@@ -1,0 +1,12 @@
+transformation bug296630();
+
+main () {}
+
+mapping mm1() {
+	init { var s1 : String; }
+
+	var s2 : String; /*@*/
+
+	end { var s3 : String; }
+}
+

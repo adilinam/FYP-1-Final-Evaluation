@@ -1,0 +1,1882 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:qvtb="http://www.eclipse.org/qvt/2015/QVTbase" xmlns:qvtg="http://www.eclipse.org/qvt/2015/DependencyGraph">
+  <qvtb:TypedModel name="$primitive$"/>
+  <qvtg:DependencyGraph>
+    <datums xsi:type="qvtg:ClassDatum" sub="/1/@datums.1 /1/@datums.188 /1/@datums.189 /1/@datums.190">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.PivotableElementCS"/>
+      <propertyDatums sub="/1/@datums.1/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums sub="/1/@datums.1/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums sub="/1/@datums.1/@propertyDatums.2">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PackageOwnerCS.ownedPackages"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.0" sub="/1/@datums.2 /1/@datums.19 /1/@datums.24 /1/@datums.44 /1/@datums.203 /1/@datums.228 /1/@datums.231 /1/@datums.232 /1/@datums.243 /1/@datums.260 /1/@datums.267 /1/@datums.274">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.ModelElementCS"/>
+      <propertyDatums super="/1/@datums.0/@propertyDatums.0" sub="/1/@datums.2/@propertyDatums.1 /1/@datums.19/@propertyDatums.1 /1/@datums.24/@propertyDatums.0 /1/@datums.24/@propertyDatums.2 /1/@datums.44/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.0/@propertyDatums.1" sub="/1/@datums.19/@propertyDatums.0 /1/@datums.24/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.0/@propertyDatums.2" sub="/1/@datums.44/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PackageOwnerCS.ownedPackages"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.1" sub="/1/@datums.3 /1/@datums.20 /1/@datums.25 /1/@datums.199 /1/@datums.216 /1/@datums.217 /1/@datums.220 /1/@datums.230 /1/@datums.246 /1/@datums.250 /1/@datums.257">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.NamedElementCS"/>
+      <propertyDatums sub="/1/@datums.3/@propertyDatums.0 /1/@datums.20/@propertyDatums.0 /1/@datums.25/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.1/@propertyDatums.0" sub="/1/@datums.3/@propertyDatums.1 /1/@datums.20/@propertyDatums.1 /1/@datums.25/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.2" sub="/1/@datums.4 /1/@datums.30 /1/@datums.233">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.TypedElementCS"/>
+      <propertyDatums super="/1/@datums.2/@propertyDatums.0" sub="/1/@datums.4/@propertyDatums.0 /1/@datums.30/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.2/@propertyDatums.1" sub="/1/@datums.4/@propertyDatums.1 /1/@datums.30/@propertyDatums.0 /1/@datums.30/@propertyDatums.4">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums sub="/1/@datums.4/@propertyDatums.2">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.TypedElementCS.qualifiers"/>
+      </propertyDatums>
+      <propertyDatums sub="/1/@datums.30/@propertyDatums.2 /1/@datums.30/@propertyDatums.3">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.TypedElementCS.ownedType"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.3" sub="/1/@datums.5 /1/@datums.12">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.FeatureCS"/>
+      <propertyDatums super="/1/@datums.3/@propertyDatums.0" sub="/1/@datums.5/@propertyDatums.0 /1/@datums.12/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.3/@propertyDatums.1" sub="/1/@datums.5/@propertyDatums.1 /1/@datums.12/@propertyDatums.1 /1/@datums.5/@propertyDatums.3 /1/@datums.12/@propertyDatums.3 /1/@datums.12/@propertyDatums.4 /1/@datums.12/@propertyDatums.5">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.3/@propertyDatums.2" sub="/1/@datums.5/@propertyDatums.2">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.TypedElementCS.qualifiers"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.4" sub="/1/@datums.6 /1/@datums.215 /1/@datums.227">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.StructuralFeatureCS"/>
+      <propertyDatums super="/1/@datums.4/@propertyDatums.0" sub="/1/@datums.6/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.4/@propertyDatums.1" sub="/1/@datums.6/@propertyDatums.1 /1/@datums.6/@propertyDatums.3 /1/@datums.6/@propertyDatums.4" requiredBy="/1/@actions.23">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.4/@propertyDatums.2" sub="/1/@datums.6/@propertyDatums.2">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.TypedElementCS.qualifiers"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.4/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.5" requiredBy="/1/@actions.0 /1/@actions.10 /1/@actions.11" dataParameter="/1/@actions.0/@parameters.0 /1/@actions.10/@parameters.0 /1/@actions.11/@parameters.0">
+      <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.ClassifierPropertyCS"/>
+      <propertyDatums super="/1/@datums.5/@propertyDatums.0" requiredBy="/1/@actions.10">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.5/@propertyDatums.1" producedBy="/1/@actions.0" requiredBy="/1/@actions.10 /1/@actions.11">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.5/@propertyDatums.2" requiredBy="/1/@actions.11">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.TypedElementCS.qualifiers"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.5/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.5/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" sub="/1/@datums.8 /1/@datums.14 /1/@datums.27 /1/@datums.50 /1/@datums.65 /1/@datums.70 /1/@datums.71 /1/@datums.72 /1/@datums.73 /1/@datums.75 /1/@datums.76 /1/@datums.84 /1/@datums.91 /1/@datums.112 /1/@datums.121 /1/@datums.134">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.NamedElement"/>
+      <propertyDatums sub="/1/@datums.8/@propertyDatums.0 /1/@datums.14/@propertyDatums.0 /1/@datums.27/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.7" sub="/1/@datums.9 /1/@datums.32 /1/@datums.53 /1/@datums.66 /1/@datums.79 /1/@datums.125">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.TypedElement"/>
+      <propertyDatums super="/1/@datums.7/@propertyDatums.0" sub="/1/@datums.9/@propertyDatums.0 /1/@datums.32/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+      <propertyDatums sub="/1/@datums.32/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.TypedElement.type"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.8" sub="/1/@datums.10 /1/@datums.16">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Feature"/>
+      <propertyDatums super="/1/@datums.8/@propertyDatums.0" sub="/1/@datums.10/@propertyDatums.0 /1/@datums.16/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.9" sub="/1/@datums.147" producedBy="/1/@actions.0" dataParameter="/1/@actions.0/@results.0">
+      <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Property"/>
+      <propertyDatums super="/1/@datums.9/@propertyDatums.0" producedBy="/1/@actions.10">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+      <propertyDatums producedBy="/1/@actions.11">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Property.isComposite"/>
+      </propertyDatums>
+      <propertyDatums producedBy="/1/@actions.23">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Property.owningClass"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" sub="/1/@datums.12 /1/@datums.25 /1/@datums.221">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.TemplateableElementCS"/>
+      <propertyDatums sub="/1/@datums.12/@propertyDatums.0 /1/@datums.25/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums sub="/1/@datums.12/@propertyDatums.1 /1/@datums.25/@propertyDatums.0 /1/@datums.12/@propertyDatums.3 /1/@datums.12/@propertyDatums.4 /1/@datums.12/@propertyDatums.5">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.4 /1/@datums.11" sub="/1/@datums.13 /1/@datums.196">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.OperationCS"/>
+      <propertyDatums super="/1/@datums.4/@propertyDatums.0 /1/@datums.11/@propertyDatums.0" sub="/1/@datums.13/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.4/@propertyDatums.1 /1/@datums.11/@propertyDatums.1" sub="/1/@datums.13/@propertyDatums.1 /1/@datums.13/@propertyDatums.3 /1/@datums.13/@propertyDatums.4" requiredBy="/1/@actions.24 /1/@actions.26 /1/@actions.32">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums sub="/1/@datums.13/@propertyDatums.2">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.OperationCS.ownedParameters"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.4/@propertyDatums.1 /1/@datums.11/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.4/@propertyDatums.1 /1/@datums.11/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.4/@propertyDatums.1 /1/@datums.11/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.12" requiredBy="/1/@actions.1 /1/@actions.12 /1/@actions.13" dataParameter="/1/@actions.1/@parameters.0 /1/@actions.12/@parameters.0 /1/@actions.13/@parameters.0">
+      <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.MappingOperationCS"/>
+      <propertyDatums super="/1/@datums.12/@propertyDatums.0" requiredBy="/1/@actions.12">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.12/@propertyDatums.1" producedBy="/1/@actions.1" requiredBy="/1/@actions.12 /1/@actions.13">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.12/@propertyDatums.2" requiredBy="/1/@actions.13">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.OperationCS.ownedParameters"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.12/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.12/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.7" sub="/1/@datums.16 /1/@datums.23 /1/@datums.28 /1/@datums.47 /1/@datums.88 /1/@datums.119 /1/@datums.133">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Namespace"/>
+      <propertyDatums super="/1/@datums.7/@propertyDatums.0" sub="/1/@datums.16/@propertyDatums.0 /1/@datums.23/@propertyDatums.0 /1/@datums.28/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" sub="/1/@datums.16 /1/@datums.28">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.TemplateableElement"/>
+      <propertyDatums sub="/1/@datums.16/@propertyDatums.0 /1/@datums.28/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.9 /1/@datums.14 /1/@datums.15" sub="/1/@datums.17 /1/@datums.98">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Operation"/>
+      <propertyDatums super="/1/@datums.9/@propertyDatums.0 /1/@datums.14/@propertyDatums.0 /1/@datums.15/@propertyDatums.0" sub="/1/@datums.17/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+      <propertyDatums sub="/1/@datums.17/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Operation.ownedParameters"/>
+      </propertyDatums>
+      <propertyDatums producedBy="/1/@actions.24 /1/@actions.26 /1/@actions.32">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Operation.owningClass"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.16" sub="/1/@datums.18 /1/@datums.144 /1/@datums.148 /1/@datums.149">
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.ImperativeOperation"/>
+      <propertyDatums super="/1/@datums.16/@propertyDatums.0" sub="/1/@datums.18/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.16/@propertyDatums.1" sub="/1/@datums.18/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Operation.ownedParameters"/>
+      </propertyDatums>
+      <propertyDatums requiredBy="/1/@actions.21">
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.ImperativeOperation.body"/>
+      </propertyDatums>
+      <propertyDatums requiredBy="/1/@actions.21">
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.ImperativeOperation.context"/>
+      </propertyDatums>
+      <propertyDatums requiredBy="/1/@actions.21">
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.ImperativeOperation.result"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.17" producedBy="/1/@actions.1" dataParameter="/1/@actions.1/@results.0">
+      <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.MappingOperation"/>
+      <propertyDatums super="/1/@datums.17/@propertyDatums.0" producedBy="/1/@actions.12">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.17/@propertyDatums.1" producedBy="/1/@actions.13" opposite="/1/@datums.34/@propertyDatums.2">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Operation.ownedParameters"/>
+      </propertyDatums>
+      <propertyDatums requiredBy="/1/@actions.21">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.MappingOperation.when"/>
+      </propertyDatums>
+      <propertyDatums requiredBy="/1/@actions.21">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.MappingOperation.where"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.1" sub="/1/@datums.21 /1/@datums.45">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.PackageOwnerCS"/>
+      <propertyDatums super="/1/@datums.1/@propertyDatums.1" sub="/1/@datums.21/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.1/@propertyDatums.0" sub="/1/@datums.21/@propertyDatums.1 /1/@datums.21/@propertyDatums.3 /1/@datums.45/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums sub="/1/@datums.45/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PackageOwnerCS.ownedPackages"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.2" sub="/1/@datums.21 /1/@datums.37 /1/@datums.194 /1/@datums.197 /1/@datums.219">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.NamespaceCS"/>
+      <propertyDatums super="/1/@datums.2/@propertyDatums.0" sub="/1/@datums.21/@propertyDatums.0 /1/@datums.37/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.2/@propertyDatums.1" sub="/1/@datums.21/@propertyDatums.1 /1/@datums.37/@propertyDatums.1 /1/@datums.21/@propertyDatums.3">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.19 /1/@datums.20" sub="/1/@datums.22">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.PackageCS"/>
+      <propertyDatums super="/1/@datums.19/@propertyDatums.0 /1/@datums.20/@propertyDatums.0" sub="/1/@datums.22/@propertyDatums.0 /1/@datums.22/@propertyDatums.2 /1/@datums.22/@propertyDatums.4">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.19/@propertyDatums.1 /1/@datums.20/@propertyDatums.1" sub="/1/@datums.22/@propertyDatums.1 /1/@datums.22/@propertyDatums.3 /1/@datums.22/@propertyDatums.5 /1/@datums.22/@propertyDatums.7 /1/@datums.22/@propertyDatums.8" requiredBy="/1/@actions.29">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums sub="/1/@datums.22/@propertyDatums.6">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PackageCS.ownedClasses"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.19/@propertyDatums.1 /1/@datums.20/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.21" requiredBy="/1/@actions.2 /1/@actions.14 /1/@actions.15 /1/@actions.16 /1/@actions.17" dataParameter="/1/@actions.2/@parameters.0 /1/@actions.14/@parameters.0 /1/@actions.15/@parameters.0 /1/@actions.16/@parameters.0 /1/@actions.17/@parameters.0">
+      <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.MetamodelCS"/>
+      <propertyDatums super="/1/@datums.21/@propertyDatums.0" requiredBy="/1/@actions.14 /1/@actions.15 /1/@actions.16">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.21/@propertyDatums.1" producedBy="/1/@actions.2" requiredBy="/1/@actions.14 /1/@actions.15 /1/@actions.16 /1/@actions.17">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.21/@propertyDatums.0">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.21/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.21/@propertyDatums.0">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.21/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.21/@propertyDatums.2" requiredBy="/1/@actions.17">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PackageCS.ownedClasses"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.21/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.21/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.14" sub="/1/@datums.102 /1/@datums.115" producedBy="/1/@actions.2" dataParameter="/1/@actions.2/@results.0">
+      <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Package"/>
+      <propertyDatums super="/1/@datums.14/@propertyDatums.0" producedBy="/1/@actions.14">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+      <propertyDatums producedBy="/1/@actions.15">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Package.nsPrefix"/>
+      </propertyDatums>
+      <propertyDatums producedBy="/1/@actions.16">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Package.URI"/>
+      </propertyDatums>
+      <propertyDatums producedBy="/1/@actions.17" opposite="/1/@datums.28/@propertyDatums.3">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Package.ownedClasses"/>
+      </propertyDatums>
+      <propertyDatums producedBy="/1/@actions.29">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Package.Model"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.1" sub="/1/@datums.25 /1/@datums.235">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.TypeCS"/>
+      <propertyDatums super="/1/@datums.1/@propertyDatums.0" sub="/1/@datums.25/@propertyDatums.0" requiredBy="/1/@actions.29">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.1/@propertyDatums.1" sub="/1/@datums.25/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.1/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.2 /1/@datums.24 /1/@datums.11" sub="/1/@datums.26 /1/@datums.37 /1/@datums.197 /1/@datums.202 /1/@datums.219">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.ClassCS"/>
+      <propertyDatums super="/1/@datums.2/@propertyDatums.1 /1/@datums.24/@propertyDatums.0 /1/@datums.11/@propertyDatums.1" sub="/1/@datums.26/@propertyDatums.1 /1/@datums.37/@propertyDatums.1 /1/@datums.26/@propertyDatums.2" requiredBy="/1/@actions.17">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.2/@propertyDatums.0 /1/@datums.24/@propertyDatums.1 /1/@datums.11/@propertyDatums.0" sub="/1/@datums.26/@propertyDatums.0 /1/@datums.37/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.25" requiredBy="/1/@actions.3 /1/@actions.18" dataParameter="/1/@actions.3/@parameters.0 /1/@actions.18/@parameters.0">
+      <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.ModelTypeCS"/>
+      <propertyDatums super="/1/@datums.25/@propertyDatums.1" requiredBy="/1/@actions.18">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.25/@propertyDatums.0" producedBy="/1/@actions.3" requiredBy="/1/@actions.18">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.25/@propertyDatums.0">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.7" sub="/1/@datums.28 /1/@datums.131">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Type"/>
+      <propertyDatums super="/1/@datums.7/@propertyDatums.0" sub="/1/@datums.28/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+      <propertyDatums producedBy="/1/@actions.21">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Type.TypedElement"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.27 /1/@datums.14 /1/@datums.15" sub="/1/@datums.29 /1/@datums.42 /1/@datums.51 /1/@datums.52 /1/@datums.58 /1/@datums.61 /1/@datums.77 /1/@datums.81 /1/@datums.95 /1/@datums.106 /1/@datums.120 /1/@datums.126 /1/@datums.129 /1/@datums.142 /1/@datums.143 /1/@datums.177 /1/@datums.182">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Class"/>
+      <propertyDatums super="/1/@datums.27/@propertyDatums.0 /1/@datums.14/@propertyDatums.0 /1/@datums.15/@propertyDatums.0" sub="/1/@datums.29/@propertyDatums.0 /1/@datums.42/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+      <propertyDatums sub="/1/@datums.42/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Class.ownedOperations"/>
+      </propertyDatums>
+      <propertyDatums sub="/1/@datums.42/@propertyDatums.4">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Class.isAbstract"/>
+      </propertyDatums>
+      <propertyDatums producedBy="/1/@actions.17">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Class.owningPackage"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.28" producedBy="/1/@actions.3" dataParameter="/1/@actions.3/@results.0">
+      <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.ModelType"/>
+      <propertyDatums super="/1/@datums.28/@propertyDatums.0" producedBy="/1/@actions.18" requiredBy="/1/@actions.21 /1/@actions.27">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+      <propertyDatums requiredBy="/1/@actions.21">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.ModelType.additionalCondition"/>
+      </propertyDatums>
+      <propertyDatums producedBy="/1/@actions.27">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.ModelType.Module"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.3" sub="/1/@datums.31 /1/@datums.209">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.ParameterCS"/>
+      <propertyDatums super="/1/@datums.3/@propertyDatums.1" sub="/1/@datums.31/@propertyDatums.1 /1/@datums.31/@propertyDatums.3 /1/@datums.31/@propertyDatums.4 /1/@datums.31/@propertyDatums.6 /1/@datums.31/@propertyDatums.7 /1/@datums.31/@propertyDatums.8" requiredBy="/1/@actions.13 /1/@actions.31">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.3/@propertyDatums.0" sub="/1/@datums.31/@propertyDatums.0 /1/@datums.31/@propertyDatums.2">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.3/@propertyDatums.3" sub="/1/@datums.31/@propertyDatums.5" requiredBy="/1/@actions.27">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.TypedElementCS.ownedType"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.3/@propertyDatums.3">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.TypedElementCS.ownedType"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.3/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.30" requiredBy="/1/@actions.4 /1/@actions.5 /1/@actions.19 /1/@actions.20 /1/@actions.21" dataParameter="/1/@actions.4/@parameters.0 /1/@actions.5/@parameters.0 /1/@actions.19/@parameters.0 /1/@actions.20/@parameters.0 /1/@actions.21/@parameters.0">
+      <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.ParameterDeclarationCS"/>
+      <propertyDatums super="/1/@datums.30/@propertyDatums.1" requiredBy="/1/@actions.19 /1/@actions.20">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.30/@propertyDatums.0" producedBy="/1/@actions.4 /1/@actions.5" requiredBy="/1/@actions.19 /1/@actions.20 /1/@actions.21">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.30/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.30/@propertyDatums.0">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.30/@propertyDatums.0">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.30/@propertyDatums.2" requiredBy="/1/@actions.21">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.TypedElementCS.ownedType"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.30/@propertyDatums.0">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.30/@propertyDatums.0">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.30/@propertyDatums.0">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.8" sub="/1/@datums.33 /1/@datums.34 /1/@datums.136">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.VariableDeclaration"/>
+      <propertyDatums super="/1/@datums.8/@propertyDatums.0" sub="/1/@datums.33/@propertyDatums.0 /1/@datums.34/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.8/@propertyDatums.1" sub="/1/@datums.33/@propertyDatums.1 /1/@datums.34/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.TypedElement.type"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.32" sub="/1/@datums.35">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Variable"/>
+      <propertyDatums super="/1/@datums.32/@propertyDatums.0" sub="/1/@datums.35/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.32/@propertyDatums.1" sub="/1/@datums.35/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.TypedElement.type"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.32" sub="/1/@datums.35">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Parameter"/>
+      <propertyDatums super="/1/@datums.32/@propertyDatums.0" sub="/1/@datums.35/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.32/@propertyDatums.1" sub="/1/@datums.35/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.TypedElement.type"/>
+      </propertyDatums>
+      <propertyDatums producedBy="/1/@actions.13">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Parameter.owningOperation"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.33 /1/@datums.34" sub="/1/@datums.36 /1/@datums.154" producedBy="/1/@actions.4" dataParameter="/1/@actions.4/@results.0">
+      <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.VarParameter"/>
+      <propertyDatums super="/1/@datums.33/@propertyDatums.0 /1/@datums.34/@propertyDatums.0" sub="/1/@datums.36/@propertyDatums.0" producedBy="/1/@actions.19">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.33/@propertyDatums.1 /1/@datums.34/@propertyDatums.1" sub="/1/@datums.36/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.TypedElement.type"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.35" producedBy="/1/@actions.5" dataParameter="/1/@actions.5/@results.0">
+      <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.ModelParameter"/>
+      <propertyDatums super="/1/@datums.35/@propertyDatums.0" producedBy="/1/@actions.20">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.35/@propertyDatums.1" producedBy="/1/@actions.21" opposite="/1/@datums.27/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.TypedElement.type"/>
+      </propertyDatums>
+      <propertyDatums producedBy="/1/@actions.31">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.ModelParameter.module"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.25 /1/@datums.20" sub="/1/@datums.38 /1/@datums.40">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.StructuredClassCS"/>
+      <propertyDatums super="/1/@datums.25/@propertyDatums.1 /1/@datums.20/@propertyDatums.0" sub="/1/@datums.38/@propertyDatums.0 /1/@datums.40/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.25/@propertyDatums.0 /1/@datums.20/@propertyDatums.1" sub="/1/@datums.38/@propertyDatums.1 /1/@datums.38/@propertyDatums.3 /1/@datums.38/@propertyDatums.5 /1/@datums.40/@propertyDatums.1 /1/@datums.38/@propertyDatums.6">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums sub="/1/@datums.38/@propertyDatums.2">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.StructuredClassCS.ownedProperties"/>
+      </propertyDatums>
+      <propertyDatums sub="/1/@datums.38/@propertyDatums.4 /1/@datums.40/@propertyDatums.2">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.StructuredClassCS.ownedOperations"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.37" requiredBy="/1/@actions.6 /1/@actions.22 /1/@actions.23 /1/@actions.24" dataParameter="/1/@actions.6/@parameters.0 /1/@actions.22/@parameters.0 /1/@actions.23/@parameters.0 /1/@actions.24/@parameters.0">
+      <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.QVToClassCS"/>
+      <propertyDatums super="/1/@datums.37/@propertyDatums.0" requiredBy="/1/@actions.22">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.37/@propertyDatums.1" producedBy="/1/@actions.6" requiredBy="/1/@actions.22 /1/@actions.23 /1/@actions.24">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.37/@propertyDatums.2" requiredBy="/1/@actions.23">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.StructuredClassCS.ownedProperties"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.37/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.37/@propertyDatums.3" requiredBy="/1/@actions.24">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.StructuredClassCS.ownedOperations"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.37/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.37/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" producedBy="/1/@actions.6" dataParameter="/1/@actions.6/@results.0">
+      <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+      <type href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+      <propertyDatums producedBy="/1/@actions.22">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+      <propertyDatums producedBy="/1/@actions.23" opposite="/1/@datums.10/@propertyDatums.2">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Class.ownedProperties"/>
+      </propertyDatums>
+      <propertyDatums producedBy="/1/@actions.24" opposite="/1/@datums.16/@propertyDatums.2">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Class.ownedOperations"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.37" sub="/1/@datums.41 /1/@datums.48">
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.ModuleCS"/>
+      <propertyDatums super="/1/@datums.37/@propertyDatums.0" sub="/1/@datums.41/@propertyDatums.0 /1/@datums.48/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.37/@propertyDatums.1" sub="/1/@datums.41/@propertyDatums.1 /1/@datums.41/@propertyDatums.3 /1/@datums.41/@propertyDatums.5 /1/@datums.41/@propertyDatums.6 /1/@datums.41/@propertyDatums.8 /1/@datums.48/@propertyDatums.1 /1/@datums.48/@propertyDatums.3 /1/@datums.48/@propertyDatums.5 /1/@datums.48/@propertyDatums.7 /1/@datums.48/@propertyDatums.9 /1/@datums.41/@propertyDatums.9 /1/@datums.48/@propertyDatums.10">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.37/@propertyDatums.3" sub="/1/@datums.41/@propertyDatums.2 /1/@datums.48/@propertyDatums.4">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.StructuredClassCS.ownedOperations"/>
+      </propertyDatums>
+      <propertyDatums sub="/1/@datums.41/@propertyDatums.4 /1/@datums.48/@propertyDatums.2">
+        <property href="QVTOperationalCS.ecore.oclas#p.qvtoperationalcs.ModuleCS.parameters"/>
+      </propertyDatums>
+      <propertyDatums sub="/1/@datums.41/@propertyDatums.7 /1/@datums.48/@propertyDatums.6 /1/@datums.48/@propertyDatums.8">
+        <property href="QVTOperationalCS.ecore.oclas#p.qvtoperationalcs.ModuleCS.qualifiers"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.40" requiredBy="/1/@actions.7 /1/@actions.25 /1/@actions.26 /1/@actions.27 /1/@actions.28" dataParameter="/1/@actions.7/@parameters.0 /1/@actions.25/@parameters.0 /1/@actions.26/@parameters.0 /1/@actions.27/@parameters.0 /1/@actions.28/@parameters.0">
+      <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.QVToLibraryCS"/>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.0" requiredBy="/1/@actions.25">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.1" producedBy="/1/@actions.7" requiredBy="/1/@actions.25 /1/@actions.26 /1/@actions.27 /1/@actions.28">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.2" requiredBy="/1/@actions.26">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.StructuredClassCS.ownedOperations"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.3" requiredBy="/1/@actions.27">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="QVTOperationalCS.ecore.oclas#p.qvtoperationalcs.ModuleCS.parameters"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.4" requiredBy="/1/@actions.28">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="QVTOperationalCS.ecore.oclas#p.qvtoperationalcs.ModuleCS.qualifiers"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.28" sub="/1/@datums.43 /1/@datums.49">
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.Module"/>
+      <propertyDatums super="/1/@datums.28/@propertyDatums.0" sub="/1/@datums.43/@propertyDatums.0 /1/@datums.49/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.28/@propertyDatums.1" sub="/1/@datums.43/@propertyDatums.1 /1/@datums.49/@propertyDatums.2">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Class.ownedOperations"/>
+      </propertyDatums>
+      <propertyDatums sub="/1/@datums.43/@propertyDatums.2">
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.Module.usedModelType"/>
+      </propertyDatums>
+      <propertyDatums sub="/1/@datums.43/@propertyDatums.3 /1/@datums.49/@propertyDatums.3">
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.Module.isBlackbox"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.28/@propertyDatums.2" sub="/1/@datums.49/@propertyDatums.4">
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Class.isAbstract"/>
+      </propertyDatums>
+      <propertyDatums requiredBy="/1/@actions.21 /1/@actions.27">
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.Module.ownedTag"/>
+      </propertyDatums>
+      <propertyDatums requiredBy="/1/@actions.21">
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.Module.ownedVariable"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.42" producedBy="/1/@actions.7" dataParameter="/1/@actions.7/@results.0">
+      <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.Library"/>
+      <propertyDatums super="/1/@datums.42/@propertyDatums.0" producedBy="/1/@actions.25">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.42/@propertyDatums.1" producedBy="/1/@actions.26" opposite="/1/@datums.16/@propertyDatums.2">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Class.ownedOperations"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.42/@propertyDatums.2" producedBy="/1/@actions.27" opposite="/1/@datums.29/@propertyDatums.2">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.Module.usedModelType"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.42/@propertyDatums.3" producedBy="/1/@actions.28">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.Module.isBlackbox"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.1" sub="/1/@datums.45 /1/@datums.246">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.RootCS"/>
+      <propertyDatums super="/1/@datums.1/@propertyDatums.2" sub="/1/@datums.45/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PackageOwnerCS.ownedPackages"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.1/@propertyDatums.0" sub="/1/@datums.45/@propertyDatums.1">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.19 /1/@datums.44" sub="/1/@datums.46">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.RootPackageCS"/>
+      <propertyDatums super="/1/@datums.19/@propertyDatums.2 /1/@datums.44/@propertyDatums.0" sub="/1/@datums.46/@propertyDatums.0">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PackageOwnerCS.ownedPackages"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.19/@propertyDatums.1 /1/@datums.44/@propertyDatums.1" sub="/1/@datums.46/@propertyDatums.2 /1/@datums.46/@propertyDatums.3">
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.45" requiredBy="/1/@actions.8 /1/@actions.29" dataParameter="/1/@actions.8/@parameters.0 /1/@actions.29/@parameters.0">
+      <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.TopLevelCS"/>
+      <propertyDatums super="/1/@datums.45/@propertyDatums.0" requiredBy="/1/@actions.29">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PackageOwnerCS.ownedPackages"/>
+      </propertyDatums>
+      <propertyDatums requiredBy="/1/@actions.29">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="QVTOperationalCS.ecore.oclas#p.qvtoperationalcs.TopLevelCS.ownedTypes"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.45/@propertyDatums.1" producedBy="/1/@actions.8" requiredBy="/1/@actions.29">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.45/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.14" producedBy="/1/@actions.8" dataParameter="/1/@actions.8/@results.0">
+      <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Model"/>
+      <propertyDatums producedBy="/1/@actions.29" opposite="/1/@datums.23/@propertyDatums.4">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Model.ownedPackages"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.40" requiredBy="/1/@actions.9 /1/@actions.30 /1/@actions.31 /1/@actions.32 /1/@actions.33 /1/@actions.34" dataParameter="/1/@actions.9/@parameters.0 /1/@actions.30/@parameters.0 /1/@actions.31/@parameters.0 /1/@actions.32/@parameters.0 /1/@actions.33/@parameters.0 /1/@actions.34/@parameters.0">
+      <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.TransformationCS"/>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.0" requiredBy="/1/@actions.30">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.1" producedBy="/1/@actions.9" requiredBy="/1/@actions.30 /1/@actions.31 /1/@actions.32 /1/@actions.33 /1/@actions.34">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.3" requiredBy="/1/@actions.31">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="QVTOperationalCS.ecore.oclas#p.qvtoperationalcs.ModuleCS.parameters"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.2" requiredBy="/1/@actions.32">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.StructuredClassCS.ownedOperations"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.4" requiredBy="/1/@actions.33 /1/@actions.34">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="QVTOperationalCS.ecore.oclas#p.qvtoperationalcs.ModuleCS.qualifiers"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.4">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="QVTOperationalCS.ecore.oclas#p.qvtoperationalcs.ModuleCS.qualifiers"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.40/@propertyDatums.1">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.leftCS"/>
+        <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.42" producedBy="/1/@actions.9" dataParameter="/1/@actions.9/@results.0">
+      <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.OperationalTransformation"/>
+      <propertyDatums super="/1/@datums.42/@propertyDatums.0" producedBy="/1/@actions.30">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+      </propertyDatums>
+      <propertyDatums producedBy="/1/@actions.31" requiredBy="/1/@actions.21" opposite="/1/@datums.36/@propertyDatums.2">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.OperationalTransformation.modelParameter"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.42/@propertyDatums.1" producedBy="/1/@actions.32" opposite="/1/@datums.16/@propertyDatums.2">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Class.ownedOperations"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.42/@propertyDatums.3" producedBy="/1/@actions.33">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.Module.isBlackbox"/>
+      </propertyDatums>
+      <propertyDatums super="/1/@datums.42/@propertyDatums.4" producedBy="/1/@actions.34">
+        <domain href="QVTOperationalCS2AS.qvtp.qvtias#qT..QVTOperationalCS2AS_qvtp_qvtias.rightAS"/>
+        <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Class.isAbstract"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.7">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Annotation"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.28">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.AnyType"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.28">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.AssociationClass"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.8" sub="/1/@datums.54 /1/@datums.62 /1/@datums.90 /1/@datums.101 /1/@datums.105 /1/@datums.124 /1/@datums.127 /1/@datums.138 /1/@datums.140 /1/@datums.141 /1/@datums.150">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.OCLExpression"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.53" sub="/1/@datums.55 /1/@datums.96 /1/@datums.158">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.CallExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.54" sub="/1/@datums.56 /1/@datums.108">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.FeatureCallExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.55" sub="/1/@datums.57 /1/@datums.109 /1/@datums.116">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.NavigationCallExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.56">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.AssociationClassCallExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.28" sub="/1/@datums.59 /1/@datums.83 /1/@datums.100 /1/@datums.104 /1/@datums.114 /1/@datums.137">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.DataType"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.58" sub="/1/@datums.60 /1/@datums.110 /1/@datums.122 /1/@datums.123 /1/@datums.169 /1/@datums.174">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.CollectionType"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.59">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.BagType"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.28" sub="/1/@datums.78 /1/@datums.128">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Behavior"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.53" sub="/1/@datums.63 /1/@datums.68 /1/@datums.82 /1/@datums.94 /1/@datums.103 /1/@datums.135 /1/@datums.168 /1/@datums.173 /1/@datums.176">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.LiteralExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.62" sub="/1/@datums.64 /1/@datums.92 /1/@datums.107 /1/@datums.130">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.PrimitiveLiteralExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.63">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.BooleanLiteralExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.7">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.CallOperationAction"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.8" sub="/1/@datums.67 /1/@datums.69">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.CollectionLiteralPart"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.66">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.CollectionItem"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.62">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.CollectionLiteralExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.66">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.CollectionRange"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.7">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.CompleteClass"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.7">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.CompleteModel"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.7" sub="/1/@datums.111 /1/@datums.113">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.CompletePackage"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.7" sub="/1/@datums.74 /1/@datums.88 /1/@datums.117">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Vertex"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.73">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.ConnectionPointReference"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.7">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Constraint"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.7">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Detail"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.28" sub="/1/@datums.78">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.DynamicType"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.61 /1/@datums.77">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.DynamicBehavior"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.8" sub="/1/@datums.80 /1/@datums.86">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.ValueSpecification"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.79">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.DynamicValueSpecification"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.28">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.ElementExtension"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.62">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.EnumLiteralExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.58">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Enumeration"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.7" sub="/1/@datums.85">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.InstanceSpecification"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.84">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.EnumerationLiteral"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.79" sub="/1/@datums.87">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.LanguageExpression"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.86">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.ExpressionInOCL"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.14 /1/@datums.73" sub="/1/@datums.89">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.State"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.88">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.FinalState"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.53">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.IfExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.7">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Import"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.63" sub="/1/@datums.93 /1/@datums.118 /1/@datums.139">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.NumericLiteralExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.92">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.IntegerLiteralExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.62">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.InvalidLiteralExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.28">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.InvalidType"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.54" sub="/1/@datums.97 /1/@datums.99 /1/@datums.170">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.LoopExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.96">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.IterateExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.16">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Iteration"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.96">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.IteratorExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.58">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.LambdaType"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.53">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.LetExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.23">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Library"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.62">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.MapLiteralExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.58">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.MapType"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.53">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.MessageExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.28">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.MessageType"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.63">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.NullLiteralExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.55" sub="/1/@datums.151 /1/@datums.175">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.OperationCallExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.56">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.OppositePropertyCallExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.59">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.OrderedSetType"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.72">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.OrphanCompletePackage"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.7">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Precedence"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.72">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.PrimitiveCompletePackage"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.58">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.PrimitiveType"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.23">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Profile"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.56">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.PropertyCallExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.73">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Pseudostate"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.92">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.RealLiteralExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.14">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Region"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.28">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.SelfType"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.7">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.SendSignalAction"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.59">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.SequenceType"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.59">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.SetType"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.53">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.ShadowExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.8">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.ShadowPart"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.28">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Signal"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.53">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.StateExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.61">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.StateMachine"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.28">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Stereotype"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.63">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.StringLiteralExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.27">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.TemplateParameter"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.TemplateSignature"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.14">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Transition"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.7">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Trigger"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.62">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.TupleLiteralExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.32">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.TupleLiteralPart"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.58">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.TupleType"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.53">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.TypeExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.92">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.UnlimitedNaturalLiteralExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.53">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.UnspecifiedValueExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.53">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.VariableExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.28">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.VoidType"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.28">
+      <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.WildcardType"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.17">
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.Constructor"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" sub="/1/@datums.146 /1/@datums.152">
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.OperationBody"/>
+      <propertyDatums requiredBy="/1/@actions.21">
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.OperationBody.content"/>
+      </propertyDatums>
+      <propertyDatums requiredBy="/1/@actions.21">
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.OperationBody.variable"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.145">
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.ConstructorBody"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.10">
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.ContextualProperty"/>
+      <propertyDatums requiredBy="/1/@actions.21">
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.ContextualProperty.initExpression"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.17">
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.EntryOperation"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.17">
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.Helper"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.53" sub="/1/@datums.151 /1/@datums.156 /1/@datums.158 /1/@datums.160 /1/@datums.161 /1/@datums.162 /1/@datums.163 /1/@datums.164 /1/@datums.165 /1/@datums.166 /1/@datums.167 /1/@datums.170 /1/@datums.175 /1/@datums.178 /1/@datums.179 /1/@datums.180 /1/@datums.181 /1/@datums.183 /1/@datums.184 /1/@datums.185 /1/@datums.186">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.ImperativeExpression"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.108 /1/@datums.150" sub="/1/@datums.153">
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.ImperativeCallExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.145">
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.MappingBody"/>
+      <propertyDatums requiredBy="/1/@actions.21">
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.MappingBody.endSection"/>
+      </propertyDatums>
+      <propertyDatums requiredBy="/1/@actions.21">
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.MappingBody.initSection"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.151">
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.MappingCallExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.35">
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.MappingParameter"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum">
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.ModuleImport"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.150" sub="/1/@datums.157">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.InstantiationExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.156">
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.ObjectExp"/>
+      <propertyDatums requiredBy="/1/@actions.21">
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.ObjectExp.body"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.54 /1/@datums.150" sub="/1/@datums.159">
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.ResolveExp"/>
+      <propertyDatums requiredBy="/1/@actions.21">
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.ResolveExp.condition"/>
+      </propertyDatums>
+      <propertyDatums requiredBy="/1/@actions.21">
+        <property href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#p.qvtoperational.ResolveExp.target"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.158">
+      <type href="../../org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.ecore.oclas#T.qvtoperational.ResolveInExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.150">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.AltExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.150">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.AssertExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.150">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.AssignExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.150">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.BlockExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.150">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.BreakExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.150">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.CatchExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.150">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.ComputeExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.150">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.ContinueExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.62">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.DictLiteralExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.59">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.DictionaryType"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.96 /1/@datums.150" sub="/1/@datums.171 /1/@datums.172">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.ImperativeLoopExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.170">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.ForExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.170">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.ImperativeIterateExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.62">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.ListLiteralExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.59">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.ListType"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.108 /1/@datums.150">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.LogExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.62">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.OrderedTupleLiteralExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.28">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.OrderedTupleType"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.150">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.RaiseExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.150">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.ReturnExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.150">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.SwitchExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.150">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.TryExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.28">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.Typedef"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.150">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.UnlinkExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.150">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.UnpackExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.150">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.VariableInitExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.150">
+      <type href="../../org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore.oclas#T.imperativeocl.WhileExp"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum">
+      <type href="../../org.eclipse.ocl.pivot/model/Lookup.ecore.oclas#T.lookup.LookupEnvironment"/>
+      <propertyDatums requiredBy="/1/@actions.21 /1/@actions.27">
+        <property href="../../org.eclipse.ocl.pivot/model/Lookup.ecore.oclas#p.lookup.LookupEnvironment.parentEnv"/>
+      </propertyDatums>
+      <propertyDatums requiredBy="/1/@actions.21 /1/@actions.27">
+        <property href="../../org.eclipse.ocl.pivot/model/Lookup.ecore.oclas#p.lookup.LookupEnvironment.namedElements"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.0">
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.PathName2CS"/>
+      <propertyDatums requiredBy="/1/@actions.21 /1/@actions.27">
+        <property href="QVTOperationalCS.ecore.oclas#p.qvtoperationalcs.PathName2CS.ownedPathElements2"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.0">
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.PathElement2CS"/>
+      <propertyDatums requiredBy="/1/@actions.21 /1/@actions.27">
+        <property href="QVTOperationalCS.ecore.oclas#p.qvtoperationalcs.PathElement2CS.name"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.0" sub="/1/@datums.191 /1/@datums.222 /1/@datums.229">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.ElementRefCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.190" sub="/1/@datums.192 /1/@datums.237">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.TypeRefCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.191" sub="/1/@datums.193 /1/@datums.212 /1/@datums.221 /1/@datums.226 /1/@datums.234 /1/@datums.236 /1/@datums.244 /1/@datums.245 /1/@datums.261 /1/@datums.279 /1/@datums.286 /1/@datums.294">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.TypedRefCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.192">
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.TypedTypeRef2CS"/>
+      <propertyDatums requiredBy="/1/@actions.21 /1/@actions.27">
+        <property href="QVTOperationalCS.ecore.oclas#p.qvtoperationalcs.TypedTypeRef2CS.ownedPathName"/>
+      </propertyDatums>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.20" sub="/1/@datums.195">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.ImportCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.194" sub="/1/@datums.207">
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.QVToImportCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.12">
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.QVToOperationCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.25 /1/@datums.20" sub="/1/@datums.198">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.DataTypeCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.197">
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.PrimitiveTypeCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.2" sub="/1/@datums.200 /1/@datums.218">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.AnnotationElementCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.199" sub="/1/@datums.201">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.AnnotationCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.200">
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.TagCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.25">
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.ExceptionCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.1" sub="/1/@datums.204 /1/@datums.210 /1/@datums.239 /1/@datums.248 /1/@datums.249 /1/@datums.250 /1/@datums.256 /1/@datums.258 /1/@datums.268 /1/@datums.271 /1/@datums.273 /1/@datums.281 /1/@datums.285 /1/@datums.295 /1/@datums.299">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.ExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.203" sub="/1/@datums.205 /1/@datums.262 /1/@datums.265">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.AbstractNameExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.204" sub="/1/@datums.206 /1/@datums.213 /1/@datums.238 /1/@datums.253 /1/@datums.263 /1/@datums.264 /1/@datums.288 /1/@datums.296">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.CallExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.205" sub="/1/@datums.208">
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.ImperativeOperationCallExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.195">
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.LibraryImportCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.206">
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.MappingCallExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.30">
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.ModelTypeRefCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.203" sub="/1/@datums.211 /1/@datums.287 /1/@datums.291 /1/@datums.302 /1/@datums.304">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.ExpressionBlockCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.210">
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.ObjectExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.192">
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.TypeSpecCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.205" sub="/1/@datums.214">
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.ResolveExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.213">
+      <type href="QVTOperationalCS.ecore.oclas#T.qvtoperationalcs.ResolveInExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.5">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.AttributeCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.2">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.ConstraintCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.2">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.DetailCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.199">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.DocumentationCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.25 /1/@datums.20">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.EnumerationCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.2">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.EnumerationLiteralCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.192 /1/@datums.11">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.LambdaTypeCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.190">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.ModelElementRefCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" sub="/1/@datums.224">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.PathElementCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.223">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.PathElementWithURICS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.PathNameCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.192">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.PrimitiveTypeRefCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.5">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.ReferenceCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.1" sub="/1/@datums.247">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.SpecificationCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.190">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.TemplateBindingCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.2" sub="/1/@datums.235">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.TemplateParameterCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.1">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.TemplateParameterSubstitutionCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.1">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.TemplateSignatureCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.3">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.TuplePartCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.192">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.TupleTypeCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.230 /1/@datums.24">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.TypeParameterCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.192">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.TypedTypeRefCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.191">
+      <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.WildcardTypeRefCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.205" sub="/1/@datums.266">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.AssociationClassCallExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.203" sub="/1/@datums.240 /1/@datums.242 /1/@datums.255 /1/@datums.259 /1/@datums.276 /1/@datums.278">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.LiteralExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.239" sub="/1/@datums.241 /1/@datums.252 /1/@datums.269 /1/@datums.270 /1/@datums.275 /1/@datums.280">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.PrimitiveLiteralExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.240">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.BooleanLiteralExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.239">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.CollectionLiteralExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.1">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.CollectionLiteralPartCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.192">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.CollectionPatternCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.192">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.CollectionTypeCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.2 /1/@datums.44">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.ContextCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.228">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.ExpSpecificationCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.203">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.IfExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.203">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.IfThenExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.203 /1/@datums.2" sub="/1/@datums.251 /1/@datums.272">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.OperatorExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.250">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.InfixExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.240">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.InvalidLiteralExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.205" sub="/1/@datums.254 /1/@datums.266">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.IterationCallExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.253" sub="/1/@datums.266">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.IterateCallExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.239">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.LambdaLiteralExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.203">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.LetExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.2" sub="/1/@datums.258 /1/@datums.277">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.VariableCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.203 /1/@datums.257">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.LetVariableCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.239">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.MapLiteralExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.1">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.MapLiteralPartCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.192">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.MapTypeCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.204" sub="/1/@datums.266">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.ShadowExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.205" sub="/1/@datums.266">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.OperationCallExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.205" sub="/1/@datums.266">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.PropertyCallExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.204" sub="/1/@datums.266">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.VariableExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.238 /1/@datums.262 /1/@datums.254 /1/@datums.253 /1/@datums.263 /1/@datums.264 /1/@datums.265">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.NameExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.1">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.NavigatingArgCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.203">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.NestedExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.240">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.NullLiteralExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.240">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.NumberLiteralExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.203">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.PatternExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.250">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.PrefixExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.203">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.SelfExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.1">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.ShadowPartCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.240">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.StringLiteralExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.239">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.TupleLiteralExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.257">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.TupleLiteralPartCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.239">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.TypeLiteralExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.192">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.TypeNameExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.240">
+      <type href="../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore.oclas#T.essentialoclcs.UnlimitedNaturalLiteralExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.203" sub="/1/@datums.282 /1/@datums.283 /1/@datums.284 /1/@datums.288 /1/@datums.290 /1/@datums.292 /1/@datums.297 /1/@datums.298 /1/@datums.300 /1/@datums.301 /1/@datums.303">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.StatementCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.281">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.AssertExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.281">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.AssignStatementCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.281">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.BlockExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.203">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.DictLiteralExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.192">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.DictTypeCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.210">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.ComputeExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.205 /1/@datums.281" sub="/1/@datums.289 /1/@datums.293">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.ImperativeLoopExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.288">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.ImperativeIterateExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.281">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.InstantiationExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.210">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.DoExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.281">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.ExpressionStatementCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.288">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.ForExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.192">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.ListTypeCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.203">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.ListLiteralExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.205">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.LogExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.281">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.QuitExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.281">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.RaiseExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.203">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.ReturnExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.281">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.SwitchAltCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.281">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.SwitchExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.210">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.TryExpCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.281">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.VariableInitializationCS"/>
+    </datums>
+    <datums xsi:type="qvtg:ClassDatum" super="/1/@datums.210">
+      <type href="../../org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCS.ecore.oclas#T.imperativeoclcs.WhileExpCS"/>
+    </datums>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.10 /1/@datums.6/@propertyDatums.1" requisites="/1/@datums.6">
+      <parameters datum="/1/@datums.6">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.cClassifierPropertyCS_2_Property.leftCS.guard.classifierPropertyCS"/>
+      </parameters>
+      <results datum="/1/@datums.10">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.cClassifierPropertyCS_2_Property.rightAS.bottom.property"/>
+      </results>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.cClassifierPropertyCS_2_Property"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.18 /1/@datums.13/@propertyDatums.1" requisites="/1/@datums.13">
+      <parameters datum="/1/@datums.13">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.cMappingOperationCS_2_MappingOperation.leftCS.guard.mappingOperationCS"/>
+      </parameters>
+      <results datum="/1/@datums.18">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.cMappingOperationCS_2_MappingOperation.rightAS.bottom.mappingOperation"/>
+      </results>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.cMappingOperationCS_2_MappingOperation"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.23 /1/@datums.22/@propertyDatums.1" requisites="/1/@datums.22">
+      <parameters datum="/1/@datums.22">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.cMetamodelCS_2_Package.leftCS.guard.metamodelCS"/>
+      </parameters>
+      <results datum="/1/@datums.23">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.cMetamodelCS_2_Package.rightAS.bottom.package"/>
+      </results>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.cMetamodelCS_2_Package"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.29 /1/@datums.26/@propertyDatums.1" requisites="/1/@datums.26">
+      <parameters datum="/1/@datums.26">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.cModelTypeCS_2_ModelType.leftCS.guard.modelTypeCS"/>
+      </parameters>
+      <results datum="/1/@datums.29">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.cModelTypeCS_2_ModelType.rightAS.bottom.modelType"/>
+      </results>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.cModelTypeCS_2_ModelType"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.35 /1/@datums.31/@propertyDatums.1" requisites="/1/@datums.31">
+      <parameters datum="/1/@datums.31">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.cParameterDeclarationCS_2_VarParameter.leftCS.guard.parameterDeclarationCS"/>
+      </parameters>
+      <results datum="/1/@datums.35">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.cParameterDeclarationCS_2_VarParameter.rightAS.bottom.varParameter"/>
+      </results>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.cParameterDeclarationCS_2_VarParameter"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.36 /1/@datums.31/@propertyDatums.1" requisites="/1/@datums.31">
+      <parameters datum="/1/@datums.31">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.cParameterDeclarationCS_2_ModelParameter.leftCS.guard.parameterDeclarationCS"/>
+      </parameters>
+      <results datum="/1/@datums.36">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.cParameterDeclarationCS_2_ModelParameter.rightAS.bottom.modelParameter"/>
+      </results>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.cParameterDeclarationCS_2_ModelParameter"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.39 /1/@datums.38/@propertyDatums.1" requisites="/1/@datums.38">
+      <parameters datum="/1/@datums.38">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.cQVToClassCS_2_Class.leftCS.guard.qVToClassCS"/>
+      </parameters>
+      <results datum="/1/@datums.39">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.cQVToClassCS_2_Class.rightAS.bottom.class"/>
+      </results>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.cQVToClassCS_2_Class"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.43 /1/@datums.41/@propertyDatums.1" requisites="/1/@datums.41">
+      <parameters datum="/1/@datums.41">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.cQVToLibraryCS_2_Library.leftCS.guard.qVToLibraryCS"/>
+      </parameters>
+      <results datum="/1/@datums.43">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.cQVToLibraryCS_2_Library.rightAS.bottom.library"/>
+      </results>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.cQVToLibraryCS_2_Library"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.47 /1/@datums.46/@propertyDatums.2" requisites="/1/@datums.46">
+      <parameters datum="/1/@datums.46">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.cTopLevelCS_2_Model.leftCS.guard.topLevelCS"/>
+      </parameters>
+      <results datum="/1/@datums.47">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.cTopLevelCS_2_Model.rightAS.bottom.model"/>
+      </results>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.cTopLevelCS_2_Model"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.49 /1/@datums.48/@propertyDatums.1" requisites="/1/@datums.48">
+      <parameters datum="/1/@datums.48">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.cTransformationCS_2_OperationalTransformation.leftCS.guard.transformationCS"/>
+      </parameters>
+      <results datum="/1/@datums.49">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.cTransformationCS_2_OperationalTransformation.rightAS.bottom.operationalTransformation"/>
+      </results>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.cTransformationCS_2_OperationalTransformation"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.10/@propertyDatums.0" requisites="/1/@datums.6 /1/@datums.6/@propertyDatums.0 /1/@datums.6/@propertyDatums.1">
+      <parameters datum="/1/@datums.6">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uProperty_name.leftCS.guard.classifierPropertyCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uProperty_name"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.10/@propertyDatums.1" requisites="/1/@datums.6 /1/@datums.6/@propertyDatums.2 /1/@datums.6/@propertyDatums.1">
+      <parameters datum="/1/@datums.6">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uProperty_isComposite.leftCS.guard.classifierPropertyCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uProperty_isComposite"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.18/@propertyDatums.0" requisites="/1/@datums.13 /1/@datums.13/@propertyDatums.0 /1/@datums.13/@propertyDatums.1">
+      <parameters datum="/1/@datums.13">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uMappingOperation_name.leftCS.guard.mappingOperationCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uMappingOperation_name"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.18/@propertyDatums.1 /1/@datums.34/@propertyDatums.2" requisites="/1/@datums.13 /1/@datums.13/@propertyDatums.2 /1/@datums.30/@propertyDatums.0 /1/@datums.13/@propertyDatums.1">
+      <parameters datum="/1/@datums.13">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uMappingOperation_ownedParameters.leftCS.guard.mappingOperationCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uMappingOperation_ownedParameters"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.23/@propertyDatums.0" requisites="/1/@datums.22 /1/@datums.22/@propertyDatums.0 /1/@datums.22/@propertyDatums.1">
+      <parameters datum="/1/@datums.22">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uPackage_name.leftCS.guard.metamodelCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uPackage_name"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.23/@propertyDatums.1" requisites="/1/@datums.22 /1/@datums.22/@propertyDatums.0 /1/@datums.22/@propertyDatums.1">
+      <parameters datum="/1/@datums.22">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uPackage_nsPrefix.leftCS.guard.metamodelCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uPackage_nsPrefix"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.23/@propertyDatums.2" requisites="/1/@datums.22 /1/@datums.22/@propertyDatums.0 /1/@datums.22/@propertyDatums.1">
+      <parameters datum="/1/@datums.22">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uPackage_URI.leftCS.guard.metamodelCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uPackage_URI"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.23/@propertyDatums.3 /1/@datums.28/@propertyDatums.3" requisites="/1/@datums.22 /1/@datums.22/@propertyDatums.6 /1/@datums.25/@propertyDatums.0 /1/@datums.22/@propertyDatums.1">
+      <parameters datum="/1/@datums.22">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uPackage_ownedClasses.leftCS.guard.metamodelCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uPackage_ownedClasses"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.29/@propertyDatums.0" requisites="/1/@datums.26 /1/@datums.26/@propertyDatums.0 /1/@datums.26/@propertyDatums.1">
+      <parameters datum="/1/@datums.26">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uModelType_name.leftCS.guard.modelTypeCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uModelType_name"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.35/@propertyDatums.0" requisites="/1/@datums.31 /1/@datums.31/@propertyDatums.0 /1/@datums.31/@propertyDatums.1">
+      <parameters datum="/1/@datums.31">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uVarParameter_name.leftCS.guard.parameterDeclarationCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uVarParameter_name"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.36/@propertyDatums.0" requisites="/1/@datums.31 /1/@datums.31/@propertyDatums.0 /1/@datums.31/@propertyDatums.1">
+      <parameters datum="/1/@datums.31">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uModelParameter_name.leftCS.guard.parameterDeclarationCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uModelParameter_name"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.36/@propertyDatums.1 /1/@datums.27/@propertyDatums.1" requisites="/1/@datums.31 /1/@datums.31/@propertyDatums.1 /1/@datums.31/@propertyDatums.5 /1/@datums.187/@propertyDatums.0 /1/@datums.187/@propertyDatums.1 /1/@datums.29/@propertyDatums.0 /1/@datums.189/@propertyDatums.0 /1/@datums.42/@propertyDatums.5 /1/@datums.17/@propertyDatums.2 /1/@datums.147/@propertyDatums.0 /1/@datums.152/@propertyDatums.0 /1/@datums.152/@propertyDatums.1 /1/@datums.18/@propertyDatums.2 /1/@datums.18/@propertyDatums.3 /1/@datums.29/@propertyDatums.1 /1/@datums.145/@propertyDatums.0 /1/@datums.158/@propertyDatums.0 /1/@datums.157/@propertyDatums.0 /1/@datums.17/@propertyDatums.3 /1/@datums.17/@propertyDatums.4 /1/@datums.42/@propertyDatums.6 /1/@datums.145/@propertyDatums.1 /1/@datums.158/@propertyDatums.1 /1/@datums.49/@propertyDatums.1 /1/@datums.188/@propertyDatums.0 /1/@datums.193/@propertyDatums.0">
+      <parameters datum="/1/@datums.31">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uModelParameter_type.leftCS.guard.parameterDeclarationCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uModelParameter_type"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.39/@propertyDatums.0" requisites="/1/@datums.38 /1/@datums.38/@propertyDatums.0 /1/@datums.38/@propertyDatums.1">
+      <parameters datum="/1/@datums.38">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uClass_name.leftCS.guard.qVToClassCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uClass_name"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.39/@propertyDatums.1 /1/@datums.10/@propertyDatums.2" requisites="/1/@datums.38 /1/@datums.38/@propertyDatums.2 /1/@datums.5/@propertyDatums.1 /1/@datums.38/@propertyDatums.1">
+      <parameters datum="/1/@datums.38">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uClass_ownedProperties.leftCS.guard.qVToClassCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uClass_ownedProperties"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.39/@propertyDatums.2 /1/@datums.16/@propertyDatums.2" requisites="/1/@datums.38 /1/@datums.38/@propertyDatums.4 /1/@datums.12/@propertyDatums.1 /1/@datums.38/@propertyDatums.1">
+      <parameters datum="/1/@datums.38">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uClass_ownedOperations.leftCS.guard.qVToClassCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uClass_ownedOperations"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.43/@propertyDatums.0" requisites="/1/@datums.41 /1/@datums.41/@propertyDatums.0 /1/@datums.41/@propertyDatums.1">
+      <parameters datum="/1/@datums.41">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uLibrary_name.leftCS.guard.qVToLibraryCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uLibrary_name"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.43/@propertyDatums.1 /1/@datums.16/@propertyDatums.2" requisites="/1/@datums.41 /1/@datums.41/@propertyDatums.2 /1/@datums.12/@propertyDatums.1 /1/@datums.41/@propertyDatums.1">
+      <parameters datum="/1/@datums.41">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uLibrary_ownedOperations.leftCS.guard.qVToLibraryCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uLibrary_ownedOperations"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.43/@propertyDatums.2 /1/@datums.29/@propertyDatums.2" requisites="/1/@datums.41 /1/@datums.41/@propertyDatums.4 /1/@datums.41/@propertyDatums.1 /1/@datums.30/@propertyDatums.2 /1/@datums.187/@propertyDatums.0 /1/@datums.187/@propertyDatums.1 /1/@datums.29/@propertyDatums.0 /1/@datums.189/@propertyDatums.0 /1/@datums.42/@propertyDatums.5 /1/@datums.188/@propertyDatums.0 /1/@datums.193/@propertyDatums.0">
+      <parameters datum="/1/@datums.41">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uLibrary_usedModelType.leftCS.guard.qVToLibraryCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uLibrary_usedModelType"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.43/@propertyDatums.3" requisites="/1/@datums.41 /1/@datums.41/@propertyDatums.7 /1/@datums.41/@propertyDatums.1">
+      <parameters datum="/1/@datums.41">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uLibrary_isBlackbox.leftCS.guard.qVToLibraryCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uLibrary_isBlackbox"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.47/@propertyDatums.0 /1/@datums.23/@propertyDatums.4" requisites="/1/@datums.46 /1/@datums.46/@propertyDatums.0 /1/@datums.21/@propertyDatums.1 /1/@datums.46/@propertyDatums.1 /1/@datums.24/@propertyDatums.0 /1/@datums.46/@propertyDatums.2">
+      <parameters datum="/1/@datums.46">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uModel_ownedPackages.leftCS.guard.topLevelCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uModel_ownedPackages"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.49/@propertyDatums.0" requisites="/1/@datums.48 /1/@datums.48/@propertyDatums.0 /1/@datums.48/@propertyDatums.1">
+      <parameters datum="/1/@datums.48">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uOperationalTransformation_name.leftCS.guard.transformationCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uOperationalTransformation_name"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.49/@propertyDatums.1 /1/@datums.36/@propertyDatums.2" requisites="/1/@datums.48 /1/@datums.48/@propertyDatums.2 /1/@datums.30/@propertyDatums.0 /1/@datums.48/@propertyDatums.1">
+      <parameters datum="/1/@datums.48">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uOperationalTransformation_modelParameter.leftCS.guard.transformationCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uOperationalTransformation_modelParameter"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.49/@propertyDatums.2 /1/@datums.16/@propertyDatums.2" requisites="/1/@datums.48 /1/@datums.48/@propertyDatums.4 /1/@datums.12/@propertyDatums.1 /1/@datums.48/@propertyDatums.1">
+      <parameters datum="/1/@datums.48">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uOperationalTransformation_ownedOperations.leftCS.guard.transformationCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uOperationalTransformation_ownedOperations"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.49/@propertyDatums.3" requisites="/1/@datums.48 /1/@datums.48/@propertyDatums.6 /1/@datums.48/@propertyDatums.1">
+      <parameters datum="/1/@datums.48">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uOperationalTransformation_isBlackbox.leftCS.guard.transformationCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uOperationalTransformation_isBlackbox"/>
+    </actions>
+    <actions xsi:type="qvtg:MappingAction" productions="/1/@datums.49/@propertyDatums.4" requisites="/1/@datums.48 /1/@datums.48/@propertyDatums.6 /1/@datums.48/@propertyDatums.1">
+      <parameters datum="/1/@datums.48">
+        <variable href="QVTOperationalCS2AS.qvtp.qvtias#qV..QVTOperationalCS2AS_qvtp_qvtias.uOperationalTransformation_isAbstract.leftCS.guard.transformationCS"/>
+      </parameters>
+      <mapping href="QVTOperationalCS2AS.qvtp.qvtias#m..QVTOperationalCS2AS_qvtp_qvtias.uOperationalTransformation_isAbstract"/>
+    </actions>
+  </qvtg:DependencyGraph>
+</xmi:XMI>

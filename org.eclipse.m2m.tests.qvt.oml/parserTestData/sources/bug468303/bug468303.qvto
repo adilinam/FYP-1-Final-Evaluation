@@ -1,0 +1,4 @@
+import compatible;
+/*<warn>*/import incompatible;/*</warn>*/
+
+transformation bug468303();

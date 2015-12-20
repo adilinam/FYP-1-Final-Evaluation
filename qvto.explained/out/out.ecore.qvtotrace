@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trace:Trace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:trace="http:///www.eclipse.org/m2m/qvt/operational/trace.ecore">
+  <traceRecords>
+    <mappingOperation name="p2p" package="t" module="t">
+      <runtimeMappingOperation href="qvto:/module.env#//p2p"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EPackage">
+        <value>
+          <modelElement href="platform:/resource/qvto.explained/in/in.ecore#/"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="EPackage">
+        <value>
+          <modelElement href="platform:/resource/qvto.explained/out/out.ecore#/"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="c2c" package="t" module="t">
+      <runtimeMappingOperation href="qvto:/module.env#//c2c"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EClassifier">
+        <value>
+          <modelElement href="platform:/resource/qvto.explained/in/in.ecore#//A"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="EClass">
+        <value>
+          <modelElement href="platform:/resource/qvto.explained/out/out.ecore#//mappedA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="c2c" package="t" module="t">
+      <runtimeMappingOperation href="qvto:/module.env#//c2c"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EClassifier">
+        <value>
+          <modelElement href="platform:/resource/qvto.explained/in/in.ecore#//B"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="EClass">
+        <value>
+          <modelElement href="platform:/resource/qvto.explained/out/out.ecore#//mappedB"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="c2c" package="t" module="t">
+      <runtimeMappingOperation href="qvto:/module.env#//c2c"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EClassifier">
+        <value>
+          <modelElement href="platform:/resource/qvto.explained/in/in.ecore#//C"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="EClass">
+        <value>
+          <modelElement href="platform:/resource/qvto.explained/out/out.ecore#//mappedC"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+</trace:Trace>

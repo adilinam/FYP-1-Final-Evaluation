@@ -1,0 +1,17 @@
+import models.bug254962.Base;
+
+modeltype Ecore1 uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+transformation Middle(in input:Ecore1, out output:Ecore1) extends Base;
+
+mapping main(in model: ecore::EPackage): ecore::EPackage {
+	
+} 
+
+mapping EPackage :: clonePackage() : EPackage {
+	init {
+			
+		result := self.deepclone().oclAsType(EPackage);
+				
+	}
+}

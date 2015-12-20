@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.m2m.qvt.oml.test.emof.imperativeocl;singleton:=true
+Bundle-Version: 3.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Require-Bundle: org.junit,
+ org.eclipse.qvt.declarative.test.emof.essentialocl;bundle-version="[0.8.0,1.0.0)";visibility:=reexport,
+ org.eclipse.m2m.qvt.oml.ecore.imperativeocl;bundle-version="[3.0.0,4.0.0)";visibility:=reexport,
+ org.eclipse.m2m.qvt.oml.emof.imperativeocl;bundle-version="[3.0.0,4.0.0)";visibility:=reexport
+Eclipse-LazyStart: false
+Export-Package: org.eclipse.m2m.qvt.oml.test.emof.imperativeocl

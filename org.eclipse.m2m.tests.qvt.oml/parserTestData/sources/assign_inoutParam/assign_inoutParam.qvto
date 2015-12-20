@@ -1,0 +1,17 @@
+transformation assign_inoutParam;
+
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+mapping main(inout pack: ecore::EPackage) {
+    init {
+		pack := object EPackage {}; -- prohibited
+		pack.name := 'name'; -- this is allowed
+    }
+}
+
+mapping EClass::class2EPackage(inout inoutPar: ECORE::EAttribute) : EPackage {
+	init {
+		inoutPar := object EAttribute {}; -- prohibited
+		inoutPar.name := 'name'; -- this is allowed
+	}
+}

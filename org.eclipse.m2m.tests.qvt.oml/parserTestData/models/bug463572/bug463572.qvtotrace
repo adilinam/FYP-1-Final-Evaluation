@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trace:Trace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:trace="http:///www.eclipse.org/m2m/qvt/operational/trace.ecore">
+  <traceRecords>
+    <mappingOperation name="mapPackage" package="bug463572" module="bug463572">
+      <runtimeMappingOperation href="qvto:/module.env#//mapPackage"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EPackage">
+        <value>
+          <modelElement href="in.ecore#/"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="EPackage">
+        <value>
+          <modelElement href="expected.ecore#/0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapClassifier" package="bug463572_lib" module="bug463572_lib">
+      <runtimeMappingOperation href="qvto:/module.env#//mapClassifier"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EClassifier">
+        <value>
+          <modelElement href="in.ecore#//Class"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="packName" type="String">
+        <value primitiveValue="test_-662974751" collectionType="String"/>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="Tuple(r1 : EClass, r2 : EPackage)">
+        <value collectionType="Tuple">
+          <collection xsi:type="trace:ETuplePartValue" name="r1">
+            <value>
+              <modelElement href="expected.ecore#/0/Class_-662974751"/>
+            </value>
+          </collection>
+          <collection xsi:type="trace:ETuplePartValue" name="r2">
+            <value>
+              <modelElement href="expected.ecore#/1"/>
+            </value>
+          </collection>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapClassifier" package="bug463572_lib" module="bug463572_lib">
+      <runtimeMappingOperation href="qvto:/module.env#//mapClassifier"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EClassifier">
+        <value>
+          <modelElement href="in.ecore#//TestIdentifier"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="packName" type="String">
+        <value primitiveValue="test_-662974751" collectionType="String"/>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="Tuple(r1 : EClass, r2 : EPackage)">
+        <value collectionType="Tuple">
+          <collection xsi:type="trace:ETuplePartValue" name="r1">
+            <value>
+              <modelElement href="expected.ecore#/0/TestIdentifier_-662974741"/>
+            </value>
+          </collection>
+          <collection xsi:type="trace:ETuplePartValue" name="r2">
+            <value>
+              <modelElement href="expected.ecore#/2"/>
+            </value>
+          </collection>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+</trace:Trace>

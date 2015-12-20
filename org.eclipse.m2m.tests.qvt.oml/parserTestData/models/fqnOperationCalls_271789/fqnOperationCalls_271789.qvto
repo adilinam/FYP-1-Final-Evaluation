@@ -1,0 +1,20 @@
+import models.fqnOperationCalls_271789.imported;
+
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+
+transformation fqnOperationCalls_271789 (
+	in inModel : ECORE, out outModel : ECORE)
+	extends imported;
+
+
+main() { 
+	inModel.rootObjects()[EPackage]->map fqnOperationCalls_271789::p2p();  
+	object EPackage {name := 'inline'} -> map p2p();
+	inModel.rootObjects()[EPackage]->map imported::p2p2();  
+
+}     
+
+mapping EPackage::p2p() : EPackage {
+	name := 't_' + self.name;
+}

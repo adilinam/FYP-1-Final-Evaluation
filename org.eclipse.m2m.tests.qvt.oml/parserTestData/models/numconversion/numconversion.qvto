@@ -1,0 +1,123 @@
+modeltype MM uses "http:///pack";
+
+transformation numconversion(in m1 : MM, out MM);
+
+intermediate class I {
+	a1 : Set(Real);
+	a2 : OrderedSet(Real);
+	a3 : Bag(Real);
+	a4 : Sequence(Real);
+	a5 : List(Real);
+	a6 : Collection(Real);
+
+	b1 : Set(OclAny);
+	b2 : OrderedSet(OclAny);
+	b3 : Bag(OclAny);
+	b4 : Sequence(OclAny);
+	b5 : List(OclAny);
+	b6 : Collection(OclAny);
+}
+
+main() {
+	var cls := m1.rootObjects()![MM::cls1];
+	
+	var cl2 := object MM::cls2 {
+		attrLong := cls.attrELong;
+		attrInt := cls.attrEInt;
+		attrShort := cls.attrEShort; 
+		attrByte := cls.attrEByte; 
+		attrDouble := cls.attrEDouble;
+		attrFloat := cls.attrEFloat;
+
+		attrLongs := cls.attrELong;
+		attrInts := cls.attrEInt;
+		attrShorts := cls.attrEShort; 
+		attrBytes := cls.attrEByte; 
+		attrDoubles := cls.attrEDouble;
+		attrFloats := cls.attrEFloat;
+
+		attrLongs += cls.attrELongs;
+		attrInts += cls.attrEInts;
+		attrShorts += cls.attrEShorts; 
+		attrBytes += cls.attrEBytes; 
+		attrDoubles += cls.attrEDoubles;
+		attrFloats += cls.attrEFloats;
+	};
+
+	var i := object I {
+		a1 := cls.attrEShorts;
+		a2 := cls.attrEShorts;
+		a3 := cls.attrEShorts;
+		a4 := cls.attrEShorts;
+		a5 := cls.attrEShorts;
+		a6 := cls.attrEShorts;
+
+		b1 := cls.attrEDoubles;
+		b2 := cls.attrEDoubles;
+		b3 := cls.attrEDoubles;
+		b4 := cls.attrEDoubles;
+		b5 := cls.attrEDoubles;
+		b6 := cls.attrEDoubles;
+	};
+	
+	i.a1 += cls.attrEShorts;
+	i.a2 += cls.attrEShorts;
+	i.a3 += cls.attrEShorts;
+	i.a4 += cls.attrEShorts;
+	i.a5 += cls.attrEShorts;
+	i.a6 += cls.attrEShorts;
+
+	i.b1 += cls.attrEShorts;
+	i.b2 += cls.attrEShorts;
+	i.b3 += cls.attrEShorts;
+	i.b4 += cls.attrEShorts;
+	i.b5 += cls.attrEShorts;
+	i.b6 += cls.attrEShorts;
+
+	var i2 := object I {
+		a1 := cl2.attrShorts;
+		a2 := cl2.attrShorts;
+		a3 := cl2.attrShorts;
+		a4 := cl2.attrShorts;
+		a5 := cl2.attrShorts;
+		a6 := cl2.attrShorts;
+
+		b1 := cl2.attrDoubles;
+		b2 := cl2.attrDoubles;
+		b3 := cl2.attrDoubles;
+		b4 := cl2.attrDoubles;
+		b5 := cl2.attrDoubles;
+		b6 := cl2.attrDoubles;
+	};
+	
+	i2.a1 += cl2.attrShorts;
+	i2.a2 += cl2.attrShorts;
+	i2.a3 += cl2.attrShorts;
+	i2.a4 += cl2.attrShorts;
+	i2.a5 += cl2.attrShorts;
+	i2.a6 += cl2.attrShorts;
+
+	i2.b1 += cl2.attrShorts;
+	i2.b2 += cl2.attrShorts;
+	i2.b3 += cl2.attrShorts;
+	i2.b4 += cl2.attrShorts;
+	i2.b5 += cl2.attrShorts;
+	i2.b6 += cl2.attrShorts;
+
+	var cls3 := object MM::cls1 {
+		attrEFloats := i.a1;
+		attrEFloats := i.a2;
+		attrEFloats := i.a3;
+		attrEFloats := i.a4;
+		attrEFloats := i.a5;
+	};
+	
+	var cls4 := object MM::cls2 {
+		attrFloats := i2.a1;
+		attrFloats := i2.a2;
+		attrFloats := i2.a3;
+		attrFloats := i2.a4;
+		attrFloats := i2.a5;
+	};
+	
+}

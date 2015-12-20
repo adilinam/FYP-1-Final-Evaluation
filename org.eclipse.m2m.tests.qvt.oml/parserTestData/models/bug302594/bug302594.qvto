@@ -1,0 +1,18 @@
+import B;
+
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation bug302594() access B;
+
+main() {
+		
+	var b : B = new B();
+	
+	b.configProp := 'config';
+	
+	-- should set 'prop' to the value of 'configProp'
+	b.transform();
+	
+	assert fatal (b.prop = b.configProp);
+	
+}

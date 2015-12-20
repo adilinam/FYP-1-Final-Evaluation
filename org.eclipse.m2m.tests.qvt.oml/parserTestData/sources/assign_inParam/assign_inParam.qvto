@@ -1,0 +1,15 @@
+transformation assign_inParam;
+
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+mapping main(inout pack: ecore::EPackage) {
+}
+
+mapping EClass::class2EPackage(in inPar: ECORE::EAttribute) : EPackage {
+	init {
+		inPar := object EAttribute {}; -- prohibited
+		inPar.name := 'name'; -- no way, it is readon-only
+		
+		var s:= inPar.name; -- this you can do		
+	}
+}

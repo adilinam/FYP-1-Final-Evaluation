@@ -1,0 +1,7 @@
+library LibForAccess;
+
+property prop_LibForAccess : String = "prop_LibForAccess";
+
+query query_LibForAccess() : String {
+	return "query_LibForAccess";
+}

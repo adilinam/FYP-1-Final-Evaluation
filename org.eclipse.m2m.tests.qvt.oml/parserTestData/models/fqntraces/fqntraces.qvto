@@ -1,0 +1,25 @@
+transformation fqntraces;
+
+import models.fqntraces.imported;  
+
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+ 
+mapping main(in model: ecore::EPackage): ecore::EPackage { 
+	init {  
+		var src := object ecore::EAnnotation {};
+		src.createClass2(); -- imported 
+		src.createClass('dummy'); -- importer
+	}
+		eSubpackages += object ecore::EPackage {
+			name := 'importer';
+			eClassifiers += src.resolveIn(ecore::EAnnotation::createClass, ecore::EClass)->any(true);
+		};
+		eSubpackages += object ecore::EPackage {
+			name := 'imported';
+			eClassifiers += src.resolveIn(ecore::EAnnotation::createClass2, ecore::EClass)->any(true);
+		};
+}   
+    
+mapping ecore::EAnnotation::createClass(in dummy : String) : ecore::EClass {
+	name := 'importer';
+}

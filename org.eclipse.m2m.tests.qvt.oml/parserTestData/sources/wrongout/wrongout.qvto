@@ -1,0 +1,25 @@
+transformation wrongout;
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+mapping base(): ecore::EClass {
+	-- single error message expected bellow, unknown type only	
+  population {
+    object result : /*<error>*/ecore::EClass2/*</error>*/ {
+        name := 'Base::base'
+    }
+  }  
+}
+
+   
+mapping wrongType(): ecore::EClass { 
+	init { 	     
+    	var x := object /*<error>*/String/*</error>*/ {}
+    }
+} 
+
+mapping wrongVarType(): ecore::EClass { 
+	init { 	     
+    	var x := object  /*<error>*/result/*</error>*/ : EPackage {}
+    }
+} 

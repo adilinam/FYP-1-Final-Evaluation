@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+	<target name="javadoc">
+		<javadoc 
+			access="public" 
+			author="true" 
+			nodeprecated="false" 
+			nodeprecatedlist="false" 
+			noindex="false" 
+			nonavbar="false" 
+			notree="false" 
+			splitindex="true"
+			use="true" 
+			version="true"
+			source="1.5" 
+			
+			overview=".\javadoc\overview.html"
+			
+			doctitle="Operational QVT API" 
+			
+			destdir="doc"			
+			>
+			
+			<bottom><![CDATA[<i>Copyright &#169; 2008, 2015 Borland Software Corporation and others. All Rights Reserved.</i>]]></bottom>
+			
+			<classpath>
+				<!--pathelement path="${classpath}"/-->
+      			<fileset dir="${target.platform}\plugins">
+			        <include name="org.eclipse.core.runtime_*.jar"/>
+			        <include name="org.eclipse.core.contenttype_*.jar"/>
+			        <include name="org.eclipse.core.resources_*.jar"/>
+			        <include name="org.eclipse.osgi_*.jar"/>
+			        <include name="org.eclipse.equinox.common_*.jar"/>
+			        <include name="org.eclipse.emf.ecore_*.jar"/>
+			        <include name="org.eclipse.emf.common_*.jar"/>
+			        <include name="org.eclipse.emf.ecore.change_*.jar"/>
+			        <include name="org.eclipse.emf.ecore.xmi_*.jar"/>
+			        <include name="org.eclipse.ocl_*.jar"/>
+			        <include name="org.eclipse.ocl.common_*.jar"/>
+			        <include name="org.eclipse.ocl.ecore_*.jar"/>
+      			</fileset>
+			</classpath>
+			
+			<link offline="true" href="http://docs.oracle.com/javase/1.5.0/docs/api/" packagelistLoc=".\javadoc\java5"/>
+			<link offline="true" href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.10.0/" packagelistLoc=".\javadoc\emf_210\"/>
+			<link offline="true" href="http://download.eclipse.org/modeling/mdt/ocl/javadoc/5.0.0/" packagelistLoc=".\javadoc\ocl_50"/>
+			<link offline="true" href="http://help.eclipse.org/luna/advanced/content.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/" packagelistLoc=".\javadoc\eclipse.platform.luna"/>
+			
+			<tag name="generated" description="EMF generated code"></tag>
+			<tag name="model" description="EMF model element"></tag>
+			<tag name="ordered" description="Ordered"></tag>
+			<tag name="noimplement" description="Interface is not intended to be implemented by clients."></tag>
+			<tag name="noextend" description="Interface is not intended to be extended by clients."></tag>
+
+			<sourcepath>
+				<pathelement location=".\..\..\plugins\org.eclipse.m2m.qvt.oml\src"/>
+				<pathelement location=".\..\..\plugins\org.eclipse.m2m.qvt.oml\_generated"/>
+				<pathelement location=".\..\..\plugins\org.eclipse.m2m.qvt.oml.ecore.imperativeocl\src"/>
+				<pathelement location=".\..\..\plugins\org.eclipse.m2m.qvt.oml.ocl\src"/>
+				<pathelement location=".\..\..\plugins\org.eclipse.m2m.qvt.oml.runtime\src"/>
+				<pathelement location=".\..\..\plugins\org.eclipse.m2m.qvt.oml.runtime.ui\src"/>
+			</sourcepath>
+    
+			<package name="org.eclipse.m2m.qvt.oml"/>
+			<package name="org.eclipse.m2m.qvt.oml.blackbox.java"/>
+			<package name="org.eclipse.m2m.qvt.oml.util"/>
+			<package name="org.eclipse.m2m.internal.qvt.oml.expressions"/>
+			<package name="org.eclipse.m2m.qvt.oml.ecore.ImperativeOCL"/>
+			<package name="org.eclipse.m2m.qvt.oml.ocl.legacy.libraries"/>
+			<package name="org.eclipse.m2m.qvt.oml.runtime.util"/>
+			<package name="org.eclipse.m2m.qvt.oml.runtime.ui.wizards"/>
+
+		</javadoc>
+	</target>
+</project>

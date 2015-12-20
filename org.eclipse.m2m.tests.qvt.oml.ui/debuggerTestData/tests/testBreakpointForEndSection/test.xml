@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE script SYSTEM "../DebuggerTestScript.dtd">
+
+<script>
+	<resume line="b2" cause="breakpoint"/>
+	<resume line="b3" cause="breakpoint"/>
+</script>

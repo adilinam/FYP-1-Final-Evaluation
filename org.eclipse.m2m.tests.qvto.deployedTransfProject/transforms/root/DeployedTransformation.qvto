@@ -1,0 +1,12 @@
+import AnotherTransformation;
+import root.other.OtherTransformation;
+
+transformation DeployedTransformation();
+
+main() {
+   	var retcode1 := new OtherTransformation().transform();
+	assert fatal (retcode1.succeeded());
+
+   	var retcode2 := new AnotherTransformation().transform();
+	assert fatal (retcode2.succeeded());
+}

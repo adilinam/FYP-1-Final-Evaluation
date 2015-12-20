@@ -1,0 +1,16 @@
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+transformation LateResolveBase(out outModel:ecore);
+
+main()
+{}
+
+mapping p():EPackage {	
+	eClassifiers := result.late resolveoneIn(EPackage::c);
+	result.map c();
+}
+
+mapping EPackage::c():EClass
+{
+name := "base"
+}	

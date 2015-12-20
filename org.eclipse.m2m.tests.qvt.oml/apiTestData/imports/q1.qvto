@@ -1,0 +1,7 @@
+library q1;
+
+modeltype Ecore1 uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+query q1(in e : Ecore1::ENamedElement) : String {
+	'name = ' + e.name
+}

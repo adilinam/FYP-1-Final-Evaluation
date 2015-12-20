@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:unbound="http://local.unbound" xsi:schemaLocation="http://local.unbound MyUnbound.ecore">
+  <unbound:cls>
+    <list/>
+    <list/>
+    <ulist/>
+    <ulist2/>
+  </unbound:cls>
+  <unbound:cls/>
+  <unbound:cls/>
+  <unbound:cls/>
+  <unbound:cls/>
+  <unbound:cls/>
+  <unbound:cls/>
+  <unbound:cls/>
+  <unbound:cls/>
+</xmi:XMI>

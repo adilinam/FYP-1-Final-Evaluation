@@ -1,0 +1,23 @@
+<!ELEMENT script ((resume | stepOver | stepInto | return)*)>
+
+<!ELEMENT resume EMPTY>
+<!ATTLIST resume 
+  line CDATA #REQUIRED
+  cause (breakpoint | stepOver | stepInto | return | none) "none"
+>
+
+<!ELEMENT stepOver EMPTY>
+<!ATTLIST stepOver 
+  line CDATA #REQUIRED
+  cause (breakpoint | stepOver | stepInto | return | none) "none"
+>
+<!ELEMENT stepInto EMPTY>
+<!ATTLIST stepInto 
+  line CDATA #REQUIRED
+  cause (breakpoint | stepOver | stepInto | return | none) "none"
+>
+<!ELEMENT return EMPTY>
+<!ATTLIST return 
+  line CDATA #REQUIRED
+  cause (breakpoint | stepOver | stepInto | return | none) "none"
+>

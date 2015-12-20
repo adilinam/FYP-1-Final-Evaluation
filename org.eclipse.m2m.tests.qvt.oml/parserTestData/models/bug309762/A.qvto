@@ -1,0 +1,22 @@
+modeltype ECORE uses "http://www.eclipse.org/emf/2002/Ecore";
+
+transformation A (in i : ECORE, out o:ECORE);
+
+main() {}
+
+helper execute() {
+
+	i.objects()[EPackage]->map m();
+	
+	return null;		
+}
+
+mapping EPackage :: m() : EPackage disjuncts EPackage::m1, EPackage::m2;
+
+mapping EPackage :: m1() : EPackage {
+	name := 'm1_original'
+}
+
+mapping EPackage :: m2() : EPackage {
+	name := 'm2_original'
+}

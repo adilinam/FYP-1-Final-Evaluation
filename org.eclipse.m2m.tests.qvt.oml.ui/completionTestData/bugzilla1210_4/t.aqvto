@@ -1,0 +1,12 @@
+transformation t;
+
+modeltype A uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+mapping main(in inModel : ecore::EPackage) : ecore::EPackage {
+        init {
+                result := object ecore::EPackage {
+                };
+        }
+
+        name:= if true then 'a' else /*@*/'b'
+}

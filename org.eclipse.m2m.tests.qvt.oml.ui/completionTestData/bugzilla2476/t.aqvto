@@ -1,0 +1,6 @@
+modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation NewTransformation(in model : uml20, out model1 : ecore);
+
+mapping main(in inModel : uml20::Model) : ecore::EPackage {
+/*@*/

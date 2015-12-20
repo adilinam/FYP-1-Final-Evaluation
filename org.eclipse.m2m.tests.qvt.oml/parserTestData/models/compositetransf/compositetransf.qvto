@@ -1,0 +1,19 @@
+import models.compositetransf.nested;
+
+modeltype ECORE uses "http://www.eclipse.org/emf/2002/Ecore";
+
+transformation compositetransf(in inModel : ECORE, out outModel : ECORE);
+
+main() {
+	var p :=object EPackage { name := 'before composite' };
+	var t : Transformation := new nested(outModel);	
+	var s : Status := t.transform();
+	
+	assert fatal (s.oclIsTypeOf(Status));
+	assert fatal (s.oclIsKindOf(Status));
+	assert fatal (s.succeeded());
+	assert fatal (not s.failed()); 
+	
+	object EClass {  name := 'after composite' };
+	p.eClassifiers += outModel.objects()[EClass];
+}

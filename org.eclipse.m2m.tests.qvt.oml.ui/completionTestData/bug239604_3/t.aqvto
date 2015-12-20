@@ -1,0 +1,14 @@
+modeltype ECORE uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation NewTransformation();
+
+main() {
+        var col : Sequence(EClass) := null;
+        col->asSet()->; 
+
+        var x : EClass := null;
+        x.eSuperTypes.name.length().;
+        var i : Integer := null;
+        i.repr()./*@*/;
+
+}

@@ -1,0 +1,20 @@
+import models.bug475123.A;
+
+transformation bug475123();
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+main() {
+
+	var e1 = object EClass{};
+	var e2 = e1.testB();
+	
+	assert fatal (e2.name = nameA);
+	
+	
+	var e3 = object EClass{};
+	var e4 = e3.testC();
+	
+	assert fatal (e4.name = nameA);
+
+}

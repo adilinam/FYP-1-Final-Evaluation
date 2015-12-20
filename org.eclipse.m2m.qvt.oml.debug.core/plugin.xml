@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+ 
+	<extension point="org.eclipse.core.resources.markers" id="QVTOBreakpointMarker">
+       <super type="org.eclipse.debug.core.lineBreakpointMarker"/>
+       <persistent value="true"/>
+       <attribute name="org.eclipse.m2m.qvt.oml.debug.core.unitUri"/>
+       <attribute name="org.eclipse.m2m.qvt.oml.debug.core.runToLine"/>       
+    </extension>
+   
+    <extension point="org.eclipse.debug.core.breakpoints">
+       <breakpoint
+             class="org.eclipse.m2m.qvt.oml.debug.core.QVTOBreakpoint"
+             markerType="org.eclipse.m2m.qvt.oml.debug.core.QVTOBreakpointMarker"
+             id="org.eclipse.m2m.qvt.oml.debug.core.QVTOBreakpoint"/>
+    </extension>
+    
+    
+    <extension id="QVTODebugApplication" point="org.eclipse.core.runtime.applications">
+       <application cardinality="*" thread="main" visible="true">
+          <run class="org.eclipse.m2m.qvt.oml.debug.core.app.QVTODebugApplication"/>
+       </application>
+    </extension>
+
+    <extension point="org.eclipse.debug.core.sourceLocators">
+        <sourceLocator 
+        	name="%srcLookupDirector.name"
+			class="org.eclipse.m2m.qvt.oml.debug.core.srclookup.QVTOSourceLookupDirector"
+			id="org.eclipse.m2m.qvt.oml.debug.srclookup.QVTOSourceLookupDirector">
+        </sourceLocator>    
+    </extension>
+    
+    <extension point="org.eclipse.debug.core.sourcePathComputers">
+       <sourcePathComputer
+			class="org.eclipse.m2m.qvt.oml.debug.core.srclookup.QVTOSourcePathComputer"
+			id="org.eclipse.m2m.qvt.oml.debug.srclookup.QVTOSourcePathComputer"/>
+    </extension>
+
+    <extension point="org.eclipse.debug.core.watchExpressionDelegates">
+       <watchExpressionDelegate
+         	debugModel="org.eclipse.m2m.qvt.oml.debug"
+         	delegateClass="org.eclipse.m2m.qvt.oml.debug.core.QVTOWatchExpressionDelegate"/>
+    </extension>   
+ 
+</plugin>

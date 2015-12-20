@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="org.eclipse.m2m.qvt.oml.samples/src_generated"
+    editDirectory="org.eclipse.m2m.qvt.oml.samples/src_generated" editorDirectory="org.eclipse.m2m.qvt.oml.samples/src_generated"
+    modelPluginID="org.eclipse.m2m.qvt.oml.samples" runtimeJar="true" modelName="Rdb"
+    editPluginClass="rdb.provider.RdbEditPlugin" editorPluginClass="rdb.presentation.RdbEditorPlugin"
+    nonNLSMarkers="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0">
+  <foreignModel>rdb.ecore</foreignModel>
+  <genPackages prefix="Rdb" ecorePackage="rdb.ecore#/">
+    <genClasses ecoreClass="rdb.ecore#//Element">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference rdb.ecore#//Element/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="rdb.ecore#//NamedColumnSet"/>
+    <genClasses ecoreClass="rdb.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rdb.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="rdb.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rdb.ecore#//Model/schemas"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rdb.ecore#//Model/server_id"/>
+    </genClasses>
+    <genClasses ecoreClass="rdb.ecore#//Schema">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rdb.ecore#//Schema/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="rdb.ecore#//SchemaElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rdb.ecore#//SchemaElement/owner"/>
+    </genClasses>
+    <genClasses ecoreClass="rdb.ecore#//Table">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rdb.ecore#//Table/columns"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rdb.ecore#//Table/primaryKey"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rdb.ecore#//Table/uniqueConstraints"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rdb.ecore#//Table/foreignKeys"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rdb.ecore#//Table/indices"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rdb.ecore#//Table/checks"/>
+    </genClasses>
+    <genClasses ecoreClass="rdb.ecore#//Column"/>
+    <genClasses ecoreClass="rdb.ecore#//TableColumn">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference rdb.ecore#//TableColumn/domain"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rdb.ecore#//TableColumn/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rdb.ecore#//TableColumn/isPrimaryKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rdb.ecore#//TableColumn/isForeignKey"/>
+    </genClasses>
+    <nestedGenPackages prefix="Constraints" basePackage="rdb" ecorePackage="rdb.ecore#//constraints">
+      <genClasses ecoreClass="rdb.ecore#//constraints/Constraint"/>
+      <genClasses ecoreClass="rdb.ecore#//constraints/CheckConstraint">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rdb.ecore#//constraints/CheckConstraint/expression"/>
+      </genClasses>
+      <genClasses ecoreClass="rdb.ecore#//constraints/ColumnRefConstraint">
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference rdb.ecore#//constraints/ColumnRefConstraint/includedColumns"/>
+      </genClasses>
+      <genClasses ecoreClass="rdb.ecore#//constraints/UniqueConstraint"/>
+      <genClasses ecoreClass="rdb.ecore#//constraints/PrimaryKey"/>
+      <genClasses ecoreClass="rdb.ecore#//constraints/ForeignKey">
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference rdb.ecore#//constraints/ForeignKey/referredUC"/>
+      </genClasses>
+      <genClasses ecoreClass="rdb.ecore#//constraints/Index">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rdb.ecore#//constraints/Index/indexedColumns"/>
+      </genClasses>
+      <genClasses ecoreClass="rdb.ecore#//constraints/IndexedColumn">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rdb.ecore#//constraints/IndexedColumn/ascending"/>
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference rdb.ecore#//constraints/IndexedColumn/refColumn"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Datatypes" basePackage="rdb" ecorePackage="rdb.ecore#//datatypes">
+      <genClasses ecoreClass="rdb.ecore#//datatypes/Domain">
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference rdb.ecore#//datatypes/Domain/parentDomain"/>
+      </genClasses>
+      <genClasses ecoreClass="rdb.ecore#//datatypes/DataType">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rdb.ecore#//datatypes/DataType/size"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rdb.ecore#//datatypes/DataType/decimalDigits"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rdb.ecore#//datatypes/DataType/nullable"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rdb.ecore#//datatypes/DataType/default"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rdb.ecore#//datatypes/DataType/check"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rdb.ecore#//datatypes/DataType/var"/>
+      </genClasses>
+      <genClasses ecoreClass="rdb.ecore#//datatypes/PrimitiveDataType">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rdb.ecore#//datatypes/PrimitiveDataType/type"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="View" basePackage="rdb" ecorePackage="rdb.ecore#//view">
+      <genClasses ecoreClass="rdb.ecore#//view/View">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rdb.ecore#//view/View/columns"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rdb.ecore#//view/View/referencedTablesAndViews"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rdb.ecore#//view/View/ddl"/>
+      </genClasses>
+      <genClasses ecoreClass="rdb.ecore#//view/ViewAlias">
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference rdb.ecore#//view/ViewAlias/referencedTableOrView"/>
+      </genClasses>
+      <genClasses ecoreClass="rdb.ecore#//view/ViewColumn"/>
+      <genClasses ecoreClass="rdb.ecore#//view/ViewExpressionColumn">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rdb.ecore#//view/ViewExpressionColumn/expression"/>
+      </genClasses>
+      <genClasses ecoreClass="rdb.ecore#//view/ReferencedViewColumn">
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference rdb.ecore#//view/ReferencedViewColumn/refColumn"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

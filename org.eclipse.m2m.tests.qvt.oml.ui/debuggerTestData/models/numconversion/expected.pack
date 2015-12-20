@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pack:cls2 xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pack="http:///pack" xsi:schemaLocation="http:///pack mm.ecore" attrLong="1" attrInt="1" attrShort="1" attrByte="1" attrDouble="1.0" attrFloat="1.0">
+  <attrLongs>1</attrLongs>
+  <attrLongs>1</attrLongs>
+  <attrLongs>2</attrLongs>
+  <attrInts>1</attrInts>
+  <attrInts>1</attrInts>
+  <attrInts>2</attrInts>
+  <attrShorts>1</attrShorts>
+  <attrShorts>1</attrShorts>
+  <attrShorts>2</attrShorts>
+  <attrBytes>1</attrBytes>
+  <attrBytes>1</attrBytes>
+  <attrBytes>2</attrBytes>
+  <attrDoubles>1.0</attrDoubles>
+  <attrDoubles>1.0</attrDoubles>
+  <attrDoubles>2.0</attrDoubles>
+  <attrFloats>1.0</attrFloats>
+  <attrFloats>1.0</attrFloats>
+  <attrFloats>2.0</attrFloats>
+</pack:cls2>

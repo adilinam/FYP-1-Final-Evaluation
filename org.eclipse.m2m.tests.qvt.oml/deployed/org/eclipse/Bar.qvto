@@ -1,0 +1,13 @@
+import Lib1;
+
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation Foo(in input : ECORE, out output : ECORE) access Lib1;
+
+main() {
+	testHelper2();
+
+	object EPackage {
+		name := "bar";
+	}
+}

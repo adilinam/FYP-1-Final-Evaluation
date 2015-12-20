@@ -1,0 +1,16 @@
+import org.eclipse.m2m.tests.qvt.oml.bbox.SimpleJavaLibrary;
+-- report duplicate
+import /*<warn>*/org.eclipse.m2m.tests.qvt.oml.bbox.SimpleJavaLibrary/*</warn>*/;
+
+-- test library load failed
+import /*<error>*/org.eclipse.m2m.tests.qvt.oml.bbox.InvalidLibrary/*</error>*/;
+
+-- deprecation warning for obsolete import statement
+import library /*<warn>*/org.bar.Foo/*</warn>*/;
+
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation blackboxlib_annotation_java(in source : ECORE, out target: ECORE);
+
+main() {
+}

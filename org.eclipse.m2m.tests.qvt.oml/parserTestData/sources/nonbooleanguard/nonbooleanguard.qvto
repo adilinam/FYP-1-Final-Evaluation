@@ -1,0 +1,9 @@
+transformation nonbooleanguard;
+
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+mapping ecore::EClass::map111(): ecore::EPackage 
+when { self.eIDAttribute }
+{
+    name:='Name1'
+} 

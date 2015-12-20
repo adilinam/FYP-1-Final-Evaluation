@@ -1,0 +1,9 @@
+transformation nonassignableout;
+
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+mapping base(): ecore::EPackage {
+    object result : ecore::EClass { -- reports variable type mismatch
+        name := 'simple'
+    }
+}

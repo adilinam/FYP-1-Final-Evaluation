@@ -1,0 +1,79 @@
+modeltype ECORE uses "http://www.eclipse.org/emf/2002/Ecore";
+
+transformation parmnamesclash(in ecore : ECORE, out outModel : ECORE, out /*<error>*/outModel/*</error>*/ : ECORE);
+ 
+mapping EClass::fooMappingWrong(in aa:String, /*<error>*/aa:String/*</error>*/) 
+	: a : EPackage, /*<error>*/a : EPackage/*</error>*/, s : EPackage, /*<error>*/outModel : EClass/*</error>*/ {
+	init {
+		var /*<error>*/s := null/*</error>*/;
+		var s1 := null;
+	}
+	end {
+		var /*<error>*/a := null/*</error>*/;
+		var v1 := /*<warn>*/result/*</warn>*/;
+		var v2 := self;
+	}
+}
+
+mapping fooMappingWrong(in aa:String, /*<error>*/aa:String/*</error>*/) : EPackage {
+	init {
+		var v1 := /*<error>*/self/*</error>*/;
+		var v2 := result;
+	}
+}
+
+mapping inout EClass::fooMappingWrongInout(in aa:String, /*<error>*/aa:String/*</error>*/) {
+	init {
+		var v1 := self;
+		var v2 := /*<error>*/result/*</error>*/;
+	}
+}
+
+
+mapping EClass::fooMappingCorrect(in aa:String, aa__:String) : a_ : EPackage, a__ : EPackage, s__ : EPackage {
+	init {
+		var s := null;
+		var s1 := null;
+	}
+	end {
+		var a := null;
+		var a1 := null;
+	}
+}
+
+query EClass::fooQueryWrong(in aa:String, /*<error>*/aa:String/*</error>*/)
+	: a : EPackage, /*<error>*/a : EPackage/*</error>*/, s : EPackage, /*<error>*/outModel : EClass/*</error>*/ {
+
+	var /*<error>*/s := null/*</error>*/;
+	var s1 := null;
+	var /*<error>*/a := null/*</error>*/;
+	var a1 := null;
+	return /*<error>*/result/*</error>*/; --  no result var recognized
+}
+
+query EClass::fooQueryCorrect(in aa:String, aa__:String) : a_ : EPackage, a__ : EPackage, s__ : EPackage {
+	var s := null;
+	var s1 := null;
+	var a := null;
+	var a1 := self;
+	return null;
+}
+
+
+helper EClass::fooHelperWrong(in aa:String, /*<error>*/aa:String/*</error>*/)
+	: a : EPackage, /*<error>*/a : EPackage/*</error>*/, s : EPackage, /*<error>*/outModel : EClass/*</error>*/ {
+
+	var /*<error>*/s := null/*</error>*/;
+	var s1 := null;
+	var /*<error>*/a := null/*</error>*/;
+	var a1 := self;
+	return /*<error>*/result/*</error>*/; --  no result var recognized
+}
+
+helper EClass::fooHelperCorrect(in aa:String, aa__:String) : a_ : EPackage, a__ : EPackage, s__ : EPackage {
+	var s := null;
+	var s1 := null;
+	var a := null;
+	var a1 := null;
+	return null;
+}

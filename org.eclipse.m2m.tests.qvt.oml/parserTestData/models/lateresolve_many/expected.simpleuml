@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml" name="root">
+  <ownedElements xsi:type="uml:Package" name="empty"/>
+  <ownedElements xsi:type="uml:Package" name="in">
+    <ownedElements xsi:type="uml:Class" name="A">
+      <attributes name="self" type="//@ownedElements.1/@ownedElements.0"/>
+      <attributes name="self_Copied" type="//@ownedElements.1/@ownedElements.0"/>
+      <attributes name="yetAnotherSelf" type="//@ownedElements.1/@ownedElements.0"/>
+      <generalizations general="//@ownedElements.1/@ownedElements.1"/>
+      <generalizations general="//@ownedElements.1/@ownedElements.2"/>
+    </ownedElements>
+    <ownedElements xsi:type="uml:Class" name="B">
+      <attributes name="self" type="//@ownedElements.1/@ownedElements.1"/>
+      <attributes name="self_Copied" type="//@ownedElements.1/@ownedElements.1"/>
+      <attributes name="yetAnotherSelf" type="//@ownedElements.1/@ownedElements.1"/>
+    </ownedElements>
+    <ownedElements xsi:type="uml:Class" name="C">
+      <attributes name="self" type="//@ownedElements.1/@ownedElements.2"/>
+      <attributes name="self_Copied" type="//@ownedElements.1/@ownedElements.2"/>
+      <attributes name="yetAnotherSelf" type="//@ownedElements.1/@ownedElements.2"/>
+    </ownedElements>
+  </ownedElements>
+  <ownedElements xsi:type="uml:Package" name="x">
+    <ownedElements xsi:type="uml:Class" name="X">
+      <attributes name="self" type="//@ownedElements.2/@ownedElements.0"/>
+      <attributes name="self_Copied" type="//@ownedElements.2/@ownedElements.0"/>
+      <attributes name="yetAnotherSelf" type="//@ownedElements.2/@ownedElements.0"/>
+    </ownedElements>
+  </ownedElements>
+</uml:Package>

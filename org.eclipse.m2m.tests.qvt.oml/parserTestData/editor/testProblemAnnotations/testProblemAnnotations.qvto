@@ -1,0 +1,16 @@
+
+
+import Strings;
+import /*<warn>*/Strings/*</warn>*/;
+
+modeltype ecore uses "http://www.eclipse.org/emf/2002/Ecore";
+
+transformation testProblemAnnotations;
+
+main() {
+}
+
+query fooQuery(model: ecore::EPackage) : /*<error>*/ecore::XXX/*</error>*/
+{    
+	return null
+}

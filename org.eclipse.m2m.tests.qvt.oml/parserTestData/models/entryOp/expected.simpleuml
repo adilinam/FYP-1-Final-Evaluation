@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml" name="uml">
+  <ownedElements xsi:type="uml:Class" name="cls3_Cls"/>
+  <ownedElements xsi:type="uml:Class" name="cls1_Cls"/>
+  <ownedElements xsi:type="uml:Class" name="cls2_Cls"/>
+  <ownedElements xsi:type="uml:Class" name="uClass"/>
+</uml:Package>

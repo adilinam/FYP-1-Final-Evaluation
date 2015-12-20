@@ -1,0 +1,10 @@
+transformation mm_header1(in ecore1 : ECORE, in ecore2 : ECORE, out uml : SIMPLEUML, out rdb : RDB);
+
+modeltype SIMPLEUML uses 'http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml';
+modeltype ECORE 'strict' uses "http://www.eclipse.org/emf/2002/Ecore";
+modeltype RDB uses 'http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb';
+
+mapping main(in p1 : EPackage@ecore1, in p2 : EPackage@ecore1) {
+	init {
+	}
+}

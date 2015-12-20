@@ -1,0 +1,12 @@
+import org.bar.Foo;
+
+library Lib();
+	-- implicit library import with extension semantics of the 'org.bar.Foo' 
+
+property counter : Integer = 0;
+
+query addSuffix(s : String) : String {
+	counter := counter+1;
+	return s + '_' + testEchoArgument(counter.toString());
+}
+

@@ -1,0 +1,3 @@
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = mapping1, displayString = mapping1, replacementOffsetDelta = 0, replacementLength = 0, cursorPosition = 8
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = EClass::mapping2, displayString = EClass::mapping2, replacementOffsetDelta = 0, replacementLength = 0, cursorPosition = 16
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = EClass::mapping3, displayString = EClass::mapping3, replacementOffsetDelta = 0, replacementLength = 0, cursorPosition = 16

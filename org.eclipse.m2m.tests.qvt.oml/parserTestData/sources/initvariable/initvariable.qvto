@@ -1,0 +1,8 @@
+transformation initvariable;
+modeltype SIMPLEUML uses 'http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml';
+
+mapping base(t: simpleuml::Generalization): simpleuml::DataType {
+    init {
+        var foo := t.name;
+    }
+}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="org.eclipse.m2m.qvt.oml.econ2009.tutorial"
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.m2m.qvt.oml.econ2009.tutorial.category"
+            class="org.eclipse.emf.common.ui.wizard.ExampleInstallerWizard"
+            id="org.eclipse.m2m.qvt.oml.econ2009.tutorial.wizard"
+            icon="icons/pr-MDA.gif"            
+            name="QVT Operational EclipseCon2009 Tutorial"
+            project="true">
+      </wizard>
+	      <category
+	            id="org.eclipse.m2m.qvt.oml.econ2009.tutorial.category"
+	            name="QVT Operational Tutorials"/>            
+      
+   </extension>
+   
+   <extension point="org.eclipse.emf.common.ui.examples">
+   
+      <example wizardID="org.eclipse.m2m.qvt.oml.econ2009.tutorial.wizard"	
+      			pageImage="icons/pr-MDA_wizard.gif">
+
+         <projectDescriptor
+               contentURI="projects/qvto.ecore2uml/"
+               description="%Ecore2UML_description"
+               name="qvto.ecore2uml"/>
+         
+         <projectDescriptor
+               contentURI="projects/qvto.ecore2uml.invoke/"
+               description="%JavaInvocation_Example_description"
+               name="qvto.ecore2uml.invoke"/>
+         
+         <projectDescriptor
+               contentURI="projects/qvto.uml2xhtml.model/"
+               description="%UML2XHtml_XSD_model"
+               name="qvto.uml2xhtml.model"/>
+         
+         <projectDescriptor
+               contentURI="projects/qvto.Uml2Xhtml/"
+               description="%Uml2XHtml_description"
+               name="qvto.Uml2Xhtml"/>
+         
+         <projectDescriptor
+               contentURI="projects/qvto.Uml2Xhtml.composite/"
+               description="%CompositeTransf_description"
+               name="qvto.Uml2Xhtml.composite"/>
+
+         <projectDescriptor
+               contentURI="projects/qvto.explained/"
+               description="%qvtoExplained_description"
+               name="qvto.explained"/>
+         
+      </example>
+      
+   </extension>
+
+</plugin>

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qvtoperational:OperationalTransformation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pivot="http://www.eclipse.org/ocl/2015/Pivot"
+    xmlns:qvtoperational="http://www.eclipse.org/qvt/pivot/1.0/QVTOperational">
+  <ownedOperations xsi:type="qvtoperational:Helper" name="package2schemas">
+    <body>
+      <content xsi:type="pivot:OperationCallExp">
+        <ownedSource xsi:type="pivot:OperationCallExp">
+          <ownedSource xsi:type="pivot:CollectionLiteralExp" kind="Set"/>
+          <ownedArguments xsi:type="pivot:OperationCallExp">
+            <ownedSource xsi:type="pivot:IteratorExp" name="collect">
+              <ownedSource xsi:type="pivot:OperationCallExp">
+                <ownedSource xsi:type="pivot:VariableExp" name="root" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+              </ownedSource>
+              <ownedIterators name="p"/>
+            </ownedSource>
+          </ownedArguments>
+        </ownedSource>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Helper" name="class2foreignKeys">
+    <body>
+      <content xsi:type="pivot:OperationCallExp">
+        <ownedSource xsi:type="pivot:IteratorExp" name="collect">
+          <ownedSource xsi:type="pivot:PropertyCallExp">
+            <ownedSource xsi:type="pivot:VariableExp" name="cls" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+          </ownedSource>
+          <ownedIterators name="temp1"/>
+        </ownedSource>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Helper" name="class2columns">
+    <body>
+      <content xsi:type="pivot:OperationCallExp">
+        <ownedSource xsi:type="pivot:OperationCallExp">
+          <ownedSource xsi:type="pivot:OperationCallExp">
+            <ownedArguments xsi:type="pivot:VariableExp" name="cls" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+          </ownedSource>
+          <ownedArguments xsi:type="pivot:OperationCallExp">
+            <ownedArguments xsi:type="pivot:VariableExp" name="cls" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+          </ownedArguments>
+        </ownedSource>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Helper" name="dataType2columns">
+    <body>
+      <content xsi:type="pivot:OperationCallExp">
+        <ownedSource xsi:type="pivot:OperationCallExp">
+          <ownedSource xsi:type="pivot:OperationCallExp">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <ownedSource xsi:type="pivot:OperationCallExp">
+                <ownedArguments xsi:type="pivot:VariableExp" name="dt" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:OperationCallExp">
+                <ownedArguments xsi:type="pivot:VariableExp" name="dt" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+              </ownedArguments>
+            </ownedSource>
+            <ownedArguments xsi:type="pivot:OperationCallExp">
+              <ownedArguments xsi:type="pivot:VariableExp" name="dt" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+            </ownedArguments>
+          </ownedSource>
+          <ownedArguments xsi:type="pivot:OperationCallExp">
+            <ownedArguments xsi:type="pivot:VariableExp" name="dt" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+          </ownedArguments>
+        </ownedSource>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Helper" name="dataType2primaryKeyColumns">
+    <body>
+      <content xsi:type="pivot:OperationCallExp">
+        <ownedSource xsi:type="pivot:IteratorExp" name="collect">
+          <ownedSource xsi:type="pivot:IteratorExp" name="select">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <ownedArguments xsi:type="pivot:VariableExp" name="dt" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+            </ownedSource>
+            <ownedIterators name="temp1"/>
+          </ownedSource>
+          <ownedIterators name="c"/>
+        </ownedSource>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Helper" name="primitiveAttributes2columns">
+    <body>
+      <content xsi:type="pivot:OperationCallExp">
+        <ownedSource xsi:type="pivot:IteratorExp" name="collect">
+          <ownedSource xsi:type="pivot:PropertyCallExp">
+            <ownedSource xsi:type="pivot:VariableExp" name="dt" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+          </ownedSource>
+          <ownedIterators name="a"/>
+        </ownedSource>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Helper" name="enumerationAttributes2columns">
+    <body>
+      <content xsi:type="pivot:OperationCallExp">
+        <ownedSource xsi:type="pivot:IteratorExp" name="collect">
+          <ownedSource xsi:type="pivot:PropertyCallExp">
+            <ownedSource xsi:type="pivot:VariableExp" name="dt" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+          </ownedSource>
+          <ownedIterators name="a"/>
+        </ownedSource>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Helper" name="relationshipAttributes2columns">
+    <body>
+      <content xsi:type="pivot:OperationCallExp">
+        <ownedSource xsi:type="pivot:IteratorExp" name="collect">
+          <ownedSource xsi:type="pivot:IteratorExp" name="collect">
+            <ownedSource xsi:type="pivot:PropertyCallExp">
+              <ownedSource xsi:type="pivot:VariableExp" name="dt" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+            </ownedSource>
+            <ownedIterators name="a"/>
+          </ownedSource>
+          <ownedIterators name="temp1"/>
+        </ownedSource>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Helper" name="assosiationAttributes2columns">
+    <body>
+      <content xsi:type="pivot:OperationCallExp">
+        <ownedSource xsi:type="pivot:IteratorExp" name="collect">
+          <ownedSource xsi:type="pivot:IteratorExp" name="select">
+            <ownedSource xsi:type="pivot:PropertyCallExp">
+              <ownedSource xsi:type="pivot:VariableExp" name="dt" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+            </ownedSource>
+            <ownedIterators name="temp1"/>
+          </ownedSource>
+          <ownedIterators name="p"/>
+        </ownedSource>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Helper" name="generalizations2columns">
+    <body>
+      <content xsi:type="pivot:OperationCallExp">
+        <ownedSource xsi:type="pivot:IteratorExp" name="collect">
+          <ownedSource xsi:type="pivot:PropertyCallExp">
+            <ownedSource xsi:type="pivot:VariableExp" name="cls" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+          </ownedSource>
+          <ownedIterators name="g"/>
+        </ownedSource>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Helper" name="getSubpackages">
+    <body>
+      <content xsi:type="pivot:OperationCallExp">
+        <ownedSource xsi:type="pivot:IteratorExp" name="collect">
+          <ownedSource xsi:type="pivot:PropertyCallExp">
+            <ownedSource xsi:type="pivot:VariableExp" name="self" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+          </ownedSource>
+          <ownedIterators name="temp1"/>
+        </ownedSource>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Helper" name="asDataType">
+    <body>
+      <content xsi:type="pivot:OperationCallExp">
+        <ownedSource xsi:type="pivot:VariableExp" name="self" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.13"/>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Helper" name="isPrimaryKey">
+    <body>
+      <content xsi:type="pivot:OperationCallExp">
+        <ownedSource xsi:type="pivot:PropertyCallExp">
+          <ownedSource xsi:type="pivot:VariableExp" name="self" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+        </ownedSource>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Helper" name="isIdentifying">
+    <body>
+      <content xsi:type="pivot:OperationCallExp">
+        <ownedSource xsi:type="pivot:PropertyCallExp">
+          <ownedSource xsi:type="pivot:VariableExp" name="self" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+        </ownedSource>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Helper" name="isPrimitive">
+    <body>
+      <content xsi:type="pivot:OperationCallExp">
+        <ownedSource xsi:type="pivot:PropertyCallExp">
+          <ownedSource xsi:type="pivot:VariableExp" name="self" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+        </ownedSource>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Helper" name="isEnumeration">
+    <body>
+      <content xsi:type="pivot:OperationCallExp">
+        <ownedSource xsi:type="pivot:PropertyCallExp">
+          <ownedSource xsi:type="pivot:VariableExp" name="self" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+        </ownedSource>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Helper" name="isRelationship">
+    <body>
+      <content xsi:type="pivot:OperationCallExp">
+        <ownedSource xsi:type="pivot:OperationCallExp">
+          <ownedSource xsi:type="pivot:PropertyCallExp">
+            <ownedSource xsi:type="pivot:VariableExp" name="self" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+          </ownedSource>
+        </ownedSource>
+        <ownedArguments xsi:type="pivot:OperationCallExp">
+          <ownedSource xsi:type="pivot:PropertyCallExp">
+            <ownedSource xsi:type="pivot:VariableExp" name="self" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+          </ownedSource>
+        </ownedArguments>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Helper" name="isAssosiation">
+    <body>
+      <content xsi:type="pivot:OperationCallExp">
+        <ownedSource xsi:type="pivot:OperationCallExp">
+          <ownedSource xsi:type="pivot:PropertyCallExp">
+            <ownedSource xsi:type="pivot:VariableExp" name="self" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+          </ownedSource>
+        </ownedSource>
+        <ownedArguments xsi:type="pivot:OperationCallExp">
+          <ownedSource xsi:type="pivot:OperationCallExp">
+            <ownedSource xsi:type="pivot:PropertyCallExp">
+              <ownedSource xsi:type="pivot:VariableExp" name="self" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+            </ownedSource>
+          </ownedSource>
+        </ownedArguments>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Helper" name="getPrimaryKeyColumns">
+    <body>
+      <content xsi:type="pivot:IteratorExp" name="select">
+        <ownedSource xsi:type="pivot:PropertyCallExp">
+          <ownedSource xsi:type="pivot:VariableExp" name="self" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+        </ownedSource>
+        <ownedIterators name="temp1"/>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Helper" name="isPersistent">
+    <body>
+      <content xsi:type="pivot:OperationCallExp">
+        <ownedSource xsi:type="pivot:PropertyCallExp">
+          <ownedSource xsi:type="pivot:VariableExp" name="self" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+        </ownedSource>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Helper" name="hasPersistentClasses">
+    <body>
+      <content xsi:type="pivot:OperationCallExp">
+        <ownedSource xsi:type="pivot:OperationCallExp">
+          <ownedSource xsi:type="pivot:IteratorExp" name="select">
+            <ownedSource xsi:type="pivot:IteratorExp" name="select">
+              <ownedSource xsi:type="pivot:PropertyCallExp">
+                <ownedSource xsi:type="pivot:VariableExp" name="self" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+              </ownedSource>
+              <ownedIterators name="temp1"/>
+            </ownedSource>
+            <ownedIterators name="c"/>
+          </ownedSource>
+        </ownedSource>
+      </content>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:MappingOperation" name="main" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb.oclas#//@ownedPackages.0/@ownedClasses.3">
+    <ownedParameters xsi:type="qvtoperational:MappingParameter" name="model" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+    <body xsi:type="qvtoperational:MappingBody">
+      <content xsi:type="qvtoperational:ObjectExp" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:MappingOperation" name="package2schema"
+      type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb.oclas#//@ownedPackages.0/@ownedClasses.4">
+    <ownedParameters xsi:type="qvtoperational:MappingParameter" name="pack" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+    <body xsi:type="qvtoperational:MappingBody">
+      <content xsi:type="qvtoperational:ObjectExp" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+    </body>
+    <when xsi:type="pivot:OperationCallExp">
+      <ownedSource xsi:type="pivot:VariableExp" name="pack" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+    </when>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:MappingOperation" name="persistentClass2table"
+      type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb.oclas#//@ownedPackages.0/@ownedClasses.6">
+    <body xsi:type="qvtoperational:MappingBody">
+      <content xsi:type="qvtoperational:ObjectExp" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+    </body>
+    <when xsi:type="pivot:OperationCallExp">
+      <ownedSource xsi:type="pivot:VariableExp" name="self" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+    </when>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:MappingOperation" name="class2primaryKey"
+      type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb.oclas#//@ownedPackages.0/@ownedPackages.0/@ownedClasses.4">
+    <body xsi:type="qvtoperational:MappingBody">
+      <content xsi:type="qvtoperational:ObjectExp" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb.oclas#//@ownedPackages.0/@ownedPackages.0/@ownedClasses.4"/>
+    </body>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:MappingOperation" name="primitiveAttribute2column"
+      type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb.oclas#//@ownedPackages.0/@ownedClasses.8">
+    <ownedParameters xsi:type="qvtoperational:MappingParameter" name="prop" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+    <body xsi:type="qvtoperational:MappingBody">
+      <content xsi:type="qvtoperational:ObjectExp" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb.oclas#//@ownedPackages.0/@ownedClasses.8"/>
+    </body>
+    <when xsi:type="pivot:OperationCallExp">
+      <ownedSource xsi:type="pivot:VariableExp" name="prop" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+    </when>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:MappingOperation" name="enumerationAttribute2column"
+      type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb.oclas#//@ownedPackages.0/@ownedClasses.8">
+    <ownedParameters xsi:type="qvtoperational:MappingParameter" name="prop" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+    <body xsi:type="qvtoperational:MappingBody">
+      <content xsi:type="qvtoperational:ObjectExp" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb.oclas#//@ownedPackages.0/@ownedClasses.8"/>
+    </body>
+    <when xsi:type="pivot:OperationCallExp">
+      <ownedSource xsi:type="pivot:VariableExp" name="prop" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+    </when>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:MappingOperation" name="relationshipAttribute2foreignKey"
+      type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb.oclas#//@ownedPackages.0/@ownedPackages.0/@ownedClasses.5">
+    <body xsi:type="qvtoperational:MappingBody">
+      <content xsi:type="qvtoperational:ObjectExp" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb.oclas#//@ownedPackages.0/@ownedPackages.0/@ownedClasses.5"/>
+    </body>
+    <when xsi:type="pivot:OperationCallExp">
+      <ownedSource xsi:type="pivot:VariableExp" name="self" type="pivot:Class http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+    </when>
+  </ownedOperations>
+  <ownedOperations xsi:type="qvtoperational:Constructor" name="B"/>
+</qvtoperational:OperationalTransformation>

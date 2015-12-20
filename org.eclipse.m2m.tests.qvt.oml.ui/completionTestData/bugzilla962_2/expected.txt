@@ -1,0 +1,3 @@
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = MyEnumLiteral1, displayString = MyEnumLiteral1, replacementOffsetDelta = 1, replacementLength = 1, cursorPosition = 14
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = MyEnumLiteral2, displayString = MyEnumLiteral2, replacementOffsetDelta = 1, replacementLength = 1, cursorPosition = 14
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = MyEnumLiteral3, displayString = MyEnumLiteral3, replacementOffsetDelta = 1, replacementLength = 1, cursorPosition = 14

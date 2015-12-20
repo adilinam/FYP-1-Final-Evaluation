@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+
+<template
+    context="org.eclipse.ant.ui.templateContextType.task" 
+    description="invoke QVT Operational transformation" 
+    id="org.eclipse.m2m.qvt.oml.runtime.ui.templates.defineQvtoAntTransformationTask" 
+    name="QVTO: define QVTO Transformation Ant task"><![CDATA[<qvto:transformation xmlns:qvto="http://www.eclipse.org/qvt/1.0.0/Operational"
+			uri="${qvtoTransfUri}">
+		<in uri="${qvtoParamUri}"/>
+		<trace uri="${qvtoTraceUri}"/>
+	</qvto:transformation>]]>
+</template>
+
+<template
+    context="org.eclipse.ant.ui.templateContextType.task" 
+    description="[inout] transformation parameter"
+    id="org.eclipse.m2m.qvt.oml.runtime.ui.templates.defineQvtoAntTaskInUri" 
+    name="QVTO: define transformation [inout] parameter URI"><![CDATA[<inout uri="${qvtoInParamUri}" outuri="${qvtoOutParamUri}"/>]]>
+</template>
+
+<template
+    context="org.eclipse.ant.ui.templateContextType.task" 
+    description="[out] transformation parameter" 
+    id="org.eclipse.m2m.qvt.oml.runtime.ui.templates.defineQvtoAntTaskOutUri" 
+    name="QVTO: define transformation [out] parameter URI"><![CDATA[<out uri="${qvtoOutParamUri}"/>]]>
+</template>
+
+</templates>

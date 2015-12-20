@@ -1,0 +1,13 @@
+modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation NewTransformation(in model : ecore, out ecore);
+
+main(in inModel : ecore::EPackage) {
+var cls := inModel.map toEObject();
+var orig : ecore::EPackage := cls.invresolveone(EObject).oclAsType(ecore::EPackage);/*@*/
+orig.nam := 'a';
+}
+
+mapping ecore::EPackage::toEObject() : EClass {
+name := self.name;
+}

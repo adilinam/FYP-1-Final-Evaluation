@@ -1,0 +1,7 @@
+import org.eclipse.m2m.tests.qvt.oml.bbox.SimpleJavaLibrary;
+
+modeltype Ecore uses 'http://www.eclipse.org/emf/2002/Ecore....';
+
+library errorsLib;
+
+

@@ -1,0 +1,56 @@
+<project default="help" basedir=".">
+	<target name="zip">
+		<antcall target="zip-loc">
+			<param name="loc" value="ja"/>
+		</antcall>
+		
+		<antcall target="zip-loc">
+			<param name="loc" value="de"/>
+		</antcall>
+
+		<antcall target="zip-loc">
+			<param name="loc" value="fr"/>
+		</antcall>
+	</target>
+
+	<target name="zip-loc">
+	    <property name="loc" value="?"/>
+	    <mkdir dir="nl/${loc}/samples"/>
+
+		<antcall target="zip-one">
+			<param name="zip" value="simpleuml2rdb.zip"/>
+			<param name="project" value="org.eclipse.m2m.qvt.oml.samples.simpleuml2rdb"/>
+			<param name="nl-files" value="Simpleuml_To_Rdb.qvto"/>
+		</antcall>	
+	</target>
+
+	<target name="zip-one">
+	    <property name="zip" value="?"/>
+		<property name="project" value="?"/>
+		<property name="nl-files" value="?"/>
+		
+		<available file="nl/${loc}/projects/${project}/${nl-files}" type="file" property="nl-exists"/>
+		<echo message="nl/${loc}/projects/${project}/${nl-files} exists: ${nl-exists}"/>
+		
+		<antcall target="zip-one-then">
+		</antcall>
+	</target>
+		
+	<target name="zip-one-then" if="nl-exists">
+		<delete file="nl/${loc}/samples/${zip}" failonerror="false"/>
+		<zip destfile="nl/${loc}/samples/${zip}">
+			<fileset dir="projects/${project}" defaultexcludes="no">
+			    <include name="**/**"/>
+                <exclude name="${nl-files}"/>
+			</fileset>
+            
+            <fileset dir="nl/${loc}/projects/${project}" defaultexcludes="no">
+                <include name="${nl-files}"/>
+            </fileset>
+		</zip>
+	</target>
+	
+	<target name="help">
+		<echo message="use zip target"/>
+	</target>
+</project>

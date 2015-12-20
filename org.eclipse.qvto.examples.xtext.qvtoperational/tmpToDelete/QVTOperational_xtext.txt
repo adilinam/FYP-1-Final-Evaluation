@@ -1,0 +1,364 @@
+/**
+ * <copyright>
+ *
+ * Copyright (c) 2011 E.D.Willink and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     E.D.Willink - initial API and implementation
+ *
+ * </copyright>
+ *
+ * $Id$
+ */
+grammar org.eclipse.qvto.examples.xtext.qvtoperational.QVTOperational with org.eclipse.qvto.examples.xtext.imperativeocl.ImperativeOCL
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "http://www.eclipse.org/ocl/3.1.0/BaseCST" as base
+import "http://www.eclipse.org/ocl/3.1.0/EssentialOCLCST" as essentialocl
+import "http://www.eclipse.org/qvt/pivot/1.0/ImperativeOCLCS" as imperativeocl
+//import "platform:/resource/org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCST.ecore"
+generate xxxx "platform:/resource/org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCST.ecore"
+
+
+// keywords
+/*Bag, Collection, Dict, OrderedSetBag, Collection, Dict, OrderedSet, Sequence, Set, Tuple, List, abstract,
+access, and, any, assert, blackbox, break, case, class, collect,
+collectNested, collectOne, collectselect, collectselectOne,
+composes, compute, configuration, constructor, continue, datatype,
+default, derived, disjuncts, do, elif, else, end, endif,
+enum, except, exists, extends, exception, false, forAll, forEach ,
+forOne, from, helper, if, implies, import , in, inherits, init,
+inout, intermediate, invresolve, invresolveIn, invresolveone,
+invresolveoneIn , isUnique, iterate, late, let, library, literal,
+log, main, map, mapping, merges, metamodel, modeltype, new, not,
+null, object, one, or, ordered, out, package, population, primitive, property,
+query, raise, readonly, references, refines, reject, resolve, resolveIn, resolveone,
+resolveoneIn, return, select, selectOne, sortedBy, static,
+switch, tag, then, transformation, true, try, typedef, unlimited,
+uses, var, when, where, while, with, xcollect , xmap, xor, xselect */
+// start rule
+
+TopLevelCS: ^import+=ImportCS* unit+=UnitElementCS*;
+
+enum ClassifierKind: DATATYPE='datatype' | PRIMITIVE='primitive' | EXCEPTION='exception' | CLASS='class';
+enum FeatureKey: COMPOSES='composes' | REFERRENCES='references' | READONLY='readonly' | DERIVED='derived' | STATIC='static';
+enum HelperKind: HELPER='helper' | QUERY='query';
+enum InitOp: EQUALS='=' | COLON_EQUALS=':=' | COLON_COLON_EQUALS='::=';
+enum MetamodelKind: METAMODEL='metamodel' | PACKAGE='package';
+enum ModuleKind: TRANSFORMATION='transformation' | LIBRARY='library';
+enum ParamDirection: IN='in' | INOUT='inout' | OUT='out';
+enum PropertyKey: DERIVED='derived' | LITERAL='literal' | CONFIGIRATION='configuration' | PROPERTY='property';
+enum Qualifier: BLACKBOX='blackbox' | ABSTRACT='abstract' | STATIC='static';
+
+ImportCS: ('import' unit=UnitCS ';')
+	| ('from' unit=UnitCS 'import' ((name+=Identifier (',' name+=Identifier)*) | all?='*') ';')
+;
+
+UnitCS: segment+=Identifier ('.' segment+=Identifier)*;
+
+// definitions in a compilation unit
+UnitElementCS:
+	  TransformationCS
+	| LibraryCS
+	| AccessDeclCS
+	| ModeltypeCS
+	| MetamodelCS
+	| ClassifierCS
+	| PropertyCS
+	| HelperCS
+	| ConstructorCS
+	| EntryCS
+	| MappingCS
+	| TagCS
+	| TypedefCS
+;
+
+// Transformation and library definitions
+TransformationCS: qualifier+=Qualifier* 'transformation' name=Identifier signature=SimpleSignatureCS
+	( access=AccessUsageCS
+	| extends=ExtendsUsageCS
+	| ('refines' refines+=ModuleRefCS)
+	)?
+	( ';'
+	| ('{' moduleElement+=ModuleElementCS* '}' ';'?)
+	)
+;
+
+LibraryCS: 'library' name=Identifier signature=SimpleSignatureCS?
+	( access=AccessUsageCS
+	| extends=ExtendsUsageCS
+	)?
+	( ';'
+	| ('{' moduleElement+=ModuleElementCS* '}' ';'?)
+	)
+;
+
+// import of transformation and library
+
+ModuleRefCS: pathName=PathNameCS signature=SimpleSignatureCS?;
+
+AccessUsageCS: 'access' moduleKind=ModuleKind? (module+=ModuleRefCS (',' module+=ModuleRefCS)*);
+
+ExtendsUsageCS: 'extends' moduleKind=ModuleKind? (module+=ModuleRefCS (',' module+=ModuleRefCS)*) ';';
+
+AccessDeclCS: AccessUsageCS ';';
+
+// module definitions
+ModuleElementCS:
+	  ClassifierCS
+	| PropertyCS
+	| HelperCS
+	| ConstructorCS
+	| EntryCS
+	| MappingCS
+	| TagCS
+	| TypedefCS
+	| (AccessUsageCS ';')
+;
+
+// general purpose grammar rules
+
+CompleteSignatureCS: SimpleSignatureCS (':' (param+=ParamCS (',' param+=ParamCS)*))?;
+
+SimpleSignatureCS: {SimpleSignatureCS} '(' (param+=ParamCS (',' param+=ParamCS)*)? ')';
+
+ParamCS: direction=ParamDirection? (pathName=PathNameCS ':') typespec=TypespecCS initPart=InitPartCS?;
+
+//SimpleDeclaratorCS: (pathName=PathNameCS ':') typespec=TypespecCS;
+
+//DeclaratorCS: (pathName=PathNameCS ':') typespec=TypespecCS initPart=InitPartCS?;
+
+InitPartCS: initOp=InitOp expression= ExpCS;
+
+TypespecCS: type=TypeReferenceCS ('@' extentLocation=Identifier)?;
+
+TypeReferenceCS returns base::TypedRefCS: TypeNameExpCS | TypeLiteralCS;
+
+ExpressionBlockCS: {ExpressionBlockCS} '{' (expression+=ExpCS (';' expression+=ExpCS)* ';'?)? '}';
+
+//ExpressionStatementCS: (expression=ExpCS ';') | (expressionBlock=ExpressionBlockCS ';'?);
+
+// model types compliance and metamodel declarations
+
+ModeltypeCS: 'modeltype' name=Identifier complianceKind=StringLiteral?
+	'uses' (uses+=PackagerefCS (',' uses+=PackagerefCS)*)
+	('where' where=ExpressionBlockCS)? ';'
+;
+
+PackagerefCS: (pathName=PathNameCS ( '(' uri=URI ')' )?) | uri=URI;
+
+// Syntax for defining explicitly metamodel contents
+MetamodelCS: keyword=MetamodelKind pathName=PathNameCS
+	( ';'
+	| ('{' element+=MetamodelElementCS* '}' ';'?)
+	)
+;
+
+MetamodelElementCS: ClassifierCS | EnumerationCS | TagCS;
+
+ClassifierCS: intermediate?='intermediate'? qualifier+=Qualifier*
+	keyword=ClassifierKind pathName=PathNameCS
+	('extends' (extends+=PathNameCS (',' extends+=PathNameCS)*))?
+	( ';'
+	| ('{' (feature+=ClassifierFeatureCS (';' feature+=ClassifierFeatureCS)* ';'?)? '}' ';'?)
+	)
+;
+
+ClassifierFeatureCS: ClassifierPropertyCS | ClassifierOperationCS | TagCS;
+
+ClassifierPropertyCS: ('<<' (stereotype+=Identifier (',' stereotype+=Identifier)*) '>>')? featureKey+=FeatureKey*
+	name=Identifier ':' typespec=TypespecCS initPart=InitPartCS? multiplicity=MultiplicityCS?
+	('opposites' tilde?='~'? oppositeIdentifier=Identifier oppositeMultiplicity=MultiplicityCS?)?
+;
+
+MultiplicityCS: '[' (lower=LOWER '...')? upper=UPPER ']';
+
+ClassifierOperationCS: ('<<' (stereotype+=Identifier (',' stereotype+=Identifier)*) '>>')? featureKey+=FeatureKey*
+	name=Identifier ':' typespec=TypespecCS signature=CompleteSignatureCS
+;
+
+EnumerationCS: 'enum' name=Identifier
+	( ';'
+	|  ('{' (literal+=Identifier (',' literal+=Identifier)*) '}' ';'?)
+	)
+;
+
+TagCS: 'tag' id=StringLiteral pathName=PathNameCS ('=' expression=ExpCS)? ';';
+
+// typedefs
+TypedefCS: 'typedef' name=Identifier '=' typespec=TypespecCS ('[' condition=ExpCS ']')? ';';
+
+// Properties in transformation
+PropertyCS: intermediate?='intermediate'? propertyKey+=PropertyKey+
+	(pathName=PathNameCS ':') typespec=TypespecCS initPart=InitPartCS? ';'
+;
+
+// Syntax for helper operations
+HelperCS: qualifier+=Qualifier* helperKind=HelperKind pathName=PathNameCS signature=CompleteSignatureCS
+	( ';'
+	| ('=' expression=ExpCS ';')
+	| (expressionBlock=ExpressionBlockCS ';'?)
+	)
+;
+
+// Syntax for constructors
+ConstructorCS: qualifier+=Qualifier* 'constructor' pathName=PathNameCS signature=SimpleSignatureCS
+	( ';'
+	| (expressionBlock=ExpressionBlockCS ';'?)
+	)
+;
+	
+// Syntax for entries
+EntryCS: 'main' signature=SimpleSignatureCS
+	( ';'
+	| (expressionBlock=ExpressionBlockCS ';'?)
+	)
+;
+
+// syntax for mapping operations
+MappingCS: qualifier+=Qualifier* 'mapping' paramDirection=ParamDirection? pathName=PathNameCS
+	signature=CompleteSignatureCS
+	( ('inherits' inherits+=PathNameCS (',' inherits+=PathNameCS)*)
+	| ('merges' merges+=PathNameCS (',' merges+=PathNameCS)*)
+	| ('disjuncts' disjuncts+=PathNameCS (',' disjuncts+=PathNameCS)*)
+	| ('refines' refines+=PathNameCS)
+	)*
+	('when' when=ExpressionBlockCS)?
+	('where' where=ExpressionBlockCS)?
+	( ';'
+	| ('{' ('init' init=ExpressionBlockCS)?
+		   ( (expression+=ExpCS (';' expression+=ExpCS)* ';'?)
+		   | 'population' expressionBlock=ExpressionBlockCS
+		   )?
+		   ('end' end=ExpressionBlockCS)?
+	   '}' ';'?
+		)
+	)
+;
+	
+/*
+// Expressions
+ExpCS: SCassign_expCS
+| SClet_expCS
+| SCvar_init_expCS
+SCassign_expCS: SCimplies_expCS
+| SCunary_expCS SCassign_opCS ExpCS SCdefault_valCS?
+| SCunary_expCS SCassign_opCS ExpressionBlockCS SCdefault_valCS?
+|
+SCassign_opCS := ':=' | '::=' | '+=' | '-='
+SCdefault_valCS: 'default' SCassign_expCS
+SCimplies_expCS: SCor_expCS
+| SCimplies_expCS 'implies' SCor_expCS
+SCor_expCS: SCand_expCS
+| SCor_expCS SCor_opCS SCand_expCS
+SCor_opCS: 'or' | 'xor'
+SCand_expCS: SCcmp_expCS
+| SCand_expCS 'and' SCcmp_expCS
+SCcmp_expCS: SCadditive_expCS
+| SCcmp_expCS SCcmp_opCS SCadditive_expCS
+SCcmp_opCS: '=' | '==' | 'SC>' | 'SC' | '>' | 'SC=' | '>='
+SCadditive_expCS: SCmult_expCS
+| SCadditive_expCS SCadd_opCS SCmult_expCS
+SCadd_opCS: '+' | '-'
+SCmult_expCS: SCunary_expCS
+| SCmult_expCS SCmult_opCS SCunary_expCS
+SCmult_opCS: '*' | '/' | '%'
+SCunary_expCS: SCpostfix_expCS
+| SCunary_opCS SCunary_expCS
+SCunary_opCS: '-' | 'not' | '#' | '##' | '*'
+SCpostfix_expCS: SCprimary_expCS
+| SCpostfix_expCS '(' SCarg_listCS? ')'
+| SCpostfix_expCS '!'? '[' SCdeclarator_vsepCS? ExpCS ']'
+| SCpostfix_expCS SCaccess_opCS
+(PathNameCS | SCiterator_expCS | SCblock_expCS
+| SCcontrol_expCS | SCrule_call_expCS
+| SCresolve_expCS | SCresolve_in_expCS)
+SCdeclarator_vsepCS: SimpleDeclaratorCS '|'
+SCmulti_declarator_vsepCS: (declarator+=SimpleDeclaratorCS (',' declarator+=SimpleDeclaratorCS)*) '|'
+SCresolve_expCS: SCresolve_keyCS '(' SCresolve_conditionCS? ')'
+SCresolve_conditionCS: DeclaratorCS ('|' ExpCS)?
+SCresolve_keyCS: 'late'? SCresolve_kindCS
+SCresolve_kindCS: 'resolve' | 'resolveone' | 'invresolve' | 'invresolveone'
+SCresolve_in_expCS: SCresolve_in_keyCS '(' PathNameCS
+(',' SCresolve_conditionCS)?')'
+SCresolve_in_keyCS: 'late'? SCresolve_in_kindCS
+SCresolve_in_kindCS: 'resolveIn' | 'resolveoneIn' | 'invresolveIn' | 'invresolveoneIn'
+SCaccess_opCS: '.' | '-CS' | '!-CS'
+SCprimary_expCS: SCliteralCS
+| PathNameCS
+| SCif_expCS
+| SCblock_expCS
+| SCcontrol_expCS
+| SCrule_call_expCS
+| SCquit_expCS
+| SCtry_expCS
+| SCraise_expCS
+| SCassert_expCS
+| SClog_expCS
+| '(' ExpCS ')'
+SCliteralCS: SCliteral_simpleCS
+| SCliteral_complexCS
+SCliteral_simpleCS: INTEGER | SCFLOATCS | STRING
+| 'true' | 'false' | 'unlimited' | 'null'
+SCliteral_complexCS: SCliteral_collectionCS
+| SCliteral_tupleCS
+| SCliteral_dictCS
+SCliteral_collectionCS: SCcollection_keyCS '{' SCcollection_item_listCS? '}'
+SCliteral_tupleCS: 'Tuple' '{' SCtuple_item_listCS? '}'
+SCliteral_dictCS: 'Dict' '{' SCdict_item_listCS? '}'
+SCcollection_item_listCS: (ExpCS (',' ExpCS)*)
+SCtuple_item_listCS: (declarator+=DeclaratorCS (',' declarator+=DeclaratorCS)*)
+SCdict_item_listCS: SCdict_itemCS (',' SCdict_itemCS)*
+SCdict_itemCS: SCliteral_simpleCS '=' ExpCS
+SCif_expCS: 'if' ExpCS SCthen_partCS
+SCelif_partCS* SCelse_partCS? 'endif'
+SCthen_partCS: 'then' SCif_bodyCS
+SCelif_partCS: 'elif' SCif_bodyCS
+SCelse_partCS: 'else' SCif_bodyCS
+SCif_bodyCS: ExpCS | ExpressionBlockCS
+SCiterator_expCS: SCsimple_iterator_opCS '(' SCdeclarator_vsepCS? ExpCS ')'
+| SCmulti_iterator_opCS '(' SCmulti_declarator_vsepCS? ExpCS ')'
+| SCiterate_expCS
+SCsimple_iterator_opCS: 'reject' | 'select' | 'collect' | 'exists'
+| 'one' | 'any' | 'isUnique' | 'collectNested'
+| 'sortedBy' | 'xselect' | 'xcollect'
+| 'selectOne' | 'collectOne'
+| 'collectselect' | 'collectselectOne'
+SCmulti_iterator_opCS: 'forAll'
+SCiterate_expCS: 'iterate' '(' (declarator+=DeclaratorCS (',' declarator+=DeclaratorCS)*) ';'
+DeclaratorCS '|' ExpCS ')'
+SCiter_declaratorCS: DeclaratorCS
+SCiter_declarator_listCS: (declarator+=DeclaratorCS (',' declarator+=DeclaratorCS)*)
+SCblock_expCS: (SCobject_expCS | SCdo_expCS | SCswitch_expCS)
+SCobject_expCS: 'object' ('(' SCiter_declaratorCS ')')? SCobject_declaratorCS
+ExpressionBlockCS
+SCobject_declaratorCS: TypespecCS | IdentifierCS ':' TypespecCS?
+SCdo_expCS: 'do' ExpressionBlockCS
+SCswitch_expCS: 'switch' ('(' SCiter_declaratorCS ')')? SCswitch_bodyCS
+SCswitch_bodyCS: '{' SCswitch_altCS+ SCswitch_elseCS? '}'
+SCswitch_altCS: 'case' '(' ExpCS ')' ExpressionStatementCS
+SCswitch_elseCS: 'else' ExpressionStatementCS
+SCcontrol_expCS: (SCwhile_expCS | SCcompute_expCS | SCfor_expCS)
+SCwhile_expCS: 'while' '(' (DeclaratorCS ';')? ExpCS ')'
+ExpressionBlockCS
+SCcompute_expCS: 'compute' '(' DeclaratorCS ')' ExpressionBlockCS
+SCfor_expCS: ('forEach' | 'forOne') '(' SCiter_declarator_listCS
+(';' DeclaratorCS)? ('|' ExpCS)? ')' ExpressionBlockCS
+SCrule_call_expCS: ('map' | 'xmap' | 'new' )
+('(' DeclaratorCS ')')? PathNameCS
+SClet_expCS: 'let' (declarator+=DeclaratorCS (',' declarator+=DeclaratorCS)*) 'in' ExpCS
+SCvar_init_expCS: 'var' (declarator+=DeclaratorCS (',' declarator+=DeclaratorCS)*)
+| 'var' '(' (declarator+=DeclaratorCS (',' declarator+=DeclaratorCS)*) ')'
+SCquit_expCS: 'break' | 'continue' | SCreturn_expCS)
+SCreturn_expCS: 'return' ExpCS?
+SCtry_expCS: 'try' ExpressionBlockCS SCexceptCS+
+SCexceptCS: 'except' '(' (scopedIdentifier+=PathNameCS (',' scopedIdentifier+=PathNameCS)*) ')' ExpressionBlockCS
+SCraise_expCS: 'raise' PathNameCS ('(' SCarg_listCS? ')')?
+SCarg_listCS: (ExpCS (',' ExpCS)*)
+SCassert_expCS: 'assert' IdentifierCS? '(' ExpCS ')'
+( 'with' SClog_expCS )?
+SClog_expCS: 'log' '(' SCarg_listCS ')' ('when' ExpCS)? */

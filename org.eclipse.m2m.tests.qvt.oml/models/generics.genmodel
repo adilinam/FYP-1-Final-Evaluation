@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.m2m.tests.qvt.oml/src_generated" modelPluginID="org.eclipse.m2m.tests.qvt.oml"
+    modelName="Generics" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>generics.ecore</foreignModel>
+  <genPackages prefix="Generics" disposableProviderFactory="true" ecorePackage="generics.ecore#/">
+    <genDataTypes ecoreDataType="generics.ecore#//MyNumber"/>
+    <genClasses ecoreClass="generics.ecore#//GenericCls">
+      <genTypeParameters ecoreTypeParameter="generics.ecore#//GenericCls/E"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generics.ecore#//GenericCls/values"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

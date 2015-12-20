@@ -1,0 +1,19 @@
+<project default="build.antTasks">
+	<property name="lib.dir" value="lib"/>
+	<property name="tasks.jar.name" value="antTasks.jar"/>
+	<property name="bin.dir" value="bin_ant"/>
+
+	<target name="build.antTasks">
+		<zip basedir="${bin.dir}" includes="**/*" destfile="${lib.dir}/${tasks.jar.name}" update="false"/>
+	</target>
+	
+	<target name="clean" depends="check.lib.exists" if="lib.exists">
+		<delete>
+			<fileset dir="${lib.dir}" includes="${tasks.jar.name}"></fileset>
+		</delete>
+	</target>
+		
+	<target name="check.lib.exists">
+		<available file="${lib.dir}/${tasks.jar.name}" property="lib.exists"/>		
+	</target>
+</project>

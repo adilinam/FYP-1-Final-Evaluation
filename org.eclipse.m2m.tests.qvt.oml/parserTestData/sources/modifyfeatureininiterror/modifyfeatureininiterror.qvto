@@ -1,0 +1,11 @@
+transformation modifyfeatureininiterror;
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+mapping impl(pack: ecore::EPackage): ecore::EPackage {
+    init {
+        pack.eClassifiers1 += object ecore::EClass1 {};
+    }
+
+        name := 'foo';
+
+}

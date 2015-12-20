@@ -1,0 +1,16 @@
+import T2;
+import apiTestData.exec3_withImport.exec3_withImport;
+
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation T1(in input : ECORE, out output : ECORE) access T2, exec3_withImport;
+
+main() {
+	new T2(input, output);
+	-- deployed module import
+	new exec3_withImport(output);
+	
+	object EPackage {
+		name := "T1";
+	}
+}

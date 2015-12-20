@@ -1,0 +1,4 @@
+Terminating execution...
+org.eclipse.m2m.internal.qvt.oml.evaluator.QvtRuntimeException: No blackbox implementation found for 'echoFromSimpleJavaLibrary'
+	at bug289982_lib::echoFromSimpleJavaLibrary(bug289982_lib_failed.qvto:12)
+	at bug289982_failed::main(bug289982_failed.qvto:12)

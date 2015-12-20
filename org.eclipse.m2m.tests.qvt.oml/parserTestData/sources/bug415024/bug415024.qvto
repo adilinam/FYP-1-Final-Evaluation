@@ -1,0 +1,12 @@
+// https://bugs.eclipse.org/bugs/show_bug.cgi?id=415024
+transformation bug415024();
+
+property test : Tuple(a : Integer, b : Integer) = null;
+
+main() {
+	test := Tuple {a = 1, b = 2};
+	/*<error>*/test.b/*</error>*/ := 3;
+	log(test.toString());
+}
+
+

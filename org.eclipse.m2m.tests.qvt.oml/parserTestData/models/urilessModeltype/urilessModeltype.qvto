@@ -1,0 +1,10 @@
+modeltype Ecore uses ecore;
+
+transformation urilessModeltype;
+
+main() {
+	var c0 : EClass = object EClass {};
+	var c1 : EClass = c0.map EClass2EClass();
+}
+
+mapping EClass :: EClass2EClass() : EClass {}

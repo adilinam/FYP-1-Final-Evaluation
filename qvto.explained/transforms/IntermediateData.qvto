@@ -1,0 +1,27 @@
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+
+transformation t(
+	in inModel : ECORE, out outModel : ECORE);
+
+
+intermediate property EClass::intermProp : String;
+
+intermediate class MyEPackage extends EPackage {
+		myName : String;
+}
+
+main() {
+		var c := object EClass { 
+			name := 'original';
+			intermProp := 'abc'
+		};
+		var p := object MyEPackage {
+			name := 'name';
+			myName := 'someThoughtfulName';
+		};
+		object EPackage {
+			name := c.intermProp + ' ' + p.myName;
+			eClassifiers += c;
+		}
+}

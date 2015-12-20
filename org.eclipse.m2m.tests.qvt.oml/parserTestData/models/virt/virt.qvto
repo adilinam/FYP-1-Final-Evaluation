@@ -1,0 +1,16 @@
+transformation virt;
+import models.virt.vutil;
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+
+query main(pack: ecore::EPackage): ecore::EPackage {
+    return impl(pack);
+}
+
+mapping ecore::EDataType::decorate(): ecore::EClassifier {
+  init {
+    result := object ecore::EDataType {
+        name := self.name.concat('--bar');
+    }
+  }
+}

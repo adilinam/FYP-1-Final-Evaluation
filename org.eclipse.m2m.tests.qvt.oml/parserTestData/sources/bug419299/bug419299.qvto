@@ -1,0 +1,43 @@
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation bug419299;
+
+
+intermediate class Cls extends /*<error>*/Exception/*</error>*/ {
+}
+
+exception ExcA extends Exception {
+}
+
+exception ExcB extends /*<error>*/AssertionFailed/*</error>*/ {
+}
+
+exception ExcExtAB extends ExcA, ExcB {
+}
+
+exception ExcD {
+}
+
+main() {
+	try {
+		raise ExcA(/*<error>*/3/*</error>*/);
+		raise /*<error>*/EClass/*</error>*/;
+	}
+	except(/*<error>*/EClass/*</error>*/) {
+	};
+	
+	try {
+		raise /*<error>*/1/*</error>*/;
+	}
+	except(ExcA) {
+	}
+	except(/*<error>*/ExcExtAB/*</error>*/) {
+	};
+
+	try {
+	}
+	except() {
+	}
+	except(/*<error>*/ExcA/*</error>*/) {
+	};
+}

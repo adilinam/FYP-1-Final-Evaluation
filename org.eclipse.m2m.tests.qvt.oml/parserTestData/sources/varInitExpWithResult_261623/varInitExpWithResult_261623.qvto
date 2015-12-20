@@ -1,0 +1,18 @@
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+transformation test(in inModel: ECORE, out outModel : ECORE) {
+
+main() {
+	var a := var b ::= var c ::= 'someString';
+	a := b := 'x';   
+	a := b := var c2 ::= 'someString';  
+	a := b := c2 := 'someString';
+	var a1 := b := var c3 ::= 'someString';
+	object EPackage { 
+		name := switch {
+			case (true) var /*<error>*/c ::= 'abc'/*</error>*/;
+		} 
+	};
+}
+
+}

@@ -1,0 +1,4 @@
+transformation duplicatelocalproperty;
+
+property foo = 'bar';
+property foo = 'abc';

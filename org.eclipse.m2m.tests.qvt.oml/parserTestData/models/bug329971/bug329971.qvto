@@ -1,0 +1,16 @@
+modeltype mm_test "strict" uses 'http://test1/1.0';
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation bug329971(in inModel : mm_test);
+
+main() {
+    var cls = inModel.rootObjects()![Class1];
+    var x: EString = cls.attr1;
+    var y: String = cls.attr1;
+    var z: TestIdentifier = cls.attr1;
+
+    assert fatal (cls.attr1 = "TestValue");
+    assert fatal (x = "TestValue");
+    assert fatal (y = "TestValue");
+    assert fatal (z = "TestValue");
+}

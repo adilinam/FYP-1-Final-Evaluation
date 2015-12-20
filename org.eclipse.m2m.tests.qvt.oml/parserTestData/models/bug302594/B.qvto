@@ -1,0 +1,7 @@
+import AA;
+
+transformation B() extends AA;
+
+main() {
+	prop := configProp;
+}

@@ -1,0 +1,10 @@
+transformation bug370098;
+
+main() {
+	recursiveHelper(11);
+}
+
+helper recursiveHelper(in i : Integer) {
+	if (i > 0)
+		recursiveHelper(i-1);
+}

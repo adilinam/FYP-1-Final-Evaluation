@@ -1,0 +1,32 @@
+import LibForAccess;
+import TransfForAccess;
+import LibForExtends;
+import TransfForExtends;	
+
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation NewTransformation(in eModel : ECORE, out outModel : ECORE) 
+	extends TransfForExtends, LibForExtends
+	access transformation TransfForAccess access library LibForAccess; 
+
+main() {
+	// prop_LibForAccess is accessible, implicit source resolved to the library default instance
+	var p : EPackage;
+	object p : EPackage {
+		name := "result";
+		eClassifiers += object EClass  { name := prop_LibForAccess; };
+		eClassifiers += object EClass  { name := prop_LibForExtends; };
+		eClassifiers += object EClass  { name := prop_TransfForExtends; };		
+		eClassifiers += object EClass  {
+			name := compute(name : String) {
+				var t : TransfForAccess := new TransfForAccess(eModel, outModel);	
+				name := t.prop_TransfForAccess;
+			};
+			 
+		};
+		
+		eSubpackages += p.map mapping_TransfForExtends(); 		
+	}; 
+	var s1 : String := prop_LibForAccess + prop_LibForExtends + prop_TransfForExtends;
+	
+}

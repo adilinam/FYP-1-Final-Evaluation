@@ -1,0 +1,23 @@
+modeltype localunboud uses "http://local.unbound";
+
+transformation unspecified_multiplicity(out localunboud);
+
+main() {
+	var v := object cls{};
+	
+	v.list := object cls {};
+	v.ulist := object cls {};
+	v.ulist2 := object cls {};
+
+	v.list += object cls {};
+	v.ulist += object cls {};
+	v.ulist2 += object cls {};
+
+	v.list := OrderedSet {object cls {}};
+	v.ulist := OrderedSet {object cls {}};
+	v.ulist2 := OrderedSet {object cls {}};
+
+	v.list += OrderedSet {object cls {}};
+	v.ulist += OrderedSet {object cls {}};
+	v.ulist2 += OrderedSet {object cls {}};
+}

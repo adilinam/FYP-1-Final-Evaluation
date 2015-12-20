@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>QVT transformation</title>
+<style type="text/css">@import url("../../book.css");</style>
+<style type="text/css">@import url("../../schema.css");</style>
+</HEAD>
+<BODY>
+<H1 style="text-align:center">QVT transformation</H1>
+<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Identifier: </h6>org.eclipse.m2m.qvt.oml.runtime.qvtTransformation<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Since: </h6>1.0
+<p></p>
+
+<h6 class="CaptionFigColumn SchemaHeader">Description: </h6>This extension point provides a mechanism to register deployed QVTo units. The registered units are accessible through the QVTo UI, and can be imported from other plugins or workspace projects.<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Configuration Markup:</h6>
+<p></p>
+<p class="code SchemaDtd">&lt;!ELEMENT <a name="e.extension">extension</a> ((<a href="#e.transformation">transformation</a> | <a href="#e.library">library</a>)+)&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST extension</p>
+<p class="code SchemaDtdAttlist">point&nbsp;CDATA #REQUIRED</p>
+<p class="code SchemaDtdAttlist">id&nbsp;&nbsp;&nbsp;&nbsp;CDATA #IMPLIED</p>
+<p class="code SchemaDtdAttlist">name&nbsp;&nbsp;CDATA #IMPLIED&gt;</p>
+<p></p>
+<p class="ConfigMarkupElementDesc">
+Extension point to register deployed QVTo modules</p>
+<br>
+<ul class="ConfigMarkupAttlistDesc">
+</ul>
+<br><div style="color: red; font-style: italic;">The <b>input</b> element is deprecated</div> <p class="code SchemaDtd">&lt;!ELEMENT <a name="e.input">input</a> EMPTY&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST input</p>
+<p class="code SchemaDtdAttlist">metamodel&nbsp;CDATA #IMPLIED</p>
+<p class="code SchemaDtdAttlist">metaclass&nbsp;CDATA #IMPLIED&gt;</p>
+<p></p>
+<p class="ConfigMarkupElementDesc">
+An input parameter to a QVTo transformation</p>
+<br>
+<ul class="ConfigMarkupAttlistDesc">
+<li><b>metamodel</b> - The namespace URI of the input metamodel</li>
+<li><b>metaclass</b> - The fully qualified name of the input classifier</li>
+</ul>
+<br><div style="color: red; font-style: italic;">The <b>output</b> element is deprecated</div> <p class="code SchemaDtd">&lt;!ELEMENT <a name="e.output">output</a> EMPTY&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST output</p>
+<p class="code SchemaDtdAttlist">metamodel&nbsp;CDATA #IMPLIED</p>
+<p class="code SchemaDtdAttlist">metaclass&nbsp;CDATA #IMPLIED&gt;</p>
+<p></p>
+<p class="ConfigMarkupElementDesc">
+An output parameter of a QVTo transformation</p>
+<br>
+<ul class="ConfigMarkupAttlistDesc">
+<li><b>metamodel</b> - The namespace URI of the output metamodel</li>
+<li><b>metaclass</b> - The fully qualified name of the output classifier, separated by slashes</li>
+</ul>
+<br><p class="code SchemaDtd">&lt;!ELEMENT <a name="e.transformation">transformation</a> (<a href="#e.input">input</a> , <a href="#e.output">output</a>)?&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST transformation</p>
+<p class="code SchemaDtdAttlist">file&nbsp;CDATA #REQUIRED</p>
+<p class="code SchemaDtdAttlist">id&nbsp;&nbsp;&nbsp;IDREF #REQUIRED&gt;</p>
+<p></p>
+<p class="ConfigMarkupElementDesc">
+A runnable transformation module containing a <code>main()</code> operation</p>
+<br>
+<ul class="ConfigMarkupAttlistDesc">
+<li><b>file</b> - The path to the registered transformation file (*.qvto)</li>
+<li><b>id</b> - The fully qualified name used to import the registered transformation</li>
+</ul>
+<br><p class="code SchemaDtd">&lt;!ELEMENT <a name="e.library">library</a> EMPTY&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST library</p>
+<p class="code SchemaDtdAttlist">file&nbsp;CDATA #REQUIRED</p>
+<p class="code SchemaDtdAttlist">id&nbsp;&nbsp;&nbsp;IDREF #REQUIRED&gt;</p>
+<p></p>
+<p class="ConfigMarkupElementDesc">
+A library module that may be imported by other modules</p>
+<br>
+<ul class="ConfigMarkupAttlistDesc">
+<li><b>file</b> - The path to the registered library file (*.qvto)</li>
+<li><b>id</b> - The fully qualified name used to import the registered library</li>
+</ul>
+<br><h6 class="CaptionFigColumn SchemaHeader">Examples: </h6><p>
+The following example registers the <code>Simpleuml_To_Rdb</code> unit, which is resolvable as 
+<code>Simpleuml_To_Rdb</code> from importing QVTo units.
+</p>
+<pre class="Example"><span class="code SchemaTag">
+&lt;extension point=</span><span class="code SchemaCstring">&quot;org.eclipse.m2m.qvt.oml.runtime.qvtTransformation&quot;</span><span class="code SchemaTag">&gt;
+ &lt;transformation file=</span><span class="code SchemaCstring">&quot;Simpleuml_To_Rdb.qvto&quot;</span><span class="code SchemaTag"> id=</span><span class="code SchemaCstring">&quot;Simpleuml_To_Rdb&quot;</span><span class="code SchemaTag">/&gt;
+&lt;/extension&gt;
+</span></pre>
+<p></p>
+
+<br>
+<p class="note SchemaCopyright">
+Copyright (c) 2007, 2015 Borland Software Corporation
+
+</p>
+</BODY>
+</HTML>

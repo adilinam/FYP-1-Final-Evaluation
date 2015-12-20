@@ -1,0 +1,12 @@
+library test;
+
+query OclAny::testWhileHeader() : OclAny {	
+        var s := 'aaa'
+        "bbb"
+        'ccc'
+        "ddd";
+        var s1 := 'aaa'
+        /*<error>*/"bbb"         'ccc'/*</error>*/
+        "ddd";
+	return null;
+}

@@ -1,0 +1,29 @@
+library q2;
+
+import org.q1;
+
+modeltype Ecore2 uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+query q2(par : Collection(String)) : String {
+	return 'xxx';
+}
+
+helper callOnTupleType(t : Tuple(name : String, size : Integer)) : Tuple(name1 : String, name2 : String) {
+	return tupleFrom2Strings(t.name, t.size.repr());
+}
+
+query ENamedElement::getUpperName() : String {
+	return self.name.toUpper();
+}
+
+query EClass::getUpperName() : String {
+	return 'EClass-' + self.name.toUpper();
+}
+
+helper callImportedQvtFileWhichCallsJavaLibrary(aStringToEcho : String) : String {
+	return callImportedJavaLibrary(aStringToEcho);
+}
+
+helper callQueryThrowingException() : Boolean {
+	return throwingException();
+}

@@ -1,0 +1,5 @@
+library b2;
+
+query String::foo2(): String {
+	return '_foo2';
+}

@@ -1,0 +1,25 @@
+transformation resolve_notype;
+
+modeltype A uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+
+mapping main(in model: ecore::EPackage): ecore::EPackage {
+	init {
+		var tmp := model.map /*@*/createEClass1();
+	}
+    object {
+    	name := tmp.invresolveoneIn(ecore::ENamedElement::createEClass1, ecore::EPackage).name;
+    }
+}
+
+mapping ecore::ENamedElement::createEClass1() : ecore::EClass {
+	object {
+		name := 'mapped1' + self.name;
+	}
+}
+
+mapping ecore::ENamedElement::createEClass2() : ecore::EClass {
+	object {
+		name := 'mapped2' + self.name;
+	}
+}

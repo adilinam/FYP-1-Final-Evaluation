@@ -1,0 +1,31 @@
+import org.bar.Foo;
+
+modeltype Ecore "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+library bug289982_validation access Bug289982_Lib;
+
+
+blackbox static constructor /*<warn>*/EPackage::EPackage/*</warn>*/();
+blackbox static mapping /*<warn>*/EClassifier::contextualMapping/*</warn>*/() : EClassifier;
+blackbox static query /*<warn>*/EClass::contextualQuery/*</warn>*/();
+
+blackbox abstract constructor /*<warn>*/EModelElement::EModelElement/*</warn>*/();
+
+blackbox /*<error>*/helper EPackage::contextualHelper/*</error>*/() { null }
+blackbox /*<error>*/constructor EPackage::EPackage(c : List(String)/*</error>*/) { null }
+
+
+blackbox mapping /*<error>*/EClass::m1/*</error>*/() : EPackage disjuncts EClass::m2;
+mapping EClass::m2() : EPackage {}
+
+blackbox /*<warn>*/mapping EClass::m11() : EPackage/*</warn>*/ inherits /*<error>*/EClass::m12/*</error>*/;
+mapping EClass::m12() : EPackage {}
+
+mapping EClass::m21() : EPackage inherits /*<error>*/EClass::m22/*</error>*/ {}
+blackbox /*<warn>*/mapping EClass::m22() : EPackage/*</warn>*/;
+
+mapping EClass::m31() : EPackage merges /*<error>*/EClass::m32/*</error>*/ {}
+blackbox /*<warn>*/mapping EClass::m32() : EPackage/*</warn>*/;
+
+/*<error>*/mapping EClass::m42() : EClassifier/*</error>*/ {}
+

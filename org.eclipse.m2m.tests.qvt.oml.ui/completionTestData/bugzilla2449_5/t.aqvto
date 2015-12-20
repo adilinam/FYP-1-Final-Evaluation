@@ -1,0 +1,15 @@
+modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation NewTransformation(in model : ecore, out ecore);
+
+main(in inModel : EPackage) {
+var orig2 := model.invresolveone();
+var q1 := model.resolve(EObject);
+var cls := inModel.map toEObject();
+var orig : EClass := cls.invresolveone().oclAsType(uml20::Model);
+var orig1 : ecore::EPackage := cls.oclAsType(uml20::Model);
+var x := orig1->asBag().name;--->collect(i |)
+var y := orig1->collect(i | /*@*/i.name.size() = 5);
+orig.nam := 'a';
+y.
+}

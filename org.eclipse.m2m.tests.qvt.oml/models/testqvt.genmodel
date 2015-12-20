@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="org.eclipse.m2m.tests.qvt.oml/src_generated"
+    modelPluginID="org.eclipse.m2m.tests.qvt.oml" modelName="Testqvt" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0">
+  <foreignModel>testqvt.ecore</foreignModel>
+  <genPackages prefix="Testqvt" disposableProviderFactory="true" ecorePackage="testqvt.ecore#/">
+    <genClasses ecoreClass="testqvt.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference testqvt.ecore#//Model/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="testqvt.ecore#//Element">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testqvt.ecore#//Element/name"/>
+    </genClasses>
+    <genClasses ecoreClass="testqvt.ecore#//BooleanElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testqvt.ecore#//BooleanElement/isSmallBoolean"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testqvt.ecore#//BooleanElement/smallBoolean"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testqvt.ecore#//BooleanElement/isLargeBoolean"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testqvt.ecore#//BooleanElement/largeBoolean"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

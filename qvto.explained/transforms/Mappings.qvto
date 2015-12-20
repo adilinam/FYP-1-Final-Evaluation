@@ -1,0 +1,19 @@
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+
+transformation t(
+	in inModel : ECORE, out outModel : ECORE);
+
+
+main() {
+	inModel.rootObjects()[EPackage]->map p2p();
+}     
+
+mapping EPackage::p2p() : EPackage {
+	name := self.name;
+	eClassifiers += self.eClassifiers->map c2c(); 
+}
+
+mapping EClassifier::c2c() : EClass {
+	name := 'mapped' + self.name;
+}

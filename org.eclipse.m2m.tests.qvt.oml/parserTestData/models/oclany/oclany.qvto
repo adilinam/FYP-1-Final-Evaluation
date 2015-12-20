@@ -1,0 +1,17 @@
+transformation oclany();
+
+import models.oclany.AnyExtension;
+
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+mapping main(in model: ecore::EPackage): ecore::EPackage {
+	init {
+		result := model.toEPackage();
+	}
+}	
+
+
+mapping Ecore::EPackage::toEPackage() : ecore::EPackage {
+	-- call a custom defined operation on OclAny in imported lib	
+	name := self.name + self.anyConcatStrings('String1','String2');
+}

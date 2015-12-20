@@ -1,0 +1,9 @@
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+	
+transformation TransfForExtends(in eModel : ECORE, out outModel : ECORE);
+ 
+property prop_TransfForExtends : String = "prop_TransfForExtends";
+
+query query_TransfForExtends() : String {
+	return "query_TransfForExtends";
+}

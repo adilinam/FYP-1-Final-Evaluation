@@ -1,0 +1,12 @@
+modeltype ECORE uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation implicitsource_ocl_234354(inout model : ECORE);
+    
+main() {
+	-- This test provides check for [234354] causing StackTraceOverflow before fixing
+	-- as QVT removed the workarround code eliminating this bug 
+	-- the correct result is just a compiled source with errors
+	var set : Set(UnknownFooType) := Set {};
+	set->any(fooProperty);	
+	set->any(fooOper());
+}

@@ -1,0 +1,9 @@
+import org.bar.Foo;
+
+modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation NewTransformation(in model : ecore, out ecore);
+
+main() {
+	cre/*@*/
+}

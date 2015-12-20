@@ -1,0 +1,114 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link rel="Stylesheet" type="text/css" href="doc.css" />
+	<title>Ant tasks support</title>
+</head>
+<h1>Ant tasks support</h1>
+<br>
+<p>
+Operational QVT Ant tasks let you launch QVTO transformations from the Ant script.
+These tasks can be run either from the Eclipse user interface or the command line.
+
+<h2>Creating an Ant script</h2>
+
+<br>
+Transformation with the following signature
+
+<pre class="Code">
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+transformation Transf(inout m1 : ECORE, out m2 : ECORE);
+</pre>
+
+in assumption that it is stored in workspace in project "qvto" under "transforms" folder, can be called from Ant script as follows
+<pre class="Code">
+&lt;project name="project" default="default" xmlns:qvto="http://www.eclipse.org/qvt/1.0.0/Operational"&gt;
+    &lt;target name="default"&gt;
+
+        &lt;qvto:transformation
+            uri="platform:/resource/qvto/transforms/Transf.qvto"
+            &gt;
+        
+            &lt;inout
+                uri="platform:/resource/qvto/transforms/in.ecore"
+                outuri="platform:/resource/qvto/transforms/out_in.ecore"
+            /&gt;
+            &lt;out
+                uri="platform:/resource/qvto/transforms/test.ecore#//cls"&gt;
+                &lt;feature
+                    name="eAnnotations"
+                    clearcontents="true"
+                /&gt;
+            &lt;/out&gt;
+        
+            &lt;trace
+                uri="platform:/resource/qvto/transforms/Transformation.qvtotrace"
+            /&gt;
+        &lt;/qvto:transformation&gt;
+
+    &lt;/target&gt;
+&lt;/project&gt;
+</pre>
+
+<p>
+Ant task used to run QVTO transformation is <code>http://www.eclipse.org/qvt/1.0.0/Operational:transformation</code>.
+Nested element and attribute definitions follows:
+
+<br>
+<p>
+<table border=1 cellspacing=0 cellpadding=5>
+
+<tr><td><strong>&lt;Tag&gt; / "Attribute"</td><td><strong>Description</td></tr>
+<tr><td class="Code">&lt;transformation&gt;</td> <td>References QVTO transformation task.</td></tr>
+<tr><td class="Code"><span style="margin-left: 30px;">"uri"</span></td> <td><em>URI</em> of the transformation file to be executed.</td></tr>
+
+<tr><td class="Code">&lt;in&gt;</td> <td>References corresponding (in order) [in] transformation parameter.</td></tr>
+<tr><td class="Code"><span style="margin-left: 30px;">"uri"</span></td> <td><em>URI</em> of the [in] transformation parameter.</td></tr>
+
+<tr><td class="Code">&lt;inout&gt;</td> <td>References corresponding (in order) [inout] transformation parameter.</td></tr>
+<tr><td class="Code"><span style="margin-left: 30px;">"uri"</span></td> <td><em>URI</em> of the [inout] transformation parameter passed as input. If "outuri" attribute is ommited then that <em>URI</em> is used to store output as well.</td></tr>
+<tr><td class="Code"><span style="margin-left: 30px;">"outuri"</span></td> <td><em>URI</em> for storing modified [inout] transformation parameter</td></tr>
+
+<tr><td class="Code">&lt;out&gt;</td> <td>References corresponding (in order) [out] transformation parameter.</td></tr>
+<tr><td class="Code"><span style="margin-left: 30px;">"uri"</span></td> <td><em>URI</em> for storing [out] transformation parameter</td></tr>
+
+<tr><td class="Code">&lt;feature&gt;</td> <td>References target structural feature (related to [out] transformation parameter <em>URI</em>) to save the result to.</td></tr>
+<tr><td class="Code"><span style="margin-left: 30px;">"name"</span></td> <td>Name the target structural feature to save the result to.</td></tr>
+<tr><td class="Code"><span style="margin-left: 30px;">"clearcontents"</span></td> <td>Specifies whether you want to clear contents of the target feature before writing the result.</td></tr>
+
+<tr><td class="Code">&lt;trace&gt;</td> <td>References trace instance that is created upon transformation execution. If this tag is omitted, trace is not saved.</td></tr>
+<tr><td class="Code"><span style="margin-left: 30px;">"uri"</span></td> <td><em>URI</em> for storing trace file.</td></tr>
+
+</table>
+
+<p>
+All <b><em>URI</em></b>s used in transformation task (transformation <em>URI</em>,
+transformation's parameter <em>URI</em>, trace <em>URI</em>) are resolved due to the following rules:
+  
+<ul>
+<li> in case it's platform URI (URI.isPlatform() == true) - it is used as-is
+<li> in case it's non-relative file URI (URI.isRelative() == false) - it's resolved against workspace root
+<li> in case it's relative file URI (URI.isRelative() == false) but starts with ["\", "/"] - it's resolved against workspace root
+<li> in case it's relative file URI (URI.isRelative() == false) and does not start with ["\", "/"] - it's resolved against script location
+</ul>
+
+<br>
+<h2>Running script as an Ant task from the Eclipse user interface</h2>
+
+<ul>
+<li> You must make sure that the script will be run in the same JRE as your workspace. To do this, right-click your build file in the Navigator View and choose <i>Run As->Ant Build....</i>
+<li> In the Edit Configuration dialog, open the JRE tab and select the Run in the same JRE as the workspace option. This step must be completed before you run the build script for the first time.
+<li> Run the script by right-clicking the build file and choosing <i>Run As->Ant Build</i>.
+</ul>
+
+<br>
+<h2>Running script as an Ant task from the command line</h2>
+
+<p>
+In a command shell, run a command similar to the following one:
+
+<pre class="Code">
+java -Xms128m -Xmx1024m -XX:MaxPermSize=256m -jar ./plugins/org.eclipse.equinox.launcher_&lt;version>.jar 
+  -data &lt;WORKSPACE_PATH&gt; -nosplash -consolelog -application org.eclipse.ant.core.antRunner -f &lt;ANTSCRIPT&gt;
+</pre>
+
+where &lt;WORKSPACE_PATH&gt; is the path to your workspace and &lt;ANTSCRIPT&gt; is the path to your Ant script file.

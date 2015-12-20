@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension
+         id="QVTONature"
+         name="%QVTONature.name"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run class="org.eclipse.m2m.internal.qvt.oml.project.nature.QVTONature"/>
+      </runtime>
+      <builder id="org.eclipse.m2m.qvt.oml.project.QVTOBuilder"/>
+   </extension>
+   
+ <extension id="QVTOBuilder" name="%QVTOBuilder.name" point="org.eclipse.core.resources.builders">
+      <builder hasNature="true">
+         <run class="org.eclipse.m2m.internal.qvt.oml.project.builder.QVTOBuilder"/>
+      </builder>
+   </extension>
+                                                          
+ <extension point="org.eclipse.core.resources.markers" id="QVTOProblem" name="%problemMarker.name">
+	<super type="org.eclipse.core.resources.problemmarker"/>
+    <super type="org.eclipse.core.resources.textmarker"/>
+	<persistent value="true"/>
+ </extension>
+ 
+  <extension point="org.eclipse.m2m.qvt.oml.unitResolverFactory">
+	<factory class="org.eclipse.m2m.internal.qvt.oml.project.builder.WorkspaceUnitResolverFactory"/>
+ </extension>
+
+</plugin>

@@ -1,0 +1,24 @@
+import models.intermediateprop_import.intermediateprop_imported;
+
+modeltype ECORE uses "http://www.eclipse.org/emf/2002/Ecore";
+
+transformation intermediateprop_import(in inMode:ECORE, out outModel : ECORE);
+
+-- test intermediate property on model type
+intermediate property ECORE::modelProp : String;
+
+main() {
+	var eClass1 := object EClass {
+		aa := 'intermediateprop_import';
+		name := 'intermediateprop_import'
+	};
+
+	var eClass2 := object EClass {
+		name := eClass1.map aa().aa;
+	};
+	
+	outModel.modelProp := 'intermediate_model_property';
+	object EClass {
+		name := outModel.modelProp;
+	}
+}

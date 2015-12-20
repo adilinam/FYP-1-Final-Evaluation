@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+	     point="org.eclipse.m2m.qvt.oml.runtime.qvtTransformationContainer">
+      <sourceContainer path="transforms"/>
+   </extension>
+
+   <extension
+         point="org.eclipse.m2m.qvt.oml.runtime.qvtTransformation">
+      <transformation
+            file="transforms/root/DeployedTransformation.qvto"
+            id="deployedTransformationId">
+      </transformation>
+   </extension>
+
+</plugin>

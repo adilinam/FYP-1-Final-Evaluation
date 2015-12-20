@@ -1,0 +1,7 @@
+transformation errorinexpressionlist;
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+query main1(newPack: ecore::EPackage): ecore::EPackage {
+    patch(newPack);
+    return newPack
+}

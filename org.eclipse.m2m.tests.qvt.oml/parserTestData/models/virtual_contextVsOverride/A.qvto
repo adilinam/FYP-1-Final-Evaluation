@@ -1,0 +1,11 @@
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+	
+transformation A(in input : ECORE, out output : ECORE);
+
+helper ENamedElement::foo() : String {
+	return "A-ENamedElement::foo";
+}
+
+helper EClass::foo() : String {
+	return "A-EClass::foo";
+}

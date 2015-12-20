@@ -1,0 +1,5 @@
+message
+confirmed message
+message with data, data: 2.344545
+confirmed message with data, data: 2.344545
+Level 4 - message with data and level, data: 2.344545

@@ -1,0 +1,57 @@
+import LibForAccess;
+import LibForExtends;
+import TransfForExtends;
+import TransfForExtends2;
+import Strings;	
+
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation fqn_noncontextual(in eModel : ECORE, out outModel : ECORE) 
+	extends TransfForExtends, LibForExtends 
+	extends transformation TransfForExtends2
+	access LibForAccess, Strings; 
+
+main() {
+	
+	assert fatal ("a.b".Strings::split("[.]") = Sequence { "a", "b" } );
+	assert fatal ("ab".Stdlib::find("b") = 2);
+	
+	TransfForExtends::_main();	
+	var subPckg := outModel.objectsOfType(EPackage);
+	
+	object EPackage {
+		name := "result";
+		
+		eClassifiers += object EClass {
+			name := queryString();
+		};
+		eClassifiers += object EClass {
+			name := fqn_noncontextual::queryString();
+		};
+		
+		eClassifiers += object EClass {
+			name := LibForAccess::queryString();
+		};
+		eClassifiers += object EClass {
+			name := TransfForExtends::queryString();
+		};
+		
+		eClassifiers += object EClass {
+			name := LibForExtends::queryString();
+		};
+					
+		eSubpackages += subPckg;
+		eSubpackages += map foo("local");
+		eSubpackages += map fqn_noncontextual::foo("fqn-local");
+		eSubpackages += map TransfForExtends::foo("t");
+		eSubpackages += map TransfForExtends2::foo("t2");	
+	}
+}
+
+query queryString() : String {
+	return "mainmodule-queryString";
+}
+
+mapping foo(in _name : String) : EPackage {
+	name := "mainmodule-" + _name;
+}

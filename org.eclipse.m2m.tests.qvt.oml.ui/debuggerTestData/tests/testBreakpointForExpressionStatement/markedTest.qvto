@@ -1,0 +1,17 @@
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+transformation testBreakpointForExpressionStatement(inout inModel : ecore);
+
+main() {
+    var pack := inModel.objects()![EPackage];
+    map test(pack);
+}
+
+mapping test(in root: EPackage): EPackage {
+	init {
+--!@#b1 breakpoint
+		var foo := 'foo';
+--!@#b2 breakpoint
+		log(foo);
+	}
+}

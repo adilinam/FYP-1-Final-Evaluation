@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project" default="default">
+    <target name="default">
+        <qvto.interpretedTransformation
+            transformation="/QvtAntTest/models/simple/simple.qvto"
+            tracefile="/QvtAntTest/models/simple/expected.uml.qvtotrace" 
+            resulturiproperty="test"
+            >
+            <targeturidef
+                targeturi="platform:/resource/QvtAntTest/models/simple/in.ecore"
+            />
+            <targeturidef
+                targeturi="platform:/resource/QvtAntTest/models/simple/simple.ecore"
+            />
+        </qvto.interpretedTransformation>
+        <echo file="out.uri.txt" message="${test1}"/>
+    </target>
+</project>

@@ -1,0 +1,39 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link rel="Stylesheet" type="text/css" href="doc.css" />
+	<title>Importing compilation units</title>
+</head>
+<h1>Importing compilation units</h1>
+<p>
+It is possible to import other QVTo compilation units for reuse. In the <code>import</code> statement, specify the fully qualified name of the unit to be imported, or its simple name if it resides in the same namespace. The fully qualified name is the path to the QVTo unit file (relative to the source container), separated by dots, and omitting the .qvto file extension.
+</p>
+
+<p>
+There are two different reuse mechanisms: <code>access</code> and <code>extends</code>. If the reuse mechanism for an imported unit is not explicitly specified, the <code>extends</code> semantics are applied by default.
+</p>
+
+<h2>Workspace imports</h2>
+
+<p>
+If the importing unit resides in a workspace QVTo project, fully qualified imports are resolved against the project's source container. You can set up the source container using the <b>QVT Settings</b> properties page of your project. If not specified explicitly, the project root is regarded as source container.
+</p>
+
+<p>
+To import a unit from a different QVTo project, add that project to the list of referenced projects using the <b>Project References</b> properties page.
+</p>
+
+<h2>Deployed imports</h2>
+
+<p>
+If the importing unit resides in a deployed plugin, fully qualified imports are resolved against the plugin's source container. Declare the source container using the <a href="./extension-points/org_eclipse_m2m_qvt_oml_runtime_qvtTransformationContainer.html">org.eclipse.m2m.qvt.oml.runtime.qvtTransformationContainer</a> extension point. If not specified explicitly, the plugin root is regarded as source container.
+</p>
+
+<p>
+To import a unit from outside its deploying plugin, the unit must be registered using the <a href="./extension-points/org_eclipse_m2m_qvt_oml_runtime_qvtTransformation.html">org.eclipse.m2m.qvt.oml.runtime.qvtTransformation</a> extension point. 
+</p>
+
+<h2>Standalone imports</h2>
+
+<p>
+In standalone mode, fully qualified imports are resolved against the Java classpath. To support standalone imports, make sure that the source container of your QVTo project is on the classpath.
+</p>

@@ -1,0 +1,5 @@
+library b1;
+
+/*<error>*/query foo_b1(): String/*</error>*/ { -- complain about wronb body type - legacy
+	/*<error>*/return 100/*</error>*/ -- produce one error on type mismatch
+}

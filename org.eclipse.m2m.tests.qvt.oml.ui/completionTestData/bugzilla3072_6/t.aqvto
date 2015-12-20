@@ -1,0 +1,15 @@
+transformation Ecore_To_Uml(in dummy : ECORE, out ECORE);
+	
+import Strings;
+	
+modeltype ECORE uses "http://www.eclipse.org/emf/2002/Ecore";
+		
+mapping main(in model : EPackage) : EPackage {   
+	init {
+		while(i : EClass; i.name <> null) {
+		while(j : EClass; j.name <> null) {
+		};
+		};
+                /*@*/
+    }  
+}

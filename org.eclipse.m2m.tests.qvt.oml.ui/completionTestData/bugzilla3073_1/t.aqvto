@@ -1,0 +1,15 @@
+transformation Ecore_To_Uml(in dummy : ECORE, out a : ECORE, out b : ECORE);
+
+import Strings;
+	
+modeltype ECORE uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+	
+mapping EClass::a() : EPackage when {self.name = 'a' }
+	 {
+       name := 'b++' + self.name;
+}
+
+query ecore::EPackage::getAllSubpackageNames(): String{
+        var names : Sequence(String) := self.eSubpackages.name;
+        return /*@*/
+}

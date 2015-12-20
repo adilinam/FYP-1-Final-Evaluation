@@ -1,0 +1,8 @@
+import models.bug392080.NewLibrary;
+
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation bug392080(in input: Ecore, out output: Ecore);
+
+
+main() {}

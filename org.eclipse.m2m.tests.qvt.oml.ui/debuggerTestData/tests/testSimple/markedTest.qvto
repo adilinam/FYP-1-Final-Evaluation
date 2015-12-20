@@ -1,0 +1,35 @@
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+transformation markedTest(inout inModel : ecore);
+
+main() {
+    var pack := inModel.objects()![EPackage];
+    map test(pack);
+}
+
+mapping test(in model: EPackage) : EPackage {
+--!@#b1 breakpoint fail
+    init {
+--!@#b2 breakpoint
+        var m := q1(model);
+        var n := q1(model).name;
+--!@#b4 breakpoint fail
+    }
+    object result : EPackage {
+--!@#b6  breakpoint
+        name := q1(model).name;
+--!@#b7 breakpoint fail
+    }
+--!@#b8
+}
+
+--!@#b9 
+query q1(in model: EPackage) : EPackage {
+--!@#b10 
+    return object EPackage{
+--!@#b11
+        name := 'pack';
+--!@#b12 breakpoint fail
+    }
+--!@#b13
+}

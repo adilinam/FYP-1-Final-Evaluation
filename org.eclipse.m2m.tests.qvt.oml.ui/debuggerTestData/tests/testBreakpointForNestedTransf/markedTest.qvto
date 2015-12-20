@@ -1,0 +1,52 @@
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation testBreakpointForNestedTransf(in inModel : Ecore) 
+	extends T1
+	extends T3
+{
+	property prop2 = prop;
+	main() {
+		var v1 = new T3();
+		var v2 = new T1(inModel);
+		var v5 = prop; 
+		var v6: Tuple(obj : EClassifier, size : Integer);
+		assert fatal (T3_helper() = "T3_helper ");
+--!@#b1 breakpoint
+		new T1(inModel).transform();
+	}
+}
+
+transformation T1(in inModel : Ecore) 
+	access T3
+{
+	property prop : String = "prop";
+	
+	main() {
+		inModel.rootObjects()![EPackage].deepclone();
+		var v1 = new T3();
+		var v2 = prop;
+		var v3: Tuple(obj : EClassifier, size : Integer);
+		assert fatal (prop = "prop");
+--!@#b2 breakpoint
+		new T3().transform();
+	}
+}
+ 
+
+transformation T3() 
+{
+	property prop2 : String = "prop2";
+	property prop3 = 123;
+	main() {
+--!@#b3 breakpoint
+		var v1 = new T3();
+		var v4: Tuple(obj : EClassifier, size : Integer);	
+		assert fatal (prop2 = "prop2");
+		assert fatal (prop3.repr() = "123");
+	}
+	
+	helper T3_helper() : String {
+		return 'T3_helper '
+	}
+}
+

@@ -1,0 +1,19 @@
+import models.bug433937_referenced.ReferencedTransformation;
+import models.bug433937_referenced.root.other.NestedTransformation;
+
+transformation RootTransformation();
+
+main() {
+   	/*
+   	var retcode1 := new OtherTransformation().transform();
+	assert fatal (retcode1.succeeded());
+
+   	var retcode2 := new AnotherTransformation().transform();
+	assert fatal (retcode2.succeeded());*/
+	
+	var retcode3 := new ReferencedTransformation().transform();
+	assert fatal (retcode3.succeeded());
+	
+	var retcode4 := new NestedTransformation().transform();
+	assert fatal (retcode4.succeeded());
+}

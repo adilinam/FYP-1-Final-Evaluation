@@ -1,0 +1,14 @@
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+
+transformation imported(
+	in inModel : ECORE, out outModel : ECORE);
+
+
+main() {
+	inModel.rootObjects()[EPackage]->map p2p2();
+}     
+
+mapping EPackage::p2p2() : EPackage {
+	name := "t2_" + self.name;
+}

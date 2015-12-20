@@ -1,0 +1,15 @@
+transformation test();
+
+main() {
+	var a := /*<error>*/"\q"/*</error>*/;
+	var b := /*<error>*/'\q'/*</error>*/;
+	var c := /*<error>*/''''/*</error>*/;
+	var d := "''";
+	var e := "\'\'";
+	var f := '\'\'';
+	var g :='\\';
+	var h := /*<error>*/""""/*</error>*/;
+	var i := '\"\"';
+	var j := '""';
+	var k := '\123';
+}

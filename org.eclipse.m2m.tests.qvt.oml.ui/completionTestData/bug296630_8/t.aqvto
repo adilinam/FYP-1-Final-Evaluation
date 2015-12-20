@@ -1,0 +1,18 @@
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+transformation bug296630();
+
+main () {}
+
+mapping mm1() : EPackage {
+	init {
+		var s1 : String;
+	}
+
+	var s2 : String;
+		
+	object result: {
+		name := /*@*/'a';
+	};
+}
+

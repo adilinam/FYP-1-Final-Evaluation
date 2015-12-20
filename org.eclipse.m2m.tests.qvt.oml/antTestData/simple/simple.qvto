@@ -1,0 +1,9 @@
+modeltype ECORE uses "http://www.eclipse.org/emf/2002/Ecore";
+
+transformation simple(in ecore : ECORE, out outEcore : ECORE);
+
+mapping main(out eCls : EClass) {
+	init {
+		eCls := object EClass { name := 'new' };		
+	}
+}

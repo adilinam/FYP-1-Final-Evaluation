@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: QVTo Build
+Bundle-SymbolicName: org.eclipse.qvto.examples.build
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.mwe.utils;bundle-version="[1.2.1,2.0.0)",
+ org.eclipse.emf.mwe2.runtime;bundle-version="[2.4.0,3.0.0)",
+ org.eclipse.emf.mwe2.launch;bundle-version="[2.4.0,3.0.0)",
+ org.eclipse.ocl.examples.build;bundle-version="[2.0.0,3.0.0)",
+ org.eclipse.ocl.examples.codegen;bundle-version="[2.0.0,3.0.0)",
+ org.eclipse.ocl.examples.autogen;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.qvtd.cs2as.build;bundle-version="[0.12.0,1.0.0)",
+ org.eclipse.qvtd.cs2as.xtext.generator;bundle-version="[0.12.0,1.0.0)",
+ org.eclipse.qvto.examples.pivot.imperativeocl;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.qvto.examples.pivot.qvtoperational;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.qvto.examples.xtext.imperativeocl;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.qvto.examples.xtext.qvtoperational;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.xtext.generator;bundle-version="[2.4.0,3.0.0)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.eclipse.qvto.examples.build.utilities

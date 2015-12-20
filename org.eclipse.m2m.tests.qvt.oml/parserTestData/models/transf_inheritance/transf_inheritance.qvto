@@ -1,0 +1,15 @@
+import models.transf_inheritance.Lib;
+import models.transf_inheritance.A;
+
+modeltype ECORE uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation B(inout m:ECORE)
+	access /*transformation*/ models::transf_inheritance::A(inout m:ECORE) 
+	-- implicit 'Lib' library import with extension semantics 
+	;
+	
+main() {
+	var retCode := new A(m).transform(); assert fatal (retCode.succeeded());
+	m.objectsOfType(ECORE::EAttribute)->forEach(a) { a.name := addSuffix(a.name); }; 
+}
+

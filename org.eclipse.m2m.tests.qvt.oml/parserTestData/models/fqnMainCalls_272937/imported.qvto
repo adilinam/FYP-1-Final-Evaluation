@@ -1,0 +1,12 @@
+import models.fqnMainCalls_272937.imported2;
+
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+transformation imported(
+	in inModel : ECORE, out outModel : ECORE)
+	extends imported2;
+
+
+main() {
+	object EPackage { name := "imported_root";}
+}

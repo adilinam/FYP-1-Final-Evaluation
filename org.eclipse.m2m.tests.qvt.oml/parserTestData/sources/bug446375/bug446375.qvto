@@ -1,0 +1,13 @@
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+transformation bug446375();
+
+main() {}
+
+mapping EClass :: m() : EClass {};
+
+mapping EClass :: inParam(p : EPackage) : EClass
+	disjuncts /*<error>*/EClass::m/*</error>*/; 
+ 
+mapping EClass :: outParam(out p : EPackage) : EClass
+	disjuncts /*<error>*/EClass::m/*</error>*/;

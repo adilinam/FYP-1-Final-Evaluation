@@ -1,0 +1,3 @@
+Terminating execution...
+org.eclipse.m2m.internal.qvt.oml.evaluator.QvtAssertionFailed: Precondition failed in mapping 'test'
+	at bug301134::main(bug301134.qvto:17)

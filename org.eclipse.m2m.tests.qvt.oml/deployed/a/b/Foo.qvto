@@ -1,0 +1,22 @@
+import a.b.Lib2;
+import org.eclipse.Lib1;
+import org.bar.Foo;
+
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation Foo(in input : ECORE, out output : ECORE) access Lib1, Lib2, FooJavaLib;
+
+main() {
+	-- blackbox lib import
+	foo();
+	
+	-- Lib1 import
+	testHelper1();
+	
+	-- Lib2 import
+	testHelper2();
+
+	object EPackage {
+		name := "foo";
+	}
+}

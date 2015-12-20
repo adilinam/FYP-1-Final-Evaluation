@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Deployed QVT transformation source container</title>
+<style type="text/css">@import url("../../book.css");</style>
+<style type="text/css">@import url("../../schema.css");</style>
+</HEAD>
+<BODY>
+<H1 style="text-align:center">Deployed QVT transformation source container</H1>
+<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Identifier: </h6>org.eclipse.m2m.qvt.oml.runtime.qvtTransformationContainer<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Since: </h6>3.4
+<p></p>
+
+<h6 class="CaptionFigColumn SchemaHeader">Description: </h6>This extension point provides a mechanism to register the source container for deployed QVTo plugins.<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Configuration Markup:</h6>
+<p></p>
+<p class="code SchemaDtd">&lt;!ELEMENT <a name="e.extension">extension</a> (<a href="#e.sourceContainer">sourceContainer</a>)&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST extension</p>
+<p class="code SchemaDtdAttlist">point&nbsp;CDATA #REQUIRED</p>
+<p class="code SchemaDtdAttlist">id&nbsp;&nbsp;&nbsp;&nbsp;CDATA #IMPLIED</p>
+<p class="code SchemaDtdAttlist">name&nbsp;&nbsp;CDATA #IMPLIED&gt;</p>
+<p></p>
+<ul class="ConfigMarkupAttlistDesc">
+<li><b>point</b> - A fully qualified identifier of the target extension point.</li>
+<li><b>id</b> - An optional identifier of the extension instance.</li>
+<li><b>name</b> - An optional name of the extension instance.</li>
+</ul>
+<br><p class="code SchemaDtd">&lt;!ELEMENT <a name="e.sourceContainer">sourceContainer</a> EMPTY&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST sourceContainer</p>
+<p class="code SchemaDtdAttlist">path&nbsp;CDATA #REQUIRED&gt;</p>
+<p></p>
+<p class="ConfigMarkupElementDesc">
+The source container of the QVTo plugin</p>
+<br>
+<ul class="ConfigMarkupAttlistDesc">
+<li><b>path</b> - The path to the source container directory, relative to the project root</li>
+</ul>
+<br><h6 class="CaptionFigColumn SchemaHeader">Examples: </h6><p>
+The following example registers the "transforms" directory as source container for a QVTo plugin.
+</p>
+<pre class="Example"><span class="code SchemaTag">
+&lt;extension point=</span><span class="code SchemaCstring">&quot;org.eclipse.m2m.qvt.oml.runtime.qvtTransformationContainer&quot;</span><span class="code SchemaTag">&gt;
+	&lt;sourceContainer path=</span><span class="code SchemaCstring">&quot;transforms&quot;</span><span class="code SchemaTag">/&gt;
+&lt;/extension&gt;
+</span></pre>
+<p></p>
+
+<h6 class="CaptionFigColumn SchemaHeader">Supplied Implementation: </h6>A substitution for the "QVT source container" of QVTo workspace projects, intended for deployed transformations
+<p></p>
+
+<br>
+<p class="note SchemaCopyright">
+Copyright (c) 2007, 2015 Borland Software Corporation and others
+
+</p>
+</BODY>
+</HTML>

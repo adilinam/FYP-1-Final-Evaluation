@@ -1,0 +1,18 @@
+modeltype Family uses family('http://family/1.0');
+
+transformation FamilyXForm(in f : Family, out Family);
+
+main() {	
+	f.rootObjects()->forEach(ro)
+	{
+		if(ro.oclIsKindOf(Family::Family) or 
+		   ro.oclIsKindOf(family::Family)) then
+		{
+			object Family::Family {};
+			log("It is a Family");
+		} else
+		{
+			log("Not a family");
+		} endif;
+	}
+}

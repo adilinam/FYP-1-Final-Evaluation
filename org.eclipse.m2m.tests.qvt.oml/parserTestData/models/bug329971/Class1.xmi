@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test1:Class1 xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:test1="http://test1/1.0" xsi:schemaLocation="http://test1/1.0 test1.ecore" attr1="TestValue"/>

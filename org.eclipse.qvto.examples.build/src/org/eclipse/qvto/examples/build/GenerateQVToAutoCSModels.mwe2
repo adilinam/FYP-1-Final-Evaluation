@@ -1,0 +1,49 @@
+/**
+ * <copyright>
+ *
+ * Copyright (c) 2015 Willink Transformations, University of York and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *		Adolfo Sanchez-Barbudo Herrera (University of York) - initial API and implementation
+ * 		
+ * </copyright>
+ *
+ *
+ */
+module GenerateAutoCSModels
+
+import org.eclipse.ocl.examples.build.*
+import org.eclipse.ocl.examples.build.utilities.*
+import org.eclipse.ocl.examples.build.xtend.*
+import org.eclipse.emf.mwe.utils.*
+import org.eclipse.emf.mwe.utils.*
+import org.eclipse.emf.ecore.resource.impl.*
+
+
+var projectName = "org.eclipse.qvto.examples.xtext.qvtoperational"
+
+/**
+ *	Generate the Concrete Syntax Models used by the Xtext editors.
+ */
+Workflow {
+	bean = ResourceSetImpl : resourceSet {}
+    bean = utilities.ProjectMapSetup { resourceSet = resourceSet  }
+    
+    //  CS2AS components
+   	component = @GenerateCGedQVTiTransformation { 
+		resourceSet = resourceSet
+		// oclFileURI = "${runtimeProject}/model/QVTOperationalCS2AS.ocl" // FIXME using relative URI, OCL Imports are not properly solved
+		oclFileURI = "platform:/resource/${projectName}/model/QVTOperationalCS2AS.ocl"
+		// FIXME the following only work if the output project are in the same FS folder. Better use a projectName and improve generator 
+		javaFolder = "../${projectName}/src-gen"
+		javaPackage = "${projectName}.cs2as"
+		environmentClassName = "${projectName}.cs2as.SingleResultLookupEnvironment"
+		lookupVisitorClassName = "org.eclipse.qvto.examples.pivot.qvtoperational.lookup.QVTOperationalLookupVisitor"
+		namedElementItfName = "org.eclipse.ocl.pivot.NamedElement"
+		tracePropertyName = "pivot"
+	}
+}

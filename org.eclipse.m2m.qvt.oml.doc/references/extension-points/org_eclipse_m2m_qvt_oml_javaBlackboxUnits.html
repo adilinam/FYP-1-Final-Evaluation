@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Java black-box units</title>
+<style type="text/css">@import url("../../book.css");</style>
+<style type="text/css">@import url("../../schema.css");</style>
+</HEAD>
+<BODY>
+<H1 style="text-align:center">Java black-box units</H1>
+<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Identifier: </h6>org.eclipse.m2m.qvt.oml.javaBlackboxUnits<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Since: </h6>2.0
+<p></p>
+
+<h6 class="CaptionFigColumn SchemaHeader">Description: </h6>This extension point provides a mechanism for contributing QVT black-box units. Conceptually, it corresponds to QVT compilation units (OMG spec 7.13.1), though it rather represents sort of deployment unit as there is no concrete syntax source file to compile. Instead, the source is represented by a Java class, which realizes the top level unit elements using Java language constructs mapped to corresponding QVT counterpart elements.</br></br>
+See the details on the Java implementation class format at <a href="../blackboxing.html">Java black-box to QVT mappings</a>.<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Configuration Markup:</h6>
+<p></p>
+<p class="code SchemaDtd">&lt;!ELEMENT <a name="e.extension">extension</a> ((<a href="#e.unit">unit</a> | <a href="#e.library">library</a>)+)&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST extension</p>
+<p class="code SchemaDtdAttlist">point&nbsp;CDATA #REQUIRED</p><p class="code SchemaDtdAttlist">id&nbsp;&nbsp;&nbsp;&nbsp;CDATA #IMPLIED</p><p class="code SchemaDtdAttlist">name&nbsp;&nbsp;CDATA #IMPLIED</p>&gt;</p>
+<p></p>
+<p class="ConfigMarkupElementDesc">
+Extension point to register QVT black-box unit of Java implementations</p>
+<br>
+<ul class="ConfigMarkupAttlistDesc">
+</ul>
+<br><p class="code SchemaDtd">&lt;!ELEMENT <a name="e.unit">unit</a> (<a href="#e.library">library</a>)&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST unit</p>
+<p class="code SchemaDtdAttlist">name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CDATA #REQUIRED</p><p class="code SchemaDtdAttlist">namespace&nbsp;&nbsp;&nbsp;CDATA #IMPLIED</p><p class="code SchemaDtdAttlist">description&nbsp;CDATA #IMPLIED</p>&gt;</p>
+<p></p>
+<p class="ConfigMarkupElementDesc">
+A deployment unit that can define mutliple libraries or transformations, a conceptual analogy to <code>compilation unit</code> defined in QVT specification.</p>
+<br>
+<ul class="ConfigMarkupAttlistDesc">
+<li><b>name</b> - Simple name of the black-box unit. Along with the <b>namespace</b>, it composes the qualified name of the unit referenceable from import statements.</li>
+<li><b>namespace</b> - Namespace in which this blackbox unit is defined. If not specified, the identifier of the owning plugin will be used.
+Along with the <b>name</b>, it composes the qualified name of the unit referenceable from import statements.</li>
+<li><b>description</b> - A textual description of this unit element, typically used by a tooling support</li>
+</ul>
+<br><p class="code SchemaDtd">&lt;!ELEMENT <a name="e.library">library</a> (<a href="#e.metamodel">metamodel</a>*)&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST library</p>
+<p class="code SchemaDtdAttlist">name&nbsp;&nbsp;CDATA #IMPLIED</p><p class="code SchemaDtdAttlist">class&nbsp;CDATA #REQUIRED</p>&gt;</p>
+<p></p>
+<p class="ConfigMarkupElementDesc">
+A library module which defines its operations in the associated implementation class and is defined in a deployment unit.<br/>
+In order to facilitate the common case of a single library per unit, a simplified definition is supported to help in reducing verbosity. In this case no explicit owning unit needs to be defined and the library element can be defined as standalone.
+Corresponding implicit unit is synthesized based on the implementation class and inherits its qualified name.</p>
+<br>
+<ul class="ConfigMarkupAttlistDesc">
+<li><b>name</b> - Name of the library representing the module name resolveable in QVT. If not specified, the simple name of the class will be used.</li>
+<li><b>class</b> - The implementation class of the library (see <a href="../blackboxing.html">Java black-box to QVT mappings</a>)</li>
+</ul>
+<br><p class="code SchemaDtd">&lt;!ELEMENT <a name="e.metamodel">metamodel</a> EMPTY&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST metamodel</p>
+<p class="code SchemaDtdAttlist">nsURI&nbsp;CDATA #REQUIRED</p>&gt;</p>
+<p></p>
+<p class="ConfigMarkupElementDesc">
+Specifies a metamodel used by a declared library, being a part of that library signature.</p>
+<br>
+<ul class="ConfigMarkupAttlistDesc">
+<li><b>nsURI</b> - The namespace URI of the metamodel package.</li>
+</ul>
+<br><h6 class="CaptionFigColumn SchemaHeader">Examples: </h6><p>
+The following examples registers the <code>ExampleJavaLib</code> black-box unit, which is resolvable as 
+<code>m2m.qvt.oml.ExampleJavaLib</code> from importing QVT modules.</br>
+It defines the QVT library resolveable by name <code>UtilLib</code>, implemented in the
+<code>org.eclipse.m2m.qvt.oml.examples.blackbox.UtilitiesLibrary</code> class.</br>
+The library operation reference types defined in the <code>Ecore</code> metamodel.
+</p>
+<pre class="Example"><span class="code SchemaTag">
+&lt;extension point=</span><span class="code SchemaCstring">&quot;org.eclipse.m2m.qvt.oml.javaBlackboxUnits&quot;</span><span class="code SchemaTag">&gt;
+  &lt;unit name=</span><span class="code SchemaCstring">&quot;ExampleJavaLib&quot;</span><span class="code SchemaTag"> namespace=</span><span class="code SchemaCstring">&quot;m2m.qvt.oml&quot;</span><span class="code SchemaTag">&gt;
+    &lt;library name=</span><span class="code SchemaCstring">&quot;UtilLib&quot;</span><span class="code SchemaTag"> 
+             class=</span><span class="code SchemaCstring">&quot;org.eclipse.m2m.qvt.oml.examples.blackbox.UtilitiesLibrary&quot;</span><span class="code SchemaTag">&gt;
+      &lt;metamodel nsURI=</span><span class="code SchemaCstring">&quot;http://www.eclipse.org/emf/2002/Ecore&quot;</span><span class="code SchemaTag">/&gt;
+    &lt;/library&gt;
+  &lt;/unit&gt;
+&lt;/extension&gt;
+</span></pre>
+<p></p>
+
+<br>
+<p class="note SchemaCopyright">
+Copyright (c) 2008 Borland Software Corporation
+ 
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+<a href="http://www.eclipse.org/legal/epl-v10.html">http://www.eclipse.org/legal/epl-v10.html</a>
+
+</p>
+</BODY>
+</HTML>

@@ -1,0 +1,1103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trace:Trace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:trace="http:///www.eclipse.org/m2m/qvt/operational/trace.ecore">
+  <traceRecords>
+    <mappingOperation name="toPackage" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toPackage"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EPackage">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#/"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Package">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVIBdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toNamedElement" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toNamedElement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ENamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#/"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="NamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVIBdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toClass" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toClass"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EClass">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Person"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Class">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVIRdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toNamedElement" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toNamedElement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ENamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Person"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="NamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVIRdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toInterface" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toInterface"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EClass">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//IFamilyMember"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Interface">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVQBdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toNamedElement" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toNamedElement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ENamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//IFamilyMember"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="NamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVQBdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toProperty" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toProperty"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EStructuralFeature">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//IFamilyMember/fullName"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Property">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVQRdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toNamedElement" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toNamedElement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ENamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//IFamilyMember/fullName"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="NamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVQRdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toMultiplicity" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toMultiplicity"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ETypedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//IFamilyMember/fullName"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="MultiplicityElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVQRdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toDataType" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toDataType"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EDataType">
+        <value>
+          <modelElement href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="DataType">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVThdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toNamedElement" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toNamedElement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ENamedElement">
+        <value>
+          <modelElement href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="NamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVThdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toProperty" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toProperty"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EStructuralFeature">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Person/firstName"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Property">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVIhdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toNamedElement" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toNamedElement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ENamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Person/firstName"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="NamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVIhdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toMultiplicity" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toMultiplicity"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ETypedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Person/firstName"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="MultiplicityElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVIhdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toProperty" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toProperty"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EStructuralFeature">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Person/lastName"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Property">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVJRdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toNamedElement" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toNamedElement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ENamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Person/lastName"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="NamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVJRdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toMultiplicity" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toMultiplicity"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ETypedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Person/lastName"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="MultiplicityElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVJRdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toProperty" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toProperty"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EStructuralFeature">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Person/gender"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Property">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVKBdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toNamedElement" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toNamedElement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ENamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Person/gender"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="NamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVKBdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toMultiplicity" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toMultiplicity"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ETypedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Person/gender"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="MultiplicityElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVKBdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toEnum" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toEnum"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EEnum">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//types/Gender"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Enumeration">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVSBdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toNamedElement" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toNamedElement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ENamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//types/Gender"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="NamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVSBdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toProperty" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toProperty"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EStructuralFeature">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Person/id"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Property">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVKxdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toNamedElement" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toNamedElement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ENamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Person/id"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="NamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVKxdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toMultiplicity" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toMultiplicity"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ETypedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Person/id"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="MultiplicityElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVKxdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toDataType" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toDataType"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EDataType">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//types/ID"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="DataType">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVSxdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toNamedElement" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toNamedElement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ENamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//types/ID"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="NamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVSxdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toClass" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toClass"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EClass">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Parent"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Class">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVLxdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toNamedElement" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toNamedElement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ENamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Parent"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="NamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVLxdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toProperty" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toProperty.1"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EReference">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Parent/children"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Property">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVMRdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toProperty" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toProperty"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EStructuralFeature">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Parent/children"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Property">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVMRdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toNamedElement" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toNamedElement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ENamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Parent/children"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="NamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVMRdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toMultiplicity" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toMultiplicity"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ETypedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Parent/children"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="MultiplicityElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVMRdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toClass" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toClass"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EClass">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Child"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Class">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVNBdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toNamedElement" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toNamedElement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ENamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Child"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="NamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVNBdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toProperty" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toProperty.1"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EReference">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Child/parents"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Property">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVNhdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toProperty" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toProperty"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EStructuralFeature">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Child/parents"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Property">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVNhdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toNamedElement" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toNamedElement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ENamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Child/parents"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="NamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVNhdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toMultiplicity" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toMultiplicity"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ETypedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Child/parents"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="MultiplicityElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVNhdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toAssociation" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toAssociation"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EReference">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Child/parents"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Association">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVRhdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toAssociation" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toAssociation"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EReference">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Parent/children"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Association">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVRhdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toClass" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toClass"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EClass">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Family"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Class">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVORdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toNamedElement" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toNamedElement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ENamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Family"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="NamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVORdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toProperty" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toProperty.1"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EReference">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Family/members"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Property">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVOhdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toProperty" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toProperty"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EStructuralFeature">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Family/members"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Property">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVOhdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toNamedElement" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toNamedElement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ENamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Family/members"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="NamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVOhdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toMultiplicity" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toMultiplicity"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ETypedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Family/members"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="MultiplicityElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVOhdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toAssociation" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toAssociation"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EReference">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Family/members"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Association">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVRBdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toProperty" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toProperty"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EStructuralFeature">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Family/size"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Property">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVPRdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toNamedElement" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toNamedElement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ENamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Family/size"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="NamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVPRdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toMultiplicity" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toMultiplicity"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ETypedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//Family/size"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="MultiplicityElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVPRdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toDataType" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toDataType"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EDataType">
+        <value>
+          <modelElement href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="DataType">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVTRdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toNamedElement" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toNamedElement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ENamedElement">
+        <value>
+          <modelElement href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="NamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVTRdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toPackage" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toPackage"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EPackage">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//types"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Package">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVRxdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="toNamedElement" package="Ecore2UML" module="Ecore2UML">
+      <runtimeMappingOperation href="qvto:/module.env#/0/toNamedElement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="ENamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/in/family.ecore#//types"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="NamedElement">
+        <value>
+          <modelElement href="platform:/resource/qvto.ecore2uml/out/family.uml#_HptVRxdcEd697_yMxL0OqA"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+</trace:Trace>

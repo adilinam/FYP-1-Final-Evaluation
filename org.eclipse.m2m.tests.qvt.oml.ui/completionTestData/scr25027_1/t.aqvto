@@ -1,0 +1,12 @@
+transformation t;
+
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+mapping main(in model: ecore::EPackage): ecore::EPackage {
+	init {
+	 	var c: Collection(String) := null;
+	 	var foo := c->/*@*/->as();
+      	var bar := c->;
+	}
+}
+

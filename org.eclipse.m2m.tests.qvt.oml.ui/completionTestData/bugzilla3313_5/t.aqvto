@@ -1,0 +1,29 @@
+transformation Ecore_To_Uml(in dummy : ECORE, out ECORE);
+
+import Strings;
+
+modeltype ECORE uses "http://www.eclipse.org/emf/2002/Ecore";
+	
+mapping main(in model : EPackage) : EPackage {   
+    init {
+      var var1 : EObject := null;
+    }
+    population {  
+    object result : {
+    	eSubpackages += object EPackage {
+    		name := 'c_pack';
+    		nsURI := c;
+    	};
+	    eSubpackages += object EPackage {
+    		name := 'cb_pack';
+    		nsURI := cb->at(1) + cb->at(2) + cb->at(3);
+    		nsPrefix := cb->size().toString();
+    	};
+	eSubpackages += object var1 : EOperation {
+                /*@*/
+    		name := 'dc_pack';
+    		eClassifiers += d;
+    	};
+    }
+    }
+}

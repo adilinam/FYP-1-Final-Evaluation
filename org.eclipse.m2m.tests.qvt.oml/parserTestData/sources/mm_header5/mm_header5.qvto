@@ -1,0 +1,10 @@
+transformation mm_header5(in ecore : ECORE, out uml : SIMPLEUML);
+
+modeltype SIMPLEUML uses 'http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml';
+modeltype ECORE uses "http://www.eclipse.org/emf/2002/Ecore";
+
+mapping main(inout p1 : EPackage, inout c1 : Class) {
+	init {
+	}
+}
+

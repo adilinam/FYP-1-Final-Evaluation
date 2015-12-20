@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.m2m.qvt.oml.samples.category"
+            name="%wizard.category.name"
+            parentCategory="org.eclipse.ui.Examples"
+      />
+      <wizard
+            category="org.eclipse.ui.Examples/org.eclipse.m2m.qvt.oml.samples.category"
+            class="org.eclipse.m2m.internal.qvt.oml.samples.wizards.Uml2RdbSampleProjectWizard"
+            icon="icons/pr-MDA.gif"
+            id="org.eclipse.m2m.qvt.oml.samples.wizards.Uml2RdbSampleProjectWizard"
+            name="%simpleuml2rdb"
+            project="true"/>
+   </extension>
+   
+   
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml"
+       class = "simpleuml.SimpleumlPackage" />
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb" 
+       class = "rdb.RdbPackage" />
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb/constraints" 
+       class = "rdb.constraints.ConstraintsPackage" />
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb/datatypes" 
+       class = "rdb.datatypes.DatatypesPackage" />
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb/view" 
+       class = "rdb.view.ViewPackage" />
+  </extension>
+  
+
+
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml" 
+       class = "simpleuml.provider.SimpleumlItemProviderAdapterFactory" 
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+
+  <extension
+    point = "org.eclipse.ui.newWizards">
+    <category
+      id = "org.eclipse.emf.ecore.Wizard.category.ID"
+      name="%_UI_Wizard_category">
+    </category>
+    <wizard
+      id = "simpleuml.presentation.SimpleumlModelWizardID"
+      name = "%_UI_SimpleumlModelWizard_label"
+      class = "simpleuml.presentation.SimpleumlModelWizard"
+      category = "org.eclipse.emf.ecore.Wizard.category.ID"
+      icon = "icons/full/obj16/SimpleumlModelFile.gif">
+      <description>%_UI_SimpleumlModelWizard_description</description>
+      <selection class = "org.eclipse.core.resources.IResource" />
+    </wizard>
+  </extension>
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "simpleuml.presentation.SimpleumlEditorID"
+        name = "%_UI_SimpleumlEditor_label"
+        icon = "icons/full/obj16/SimpleumlModelFile.gif"
+        extensions = "simpleuml"
+        class = "simpleuml.presentation.SimpleumlEditor" 
+        contributorClass="simpleuml.presentation.SimpleumlActionBarContributor" >
+    </editor>
+  </extension>    
+  
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb" 
+       class = "rdb.provider.RdbItemProviderAdapterFactory"
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+  
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb/constraints" 
+       class = "rdb.constraints.provider.ConstraintsItemProviderAdapterFactory"
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+  
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb/datatypes" 
+       class = "rdb.datatypes.provider.DatatypesItemProviderAdapterFactory"
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+  
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb/view" 
+       class = "rdb.view.provider.ViewItemProviderAdapterFactory"
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+  
+
+  <extension
+    point = "org.eclipse.ui.newWizards">
+    <category
+      id = "org.eclipse.emf.ecore.Wizard.category.ID"
+      name="%_UI_Wizard_category">
+    </category>
+    <wizard
+      id = "rdb.presentation.RdbModelWizardID"
+      name = "%_UI_RdbModelWizard_label"
+      class = "rdb.presentation.RdbModelWizard"
+      category = "org.eclipse.emf.ecore.Wizard.category.ID"
+      icon = "icons/full/obj16/RdbModelFile.gif">
+      <description>%_UI_RdbModelWizard_description</description>
+      <selection class = "org.eclipse.core.resources.IResource" />
+    </wizard>
+  </extension>
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "rdb.presentation.RdbEditorID"
+        name = "%_UI_RdbEditor_label"
+        icon = "icons/full/obj16/RdbModelFile.gif"
+        extensions = "rdb"
+        class = "rdb.presentation.RdbEditor" 
+        contributorClass="rdb.presentation.RdbActionBarContributor" >
+    </editor>
+  </extension>    
+
+  <extension
+    point = "org.eclipse.ui.newWizards">
+    <category
+      id = "org.eclipse.emf.ecore.Wizard.category.ID"
+      name="%_UI_Wizard_category">
+    </category>
+    <wizard
+      id = "rdb.constraints.presentation.ConstraintsModelWizardID"
+      name = "%_UI_ConstraintsModelWizard_label"
+      class = "rdb.constraints.presentation.ConstraintsModelWizard"
+      category = "org.eclipse.emf.ecore.Wizard.category.ID"
+      icon = "icons/full/obj16/ConstraintsModelFile.gif">
+      <description>%_UI_ConstraintsModelWizard_description</description>
+      <selection class = "org.eclipse.core.resources.IResource" />
+    </wizard>
+  </extension>
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "rdb.constraints.presentation.ConstraintsEditorID"
+        name = "%_UI_ConstraintsEditor_label"
+        icon = "icons/full/obj16/ConstraintsModelFile.gif"
+        extensions = "constraints"
+        class = "rdb.constraints.presentation.ConstraintsEditor" 
+        contributorClass="rdb.constraints.presentation.ConstraintsActionBarContributor" >
+    </editor>
+  </extension>    
+
+  <extension
+    point = "org.eclipse.ui.newWizards">
+    <category
+      id = "org.eclipse.emf.ecore.Wizard.category.ID"
+      name="%_UI_Wizard_category">
+    </category>
+    <wizard
+      id = "rdb.datatypes.presentation.DatatypesModelWizardID"
+      name = "%_UI_DatatypesModelWizard_label"
+      class = "rdb.datatypes.presentation.DatatypesModelWizard"
+      category = "org.eclipse.emf.ecore.Wizard.category.ID"
+      icon = "icons/full/obj16/DatatypesModelFile.gif">
+      <description>%_UI_DatatypesModelWizard_description</description>
+      <selection class = "org.eclipse.core.resources.IResource" />
+    </wizard>
+  </extension>
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "rdb.datatypes.presentation.DatatypesEditorID"
+        name = "%_UI_DatatypesEditor_label"
+        icon = "icons/full/obj16/DatatypesModelFile.gif"
+        extensions = "datatypes"
+        class = "rdb.datatypes.presentation.DatatypesEditor" 
+        contributorClass="rdb.datatypes.presentation.DatatypesActionBarContributor" >
+    </editor>
+  </extension>    
+
+  <extension
+    point = "org.eclipse.ui.newWizards">
+    <category
+      id = "org.eclipse.emf.ecore.Wizard.category.ID"
+      name="%_UI_Wizard_category">
+    </category>
+    <wizard
+      id = "rdb.view.presentation.ViewModelWizardID"
+      name = "%_UI_ViewModelWizard_label"
+      class = "rdb.view.presentation.ViewModelWizard"
+      category = "org.eclipse.emf.ecore.Wizard.category.ID"
+      icon = "icons/full/obj16/ViewModelFile.gif">
+      <description>%_UI_ViewModelWizard_description</description>
+      <selection class = "org.eclipse.core.resources.IResource" />
+    </wizard>
+  </extension>
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "rdb.view.presentation.ViewEditorID"
+        name = "%_UI_ViewEditor_label"
+        icon = "icons/full/obj16/ViewModelFile.gif"
+        extensions = "view"
+        class = "rdb.view.presentation.ViewEditor" 
+        contributorClass="rdb.view.presentation.ViewActionBarContributor" >
+    </editor>
+  </extension>    
+
+   <extension
+         id="org.eclipse.m2m.qvt.oml.examples.Blackbox"
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.ui.Examples/org.eclipse.m2m.qvt.oml.samples.category"
+            class="org.eclipse.emf.common.ui.wizard.ExampleInstallerWizard"
+            icon="icons/pr-MDA.gif"
+            id="org.eclipse.m2m.qvt.oml.examples.Blackbox"
+            name="%Blackbox_Examples_name"
+            project="true">
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.emf.common.ui.examples">
+      <example
+            pageImage="icons/pr-MDA_wizard.gif"
+            wizardID="org.eclipse.m2m.qvt.oml.examples.Blackbox">
+         <projectDescriptor
+               contentURI="projects/org.eclipse.m2m.qvt.oml.examples.blackbox/"
+               description="%Blackbox_Examples_description"
+               name="org.eclipse.m2m.qvt.oml.examples.blackbox">
+         </projectDescriptor>
+         <fileToOpen
+               location="org.eclipse.m2m.qvt.oml.examples.blackbox/src/org/eclipse/m2m/qvt/oml/examples/blackbox/UtilitiesLibrary.java">
+         </fileToOpen>
+      </example>
+   </extension>
+  
+</plugin>

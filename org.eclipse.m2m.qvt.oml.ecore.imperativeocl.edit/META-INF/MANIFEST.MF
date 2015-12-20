@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.m2m.qvt.oml.ecore.imperativeocl.edit;singleton:=true
+Bundle-Version: 3.0.300.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: org.eclipse.m2m.qvt.oml.ecore.ImperativeOCL.provider.ImperativeOCLEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.eclipse.m2m.qvt.oml.ecore.ImperativeOCL.provider
+Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.5.0,4.0.0)",
+ org.eclipse.m2m.qvt.oml.ecore.imperativeocl;bundle-version="[3.0.0,4.0.0)";visibility:=reexport,
+ org.eclipse.ocl.ecore.edit;bundle-version="[3.0.0,4.0.0)";visibility:=reexport
+Bundle-ActivationPolicy: lazy

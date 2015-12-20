@@ -1,0 +1,42 @@
+import RootTransfForExtends;
+	
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+	
+transformation TransfForExtends(in eModel : ECORE, out outModel : ECORE) 
+	extends transformation RootTransfForExtends;
+ 
+
+helper EClass::decorateName() : String {
+	return "TransfForExtends-" + self.name;
+}
+
+helper non_ContextualDecorate(c : EClass) : String {
+	return "TransfForExtends->" + this.RootTransfForExtends::non_ContextualDecorate(c);
+}
+
+mapping EClass::customCopy() : EClass {
+	name := "TransfForExtends-EClass::customCopy()" + self.name;
+}
+
+mapping customCopy(in eClass : EClass) : EClass {
+	name := "TransfForExtends-customCopy(in eClass : EClass)" + eClass.name;
+}
+
+/*
+ Intentionally not overridden here but only by the bottom most sub-module
+*/
+//helper rootModuleQuery() : String {
+//	return "RootTransfForExtends";
+//}
+
+query callRootModuleQuery() : String {
+	return rootModuleQuery();
+}
+
+query reusableQuery() : String {
+	return 	"TransfForExtends::reusableQuery";
+}
+
+helper callOverridenPackageResult() : EPackage {
+	return map createOverridenCallsPackage("result-in-TransfForExtends");
+}

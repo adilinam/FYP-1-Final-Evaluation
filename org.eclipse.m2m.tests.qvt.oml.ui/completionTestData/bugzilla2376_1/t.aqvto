@@ -1,0 +1,13 @@
+modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation NewTransformation(in model : uml20, out ecore);
+
+main(in inModel : uml20::Model) {
+var cls := inModel.map toEObject();
+var orig : uml20::Model := cls.invresolveone().oclAsType(uml20::Model);
+orig.nam := 'a';
+}
+
+mapping ecore::EPackage::toEObject() : EClass {
+/*@*/name := self.name;
+}

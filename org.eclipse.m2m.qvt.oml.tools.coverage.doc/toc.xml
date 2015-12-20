@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="Code Coverage Tool" link_to="../org.eclipse.m2m.qvt.oml.tools.doc/toc.xml#org.eclipse.m2m.qvt.oml.tools.doc.anchor">
+	<topic label="Code Coverage Tool">
+    <topic href="html/launch-delegate.html" label="Operational QVT Coverage Launch Delegate">
+    </topic>
+    <topic href="html/test-coverage-view.html" label="Operational QVT Code Coverage View">
+    </topic>
+    <topic href="html/editor-annotation.html" label="Operational QVT Editor Annotation">
+    </topic>
+    <topic href="html/junit-integration.html" label="JUnit Integration Tutorial">
+    </topic>
+    <topic href="html/references.html" label="References">
+    </topic> 
+	</topic>
+</toc>

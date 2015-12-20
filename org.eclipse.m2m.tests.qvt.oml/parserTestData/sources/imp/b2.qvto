@@ -1,0 +1,7 @@
+library b2;
+
+import b1;
+
+query foo_b2(): String {
+	return 'b2->' + foo_b1();
+}

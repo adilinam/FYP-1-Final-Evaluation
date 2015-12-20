@@ -1,0 +1,46 @@
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype QVT uses qvtoperational('http://www.eclipse.org/QVT/1.0.0/Operational');
+		
+
+transformation stdlibElementAsOut(in m : ECORE, out x : ECORE, out y : ECORE);
+
+property e : Element = null;
+ 
+main() {
+	var s:String := m.queryOnECORE();
+	var model : Stdlib::Model := x;
+	
+	model.queryOnModel();
+	x.queryOnModel();
+}
+
+query ECORE::queryOnECORE() : String {
+	return 'strVal';
+}
+
+query Model::queryOnModel() : String {
+	return 'strVal';
+}	
+
+
+mapping ECORE::mapToModelECORE() : /*<error>*/ECORE/*</error>*/ {
+	init {
+		var fooECORE : ECORE := m; 		
+		
+		object /*<error>*/ECORE/*</error>*/ { };
+		 
+		object fooECORE : /*<error>*/ECORE/*</error>*/ { };			
+		
+		object /*<error>*/fooECORE/*</error>*/ : {}
+	}	
+}
+
+mapping mapToModelBase() : /*<error>*/Model/*</error>*/ {
+	init { 
+		var fooModel : Model := m; 		
+		
+		object fooModel : /*<error>*/Model/*</error>*/ { };
+		 
+		object /*<error>*/fooModel/*</error>*/ : { };			
+	}
+}

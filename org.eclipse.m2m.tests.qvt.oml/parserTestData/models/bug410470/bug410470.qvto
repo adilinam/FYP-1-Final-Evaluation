@@ -1,0 +1,5 @@
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+abstract transformation bug410470;
+
+main() {}

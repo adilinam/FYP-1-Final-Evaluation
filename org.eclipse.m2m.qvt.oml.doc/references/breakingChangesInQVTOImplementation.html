@@ -1,0 +1,234 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link rel="Stylesheet" type="text/css" href="doc.css" />
+	<title>Breaking Changes In QVTO Implementation</title>
+</head>
+<h1>Breaking Changes In QVTO Implementation</h1>
+<p>
+Due to synchronization with the OMG standard specification
+(<a href="http://www.omg.org/docs/ptc/07-07-07.pdf">(MOF) 2.0 Query/View/Transformation</a>) in QVTO 2.0 
+a range of breaking changes in the language implementation has been introduced. This section is to
+describe these changes.
+</p>
+<p>
+<h4>Breaking changes list</h4>
+<ul>
+  <li><a href="#bug252358">Expressions in mapping population section</a></li>
+  <li><a href="#bug253051">Expressions in ObjectExp body</a></li>
+  <li><a href="#bug254482">ResolveExp/ResolveInExp implicit source resolution disablement</a></li>
+  <li><a href="#bug251064">Keyword reservation</a></li>
+</ul> 
+</p>
+<p>
+<h2><a name="bug252358">Expressions in mapping population section</a></h2>
+Usage of expressions within the population section of mappings was highly limited in QVTO 1.x.
+This was significantly improved in QVTO 2.0.
+According to the specification (sections 8.4.7.1, 8.2.1.19, 8.2.1.18 and 8.1.5), it is possible
+to have arbitrary expressions (assignments, variable declarations, if-expressions, etc.) in 
+a mapping population section. Furthermore, within an implicit mapping population section 
+(i.e. when the <i>population</i> keyword is omitted) properties of the result
+object can be accessed directly.
+<pre class="Code">
+modeltype Ecore uses "http://www.eclipse.org/emf/2002/Ecore";
+
+transformation test(in dummy : Ecore, out model : Ecore);
+
+mapping EPackage::toEClass() : EClass {
+	var x := 'ifExp'; -- local variable 'x'
+	if x = 'ifExp' then {
+		name := x; -- assignment to 'name' property of the result object of type EClass 
+		           -- same as: result.name := x;
+		name := name + name; -- 'name' property can be directly accessed in any parts of the expression
+		                     -- same as: result.name := result.name + result.name;
+	} else {
+		name := 'wrong'; -- same as: result.name := 'wrong';
+	} endif;
+}
+</pre>
+In case of a mapping with an inout context and without result, this is applicable
+to the properties of the context which is illustrated in the examples in the specification.
+Thus the mapping below is valid:
+<pre class="Code">
+mapping inout EPackage::selfModification() {
+	name := 'initialValue'; -- same as: self.name := 'initialValue'; 
+}
+</pre>
+As regards the previous implementation, the implicit population section in mappings could only
+consist of assignments to properties of the result object (or the context in case of a mapping with
+an inout context and without result). Moreover the left part of such assignments must have been
+a property name (direct assignment without source). The direct access to properties in the right part
+was unavailable. Thus the mapping below caused a compilation error:
+<pre class="Code">
+mapping EPackage::toEClass() : EClass {
+	name := name; -- in QVTO 1.x this line produced a compilation error
+	              -- since properties in the right part could not be accessed directly
+}
+</pre>
+An important difference between the previous and the new versions is not only the ability to
+use expressions within the mapping population section but also the <b>name clashing resolution</b>.
+As already mentioned, the previous implementation considered the left part of the assignment as a
+property name while the right part was considered to be an ordinary OCL expression where properties
+could not be accessed directly. Therefore, the code below was correct and sensible.
+<pre class="Code">
+mapping EPackage::toEClass(name : String) : EClass {
+	name := name; -- in QVTO 1.x this line was the same as: result.name := name;
+	              -- where 'name' in the right part resolved to the parameter
+}
+</pre>
+The current implementation treats properties in the left part of the assignment the same way as in
+the right part. Moreover, name clashes are resolved to local variables/parameters. This question
+is discussed in the bug comments. Thus in QVTO 2.0 the code above does not compile since it attempts
+to update a read-only parameter:
+<pre class="Code">
+mapping EPackage::toEClass(name : String) : EClass {
+	name := name; -- in QVTO 2.0 this line is the same as: name := name;
+	              -- where 'name' in the expression resolves to the parameter
+	              -- which is read-only
+}
+</pre>
+In the same manner, the example below updates the local variable and hence does not modify the
+corresponding property:
+<pre class="Code">
+mapping EPackage::toEClass() : EClass {
+	var name := 'a'; -- a local variable hiding the corresponding property
+	name := name + 'b'; -- local variable 'name' is updated here
+}
+</pre>
+
+Note that the behaviour changes only in cases of name clashing and the majority of mappings written in
+QVTO 1.x are to be executed in QVTO 2.0 the same way as before.<br>
+
+See bug 252358 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=252358">https://bugs.eclipse.org/bugs/show_bug.cgi?id=252358</a>).
+</p>
+<p>
+<h2><a name="bug253051">Expressions in ObjectExp body</a></h2>
+In QVTO 1.x ObjectExp body could only contain assignments to the target object properties.
+In accordance with the specification (sections 8.4.7.1, 8.2.1.18 and 8.1.5), QVTO 2.0 allows
+to have arbitrary expressions (assignments, variable declarations, if-expressions, etc.) in 
+an ObjectExp body. Furthermore, within the ObjectExp body properties of the referred
+object can be accessed directly.
+<pre class="Code">
+object a : EClass {
+	var x := 'ifExp'; -- local variable 'x'
+	if x = 'ifExp' then {
+		name := x; -- assignment to 'name' property of the referred object 'a' of type EClass 
+		           -- same as: a.name := x;
+		name := name + name; -- 'name' property can be directly accessed in any parts of the expression
+		                     -- same as: a.name := a.name + a.name;
+	} else {
+		name := 'wrong'; -- same as: a.name := 'wrong';
+	} endif;
+}
+</pre>
+As regards the previous implementation, ObjectExp body could only consist of assignments to properties
+of the referred object. Moreover, the left part of such assignments must have been a property name
+(direct assignment without source). The direct access to properties in the right part was unavailable.
+Thus the ObjectExp below caused a compilation error:
+<pre class="Code">
+object a : EClass {
+	name := name; -- in QVTO 1.x this line produced a compilation error
+	              -- since properties in the right part could not be accessed directly
+}
+</pre>
+An important difference between the previous and the new versions is not only the ability to
+use expressions within ObjectExp body but also the <b>name clashing resolution</b>.
+As already mentioned, the previous implementation considered the left part of the assignment as a
+property name while the right part was considered to be an ordinary OCL expression where properties
+could not be accessed directly. Therefore, the code below was correct and sensible.
+<pre class="Code">
+var name := 'a';
+object a : EClass {
+	name := name + 'b'; -- in QVTO 1.x this line was the same as: a.name := name;
+	                    -- where 'name' in the right part resolved to the parameter
+}
+</pre>
+The current implementation treats properties in the left part of the assignment the same way as in
+the right part. Moreover, name clashes are resolved to local variables/parameters. Thus name clashes
+in ObjectExp body and in mapping population section are treated the way.  Thus in QVTO 2.0 the code 
+above compiles but produces a completely different result since it updates a local variable:
+<pre class="Code">
+var name := 'a';
+object a : EClass {
+	name := name + 'b'; -- in QVTO 2.0 this line is the same as: name := name;
+	                    -- where 'name' in the expression resolves to the local variable
+	                    -- a.name remains unchanged
+}
+</pre>
+
+Note that the behaviour changes only in cases of name clashing and the majority of object expressions
+written in QVTO 1.x are to be executed in QVTO 2.0 the same way as before.<br>
+
+See bug 253051 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=253051">https://bugs.eclipse.org/bugs/show_bug.cgi?id=253051</a>).
+</p>
+<p>
+<h2><a name="bug254482">ResolveExp/ResolveInExp implicit source resolution disablement</a></h2>
+QVTO 1.x performed implicit source lookup for ResolveExp/ResolveInExp expressions. If such lookup was
+successful ResolveExp (consequently, ResolveInExp) was considered to be used with implicit source.
+In this way, the following code was allowed:
+<pre class="Code">
+main() {
+		var a := object EPackage{name := 'a'};
+		var b := object EPackage{name := 'b'};
+		var c := object EPackage{name := 'c'};
+		a.map toEClass(); -- creates a trace record for 'a'
+		b.map toEClass(); -- creates a trace record for 'b'
+		c.map toEClass(); -- creates a trace record for 'c'
+		var x := Bag {a, b} -> collect(resolve()); -- in QVTO 1.x the source of resolve() is the implicit iterator
+		                                           -- of the collect expression
+		                                           -- 'x' becomes a collection of 2 elements
+		var y := Bag {a, b} -> collect(resolveIn(EPackage::toEClass)); -- in QVTO 1.x the source of resolveIn() is the implicit iterator
+		                                                               -- of the collect expression
+		                                                               -- note: this is not a resolveIn() call without source
+		                                                               -- as in the next line.
+		                                                               -- 'y' becomes a collection of 2 elements
+		var z := resolveIn(EPackage::toEClass); -- no implicit source found
+		                                        -- 'z' becomes a collection of 3 elements
+		--var z1 := resolve(); -- implicit source for resolve() not found => compilation error                                                       
+}
+ 
+mapping EPackage::toEClass() : EClass {
+}
+</pre>
+
+However, no proof of this concept was found in the specification. Thus, QVTO 2.0 disallowed implicit
+source resolution for ResolveExp/ResolveInExp. Consequently, usage of ResolveExp (not ResolveInExp)
+without source is prohibited and usage of ResolveInExp without source is always considered a search
+though all objects created or updated by the referred mapping (8.2.1.23):
+<pre class="Code">
+main() {
+		var a := object EPackage{name := 'a'};
+		var b := object EPackage{name := 'b'};
+		var c := object EPackage{name := 'c'};
+		a.map toEClass(); -- creates a trace record for 'a'
+		b.map toEClass(); -- creates a trace record for 'b'
+		c.map toEClass(); -- creates a trace record for 'c'
+		--var x := Bag {a, b} -> collect(resolve()); -- in QVTO 2.0 resolve() without source is prohibited
+		var y := Bag {a, b} -> collect(resolveIn(EPackage::toEClass)); -- in QVTO 2.0 this is a resolveIn() call without source
+		                                                               -- as in the next line.
+		                                                               -- 'y' becomes a collection of 6 elements
+		var z := resolveIn(EPackage::toEClass); -- a resolveIn() call without source
+		                                        -- 'z' becomes a collection of 3 elements
+		--var z1 := resolve(); -- in QVTO 2.0 resolve() without source is prohibited                                                       
+}
+ 
+mapping EPackage::toEClass() : EClass {
+}
+</pre>
+
+Note that the behaviour changes only in case when ResolveExp/ResolveInExp is used without source and
+there are implicit variables in the corresponding scope (e.g. within collect, select, etc. with
+implicit iterator). Thus the majority of ResolveExp/ResolveInExp expressions written in QVTO 1.x 
+are to be executed in QVTO 2.0 the same way as before.<br>
+
+See bug 254482 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=254482">https://bugs.eclipse.org/bugs/show_bug.cgi?id=254482</a>).
+</p>
+<p>
+<h2><a name="bug251064">Keyword reservation</a></h2>
+QVTO 2.0 reserves all keywords mentioned in the specification (8.4.7.1 Syntax for module definitions, keywords section).
+In addition, QVTO 2.0 also reserves the keyword <i>List</i> mistakenly forgotten in the section and the keyword <i>invalid</i>
+which is not present in the OCL implementation (where <i>Invalid</i> starting from the capital <i>I</i> is used).<br>
+To refer to a named element in case of clashing with keywords, use an underscore prefix "<i>_</i>" as described in the
+<a href="http://www.omg.org/docs/formal/06-05-01.pdf">OCL specification</a> (9.3)<br> 
+
+See bug 251064 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=251064">https://bugs.eclipse.org/bugs/show_bug.cgi?id=251064</a>).
+</p>

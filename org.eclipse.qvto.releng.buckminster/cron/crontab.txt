@@ -1,0 +1,5 @@
+#
+#
+#
+#mmt-qvto publishing
+30 3 * * * ant -f /shared/jobs/qvto-luna-master/lastSuccessful/archive/publishroot/publisher.ant -Dbuild.archives=/shared/jobs/qvto-luna-master/lastSuccessful/archive &> logs/qvto-luna-master-publishing.log 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<psf version="2.0">
+<provider id="org.eclipse.egit.core.GitProvider">
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,plugins/org.eclipse.m2m.qvt.oml.tools.coverage"/>
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,doc/org.eclipse.m2m.qvt.oml.tools.coverage.doc"/>
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,features/org.eclipse.m2m.qvt.oml.tools.coverage.feature"/>
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,releng/org.eclipse.m2m.qvt.oml.tools.coverage.releng"/>
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,plugins/org.eclipse.m2m.qvt.oml.tools.coverage.ui"/>
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,doc/org.eclipse.m2m.qvt.oml.tools.doc"/>
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,features/org.eclipse.m2m.qvt.oml.tools.feature"/>
+</provider>
+<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1403466469867_7" label="Coverage" name="Coverage">
+<item elementID="=org.eclipse.m2m.qvt.oml.tools.coverage.feature" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.m2m.qvt.oml.tools.feature" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.m2m.qvt.oml.tools.coverage.doc" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.m2m.qvt.oml.tools.doc" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.m2m.qvt.oml.tools.coverage.releng" type="4"/>
+<item elementID="=org.eclipse.m2m.qvt.oml.tools.coverage" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.m2m.qvt.oml.tools.coverage.ui" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSets>
+</psf>

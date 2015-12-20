@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.eclipse.m2m.qvt.oml.runtime" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="org.eclipse.m2m.qvt.oml.runtime" id="qvtTransformation" name="QVT transformation"/>
+      </appInfo>
+      <documentation>
+      	This extension point provides a mechanism to register deployed QVTo units. The registered units are accessible through the QVTo UI, and can be imported from other plugins or workspace projects. 
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appInfo>
+            <meta.element />
+         </appInfo>
+         <documentation>
+            Extension point to register deployed QVTo modules
+         </documentation>
+      </annotation>
+      <complexType>
+         <sequence>
+            <choice minOccurs="1" maxOccurs="unbounded">
+               <element ref="transformation"/>
+               <element ref="library"/>
+            </choice>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="input">
+      <annotation>
+         <appInfo>
+            <meta.element deprecated="true"/>
+         </appInfo>
+         <documentation>
+            An input parameter to a QVTo transformation
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="metamodel" type="string">
+            <annotation>
+               <documentation>
+                  The namespace URI of the input metamodel
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="metaclass" type="string">
+            <annotation>
+               <documentation>
+                  The fully qualified name of the input classifier
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="output">
+      <annotation>
+         <appInfo>
+            <meta.element deprecated="true"/>
+         </appInfo>
+         <documentation>
+            An output parameter of a QVTo transformation
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="metamodel" type="string">
+            <annotation>
+               <documentation>
+                  The namespace URI of the output metamodel
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="metaclass" type="string">
+            <annotation>
+               <documentation>
+                  The fully qualified name of the output classifier, separated by slashes
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="transformation">
+      <annotation>
+         <documentation>
+            A runnable transformation module containing a &lt;code&gt;main()&lt;/code&gt; operation
+         </documentation>
+      </annotation>
+      <complexType>
+         <sequence minOccurs="0" maxOccurs="1">
+            <element ref="input"/>
+            <element ref="output"/>
+         </sequence>
+         <attribute name="file" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The path to the registered transformation file (*.qvto)
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="resource"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The fully qualified name used to import the registered transformation
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="identifier"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="library">
+      <annotation>
+         <documentation>
+            A library module that may be imported by other modules
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="file" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The path to the registered library file (*.qvto)
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="resource"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The fully qualified name used to import the registered library
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="identifier"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+      	1.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         &lt;p&gt;
+The following example registers the &lt;code&gt;Simpleuml_To_Rdb&lt;/code&gt; unit, which is resolvable as 
+&lt;code&gt;Simpleuml_To_Rdb&lt;/code&gt; from importing QVTo units.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;extension point=&quot;org.eclipse.m2m.qvt.oml.runtime.qvtTransformation&quot;&gt;
+	&lt;transformation file=&quot;Simpleuml_To_Rdb.qvto&quot; id=&quot;Simpleuml_To_Rdb&quot;/&gt;
+&lt;/extension&gt;
+&lt;/pre&gt;
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         Copyright (c) 2007, 2015 Borland Software Corporation
+      </documentation>
+   </annotation>
+
+</schema>

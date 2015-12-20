@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension-point id="projectElementsWizards" name="QVT Project Elements Wizard" schema="schema/projectElementsWizards.exsd"/>
+
+   <extension point="org.eclipse.ui.newWizards">   
+    <category
+          id="org.eclipse.m2m.qvt.oml.wizardCategory"
+          name="%m2mWizardsCategoryName"/>
+      <wizard
+            category="org.eclipse.m2m.qvt.oml.wizardCategory"
+            class="org.eclipse.m2m.internal.qvt.oml.ui.wizards.NewQVTTransformationWizard"
+            icon="icons/pr-Model_to_model.gif"
+            id="org.eclipse.m2m.qvt.oml.ui.wizards.NewQVTTransformationWizard"
+            name="%newQVTTransformation">
+         <description>
+         %qvtTransform.wizard.description
+         </description>
+      </wizard>
+      <wizard
+            category="org.eclipse.m2m.qvt.oml.wizardCategory"
+            class="org.eclipse.m2m.internal.qvt.oml.ui.wizards.NewQvtLibraryWizard"
+            icon="icons/pr-Model_to_model.gif"
+            id="org.eclipse.m2m.qvt.oml.ui.wizards.NewQvtLibraryWizard"
+            name="%newQvtLibrary">
+         <description>
+         %qvtLib.wizard.description
+         </description>
+      </wizard>
+   </extension>
+   
+   <extension point="org.eclipse.m2m.qvt.oml.ui.projectElementsWizards">
+		<wizard refId="org.eclipse.m2m.qvt.oml.ui.wizards.NewQVTTransformationWizard"/>
+		<wizard refId="org.eclipse.m2m.qvt.oml.ui.wizards.NewQvtLibraryWizard"/>
+   </extension>
+      
+   <extension
+         point="org.eclipse.ui.newWizards">
+             
+      <wizard
+            category="org.eclipse.m2m.qvt.oml.wizardCategory"
+            class="org.eclipse.m2m.internal.qvt.oml.ui.wizards.project.NewQVTProjectWizard"
+            icon="icons/pr-MDA.gif"
+            id="org.eclipse.m2m.qvt.oml.project.newTransformationProject"
+            name="%newTransformationProject"
+            project="true">
+         <description>
+             %newTransformationProjectDesc
+         </description>
+      </wizard>
+   </extension>
+   
+   
+   <extension point="org.eclipse.ui.perspectiveExtensions">
+     <perspectiveExtension targetID="org.eclipse.jdt.ui.JavaPerspective">
+        <newWizardShortcut id="org.eclipse.m2m.qvt.oml.ui.wizards.NewQVTTransformationWizard"/>
+        <newWizardShortcut id="org.eclipse.m2m.qvt.oml.ui.wizards.NewQvtLibraryWizard"/>
+     </perspectiveExtension>
+  </extension>
+  
+  <extension point="org.eclipse.ui.ide.projectNatureImages">
+	<image
+		id="org.eclipse.m2m.qvt.oml.project.QVTONatureImage"
+		natureId="org.eclipse.m2m.qvt.oml.project.QVTONature"
+    	icon="icons/pr-MDA.gif">
+	</image>
+  </extension>   
+  
+  
+  <extension point="org.eclipse.ui.propertyPages">
+    <page
+        id="QvtMetamodelMappingPagess"
+        category="org.eclipse.m2m.qvt.oml.ui.QvtSettingsPropertyPage"
+        name= "%metamodelMappingsPageName"
+        class="org.eclipse.m2m.internal.qvt.oml.ui.wizards.project.QvtMetamodelMappingPage">
+	    <filter name="nature" value="org.eclipse.m2m.qvt.oml.project.QVTONature"/>        
+     <enabledWhen>
+        <adapt type="org.eclipse.core.resources.IProject"/>
+     </enabledWhen>        
+    </page>
+  </extension>
+
+  <extension point="org.eclipse.ui.propertyPages">
+    <page
+        id="org.eclipse.m2m.qvt.oml.ui.QvtSettingsPropertyPage"
+        name= "%qvtSettings"
+        class="org.eclipse.m2m.internal.qvt.oml.ui.wizards.project.QvtSettingsPropertyPage">
+	    <filter name="nature" value="org.eclipse.m2m.qvt.oml.project.QVTONature"/>
+     <enabledWhen>
+        <adapt type="org.eclipse.core.resources.IProject"/>
+     </enabledWhen>      
+    </page>
+  </extension>
+
+	<extension point="org.eclipse.ui.navigator.viewer">
+      <viewerContentBinding viewerId="org.eclipse.team.cvs.ui.workspaceSynchronization">
+         <includes>
+            <contentExtension pattern="org.eclipse.qvt.ui.qvtContent"/>
+         </includes>
+      </viewerContentBinding>
+		
+	<viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+		<includes>
+		<contentExtension pattern="org.eclipse.qvt.ui.qvtContent"/>				
+		</includes>
+	</viewerContentBinding>
+      
+   </extension>
+
+	<extension point="org.eclipse.ui.navigator.navigatorContent">
+		<navigatorContent
+        activeByDefault="true"
+        contentProvider="org.eclipse.m2m.internal.qvt.oml.ui.wizards.project.NullContentProvider"
+        id="org.eclipse.qvt.ui.qvtContent"
+        labelProvider="org.eclipse.m2m.internal.qvt.oml.ui.wizards.project.QvtProjectLabelProvider"
+        name="%commonNavigatorContentName"
+        priority="highest">
+			<triggerPoints>
+				<or>
+					<adapt type="org.eclipse.core.resources.IProject" >
+						<test property="org.eclipse.core.resources.projectNature" value="org.eclipse.m2m.qvt.oml.project.QVTONature"/>
+					</adapt>
+ 				</or>
+			</triggerPoints>
+			<possibleChildren>
+			<or>
+				<instanceof	value="org.eclipse.core.resources.IFolder"/>
+    			<instanceof value="org.eclipse.core.resources.IFile"/>
+			</or>				
+			</possibleChildren>
+   
+		</navigatorContent>
+          
+   </extension>
+   
+</plugin>

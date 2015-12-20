@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>JUnit Integration Tutorial</title>
+</head>
+
+<body>
+<h1>JUnit Integration Tutorial</h1>
+<p>
+The Code Coverage Tool provides an additional JUnit launch configuration delegate as a means to integrate with the 
+JUnit test framework. This allows for determining the achieved code coverage for test suites containing containing 
+test cases for Operational QVT (QVTO) model transformations. This section explains how to measure and visualize the code coverage of
+a test suite. Basic knowledge about EMF, QVTO, JUnit is assumed.
+</p>
+
+<p>
+<i><b>Note:</b></i> The example created by following the tutorial is available <a href="../example/qvto-coverage-example.zip">here</a>.
+</p> 
+
+<h2>Steps</h2>
+<ol>
+  <li> Create a QVTO transformation, e.g. from <a href="http://www.levysiqueira.com.br/2011/01/eclipse-qvto-hello-world/">this</a> tutorial. </li>
+  <li> Create a Plug-in project. </li>
+  <li> Add a JUnit test case to the project </li>
+  <li> Add and implement a test case. An example code snippet is listed below: </li>
+</ol>
+
+<textarea rows="56" cols="143" style="background-color: buttonface;">
+public class SingleTest {
+    
+    private static final URI TRANSFORMATION_FILE_URI = 
+            URI.createFileURI("C:/Localdata/Eclipse/qvto-coverage/runtime-ws/org.eclipse.qvto.example/transforms/HelloWorld.qvto"); 
+    private static final URI IN_MODEL_PLATFORM_URI = 
+            URI.createURI("platform:/resource/org.eclipse.qvto.example.mm.test/instances/in.abc");
+    private static final URI OUT_MODEL_PLATFORM_URI = 
+            URI.createURI("platform:/resource/org.eclipse.qvto.example.mm.test/instances/out.abc");
+    
+    @BeforeClass
+    static public void setUp() throws Exception {
+        // Add project to platform resource URI map
+        EcorePlugin.getPlatformResourceMap().put("org.eclipse.qvto.example.mm.test", URI.createFileURI(System.getProperty("user.dir") + '/'));
+        
+        // Register resource factory for our ABC meta-model
+        Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("abc",
+                new XMIResourceFactoryImpl());
+        // Register package
+        AbcPackage.eINSTANCE.eClass();
+    }
+
+    @Test
+    public void test() {
+        // create the input extent with its initial contents
+        ResourceSet resourceSet = new ResourceSetImpl();
+        Resource inResource = resourceSet.getResource(IN_MODEL_PLATFORM_URI, true);     
+        EList<EObject> inObjects = inResource.getContents();
+        ModelExtent input = new BasicModelExtent(inObjects);        
+
+        // create an empty output model extent
+        ModelExtent output = new BasicModelExtent();
+
+        // setup the execution environment details -> 
+        // configuration properties, logger, monitor object etc.
+        ExecutionContextImpl context = new ExecutionContextImpl();
+
+        // run the transformation assigned to the executor
+        TransformationExecutor executor = new TransformationExecutor(TRANSFORMATION_FILE_URI);
+        ExecutionDiagnostic result = executor.execute(context, input, output);
+
+        // In case of success, store the output objects in it's resource and persist the resource
+        if(result.getSeverity() == Diagnostic.OK) {
+            List<EObject> outObjects = output.getContents();
+            ResourceSet resourceSet2 = new ResourceSetImpl();
+            Resource outResource = resourceSet2.createResource(OUT_MODEL_PLATFORM_URI);
+            outResource.getContents().addAll(outObjects);
+            try {
+                outResource.save(Collections.emptyMap());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            // Consider the test failed
+            fail("Failed to execute the transformation");
+        }
+    }
+}
+</textarea>
+
+<ol start="5">
+  <li> Run the JUnit test (Run As -> JUnit Test)</li>
+  <li> A dialog will be presented, asking to chose between the available JUnit launch delegate. This includes
+       the one contributed by the Code Coverage Tool, which is the Operational QVT Interpreter Coverage Launcher. Either use 
+       configuration specific settings or change the workspace global setting to prefer the Operational QVT Interpreter Coverage
+       Launcher. The former method allows ruling out the Operational QVT Interpreter Coverage Launcher in case a JUnit test suite does
+       not include any QVT model transformations. </li>
+</ol>
+
+<p>
+<img alt="Select Preferred Launcher Dialog" src="../images/select-launch-delegate-dialog.png">
+</p>
+
+<ol start="7">
+  <li> Press OK to confirm your choice. The test case will now be executed. </li>
+  <li> Upon successful execution of the test case, the Operational QVT Code Coverage View is instantiated and given focus, in order
+       to directly present the coverage data.</li>
+</ol>
+
+<p>
+<img alt="QVTo Test Coverage View" src="../images/qvto-test-coverage-view.png">
+</p>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+import org.bar.Foo;
+import models.transf_inheritance.Lib;
+
+modeltype ECORE uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation A(inout m:ECORE)
+	access library Lib()
+	extends library org::bar::Foo::FooJavaLib()
+	;
+
+main() {
+	m.objectsOfType(ECORE::EClass)->forEach(c) { addSuffix(c); };
+}
+
+helper addSuffix(inout n : ECORE::ENamedElement) {
+	n.name := addSuffix(Lib::addSuffix(n.name));
+	return;
+}
+
+query addSuffix(in n : String) : String {
+	return n + testEchoArgument('_');
+}
+
+helper testEchoArgument(in n : String) : String {
+	return n + n;
+}
+

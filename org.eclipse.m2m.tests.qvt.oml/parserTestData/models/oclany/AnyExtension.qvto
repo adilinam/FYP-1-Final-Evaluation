@@ -1,0 +1,8 @@
+library AnyExtension;
+
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+	
+
+query OclAny::anyConcatStrings(in s1:String, in s2:String) : String {
+	return s1 + s2
+}

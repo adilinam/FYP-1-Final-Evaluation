@@ -1,0 +1,20 @@
+import A;
+modeltype ECORE uses "http://www.eclipse.org/emf/2002/Ecore";
+
+transformation bug413391() 
+	access A;
+
+property pa = /*<error>*/Tuple(a:String)/*</error>*/;
+property pb = /*<error>*/Integer/*</error>*/;
+property pc = /*<error>*/bug413391/*</error>*/;
+property pd = /*<error>*/EClass/*</error>*/;
+property pe = /*<error>*/A/*</error>*/;
+
+main() {
+		var a = /*<error>*/Tuple(a:String)/*</error>*/;
+		var b = /*<error>*/Integer/*</error>*/;
+		var c = /*<error>*/bug413391/*</error>*/;
+		var d = /*<error>*/EClass/*</error>*/;
+		var e = /*<error>*/A/*</error>*/;
+}
+

@@ -1,0 +1,9 @@
+transformation t;
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+mapping main(in pack: ecore::EPackage): ecore::EPackage {
+    object {
+        name := pack.allInstances(ecore::EPackage)->any(true).name;
+        name := pack./*@*/name;
+    }
+}

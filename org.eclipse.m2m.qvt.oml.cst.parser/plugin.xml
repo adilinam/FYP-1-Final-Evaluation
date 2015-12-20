@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2007 Borland Software Corporation
+ 
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+   
+ Contributors:
+     Borland Software Corporation - initial API and implementation
+ 
+ 
+
+ $Id: plugin.xml,v 1.4 2010/02/02 15:28:19 sboyko Exp $
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.eclipse.org/QVT2/1.0.0/Operational/cst"
+            class="org.eclipse.m2m.internal.qvt.oml.cst.CSTPackage"
+            genModel="model/QVTOperationalCST.genmodel"/>
+   </extension>
+
+</plugin>

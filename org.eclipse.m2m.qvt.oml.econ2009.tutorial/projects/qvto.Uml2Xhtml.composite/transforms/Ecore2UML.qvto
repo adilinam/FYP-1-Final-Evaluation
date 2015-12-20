@@ -1,0 +1,92 @@
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype UML "strict" uses uml('http://www.eclipse.org/uml2/3.0.0/UML');
+
+transformation Ecore2UML(in eModel : ECORE, out umlModel : UML);
+
+main() {
+	eModel.rootObjects()[EPackage]->map toPackage();
+}
+
+mapping EPackage::toPackage() : Package inherits ENamedElement::toNamedElement {
+	init {
+		result := if(self.eSuperPackage = null) then object Model {} else object Package {} endif;
+	}	
+	packagedElement += self.eClassifiers->map toType();
+	packagedElement += umlModel.objects()[Association]->select(_package = null);
+	packagedElement += self.eSubpackages->map toPackage();
+	end {
+		if(result.oclIsKindOf(Model)) then 
+			result.packagedElement += object Package {
+				name := "importedTypes"; 
+				packagedElement += (umlModel.objects()[Type])[_package = null];
+			}		
+		endif;
+	}
+}
+
+mapping EClassifier::toType() : Type disjuncts EClass::toClass, EClass::toInterface, EEnum::toEnum, EDataType::toDataType {}
+
+mapping EClass::toClass() : Class inherits ENamedElement::toNamedElement when { not self.interface } {
+	superClass := self.eSuperTypes->map toClass();
+	interfaceRealization := self.eSuperTypes[interface]->xcollect( i |
+		object InterfaceRealization {
+			contract := i.map toInterface();
+		}
+	);
+
+	isAbstract := self._abstract;
+	ownedAttribute += self.eStructuralFeatures->map toProperty();
+}
+
+mapping EClass::toInterface() : Interface inherits ENamedElement::toNamedElement when { self.interface } { 
+	ownedAttribute += self.eStructuralFeatures->map toProperty();
+}
+
+mapping EEnum::toEnum() : UML::Enumeration inherits ENamedElement::toNamedElement {
+	ownedLiteral := self.eLiterals->xcollect(e | object EnumerationLiteral {
+		name:= e.name;
+	});
+}
+
+mapping EDataType::toDataType() : UML::DataType inherits ENamedElement::toNamedElement {}
+
+mapping EStructuralFeature::toProperty() : UML::Property inherits ENamedElement::toNamedElement, ETypedElement::toMultiplicity {	
+	isDerived := self._derived;
+	isReadOnly := self.changeable;	
+	type := self.eType.map toType();	
+}
+
+mapping EReference::toProperty() : UML::Property inherits EStructuralFeature::toProperty {	
+	association := self.map toAssociation();
+	aggregation := if(self.containment) then 
+					AggregationKind::composite 
+					else AggregationKind::none endif;	
+}
+
+mapping EReference::toAssociation() : Association {
+	init {
+		result := self.eOpposite.resolveoneIn(EReference::toAssociation, Association);
+	} 
+	ownedEnd += if (self.eOpposite = null) then   
+					object Property {
+						name := self.eContainingClass.name.toLower();
+						type := self.eContainingClass.map toClass();
+					} endif;
+	memberEnd += self.map toProperty();
+}
+
+abstract mapping ETypedElement::toMultiplicity() : MultiplicityElement {
+	isOrdered := self._ordered;
+	isUnique := self.unique;
+	lower := self.lowerBound;
+	upperValue := if(self.upperBound <> *) then 
+			object LiteralInteger { value := self.upperBound.oclAsType(Integer) } 
+		else
+			object LiteralUnlimitedNatural { value := -1 }    
+		endif; 
+}
+
+abstract mapping ENamedElement::toNamedElement() : NamedElement {	
+	name := self.name;
+	visibility := VisibilityKind::public;
+}

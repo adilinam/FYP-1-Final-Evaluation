@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdb:Schema xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdb="http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb" name="schema">
+  <elements xsi:type="rdb:Table" name="attr_Table"/>
+</rdb:Schema>

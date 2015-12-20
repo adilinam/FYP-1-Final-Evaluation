@@ -1,0 +1,36 @@
+import org.bar.Foo;
+
+library listtype;
+
+helper testCase() : Boolean {
+
+	var c : Collection(String) := Set { 'a', 'b'};
+	var setElements : Set(String) := /*<error>*/newList(c)/*</error>*/;
+	var bagElements : Bag(String) := /*<error>*/newList(c)/*</error>*/;
+	var seqElements : Sequence(String) := newList(c);	
+	var oSetElements : OrderedSet(String) := /*<error>*/newList(c)/*</error>*/;	
+	
+	var chars := OrderedSet{ 'a', 'b', 'c'  };
+	var listElements : List(String) := newList(chars);
+	listElements := /*<error>*/Set { '' }/*</error>*/;
+	listElements := /*<error>*/Bag { '' }/*</error>*/; 
+	listElements := Sequence { '' };
+	listElements := /*<error>*/OrderedSet { '' }/*</error>*/;
+
+	-- correct samples
+	var conformantCollection : Collection(OclAny) := listElements;
+	var nonconFormantCollection : Collection(Real) := /*<error>*/listElements/*</error>*/; 
+	
+	var listCopy := echoList(listElements);
+	-- check List is conformant to Collection type 
+	-- and can be used as normal collection
+	assert fatal (chars->includesAll(listCopy));
+	
+	-- test all List operations
+	listElements->add('x');
+	listElements->insertAt(1, 'y');	
+	var element : String :=listElements->genericListElementAt(1);
+	element :=listElements->genericListElementAt(listElements->size());	
+
+	return true;
+}

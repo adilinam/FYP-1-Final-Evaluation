@@ -1,0 +1,23 @@
+import models.fqnMainCalls_272937.imported;
+
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+
+transformation fqnMainCalls_272937 (
+	in inModel : ECORE, out outModel : ECORE)
+	extends imported;
+ 
+intermediate property fqnMainCalls_272937::myInt : Integer;
+	
+	
+
+main() { 
+	if (myInt <> 111) then {          
+		myInt := 111;
+		_main();  
+		myInt := 112;     
+		this.imported::_main();                
+		this.imported2::_main();                
+	} endif;
+	object EPackage { name := 'Main' + myInt.toString(); };
+}

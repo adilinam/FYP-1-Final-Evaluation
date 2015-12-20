@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE script SYSTEM "../DebuggerTestScript.dtd">
+
+<script>
+	<resume   line="b2" cause="breakpoint"/>
+	<stepInto line="b6" cause="breakpoint"/>
+	<stepOver line="b10"/> <!-- previous command is a cause -->
+	<return   line="b11"/>
+	<resume   line="b6"/>
+</script>

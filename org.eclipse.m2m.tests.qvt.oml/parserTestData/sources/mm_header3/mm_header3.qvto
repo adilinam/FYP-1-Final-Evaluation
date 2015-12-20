@@ -1,0 +1,9 @@
+transformation mm_header3(in ecore1 : ECORE, in ecore2 : ECORE);
+
+modeltype ECORE uses "http://www.eclipse.org/emf/2002/Ecore";
+
+mapping main(in p1 : EPackage, in p2 : EPackage) {
+	init {
+	}
+}
+

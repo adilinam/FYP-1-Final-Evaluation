@@ -1,0 +1,40 @@
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+transformation test(in inModel: ECORE, out outModel : ECORE) {
+	/*<error>*/dssd/*</error>*/
+
+	intermediate property EPackage::myProperty : String;
+
+	/*<error>*/dssd/*</error>*/
+	
+	intermediate class MyEPackage extends EPackage {
+		myName : String;
+	}
+		
+	/*<error>*/dssd/*</error>*/
+
+	main() {
+		inModel.rootObjects()[EPackage]->map foo();
+	}
+
+	/*<error>*/dssd/*</error>*/
+	
+	mapping EPackage::foo() : EPackage {
+		name := self.bar() + '_foo';
+		result.myProperty := 'intermProp';
+		nsURI := result.bar2();
+	}
+
+	/*<error>*/dssd/*</error>*/
+	
+	query EPackage::bar() : String {
+		return self.name + '_bar';
+	}
+
+	/*<error>*/dssd/*</error>*/
+
+	helper EPackage::bar2() : String {
+		return self.myProperty + '_bar2';
+	}
+	/*<error>*/dssd/*</error>*/
+}

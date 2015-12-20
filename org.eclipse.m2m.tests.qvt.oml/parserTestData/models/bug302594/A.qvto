@@ -1,0 +1,6 @@
+transformation A();
+
+configuration property configProp : String;
+property prop : String = '';
+
+main() {}

@@ -1,0 +1,11 @@
+import bug326871_lib; 
+
+modeltype Ecore "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation bug326871a_standalone;
+
+main() {
+	assert fatal (echoFromBBoxModule2('test') = 'test');
+	
+	assert fatal (modifyClassName2(object EClass{}, "test").name = "test");
+}

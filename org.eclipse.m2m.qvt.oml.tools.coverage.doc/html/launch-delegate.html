@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title></title>
+</head>
+
+<body>
+<h1>Operational QVT Coverage Launch Delegate</h1>
+<p>
+The Code Coverage Tool provides an extended Operational QVT launch configuration delegate which is able to collect code
+coverage data from the transformation that is configured to be executed in the launch configuration. An example is shown
+in the figure below:
+
+<p>
+<img alt="Launch configuration of an example transformation" src="../images/launch-configuration.png">
+</p>
+
+The transformation can only be executed once one of the available launchers are selected. Click the link <i>Select one...</i>
+in order to select the preferred launcher using the dialog as shown below:
+
+<p>
+<img alt="Select preferred launcher" src="../images/select-preferred-launcher.png">
+</p>
+
+<p>
+Either select the desired launcher for all transformations by changing the workspace settings, or select one for the current
+transformation using the configuration specific settings. The launcher contributed by the Code Coverage tool is the 
+<i>Operational QVT Interpreter Coverage Launcher</i>. In case this launcher is selected, the transformation is instrumented with
+coverage data.
+</p>
+
+<p>
+After successful execution of the transformation using the <i>Operational QVT Interpreter Coverage Launcher</i>, the Operational
+QVT Code Coverage View is instantiated and given focus, in order to directly present the coverage data. An example is shown below:
+</p>
+
+<p>
+<img alt="QVTo Test Coverage View" src="../images/qvto-test-coverage-view.png">
+</p>
+
+</body>
+</html>

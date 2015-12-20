@@ -1,0 +1,54 @@
+import TransfForAccess;
+import LibForExtends;
+import TransfForExtends;	
+
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation operation_override(in eModel : ECORE, out outModel : ECORE) 
+	extends TransfForExtends, LibForExtends
+	access transformation TransfForAccess; 
+    
+    
+main() {
+	var e : EPackage := object EPackage {
+		name := rootModuleQuery();
+
+		eSubpackages += object EPackage {
+			name := callRootModuleQuery();	
+	
+			var c: EClass;
+			eClassifiers += object c:EClass {
+				name := queryStringForAccess();
+			};
+		};
+		
+		eSubpackages += object EPackage {
+			name := this.RootTransfForExtends::rootModuleQuery();
+		};   
+	};
+		
+	e.eSubpackages += map createOverridenCallsPackage("result-in-MainModule");	
+	e.eSubpackages += callOverridenPackageResult();
+	 
+	e.eClassifiers += object EClass { 
+		name := callQuery_LibForExtends();
+	}	
+}
+
+
+helper rootModuleQuery() : String {
+	return "mainModule-RootTransfForExtends";
+}
+
+// non-overriding query local hiding of accessed query 
+query queryStringForAccess() : String {
+	return "mainModule-queryStringForAccess";
+}
+
+query reusableQuery() : String {
+	return 	"mainModule->" + this.TransfForExtends::reusableQuery();
+}
+
+query query_LibForExtends() : String {
+	return "mainModule->LibForExtends-query_LibForExtends";
+}

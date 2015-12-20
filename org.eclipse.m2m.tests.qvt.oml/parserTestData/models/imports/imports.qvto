@@ -1,0 +1,23 @@
+transformation imports(in input:Ecore1, out output: Ecore1);
+
+import models.imports.q2;  
+import models.imports.q1;  
+
+modeltype Ecore1 uses 'http://www.eclipse.org/emf/2002/Ecore'; -- test clash with q1
+ 
+mapping main(in model: Ecore1::EPackage): Ecore1::EPackage { 
+	init{  
+		var classes := input.objectsOfType(Ecore1::EClass)->collect(oclAsType(EClass));
+	}
+    	eClassifiers += classes->collect(c|c2c(c));
+}   
+    
+mapping c2c(in clz : Ecore1::EClassifier) : ecore::EClass /*use package name for resolution check*/{
+	init {
+		var t := qq1(clz); 
+	}          
+	name:=clz.name;
+	eAnnotations += object Ecore1::EAnnotation {
+		source := q2(clz);
+	};
+}

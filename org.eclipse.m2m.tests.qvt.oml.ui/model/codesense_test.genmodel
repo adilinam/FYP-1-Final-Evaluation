@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.m2m.tests.qvt.oml.ui/src_generated"
+    modelPluginID="org.eclipse.m2m.tests.qvt.oml.ui" modelName="Codesense_test" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false">
+  <foreignModel>codesense_test.ecore</foreignModel>
+  <genPackages prefix="MyPackage" basePackage="org.eclipse.m2m.internal.tests.qvt.oml.ui"
+      disposableProviderFactory="true" ecorePackage="codesense_test.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="codesense_test.ecore#//MyEnum">
+      <genEnumLiterals ecoreEnumLiteral="codesense_test.ecore#//MyEnum/MyEnumLiteral1"/>
+      <genEnumLiterals ecoreEnumLiteral="codesense_test.ecore#//MyEnum/MyEnumLiteral2"/>
+      <genEnumLiterals ecoreEnumLiteral="codesense_test.ecore#//MyEnum/MyEnumLiteral3"/>
+    </genEnums>
+    <genClasses ecoreClass="codesense_test.ecore#//MyClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute codesense_test.ecore#//MyClass/MyEnumAttribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute codesense_test.ecore#//MyClass/MyIntAttribute"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

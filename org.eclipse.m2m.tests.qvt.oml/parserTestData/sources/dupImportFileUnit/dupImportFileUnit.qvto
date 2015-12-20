@@ -1,0 +1,11 @@
+import importedFileUnit;
+-- check duplicate import
+import /*<warn>*/importedFileUnit/*</warn>*/;
+
+import ns.importedFileUnit;
+
+library dupImportFileUnit;
+
+helper myHelper()  : Boolean {
+	return importedLibraryHelper() and ns_importedLibraryHelper();
+}

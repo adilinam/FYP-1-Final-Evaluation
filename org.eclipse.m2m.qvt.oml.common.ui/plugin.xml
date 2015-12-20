@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="org.eclipse.m2m.qvt.oml"
+            name="%qvtoCategoryName"/>
+      <view
+            category="org.eclipse.m2m.qvt.oml"
+            class="org.eclipse.m2m.internal.qvt.oml.common.ui.views.MetamodelBrowserView"
+            icon="icons/metamodels.gif"
+            id="org.eclipse.m2m.internal.qvt.oml.common.views.MetamodelBrowserView"
+            name="%metamodelBrowserViewName"/>
+   </extension>   
+   
+	<extension point="org.eclipse.ui.contexts">
+		<context
+        id="org.eclipse.m2m.qvt.oml.metamodelBrowser"
+        name="%metamodelBrowserViewContext"
+        parentId="org.eclipse.ui.contexts.dialogAndWindow"/>
+	</extension> 
+    
+	<extension point="org.eclipse.ui.commands">
+		<category
+			id="org.eclipse.m2m.qvt.oml.category"
+			name="%qvtCommandCategory"/>
+		<command
+			categoryId="org.eclipse.m2m.qvt.oml.category"
+			id="org.eclipse.m2m.qvt.oml.findClassifier"
+			name="%findClassifier"/>
+	</extension>
+	
+	<extension point="org.eclipse.ui.bindings">
+		<key 
+			commandId="org.eclipse.m2m.qvt.oml.findClassifier"
+			contextId="org.eclipse.m2m.qvt.oml.metamodelBrowser"
+			schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+			sequence="M1+M3+F"/>
+	</extension>   
+ 
+</plugin>

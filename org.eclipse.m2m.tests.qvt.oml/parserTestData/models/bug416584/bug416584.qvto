@@ -1,0 +1,66 @@
+import bug416584lib;
+
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation T2(in inModel : Ecore, out outModel : Ecore) 
+	extends T1
+	extends T3
+	extends libT
+{
+	property prop2 = prop;
+	main() {
+		var v1 = new T3();
+		var v2 = new T1(inModel, outModel);
+		var v4 = libProp; 
+		var v5 = prop; 
+		var v6: Tuple(obj : EClassifier, size : Integer);
+		log("=== T2 ===");	
+		assert fatal (lib_helper() = "lib_helper 123");
+		log(lib_helper());
+		assert fatal (T3_helper() = "T3_helper 123");
+		log(T3_helper());
+		new T1(inModel, outModel).transform();
+	}
+}
+
+transformation T1(in inModel : Ecore, out outModel : Ecore) 
+	access T3
+	access libT
+{
+	configuration property prop : String;
+	
+	main() {
+		inModel.rootObjects()![EPackage].deepclone();
+		var v1 = new T3();
+		var v2 = prop;
+		var v3: Tuple(obj : EClassifier, size : Integer);
+		log("=== T1 ===");	
+		assert fatal (prop = "prop");
+		log(prop);
+		new T3().transform();
+	}
+}
+ 
+
+transformation T3() 
+	extends libT
+{
+	configuration property prop2 : String;
+	property prop3 = 123;
+	main() {
+		var v1 = new T3();
+		var v3 = libProp; // libT.libProp
+		var v4: Tuple(obj : EClassifier, size : Integer);	
+		log("=== T3 ===");	
+		assert fatal (prop2 = "prop2");
+		log(prop2);	
+		assert fatal (prop3.repr() = "123");
+		log(prop3.repr());	
+		assert fatal (lib_helper() = "lib_helper 123");
+	}
+	
+	helper T3_helper() : String {
+		return 'T3_helper ' + libProp.repr();
+	}
+}
+

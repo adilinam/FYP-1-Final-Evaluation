@@ -1,0 +1,20 @@
+import ImportedTransf4;
+
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+	
+transformation ImportedTransf3(in eModel : ECORE, out outModel : ECORE) extends ImportedTransf4;
+ 
+configuration property outClassName : String;
+
+helper mainHelperFromTransf3() : OclVoid {
+	var inPacks := outModel.rootObjects()[EPackage];
+	inPacks->xcollect(p |
+		p.eClassifiers := object EClass {
+				name := outClassName;
+			});
+
+	// imported from ImportedTransf4
+	outModel.objects()[EClass]->map addAttributes();
+	return null;	
+}
+

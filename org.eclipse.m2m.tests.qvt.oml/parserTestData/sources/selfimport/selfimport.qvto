@@ -1,0 +1,6 @@
+transformation selfimport;
+import selfimport;
+
+query foo(): String {
+    return 'foo'
+}

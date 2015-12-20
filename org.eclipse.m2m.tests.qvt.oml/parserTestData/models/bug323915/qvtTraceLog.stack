@@ -1,0 +1,4 @@
+Terminating execution...
+org.eclipse.m2m.internal.qvt.oml.evaluator.QvtRuntimeException: Java method invocation error 'public void org.eclipse.m2m.tests.qvt.oml.bbox.AnnotatedJavaLibrary.testThrowRuntimeException()'
+Caused by: java.lang.RuntimeException: Exception from bbox library
+	at bug323915::main(bug323915.qvto:5)

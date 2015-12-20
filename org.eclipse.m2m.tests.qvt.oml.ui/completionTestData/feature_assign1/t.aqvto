@@ -1,0 +1,11 @@
+transformation t;
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+mapping main(in pack: ecore::EPackage): ecore::EPackage {
+    object {
+        name := /*@*/'foo';
+    }
+}
+
+mapping ecore::EPackage::main1(in pack: ecore::EPackage): ecore::EPackage {
+}

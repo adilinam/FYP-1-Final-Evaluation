@@ -1,0 +1,15 @@
+transformation virtrettypemismatch;
+
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+mapping ecore::ENamedElement::makeClassifier(): ecore::EClass {
+		name := 'NE:' + self.name;
+}
+
+mapping ecore::EClass::makeClassifier(): ecore::EClassifier {
+    init {
+	result := object ecore::EClass {
+		name := 'CLASS:' + self.name;
+	}
+    }	
+}

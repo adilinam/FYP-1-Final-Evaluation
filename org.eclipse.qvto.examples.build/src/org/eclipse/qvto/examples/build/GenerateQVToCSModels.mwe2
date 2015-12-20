@@ -1,0 +1,188 @@
+/**
+ * <copyright>
+ *
+ * Copyright (c) 2013 Willink Transformations, University of York and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *		Adolfo Sanchez-Barbudo Herrera (University of York) - initial API and implementation
+ * 		
+ * </copyright>
+ *
+ *
+ */
+module GenerateQVToCSModels
+
+import org.eclipse.ocl.examples.build.utilities.*
+import org.eclipse.ocl.examples.build.xtend.*
+import org.eclipse.emf.mwe.utils.*
+import org.eclipse.emf.mwe.utils.*
+import org.eclipse.emf.ecore.resource.impl.*
+
+/**
+ *	Generate the Concrete Syntax Models used by the Xtext editors.
+ */
+var platformURI = ".."
+
+/*
+ * ImperativeOCL/QVTo Xtext models related configuration variables
+ */
+var oclXtextBaseProjectName = "org.eclipse.ocl.xtext.base"
+var oclXtextBaseProjectURI = "platform:/resource/${oclXtextBaseProjectName}"
+var oclXtextBaseProjectPrefix = "BaseCS"
+var oclXtextBaseModelName = "basecs"
+var oclXtextBaseEcoreProjectPath = "model/${oclXtextBaseProjectPrefix}.ecore"
+var oclXtextBaseEcoreURI = "${oclXtextBaseProjectURI}/${oclXtextBaseEcoreProjectPath}"
+var oclXtextBaseVisitorPackage = "${oclXtextBaseProjectName}.${oclXtextBaseModelName}.util"
+var oclXtextBaseVisitorName = "${oclXtextBaseProjectPrefix}Visitor"
+var oclXtextBaseVisitorQualifiedName = "${oclXtextBaseVisitorPackage}.${oclXtextBaseVisitorName}"
+var oclXtextBaseVisitablePackage = "${oclXtextBaseVisitorPackage}"
+var oclXtextBaseVisitableName = "VisitableCS"
+
+var essentialOclXtextProjectName = "org.eclipse.ocl.xtext.essentialocl"
+var essentialOclXtextProjectURI = "platform:/resource/${essentialOclXtextProjectName}"
+var essentialOclXtextProjectPrefix = "EssentialOCLCS"
+var essentialOclXtextModelName = "essentialoclcs"
+var essentialOclXtextModelPackageName = "org.eclipse.ocl.xtext.${essentialOclXtextModelName}"
+var essentialOclXtextEcoreProjectPath = "model/${essentialOclXtextProjectPrefix}.ecore"
+var essentialOclXtextEcoreURI = "${essentialOclXtextProjectURI}/${essentialOclXtextEcoreProjectPath}"
+var essentialOclXtextVisitorPackage = "${essentialOclXtextProjectName}.${essentialOclXtextModelName}.util"
+var essentialOclXtextVisitorName = "${essentialOclXtextProjectPrefix}Visitor"
+var essentialOclXtextVisitorQualifiedName = "${essentialOclXtextVisitorPackage}.${essentialOclXtextVisitorName}"
+
+/*
+ * ImperativeOCL Xtext models related configuration variables
+ */
+var imperativeOclXtextProjectName = "org.eclipse.qvto.examples.xtext.imperativeocl"
+var imperativeOclXtextProjectURI = "platform:/resource/${imperativeOclXtextProjectName}"
+var imperativeOclXtextProjectPrefix = "ImperativeOCLCS"
+var imperativeOclXtextModelName = "imperativeoclcs"
+var imperativeOclXtextModelPackageName = "org.eclipse.qvto.examples.xtext.${imperativeOclXtextModelName}"
+var imperativeOclXtextSuperProjectName = "${essentialOclXtextProjectName}"
+var imperativeOclXtextSuperProjectPrefix = "${essentialOclXtextProjectPrefix}"
+var imperativeOclXtextSuperModelName = "${essentialOclXtextModelName}"
+var imperativeOclXtextSuperModelPackageName ="${essentialOclXtextModelPackageName}"
+var imperativeOclXtextEcoreName = "${imperativeOclXtextProjectPrefix}"
+var imperativeOclXtextEcoreProjectPath = "model/${imperativeOclXtextEcoreName}.ecore"
+var imperativeOclXtextEcoreURI = "${imperativeOclXtextProjectURI}/${imperativeOclXtextEcoreProjectPath}"
+var imperativeOclXtextGenModelProjectPath = "model/${imperativeOclXtextEcoreName}.genmodel"
+var imperativeOclXtextGenModelPath = "${imperativeOclXtextProjectName}/${imperativeOclXtextGenModelProjectPath}"
+
+/*
+ * QVTOperational Xtext models related configuration variables
+ */
+var qvtOperationalXtextProjectName = "org.eclipse.qvto.examples.xtext.qvtoperational"
+var qvtOperationalXtextProjectURI = "platform:/resource/${qvtOperationalXtextProjectName}"
+var qvtOperationalXtextProjectPrefix = "QVTOperationalCS"
+var qvtOperationalXtextModelName = "qvtoperationalcs"
+var qvtOperationalXtextModelPackageName = "org.eclipse.qvto.examples.xtext.${qvtOperationalXtextModelName}"
+var qvtOperationalXtextSuperProjectName = "${imperativeOclXtextProjectName}"
+var qvtOperationalXtextSuperProjectPrefix = "${imperativeOclXtextProjectPrefix}"
+var qvtOperationalXtextSuperModelName = "${imperativeOclXtextModelName}"
+var qvtOperationalXtextSuperModelPackageName ="${imperativeOclXtextModelPackageName}"
+var qvtOperationalXtextEcoreName = "${qvtOperationalXtextProjectPrefix}"
+var qvtOperationalXtextEcoreProjectPath = "model/${qvtOperationalXtextEcoreName}.ecore"
+var qvtOperationalXtextEcoreURI = "${qvtOperationalXtextProjectURI}/${qvtOperationalXtextEcoreProjectPath}"
+var qvtOperationalXtextGenModelProjectPath = "model/${qvtOperationalXtextEcoreName}.genmodel"
+var qvtOperationalXtextGenModelPath = "${qvtOperationalXtextProjectName}/${qvtOperationalXtextGenModelProjectPath}"
+
+Workflow {
+	bean = ResourceSetImpl : resourceSet {}
+    bean = StandaloneSetup { resourceSet = resourceSet
+    	platformUri = platformURI	// Common path from which...
+    	scanClassPath = true		// ... a scan finds all classes
+    	    	
+    	uriMap = Mapping {
+    		from = "platform:/plugin/org.eclipse.ocl.examples.build/"
+    		to = "platform:/resource/org.eclipse.ocl.examples.build/"
+    	}
+    }
+    bean = GenModelSetup { resourceSet = resourceSet }
+    bean = EcoreGenModelSetup { resourceSet = resourceSet }
+    
+//    component = DerivedVisitorPatternWeaver {
+//    	resourceSet = resourceSet
+//    	in = imperativeOclXtextEcoreURI
+//    	in = essentialOclXtextEcoreURI
+//    	in = oclXtextBaseEcoreURI
+//    	rootVisitorInterfaceName = oclXtextBaseVisitorName
+//    	rootVisitorInterfaceQualifiedName = oclXtextBaseVisitorQualifiedName
+//    	superVisitorInterfaceName = essentialOclXtextVisitorName
+//    	superVisitorInterfaceQualifiedName = essentialOclXtextVisitorQualifiedName
+//    	derivedVisitorInterfaceName = "${imperativeOclXtextProjectPrefix}Visitor"
+//    	derivedVisitorInterfaceQualifiedName = "${imperativeOclXtextProjectName}.imperativeoclcs.util.${imperativeOclXtextProjectPrefix}Visitor"
+//    }
+
+//    component = DerivedVisitorPatternWeaver {
+//    	resourceSet = resourceSet
+//    	in = qvtOperationalXtextEcoreURI
+//    	in = essentialOclXtextEcoreURI
+//    	in = oclXtextBaseEcoreURI
+//    	rootVisitorInterfaceName = oclXtextBaseVisitorName
+//    	rootVisitorInterfaceQualifiedName = oclXtextBaseVisitorQualifiedName
+//    	superVisitorInterfaceName = "${imperativeOclXtextProjectPrefix}Visitor"
+//    	superVisitorInterfaceQualifiedName = "${imperativeOclXtextProjectName}.imperativeoclcs.util.${imperativeOclXtextProjectPrefix}Visitor"
+//    	derivedVisitorInterfaceName = "${qvtOperationalXtextProjectPrefix}Visitor"
+//    	derivedVisitorInterfaceQualifiedName = "${qvtOperationalXtextProjectName}.qvtoperationalcs.util.${qvtOperationalXtextProjectPrefix}Visitor"
+//    }
+    
+//    component = GenerateModel { resourceSet = resourceSet skipOnErrors = true
+//		genModel = imperativeOclXtextGenModelPath
+//		clearResourceSet = false
+//    }
+//    
+//    component = GenerateModel { resourceSet = resourceSet skipOnErrors = true
+//		genModel = qvtOperationalXtextGenModelPath
+//		clearResourceSet = false
+//    }
+    
+//    component = GenerateCS2ASVisitors { resourceSet = resourceSet
+//    	genModelFile = imperativeOclXtextGenModelProjectPath // FIXME change this when changing from automatically generated MM to a manual one located in /model
+//    	javaFolder = imperativeOclXtextModelJavaFolder
+//    	projectName = imperativeOclXtextProjectName
+//    	projectPrefix = imperativeOclXtextProjectPrefix
+//    	superProjectName = imperativeOclXtextSuperProjectName
+//    	superProjectPrefix = imperativeOclXtextSuperProjectPrefix
+//    	superVisitorPackageName = essentialOclXtextVisitorPackage // FIXME if Essential OCL aligns with conventions
+//    	superVisitorClassName = essentialOclXtextVisitorName      // FIXME if Essential OCL aligns with conventions
+//    	visitablePackageName = oclXtextBaseVisitablePackage
+//    	visitableClassName = oclXtextBaseVisitableName
+//    }
+    
+    component = @qvto.SubGenerateCSModel { resourceSet = resourceSet
+    	projectName = imperativeOclXtextProjectName
+    	projectPrefix = imperativeOclXtextProjectPrefix
+    	modelName = imperativeOclXtextModelName
+    	modelPackageName = imperativeOclXtextModelPackageName
+    	superProjectName = imperativeOclXtextSuperProjectName
+    	superProjectPrefix = imperativeOclXtextSuperProjectPrefix
+    	superModelName = imperativeOclXtextSuperModelName
+    	superModelPackageName = imperativeOclXtextSuperModelPackageName
+//    	asGenModelURI = "platform:/resource/org.eclipse.qvto.examples.pivot.imperaticeocl/model/ImperativeOCL.genmodel"
+    }
+    
+    component = @qvto.SubGenerateCSModel { resourceSet = resourceSet
+    	projectName = qvtOperationalXtextProjectName
+    	projectPrefix = qvtOperationalXtextProjectPrefix
+    	modelName = qvtOperationalXtextModelName
+    	modelPackageName = qvtOperationalXtextModelPackageName
+    	superProjectName = qvtOperationalXtextSuperProjectName
+    	superProjectPrefix = qvtOperationalXtextSuperProjectPrefix
+		superModelName = qvtOperationalXtextSuperModelName
+		superModelPackageName = qvtOperationalXtextSuperModelPackageName
+//    	asGenModelURI = "platform:/resource/org.eclipse.qvto.examples.pivot.qvtoperational/model/QVTOperational.genmodel"
+    }
+    
+//    component = GenerateCS2ASVisitors { resourceSet = resourceSet
+//    	javaFolder = qvtOperationalXtextModelJavaFolder
+//    	projectName = qvtOperationalXtextProjectName
+//    	projectPrefix = qvtOperationalXtextProjectPrefix
+//    	superProjectName = qvtOperationalXtextSuperProjectName
+//    	superProjectPrefix = qvtOperationalXtextSuperProjectPrefix
+//    	visitablePackageName = oclXtextBaseVisitablePackage
+//    	visitableClassName = oclXtextBaseVisitableName
+//    }
+}

@@ -1,0 +1,4 @@
+Terminating execution...
+org.eclipse.m2m.internal.qvt.oml.evaluator.QvtRuntimeException: Input model parameter 'model : scr878::ecore' is read-only!
+	at scr878::testMapping(scr878.qvto:17)
+	at scr878::main(scr878.qvto:7)

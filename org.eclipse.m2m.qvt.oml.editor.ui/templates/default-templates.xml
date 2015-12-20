@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+    <template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.transformation"
+          name="%code_template_transformation"
+          description="%code_template_transformation_desc">transformation ${name}(in input : ${modeltype1}, out output : ${modeltype2});
+</template>
+    <template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.library"
+          name="%code_template_library"
+          description="%code_template_library_desc">library ${name};
+</template>
+<template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.main"
+          name="%code_template_main"
+          description="%code_template_main_desc">main() {
+	${cursor}
+}</template>
+	<template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.mappingCtx"
+          name="%code_template_mappingCtx"
+          description="%code_template_mappingCtx_desc">mapping ${ContextType}::${name}() : ${OutputType} {
+	${cursor}
+}</template>
+	<template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.mapping"
+          name="%code_template_mapping"
+          description="%code_template_mapping_desc">mapping ${name}(in ${par} : ${InputType}) : ${OutputType} {
+	${cursor}
+}</template>
+	<template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.mappingInplace"
+          name="%code_template_mappingInplace"
+          description="%code_template_mappingInplace_desc">mapping inout ${ContextType}::${name}() {
+	${cursor}
+}</template>
+
+    <template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.guarded_mapping"
+          name="%code_template_guarded_mapping"
+          description="%code_template_guarded_mapping_desc">mapping ${ContextType}::${name}() : ${OutputType} 
+	when {
+		${condition}
+	}
+{
+	${cursor}
+}</template>
+    <template
+          autoinsert="false"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.query"
+          name="%code_template_query"
+          description="%code_template_query_desc">query ${ContextType}::${name}() : ${ReturnType} {
+	${cursor}
+	return null;
+}</template>
+    <template
+          autoinsert="false"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.helper"
+          name="%code_template_helper"
+          description="%code_template_helper_desc">helper ${ContextType}::${name}() : ${ReturnType} {
+	${cursor}
+	return null;
+}</template>
+    <template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.object"
+          name="%code_template_object"
+          description="%code_template_object_desc">object ${Type} {
+	${cursor}
+}</template>
+    <template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.rename"
+          name="%code_template_rename"
+          description="%code_template_rename_desc">tag "alias" ${Class}::${PropertyName} = '${newName}';</template>
+          
+    <template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.var"
+          name="%code_template_var"
+          description="%code_template_var_desc">var ${name} : ${Type} := ${InitExpr};
+	</template>
+	          
+    <template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.modeltype"
+          name="%code_template_modeltype"
+          description="%code_template_modeltype_desc">modeltype ${name} "strict" uses ${uri};
+	</template>
+	
+    <template
+          autoinsert="false"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.config_property"
+          name="%code_template_config_property"
+          description="%code_template_config_property_desc">configuration property ${name} : ${Type};
+	</template>
+    <template
+          autoinsert="false"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.interm_property"
+          name="%code_template_interm_property"
+          description="%code_template_interm_property_desc">intermediate property ${ContextClass}::${name} : ${Type};
+	</template>
+	
+    <template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.property"
+          name="%code_template_property"
+          description="%code_template_property_desc">property ${name} : ${Type} = ${InitExpr};
+	</template>
+
+    <template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.import"
+          name="%code_template_import"
+          description="%code_template_import_desc">import ${compilationUnit};
+	</template>
+
+    <template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.assert"
+          name="%code_template_assert"
+          description="%code_template_assert_desc">assert ${levelOpt} (${condition});
+	</template>
+
+    <template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.assertLog"
+          name="%code_template_assertLog"
+          description="%code_template_assertLog_desc">assert ${level} (${condition}) with log('${message}');
+	</template>
+
+    <template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.log"
+          name="%code_template_log"
+          description="%code_template_log_desc">log('${message}', ${dataObj});
+	</template>
+
+    <template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.logWhen"
+          name="%code_template_logWhen"
+          description="%code_template_logWhen_desc">log('${message}', ${dataObj}) when ${condition};
+	</template>
+
+    <template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.while"
+          name="%code_template_while"
+          description="%code_template_while_desc">while(${condition}) {
+	${cursor}			
+};
+	</template>
+
+    <template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.whileWithResult"
+          name="%code_template_whileWithResult"
+          description="%code_template_whileWithResult_desc">while(${varName} : ${Type}; ${condition}) {
+	${cursor}
+};</template>
+
+    <template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.tupleType"
+          name="%code_template_tupleType"
+          description="%code_template_tupleType_desc">Tuple(${part1} : ${Type1}; ${part2} : ${Type2})
+	</template>
+    <template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.tupleLiteral"
+          name="%code_template_tupleLiteral"
+          description="%code_template_tupleLiteral_desc">Tuple {${part1} = ${val1}; ${part2} : ${val2}}
+	</template>
+
+    <template
+          autoinsert="true"
+          context="org.eclipse.m2m.qvt.oml.templates"
+          id="org.eclipse.m2m.qvt.oml.template.switch"
+          name="%code_template_switch"
+          description="%code_template_switch_desc">switch {
+	case (${condition1}) ${expression1};
+	case (${condition2}) ${expression2};
+	else ${expression3};
+};</template>
+
+<template
+	autoinsert="false"
+	context="org.eclipse.m2m.qvt.oml.templates"
+	id="org.eclipse.m2m.qvt.oml.template.if_statement"
+	name="%code_template_if_statement"
+	description="%code_template_if_statement_desc">if(${condition}) then {
+	${cursor}
+} endif;
+</template>
+
+<template
+	autoinsert="false"
+	context="org.eclipse.m2m.qvt.oml.templates"
+	id="org.eclipse.m2m.qvt.oml.template.if_else_statement"
+	name="%code_template_if_else_statement"
+	description="%code_template_if_else_statement_desc">if(${condition}) then {
+	${cursor}
+} else {
+	
+} endif;
+</template>
+
+<template
+	autoinsert="false"
+	context="org.eclipse.m2m.qvt.oml.templates"
+	id="org.eclipse.m2m.qvt.oml.template.compute"
+	name="%code_template_compute"
+	description="%code_template_compute_desc">compute(${result} : ${type}) {
+	${cursor}
+};
+</template>
+
+</templates>

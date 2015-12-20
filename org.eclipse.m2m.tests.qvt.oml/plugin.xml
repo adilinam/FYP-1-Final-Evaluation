@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package 
+            uri="http://www.eclipse.org/m2m/qvt/oml/testqvt" 
+            class="testqvt.TestqvtPackage"
+            genModel=""/> 
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.eclipse.org/m2m/qvt/oml/generics"
+            class="generics.GenericsPackage"
+            genModel=""/>
+   </extension>
+
+   <extension
+         point="org.eclipse.m2m.qvt.oml.runtime.qvtTransformation">
+      <transformation
+            file="parserTestData/models/abstractresult/abstractresult.qvto"
+            id="parserTestData.models.abstractresult.abstractresult">
+      </transformation>
+      <transformation
+            file="apiTestData/exec1/exec1.qvto"
+            id="apiTestData.exec1.exec1">
+      </transformation>
+      <transformation
+            file="apiTestData/exec3/exec3.qvto"
+            id="apiTestData.exec3.exec3">
+      </transformation>
+      <transformation
+            file="apiTestData/exec3_withImport/exec3_withImport.qvto"
+            id="apiTestData.exec3_withImport.exec3_withImport">
+      </transformation>
+   </extension>
+
+   <extension point="org.eclipse.m2m.qvt.oml.ocl.libraries">
+      <library class="org.eclipse.m2m.tests.qvt.oml.TestBlackboxLibrary" id="TestBlackboxLibrary">
+         <inMetamodel uri="http://www.eclipse.org/emf/2002/Ecore"/>
+         <outMetamodel uri="http://www.eclipse.org/emf/2002/Ecore"/>
+      </library>
+   </extension>
+   
+	<extension point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+   		<unit name="Foo" namespace="org.bar">
+    		<library name="FooJavaLib" class="org.eclipse.m2m.tests.qvt.oml.bbox.AnnotatedJavaLibrary">
+				<metamodel nsURI="http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml"/>	    		
+    			<metamodel nsURI="http://www.eclipse.org/emf/2002/Ecore"/>
+				<metamodel nsURI="http://www.eclipse.org/qvt/1.0.0/Operational/Expressions"/>
+				<metamodel nsURI="http://www.eclipse.org/m2m/qvt/oml/generics"/>
+    		</library>
+
+    		<library name="Bug289982_Lib" class="org.eclipse.m2m.tests.qvt.oml.bbox.Bug289982_Library">
+    			<metamodel nsURI="http://www.eclipse.org/emf/2002/Ecore"/>
+    		</library>
+
+    		<library name="Bug427237_Lib" class="org.eclipse.m2m.tests.qvt.oml.bbox.Bug427237_Library">
+    			<metamodel nsURI="http://www.eclipse.org/emf/2002/Ecore"/>
+    		</library>
+		</unit>
+		
+   		<unit name="Collections" namespace="org.bar">
+    		<library name="FooCollectionsLib" class="org.eclipse.m2m.tests.qvt.oml.bbox.CollectionTypeLibrary">
+    			<metamodel nsURI="http://www.eclipse.org/emf/2002/Ecore"/>				
+    		</library>    		
+		</unit>
+
+		<!-- Simple definition, with implicit unit -->
+    	<library class="org.eclipse.m2m.tests.qvt.oml.bbox.SimpleJavaLibrary">
+    	 	<!-- Also testing no referenced metamodel, if using only OCL Stdlib types -->			
+    	</library>
+    	
+    	<library class="org.eclipse.m2m.tests.qvt.oml.bbox.InvalidLibrary"/> 
+    	
+	</extension>
+
+  	<extension point="org.eclipse.emf.ecore.dynamic_package">
+		<resource location="models/test_dynamicpkg.ecore" uri="http://www.eclipse.org/m2m/qvt/oml/test_dynamicpkg"/>
+		<resource location="deployed/dynamicmodel/registered.ecore" uri="http://www.eclipse.org/m2m/qvt/oml/test/registeredDynamic"/>		 	
+  	</extension>
+
+	<extension point="org.eclipse.emf.ecore.protocol_parser">
+		<parser
+		  class="org.eclipse.m2m.tests.qvt.oml.util.CustomEmfResourceFactory"
+	      protocolName="custom_scheme"/>
+	</extension>
+
+   <extension
+	     point="org.eclipse.m2m.qvt.oml.runtime.qvtTransformationContainer">
+      <sourceContainer path="/"/>
+   </extension>
+   <extension
+	     point="org.eclipse.m2m.qvt.oml.runtime.qvtTransformationContainer">
+      <sourceContainer path="parserTestData"/>
+   </extension>
+
+</plugin>

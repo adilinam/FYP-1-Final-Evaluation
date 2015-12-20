@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<psf version="2.0">
+<provider id="org.eclipse.egit.core.GitProvider">
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,features/org.eclipse.m2m.qvt.oml.debug.feature"/>
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,doc/org.eclipse.m2m.qvt.oml.doc"/>
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,doc/org.eclipse.m2m.qvt.oml.doc-feature"/>
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,features/org.eclipse.m2m.qvt.oml.editor.feature"/>
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,examples/org.eclipse.m2m.qvt.oml.examples-feature"/>
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,features/org.eclipse.m2m.qvt.oml.feature"/>
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,features/org.eclipse.m2m.qvt.oml.runtime.feature"/>
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,features/org.eclipse.m2m.qvt.oml.sdk-feature"/>
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,features/org.eclipse.m2m.qvt.oml.tests-feature"/>
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,features/org.eclipse.qvto.license-feature"/>
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,releng/org.eclipse.qvto.releng.buckminster"/>
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,releng/org.eclipse.qvto.releng"/>
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,releng/org.eclipse.qvto.oomph"/>
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,features/org.eclipse.qvto.releng.build-feature"/>
+</provider>
+<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1391419627245_4" label="QVTo Releng" name="QVTo Releng">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.qvto.releng.build-feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.m2m.qvt.oml.sdk-feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.m2m.qvt.oml.runtime.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.m2m.qvt.oml.doc" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.qvto.license-feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.m2m.qvt.oml.debug.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.m2m.qvt.oml.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.m2m.qvt.oml.tests-feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.qvto.releng.buckminster" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.qvto.releng" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.qvto.oomph" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.m2m.qvt.oml.editor.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.m2m.qvt.oml.examples-feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.m2m.qvt.oml.doc-feature" type="4"/>
+</workingSets>
+</psf>

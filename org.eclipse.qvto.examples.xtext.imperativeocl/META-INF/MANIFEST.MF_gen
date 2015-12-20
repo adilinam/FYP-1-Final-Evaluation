@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.eclipse.qvto.examples.xtext.imperativeocl
+Bundle-SymbolicName: org.eclipse.qvto.examples.xtext.imperativeocl; singleton:=true
+Bundle-Version: 0.0.1
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.qvto.examples.xtext.imperativeocl,
+ org.eclipse.qvto.examples.xtext.imperativeocl.services,
+ org.eclipse.qvto.examples.xtext.imperativeocl.serializer,
+ org.eclipse.qvto.examples.xtext.imperativeocl.parser.antlr,
+ org.eclipse.qvto.examples.xtext.imperativeocl.parser.antlr.internal,
+ org.eclipse.qvto.examples.xtext.imperativeocl.validation,
+ org.eclipse.qvto.examples.xtext.imperativeocl.scoping,
+ org.eclipse.qvto.examples.xtext.imperativeocl.formatting
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.antlr.runtime
+Import-Package: org.apache.log4j
+

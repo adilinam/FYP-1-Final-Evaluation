@@ -1,0 +1,49 @@
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+	
+transformation RootTransfForExtends(in eModel : ECORE, out outModel : ECORE);
+ 
+property prop_TransfForExtends : String = "prop_TransfForExtends";
+
+main() {
+	object EPackage {
+		name := "should never be executed";
+	};
+}
+
+
+helper EClass::decorateName() : String {
+	return "RootTransfForExtends-" + self.name;
+}
+
+helper non_ContextualDecorate(c : EClass) : String {
+	return "RootTransfForExtends-" + c.name;
+}
+
+mapping EClass::customCopy() : EClass {
+	name := "RootTransfForExtends-" + self.name;
+}
+
+mapping customCopy(in eClass : EClass) : EClass {
+	name := "RootTransfForExtends-" + eClass.name;
+}
+
+helper rootModuleQuery() : String {
+	return "RootTransfForExtends";
+}
+
+mapping createOverridenCallsPackage(in pckgName : String) : EPackage {
+	init {
+		var c:EClass := object EClass { name := pckgName };
+		c.eStructuralFeatures += object EAttribute {
+			name := c.decorateName();
+		};
+		c.eStructuralFeatures += object EAttribute {
+			name := non_ContextualDecorate(c);
+		};
+	}
+
+	name := pckgName;
+	eClassifiers += c;
+	eClassifiers += c.map customCopy();
+	eClassifiers += map customCopy(c);	
+}

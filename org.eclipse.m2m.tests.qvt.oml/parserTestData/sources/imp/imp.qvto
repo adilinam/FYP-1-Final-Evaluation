@@ -1,0 +1,8 @@
+library imp;
+
+import b1;
+import b2;
+
+query foo_a(): String {
+	return 'abc' + foo_b1() + foo_b2()
+}

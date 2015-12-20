@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="ASCII"?>
+<testqvt:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:testqvt="http://www.eclipse.org/m2m/qvt/oml/testqvt">
+  <elements xsi:type="testqvt:BooleanElement" name="testBoolean" isSmallBoolean="true" smallBoolean="true" isLargeBoolean="true" largeBoolean="true"/>
+</testqvt:Model>

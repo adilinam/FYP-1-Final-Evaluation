@@ -1,0 +1,68 @@
+import com.foo.FooLibImport;
+
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+library FooLib;
+
+property suffix : String = '_suffix'; 
+
+
+helper String::testEchoContextual(inStr : String, upperCase : Boolean) : String {
+	if(upperCase) then {
+		return self + inStr.toUpper() + suffix;
+	} endif;
+	
+	return self + inStr + suffix; 
+
+}
+
+query testEchoContextless(inStr : String, upperCase : Boolean) : String {
+	if(upperCase) then {
+		return inStr.toUpper() + suffix;
+	} endif;
+	
+	return inStr + suffix; 
+}
+
+query testHelperWithAssertFailed() : String {
+ 	assert fatal (false);
+ 	return null;
+}
+
+-- tests log expression does not cause any failure
+query testHelperWithLog() : String {
+	log('testHelperWithLog'); 	
+	return 'testHelperWithLog';	
+}
+
+-- tests resolve expression does not cause any failure
+query EClass::testHelperWithResolve() : String {
+	assert fatal (self.resolve()->isEmpty());
+	return 'testHelperWithResolve';	
+}
+
+
+helper testNoArgsHelper() : String {
+	return 'testNoArgsHelper';
+}
+
+query EClass::testQueryContextual() : String {
+	return null;
+}
+
+query testQueryNonContextual() : String {
+	return null;
+}
+
+helper testImportedVirtualCall() : Boolean {
+	-- do nothing, just represent a test-case
+	return true;
+}
+
+helper Collection(String)::testToUpperStrings() : Collection(String) {
+	return self.toUpper();
+}
+
+helper String::testCollectionTypeInImportsMatch() : String {
+	return Sequence{self, self}->collectionOpFromImportedLib();
+}

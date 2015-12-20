@@ -1,0 +1,6 @@
+transformation normalimport;
+import util;
+
+query foo(): String {
+    return bar()
+}

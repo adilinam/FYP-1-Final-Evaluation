@@ -1,0 +1,28 @@
+modeltype UML "strict" uses uml('http://www.eclipse.org/uml2/3.0.0/UML');
+
+transformation UMLFoo(inout uml : UML);
+
+main() {
+	var c := uml.objects()![Class];
+	var p := c._package;
+
+	var i := object UML::Interface {
+		name := "I" + c.name;
+		ownedOperation := c.ownedOperation[visibility = VisibilityKind::public];
+	};
+
+	p.ownedType += i;
+	
+	c.interfaceRealization += object InterfaceRealization {
+		contract := i;
+		implementingClassifier := c;
+	};
+
+	(uml.objects()[TypedElement])[type = c]->map updateReferredType(i);
+	
+	c.name := c.name + "Impl";
+}
+
+mapping inout TypedElement::updateReferredType(in newType : Interface) {
+	type := newType; 
+}

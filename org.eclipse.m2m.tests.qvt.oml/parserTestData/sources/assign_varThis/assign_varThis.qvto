@@ -1,0 +1,13 @@
+transformation assign_varThis;
+
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+property myProp : String = 'aStr';
+
+mapping main(inout pack: ECORE::EPackage) {
+	init {
+		this := null;				-- cannot modify this variable		
+		var b: Boolean := this <> null;		-- but can access this
+		var s: String := this.myProp;		-- and its properties		
+	}	
+}

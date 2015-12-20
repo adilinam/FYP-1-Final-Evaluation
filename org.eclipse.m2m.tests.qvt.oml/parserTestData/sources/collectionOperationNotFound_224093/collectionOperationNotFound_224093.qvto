@@ -1,0 +1,11 @@
+modeltype Ecore uses "http://www.eclipse.org/emf/2002/Ecore";
+transformation sample(inout model : Ecore);
+
+main() {
+	var coll : Collection(EClass) := Sequence {};
+	var coll2 := /*<error>*/coll->first()/*</error>*/;    
+	var a2 : List(Integer) := List {-1..3, 5, 8..10};
+	/*<error>*/a2.add()/*</error>*/; 
+	var a1 : Integer := 1;
+	/*<error>*/a1.foo()/*</error>*/;
+}

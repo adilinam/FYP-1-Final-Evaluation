@@ -1,0 +1,16 @@
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype UML uses 'http://www.eclipse.org/uml2/2.0.0/UML';
+
+
+transformation Ecore2Uml(
+	in inModel : ECORE, out outModel : UML);
+
+
+main() {
+	inModel.rootObjects()[EPackage]->map ePackage2Model();
+}     
+
+
+mapping EPackage::ePackage2Model() : Model {
+	name := self.name;
+}

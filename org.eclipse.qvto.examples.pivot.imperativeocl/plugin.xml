@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ Copyright (c) 2013 Willink Transformations, University of York, and others.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+   E.D.Willink - Initial API and implementation
+   Adolfo Sanchez-Barbudo (University of York) - Bug397429
+ </copyright>
+-->
+
+<plugin>
+
+  <extension point="org.eclipse.team.core.fileTypes">
+    <fileTypes extension="imperativeoclas" type="text" />
+  </extension>
+  
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser type="imperativeoclas"
+            class="org.eclipse.qvto.examples.pivot.imperativeocl.utilities.ImperativeOCLASResourceFactory"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ImperativeOCL -->
+      <package
+            uri="http://www.eclipse.org/qvt/pivot/1.0/ImperativeOCL"
+            class="org.eclipse.qvto.examples.pivot.imperativeocl.ImperativeOCLPackage"
+            genModel="model/ImperativeOCL.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.content_parser">
+      <!-- @generated ImperativeOCL NOT -->
+      <!--parser contentTypeIdentifier="org.eclipse.qvto.imperativeocl"
+            class="org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl"/-->
+      <parser contentTypeIdentifier="org.eclipse.qvto.imperativeocl"
+            class="org.eclipse.qvto.examples.pivot.imperativeocl.utilities.ImperativeOCLASResourceFactory"/>
+   </extension>
+
+   <extension point="org.eclipse.core.contenttype.contentTypes">
+      <!-- @generated ImperativeOCL NOT-->
+      <content-type
+            base-type="org.eclipse.ocl.examples.oclas"
+            file-extensions="imperativeoclas"
+            id="org.eclipse.qvto.imperativeocl"
+            name="%_UI_ImperativeOCL_content_type"
+            priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://www.eclipse.org/qvt/pivot/1.0/ImperativeOCL"/>
+            <parameter name="kind" value="xmi"/>
+         </describer>
+      </content-type>
+   </extension>
+</plugin>

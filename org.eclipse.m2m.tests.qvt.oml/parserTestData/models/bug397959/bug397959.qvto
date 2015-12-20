@@ -1,0 +1,22 @@
+import models.bug397959.NewLibrary;
+
+modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation bug397959(in input : ecore, out output: ecore);
+
+main() {
+	-- should result in correct overriding mapping call
+	map m();
+}
+
+mapping m() : EPackage {
+		
+	name := 'overridden_contextless'
+	
+}
+
+mapping EPackage :: m() : EPackage {
+		
+	name := 'overridden_contextaware'
+	
+}

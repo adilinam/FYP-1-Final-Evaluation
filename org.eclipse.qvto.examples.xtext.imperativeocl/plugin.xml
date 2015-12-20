@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ImperativeOCLCS -->
+      <package
+            uri="http://www.eclipse.org/qvt/pivot/1.0/ImperativeOCLCS"
+            class="org.eclipse.qvto.examples.xtext.imperativeoclcs.ImperativeOCLCSPackage"
+            genModel="model/ImperativeOCLCS.genmodel"/>
+   </extension>
+
+</plugin>

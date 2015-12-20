@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ Copyright (c) 2008 Open Canarias S.L. and others.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+     A. Sanchez-Barbudo  - initial API and implementation
+ </copyright>
+
+ $Id: plugin.xml,v 1.3 2008/12/29 11:36:42 radvorak Exp $
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.eclipse.org/qvt/1.0/ImperativeOCL"
+            class="org.eclipse.m2m.qvt.oml.ecore.ImperativeOCL.ImperativeOCLPackage"
+            genModel="model/ImperativeOCL.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.content_parser">
+      <parser
+            contentTypeIdentifier="org.eclipse.m2m.qvt.oml.ecore.imperativeocl"
+            class="org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.emf.ecore"
+            file-extensions="eimperativeocl"
+            id="org.eclipse.m2m.qvt.oml.ecore.imperativeocl"
+            name="%_UI_ImperativeOCL_content_type"
+            priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://www.eclipse.org/qvt/1.0/ImperativeOCL"/>
+            <parameter name="kind" value="xmi"/>
+         </describer>
+      </content-type>
+   </extension>
+
+</plugin>

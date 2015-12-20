@@ -1,0 +1,10 @@
+modeltype ECORE1 uses "http://www.eclipse.org/emf/2002/Ecore"
+	where {self.objectsOfType(EPackage)->size()>=1; self.objectsOfType(EClass)->size()>=0; var v : Boolean ::= true};
+modeltype ECORE2 uses "http://www.eclipse.org/emf/2002/Ecore"
+	where {self.objectsOfType(EPackage)->size()>=1; self.objectsOfType(EClass)->size()>=1; var v : Boolean ::= true};
+
+transformation A (in i1 : ECORE1, in i2 : ECORE2, out o:ECORE1);
+
+main() {
+		object EPackage {name := 'pack'};
+}

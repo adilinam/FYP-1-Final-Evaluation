@@ -1,0 +1,4 @@
+transformation imp;
+
+property aa : Integer = 1;
+property bb : Integer = aa + 1;

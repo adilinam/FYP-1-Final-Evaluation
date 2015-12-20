@@ -1,0 +1,8 @@
+modeltype Ecore1 uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+transformation Base(in input:Ecore1, out output:Ecore1);
+
+intermediate property EPackage::prop1 : EClass;
+	
+
+main();

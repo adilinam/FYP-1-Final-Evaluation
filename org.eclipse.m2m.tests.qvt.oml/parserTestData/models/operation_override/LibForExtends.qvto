@@ -1,0 +1,11 @@
+library LibForExtends;
+
+
+query query_LibForExtends() : String {
+	return "LibForExtends-query_LibForExtends";
+}
+
+query callQuery_LibForExtends() : String {
+	return query_LibForExtends();
+}
+

@@ -1,0 +1,29 @@
+import models.bug254962.Middle;
+
+modeltype Ecore1 uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+transformation bug254962(in input:Ecore1, out output:Ecore1) extends Middle;
+
+intermediate property EPackage::prop2 : EClass;
+
+main() {
+
+	var root : EPackage = input.objects()[EPackage]->any(name = 'root');				
+	var a : EClass = root.eClassifiers->any(name = 'A').oclAsType(EClass);
+		
+	var sub : EPackage = root.eSubpackages->any(name = 'sub').oclAsType(EPackage);
+	var b : EClass = sub.eClassifiers->any(name = 'B').oclAsType(EClass);
+			
+	sub.prop1 := a;
+	sub.prop2 := b;
+	
+	-- delegate clone to extended module which does not directly own the intermediate properties
+	var copy : EPackage = sub.map clonePackage();
+	
+	-- 'a' is referenced by 'sub' -> assert copied reference 
+	assert fatal (copy.prop1 = a);
+	
+	-- 'b' is contained by 'sub' -> assert cloned object
+	assert fatal (copy.prop2 <> b and copy.prop2.name = 'B');
+		
+}

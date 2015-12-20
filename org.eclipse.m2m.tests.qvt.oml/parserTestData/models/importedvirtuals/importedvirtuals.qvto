@@ -1,0 +1,239 @@
+import models.importedvirtuals.Imported;
+import models.importedvirtuals.Imported2;
+import models.importedvirtuals.Imported2; -- import me twice to see if can handle that
+
+modeltype ecore uses "http://www.eclipse.org/emf/2002/Ecore";
+
+
+transformation importedvirtuals(in modelIn : ecore, out model : ecore);
+
+property LOCAL_PROP : String = 'importedvirtuals::LOCAL_PROP';
+property importedvirtuals_PROP : String = 'importedvirtuals::PROP';
+
+
+main(in inModel : ecore::EPackage, out outModel : ecore::EPackage@model) {
+	
+	outModel:= object EPackage@model {
+		name := 'testRoot';
+	};
+
+	var testGlobalVirtualMapping := map testGlobalVirtualMapping(
+			object EAnnotation@model {}, 
+			object EEnumLiteral@model { name:= 'e'}, 
+			object EOperation@model {}, 
+			object EAttribute@model {}, 
+			object EReference@model {},
+			object EParameter@model {}
+	);	
+
+	var testResult : Boolean :=
+		INDIRECT_IMPORT_PROP = 'ImportedMappingTest::INDIRECT_IMPORT_PROP'
+			and
+		map upCastToModelElement(inModel) = inModel	
+	 		and
+		testGlobalVirtualMapping.status			
+			and
+		testOverrideLocalQuery()
+			and
+		testLocalVirtualQuery(
+			object EClass@model {}, 
+			object EDataType@model {}, 
+			object EPackage@model {})	
+			and
+		testRemoteVirtualQuery(
+			object EClass@model {}, 
+			object EDataType@model {}, 
+			object EPackage@model {})
+			and
+		testGlobalVirtualQuery(
+			object EAnnotation@model {}, 
+			object EEnumLiteral@model { name:= 'e' }, 
+			object EOperation@model {}, 
+			object EAttribute@model {}, 
+			object EReference@model {},
+			object EParameter@model {})
+			and
+		testProperties()
+			and
+		LOCAL_PROP = getLocalProperty();
+
+	-- bind objects created so far to a common container
+	var objects : OrderedSet(EObject) := model.objects()->select(i| i <> outModel and i.oclIsKindOf(EObject))->collect(oclAsType(EObject))->asOrderedSet();
+ 	-- dump the temp context instance as annotation contents 
+	outModel.eAnnotations += object EAnnotation {
+		contents := objects;
+	};
+	
+	outModel.eClassifiers += object EClass {
+		name := if(testResult) then 'passed' else null endif;
+	};	
+	
+	assert fatal (testResult);
+}
+
+    
+mapping EClassifier::xclass2Class(in arg : Collection(Integer)) : EClass { 
+	init {
+	} 
+}  
+
+
+query EClassifier::x(in x: Set(EClassifier)) {
+	return null;
+} 
+ 
+query EClass::x(in x: Set(EClassifier)) {
+	return null;
+}
+
+
+query EClass::x(in x: Set(ENamedElement)) {
+	return null;
+}
+
+query virtQuery() : EClassifier {
+	assert fatal (false) with log('never get called');
+	return object EClass {
+		
+	};
+}
+
+
+
+
+/*
+ Tests that matching context-less query overrides imported ones
+*/
+query testOverrideLocalQuery() : Boolean {
+	return Sequence { 
+		localQuery(),
+		checkImportedLocalQuery(),	
+		checkImported2LocalQuery()
+	} = Sequence {
+		'importedvirtuals::localQuery',
+		'importedvirtuals::localQuery',
+		'importedvirtuals::localQuery'
+	}
+}
+
+query localQuery() : String {
+	return 'importedvirtuals::localQuery';
+}
+
+/**
+ Test virtual operations deifned in a single module
+*/
+query testLocalVirtualQuery(in eClass: EClass, in eDataType: EDataType, in ePackage : EPackage) : Boolean {
+	return Sequence { 
+		eClass.oclAsType(ENamedElement).localVirtualQuery(12, Set{ 1 }, Tuple { val = Bag{ false }}),
+		eDataType.oclAsType(ENamedElement).localVirtualQuery(12, Set{ 1 }, Tuple { val = Bag{ false }}),	
+		ePackage.oclAsType(ENamedElement).localVirtualQuery(12, Set{ 1 }, Tuple { val = Bag{ false }})
+	} 
+	= 
+	Sequence { 
+		'EClass::localVirtualQuery',
+		'EClassifier::localVirtualQuery',
+		'ENamedElement::localVirtualQuery'
+	}
+}
+
+query EClass::localVirtualQuery(in arg1 : OclAny, in arg2 : Collection(Real), in arg3: Tuple (val : Collection(OclAny))) : String {
+	return 'EClass::localVirtualQuery';
+}
+
+query ENamedElement::localVirtualQuery(in arg1 : OclAny, in arg2 : Collection(Real), in arg3: Tuple (val : Collection(OclAny))) : String {
+	return 'ENamedElement::localVirtualQuery';
+}
+
+query EClassifier::localVirtualQuery(in arg1 : OclAny, in arg2 : Collection(Real), in arg3: Tuple (val : Collection(OclAny))) : String {
+	return 'EClassifier::localVirtualQuery';
+}
+
+
+/**
+ Test virtual operations defined in a multiple module module
+*/
+query testGlobalVirtualQuery(
+	element: EModelElement, named: ENamedElement, 
+	typed: ETypedElement, attrib: EStructuralFeature, 
+	ref: EReference, param : EParameter) : Boolean {
+	return Sequence { 
+		element.oclAsType(EModelElement).globalVirtualQuery(12, Set{ 1 }, Tuple { val = Bag{ false }}),
+		named.oclAsType(EModelElement).globalVirtualQuery(12, Set{ 1 }, Tuple { val = Bag{ false }}),	
+		typed.oclAsType(EModelElement).globalVirtualQuery(12, Set{ 1 }, Tuple { val = Bag{ false }}),
+		attrib.globalVirtualQuery(12, Set{ 1 }, Tuple { val = Bag{ false }}),	
+		ref.oclAsType(EModelElement).globalVirtualQuery(12, Set{ 1 }, Tuple { val = Bag{ false }}),		
+		param.globalVirtualQuery(12, Set{ 1 }, Tuple { val = Bag{ false }})
+				
+	} = Sequence {
+		'EModelElement::globalVirtualQuery',
+		'ENamedElement::globalVirtualQuery',
+		'ETypedElement::globalVirtualQuery', -- EOperation
+		'EStructuralFeature::globalVirtualQuery', -- EAttribute		
+		'EReference::globalVirtualQuery', -- concrete match
+		'EParameter::globalVirtualQuery' -- concrete match  	
+	}
+}
+
+
+query EReference::globalVirtualQuery(in arg1 : OclAny, in arg2 : Collection(Real), in arg3: Tuple (val : Collection(OclAny))) : String {
+	return 'EReference::globalVirtualQuery';
+}
+
+query EParameter::globalVirtualQuery(in arg1 : OclAny, in arg2 : Collection(Real), in arg3: Tuple (val : Collection(OclAny))) : String {
+	return 'EParameter::globalVirtualQuery';
+}
+
+
+query EStructuralFeature::globalVirtualQuery(in arg1 : OclAny, in arg2 : Collection(Real), in arg3: Tuple (val : Collection(OclAny))) : String {
+	return 'EStructuralFeature::globalVirtualQuery';
+}
+
+/**
+ Test virtual operations fully defined in a single module, imported indirectly
+*/
+query testRemoteVirtualQuery(in arg1: EClass, in arg2: EDataType, in arg3 : EPackage) : Boolean {
+	return Sequence { 
+		arg1.oclAsType(ENamedElement).remoteVirtualQuery(12, Set{ 1 }, Tuple { val = Bag{ false }}),
+		arg2.oclAsType(ENamedElement).remoteVirtualQuery(12, Set{ 1 }, Tuple { val = Bag{ false }}),	
+		arg3.oclAsType(ENamedElement).remoteVirtualQuery(12, Set{ 1 }, Tuple { val = Bag{ false }})
+	} = Sequence { 
+		'EClass::remoteVirtualQuery',
+		'EClassifier::remoteVirtualQuery',
+		'ENamedElement::remoteVirtualQuery'
+	} 
+}
+
+
+/* 
+* Testing module property resolution 
+*/
+query testProperties() : Boolean {
+	return testLocalProperty() and 
+	testGlobalProperty() and 
+	INDIRECT_IMPORT_PROP = 'ImportedMappingTest::INDIRECT_IMPORT_PROP'
+}
+
+query testGlobalProperty() : Boolean {
+	return importedvirtuals_PROP = 'importedvirtuals::PROP' and  
+	Imported_PROP = 'Imported::PROP' and
+	Imported2_PROP = 'Imported2::PROP'
+}
+
+
+query testLocalProperty() : Boolean {
+	return LOCAL_PROP = 'importedvirtuals::LOCAL_PROP' and
+	LOCAL_PROP = getLocalProperty() and
+	getImportedLocalProperty() = 'Imported::LOCAL_PROP' and
+	getImported2LocalProperty() = 'Imported2::LOCAL_PROP'
+}
+
+
+query getLocalProperty() : String {
+	return LOCAL_PROP;
+}
+
+----- virtual mapping exposed to indirectly imported ImportMappingTest
+mapping EParameter::globalVirtualMapping(in arg1 : OclAny, in arg2 : Collection(Real), in arg3: Tuple (val : Collection(OclAny))) : EClass {
+	name:='EParameter::globalVirtualMapping';
+}

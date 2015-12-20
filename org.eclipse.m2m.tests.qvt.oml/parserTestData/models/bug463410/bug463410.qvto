@@ -1,0 +1,16 @@
+import models.bug463410.Lib;
+
+transformation bug463410();
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+main() {
+
+	var c = map m();
+	assert fatal (c.name = "overridden");
+	
+} 
+
+constructor EClass::EClass() {
+	name := "overridden";
+}

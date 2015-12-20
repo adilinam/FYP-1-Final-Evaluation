@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<psf version="2.0">
+<provider id="org.eclipse.egit.core.GitProvider">
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,examples/org.eclipse.m2m.qvt.oml.econ2009.tutorial"/>
+<project reference="1.0,http://git.eclipse.org/gitroot/mmt/org.eclipse.qvto.git,master,plugins/org.eclipse.m2m.qvt.oml.samples"/>
+</provider>
+<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1391419636308_5" label="QVTo Examples" name="QVTo Examples">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.m2m.qvt.oml.econ2009.tutorial" type="4"/>
+<item elementID="=org.eclipse.m2m.qvt.oml.samples" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSets>
+</psf>

@@ -1,0 +1,8 @@
+modeltype ECORE uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+	
+transformation resolvecond(inout m : ECORE);
+
+main() {
+	object EObject {}.resolveone(e : EClass | true);
+	object EObject {}.resolveone(e : EClass | /*<error>*/'not a boolean'/*</error>*/)
+}

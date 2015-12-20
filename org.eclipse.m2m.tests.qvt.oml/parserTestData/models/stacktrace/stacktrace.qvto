@@ -1,0 +1,61 @@
+
+import models.stacktrace.auxtransf;
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+	
+transformation stacktrace(in inModel : ecore, out outModel : ecore); 
+ 
+configuration property testcase : String;
+
+
+property aProp : EClassifier = if testcase = 'mappingCallInProperty' then object EClass {}.map mapCreateInstaceFailureFromAux() else null endif;
+
+ 
+mapping EClassifier::mapCreateInstaceFailure() : EClass {
+	init {
+		self.mapCreateInstaceFailure2();
+	}	
+} 
+
+mapping EClassifier::mapCreateInstaceFailure2() : EClassifier {
+	init {  
+		self.mapCreateInstaceFailure3();
+	}
+}
+ 
+mapping EClassifier::mapCreateInstaceFailure3() : EClassifier {
+	init {  
+		result := object EClass {}; 
+	}
+}
+
+mapping EClass::mapCreateInstaceFailure3() : EClassifier {
+	init {  
+		result := null; -- cheat the compiler like we have assigned a concrete result;
+	}
+}
+
+main() {
+	var res : OclAny := if(testcase = 'stackOverFlow') then 
+		causeStackOverFlow()
+	else if (testcase = 'createInstaceFailure') then
+				object EClass {}.map mapCreateInstaceFailure()
+			else if (testcase = 'assertionFailed') then {
+					assert warning (false);
+					assert error (true);
+					assert error (false) with log('Test error message', testcase);
+					object EClass {}.map mapWithAssertionFailedFromAux()
+				} 
+				else if (testcase = 'testLogExpUsage') then 
+							populateLogData()
+						else if (testcase = 'mappingCallInProperty') then
+							null -- see aProp initialisation
+						endif							
+				endif 
+			endif 
+		endif
+	endif;	
+}
+
+

@@ -1,0 +1,18 @@
+<project default="build.jars" basedir=".">
+	<target name="zip">
+	    <mkdir dir="samples"/>
+
+		<delete file="samples/simpleuml2rdb.zip" failonerror="false"/>
+		<zip destfile="samples/simpleuml2rdb.zip">
+			<fileset dir="projects/org.eclipse.m2m.qvt.oml.samples.simpleuml2rdb" defaultexcludes="no">
+			    <include name="**/**"/>
+			    <exclude name="*CVS*/**"/>
+			</fileset>
+		</zip>
+	</target>
+	
+	<target name="build.jars">
+		<antcall target="zip"/>
+		<!--ant antfile="build-nl.xml" target="zip"/-->
+	</target>
+</project>

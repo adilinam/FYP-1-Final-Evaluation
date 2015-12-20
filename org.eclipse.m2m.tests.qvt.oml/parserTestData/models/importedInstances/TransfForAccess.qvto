@@ -1,0 +1,16 @@
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+	
+transformation TransfForAccess(in eModel : ECORE, out outModel : ECORE);
+ 
+property prop_TransfForAccess : String = "prop_TransfForAccess";
+
+main() {
+	// just do nothing	
+}
+
+query query_TransfForAccess() : String {
+	return "query_TransfForAccess";
+}
+
+mapping EPackage::mapping_TransfForAccess() : EPackage {	
+}

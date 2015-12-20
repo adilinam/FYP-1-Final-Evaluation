@@ -1,0 +1,9 @@
+library m1;
+
+import models.imports_transformations.m3;
+
+modeltype Ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+query qq1(in e : ecore::ENamedElement) : String {
+	return 'name = ' + e.name
+}

@@ -1,0 +1,27 @@
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+transformation t(
+	in inModel : ECORE, out outModel : ECORE);
+
+
+main() {
+	inModel.rootObjects()[EPackage]->map p2p();
+}     
+
+mapping EPackage::p2p() : EPackage {
+	name := self.name;
+	eClassifiers += self.eClassifiers[EClass]->map makeClass(); 
+}
+
+mapping EClass::makeAClass(): EClass 
+	when {self.name <> null and self.name.startsWith('A')} {
+		name := self.name + 'A';
+}
+
+mapping EClass::makeBClass(): EClass 
+	when {self.name <> null and self.name.startsWith('B')} {
+		name := self.name + 'B';
+}
+
+mapping EClass::makeClass(): EClass 
+	disjuncts EClass::makeAClass, EClass::makeBClass {}

@@ -1,0 +1,7 @@
+modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation NewTransformation(in model : ecore, out ecore);
+
+mapping inout EPackage::toEPackage(in s : String) {
+	/*@*/
+}

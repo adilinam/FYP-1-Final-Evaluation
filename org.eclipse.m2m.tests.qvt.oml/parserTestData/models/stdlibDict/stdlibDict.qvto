@@ -1,0 +1,131 @@
+import models.stdlibDict.TestLib;
+   
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+	
+transformation stdlibDict(in input : ECORE, out ouput : ECORE);
+ 
+main() {
+	testDictOperationSet();	
+	testTypesConformancy();	
+	testDictWithNestedCollectionValue();
+} 
+
+helper testDictOperationSet() : Boolean {
+	var string2IntDict1 : Dict(String, Integer) := Dict { 'key1' = 10 };
+	
+	var keys : List(String) := string2IntDict1->keys();
+	assert fatal (keys->count('key1') = 1);
+	assert fatal (keys->size() = 1);
+
+	var values : List(Integer) := string2IntDict1->values();
+	assert fatal (values->count(10) = 1);
+	assert fatal (values->size() = 1);
+
+	-- test get
+	assert fatal (string2IntDict1->get('key1') = 10); -- still keep the original	
+	-- test put(k, v)
+	var voidResult : OclVoid := string2IntDict1->put('key2', 20);
+	assert fatal (string2IntDict1->get('key1') = 10); -- still keep the original
+	assert fatal (string2IntDict1->get('key2') = 20); -- provide the additional
+	
+	assert fatal (keys->size() = 1); -- not a write through list	
+	assert fatal (values->size() = 1); -- not a write through list	
+	assert fatal (string2IntDict1->keys()->size() = 2);
+	assert fatal (string2IntDict1->values()->size() = 2);
+	
+	-- test hasKey
+	assert fatal (string2IntDict1->hasKey('key1'));	
+
+	-- test clear
+	string2IntDict1->clear();
+	assert fatal (string2IntDict1->isEmpty());
+	assert fatal (string2IntDict1->keys()->isEmpty());
+	assert fatal (string2IntDict1->values()->isEmpty());
+	assert fatal (string2IntDict1->get('key1') = null);
+	assert fatal (not string2IntDict1->hasKey('key1'));	
+	
+	-- test defaultget
+	string2IntDict1->put('key3', 30);
+	assert fatal (string2IntDict1->defaultget('key1', 1000) = 1000);
+	assert fatal (string2IntDict1->defaultget('key3', 1000) = 30);	
+	
+	-- not OMG std but consistent for now
+	string2IntDict1 += 500;
+	assert fatal (string2IntDict1->get(null) = 500);
+ 
+ 	-- test assignment
+	var string2IntDict2 : Dict(String, Integer);
+	string2IntDict2 := Dict {};
+	string2IntDict2->put('xx', -10);
+	string2IntDict1 := string2IntDict2;
+	-- check assignment took place	
+	assert fatal (string2IntDict1->get('xx') = -10);
+
+	-- test implicit iterator
+	assert fatal (Set { '-10' }->includesAll(string2IntDict1.repr()));
+
+	return true;
+}
+
+
+helper testDictWithNestedCollectionValue() : Boolean {
+	var dict : Dict(String, Collection(Set(Real)));
+	dict := Dict { 'key1' = Set { OrderedSet { 100 } } };
+	
+	var value : Collection(Collection(Real)) := dict->get('key1');
+	assert fatal (Sequence {}->including(value)->flatten()->count(100) = 1);
+
+	dict->put('key2', Set { });
+	assert fatal (dict->get('key2')->isEmpty());
+		
+	return true;
+} 
+
+
+helper testTypesConformancy() : Boolean {	 
+	-- test dict literal, common super type on values
+    var any2IntDict : Dict(OclAny, Real) := Dict { 'key1' = 10, 1 = 1.5 };
+    var anyKeysCol : Collection(OclAny) := any2IntDict->keys();
+	var anyKeysList : List(OclAny) := any2IntDict->keys();
+	var realValueCol : Collection(Real) := any2IntDict->values();
+	var realValueList : List(Real) := any2IntDict->values();
+	
+    assert fatal (any2IntDict->size() = 2);
+    var valReal : Real := any2IntDict->get(true);
+    assert fatal (valReal = null);
+	assert fatal (any2IntDict->get(1) = 1.5);        
+	assert fatal (any2IntDict->get('key1') = 10);	
+    
+    -- test dict literal, common super type on keys 
+    var real2AnyDict : Dict(Real, String) := Dict { 1.5 = 'val1', 10 = 'val2' };
+    -- test all types common super types with keys 
+	var allAny2StringDict : Dict(OclAny, String) := Dict { 1.5 = 'val', 10 = 'val', true = 'val', * = 'val', null = 'val' };
+
+	-- test all types common super types with values
+    var element : Stdlib::Element := input.rootObjects()![Element];
+	assert fatal (not element.oclIsUndefined());    
+	
+	var string2AllAnyDict : Dict(String, OclAny) := Dict { 
+		'key1' = 1.5, 'key2' = 10, 'key3' = true, 'key4' = *, 'key5' = null, 'key6' = element, 'key7' = Tuple { name = 'aName' } 
+	};
+	-- test all value type get and external operation using DictionaryType	
+	assert fatal(1.5 = getDictValueForAKey('key1', string2AllAnyDict));
+	assert fatal(10 = getDictValueForAKey('key2', string2AllAnyDict));
+	assert fatal(true = getDictValueForAKey('key3', string2AllAnyDict));
+	assert fatal(* = getDictValueForAKey('key4', string2AllAnyDict));
+	assert fatal(null = getDictValueForAKey('key5', string2AllAnyDict));	
+	assert fatal(element = getDictValueForAKey('key6', string2AllAnyDict));	
+	assert fatal(Tuple { name = 'aName' } = getDictValueForAKey('key7', string2AllAnyDict));
+	
+	-- no invalid allowed to be stored
+	var invalidValue := null.oclAsType(String).length();
+	assert fatal (invalidValue.oclIsInvalid());
+		
+	var dictWithInvalidTest := Dict { 's' = invalidValue };		
+	assert fatal(dictWithInvalidTest->get('s') = null);
+	dictWithInvalidTest->put('s', invalidValue);
+	assert fatal(dictWithInvalidTest->get('s') = null);
+	assert fatal(dictWithInvalidTest->isEmpty());	
+	
+	return true;
+}

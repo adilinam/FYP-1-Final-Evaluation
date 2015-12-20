@@ -1,0 +1,24 @@
+transformation imports_transformations;
+
+import models.imports_transformations.m2;  
+import models.imports_transformations.m1;  
+
+modeltype Ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+ 
+mapping main(in model: Ecore::EPackage): Ecore::EPackage { 
+	init{  
+		var classes:= model.allInstances(Ecore::EClass);
+	}
+    	eClassifiers += classes->collect(c|c2c(c));
+}   
+    
+mapping c2c(in clz : Ecore::EClass) : Ecore::EClass {
+	init {
+		var t := qq1(clz); 
+		dump(q3(clz));
+	}          
+	name:=clz.name;
+	eAnnotations += object Ecore::EAnnotation {
+		source := q2(clz);
+	};
+}

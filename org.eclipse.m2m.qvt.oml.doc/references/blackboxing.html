@@ -1,0 +1,126 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link rel="Stylesheet" type="text/css" href="doc.css" />
+	<title>Black-box implementation support</title>
+</head>
+<h1>Black-box implementation support</h1>
+<p>
+The current support for black-box implementation in QVT Operational enables the users for library 
+modules definition. The Eclipse OCL mapping for predefined OCL types to Java classes in runtime is followed,
+user model elements are limited to Java-linked EMF models only.
+</p>
+<p>
+For the case of simplicity, an analogy of a public Java class declaring public operations is adopted
+and mapped to a corresponding QVT Library AST model, which in turn owns the corresponding imperative operations.
+Predefined Java-OCL type mapping rules are applied, eventually complemented by Java annotations to 
+add missing information that are not expressable in Java language.
+</p>
+<p>
+See an example at 'Examples/Operational QVT Transformation/Black-box Library Definition' wizard.
+</p>
+
+<h4>Java classes mapped to predefined OCL/QVTo types</h4>
+<table border="1">
+<th>Java class</th><th>OCL/QVTo type</th>
+<tr><td>java.lang.Object</td><td>OclAny</td></tr>
+<tr><td>java.lang.String</td><td>String</td></tr>
+<tr><td>java.lang.Boolean</td><td>Boolean</td></tr>
+<tr><td>java.lang.Integer</td><td>Integer</td></tr>
+<tr><td>java.lang.Double</td><td>Real</td></tr>
+<tr><td>java.util.Collection</td><td>Collection</td></tr>
+<tr><td>java.util.List</td><td>Sequence</td></tr>
+<tr><td>java.util.Set</td><td>Set</td></tr>
+<tr><td>java.util.LinkedHashset</td><td>OrderedSet</td></tr>
+<tr><td>org.eclipse.ocl.util.Bag</td><td>Bag</td></tr>
+<tr><td>org.eclipse.m2m.qvt.oml.util.MutableList</td><td>List</td></tr>
+<tr><td>org.eclipse.m2m.qvt.oml.util.Dictionary</td><td>Dict</td></tr>
+</table>
+<p>
+The collection element types are expressed using Java generics, 
+so <code>java.util.Set&lt;java.util.List&lt;java.lang.String&gt;&gt;</code> is mapped to <code>Set(Sequence(String))</code> in QVT.
+For OCL Collection instance creation, the user should use the <code>org.eclipse.ocl.util.CollectionUtil</code/> utility class, and respectively <code>org.eclipse.m2m.qvt.oml.util.Utils</code> for QVTo mutable collection types.
+</p>
+
+<h4>Additional Java numeric types recognized as OCL predefined types:</h4>
+<table border="1">
+<th>Java class</th><th>OCL type</th>
+<tr><td>java.lang.Short</td><td>Integer</td></tr>
+<tr><td>java.lang.Long</td><td>Integer</td></tr>
+<tr><td>java.math.BigInteger</td><td>Integer</td></tr>
+<tr><td>java.lang.Float</td><td>Real</td></tr>
+<tr><td>java.math.BigDecimal</td><td>Real</td></tr>
+</table>
+
+
+<h2>User model types</h2>
+The user model types are represented by corresponding Java interfaces generated for the model classes or by Java classes
+bound to individual datatypes.
+The resolution is performed based on lookup of EClassifier by instance class name within the EClassifiers of EPackages
+referenced by the given QVT module.</br>
+In other words, the <code>org.eclipse.emf.ecore.EAttribute</code> Java interface specified in an operation signature is 
+resolved <code>ecore::EAttribute</code> class in the QVT type system, provided that the owning QVT module is 
+declared as referencing <code>"http://www.eclipse.org/emf/2002/Ecore"</code> metamodel. 
+The default package registry <code>EPackage.Registry.INSTANCE</code> is used to lookup the metamodel package by
+its nsURI.
+
+<h2>Library class</h2>
+A public Java class that with a public default constructor. The public operations declared by this class are considered
+the QVT library defined operation. In order to make the library class visible, it has to be deployed in a black-unit using
+the <a href="./extension-points/org_eclipse_m2m_qvt_oml_javaBlackboxUnits.html">org.eclipse.m2m.qvt.oml.javaBlackboxUnits</a> 
+extension point. 
+
+<h3>Library operations</h3>
+A public operation having both the return type and all parameter types resolvable to corresponding OCL types.
+ 
+<h4>Non-contextual operation</h4>
+Operation owned by the library and having no contextual type to be used as the source object of operation
+calls. It is defined as an ordinary public Java operation.
+
+<h4>Contextual operation</h4>
+Operation 'physically' owned by the defining library but having a contextual type to be used as the source object of operation
+calls. It is defined as a public Java operation of which the first argument is reserved for passing the source object (contextual instance) of the call. This is indicated by marking the operation by the predefined annotation <code>@Operation(contextual=true)</code>.
+
+<h4>Simple library class example</h4>
+<pre class="Code">
+import java.util.Date;
+import org.eclipse.m2m.qvt.oml.blackbox.java.Operation;
+import org.eclipse.m2m.qvt.oml.blackbox.java.Parameter;
+import org.eclipse.emf.ecore.EClassifier;
+
+public class MyLibrary {
+
+	public MyLibrary() {
+		super()
+	}
+		
+	public Date createDate(String dateStr) {
+		return (Date)EcoreFactory.eINSTANCE.createFromString(EcorePackage.eINSTANCE.getEDate(), dateStr);
+	}
+	
+	/*
+	* java.util.Date resolved as ecore::EDate, which as an opaque data type to the QVT type system, however
+	* here equipped by this additional operation.
+	*/
+	@Operation(contextual=true)
+	public static boolean before(Date self, Date when) {
+		return self.before(when);
+	}
+	
+	@Operation(contextual=true)
+	public static String getQualifiedName(EClassifier self) {
+		return self.getEPackage().getName() + "::" + self.getName();
+	}	
+}
+</pre>
+
+<h4>The library Java class declared above appears to the importing QVT module as in the <code>main()</code> operation
+example bellow.</h4>
+<pre class="Code">
+main() {
+	var date : ecore::EDate := createDate('2008-10-31');
+	var isBefore := date.before(createDate('2008-11-01'));
+	
+	var eClass := object ecore::EClass {};
+	var qname := eClass.getQualifiedName();
+}
+</pre>

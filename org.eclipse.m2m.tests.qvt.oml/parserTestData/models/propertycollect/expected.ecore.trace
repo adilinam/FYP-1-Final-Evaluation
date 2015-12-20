@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trace:TraceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:trace="http:///www.eclipse.org/m2m/qvt/oml/trace">
+  <traces ruleName="main" transformationFqn="models.propertycollect.propertycollect">
+    <from href="platform:/resource/for33448.java/models/propertycollect/in.ecore#/"/>
+    <to href="platform:/resource/for33448.java/models/propertycollect/expected.ecore#/"/>
+  </traces>
+</trace:TraceModel>

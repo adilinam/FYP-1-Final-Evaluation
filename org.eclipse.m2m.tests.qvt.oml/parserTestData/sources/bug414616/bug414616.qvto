@@ -1,0 +1,9 @@
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+transformation bug(in srcModel:Ecore,out dest:Ecore);
+
+main() {
+    /*<error>*/Dict{"name"="dd"}-> foo_reject(i|EPackage)/*</error>*/;
+    /*<error>*/srcModel.objects()[EPackage] -> foo_reject(i|EPackage)/*</error>*/;
+}    
+
+

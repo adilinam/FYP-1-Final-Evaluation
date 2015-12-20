@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+<extension
+      point = "org.eclipse.ui.preferencePages">
+      <page
+         id="org.eclipse.m2m.qvt.oml.tools.coverage.preferences"
+         class="org.eclipse.m2m.internal.qvt.oml.tools.coverage.ui.QVTOCoveragePreferencePage"
+         name="%page.name"
+         >
+      </page>
+   </extension>
+
+<extension point="org.eclipse.debug.core.launchDelegates">
+  <launchDelegate
+       id="org.eclipse.m2m.qvt.oml.tools.coverageLaunchDelegate"
+       name="%launchDelegate.name"
+       delegate="org.eclipse.m2m.internal.qvt.oml.tools.coverage.ui.launching.JUnitCoverageLaunchDelegate"
+       type="org.eclipse.jdt.junit.launchconfig"
+       modes="run">
+  </launchDelegate>
+ </extension>
+ 
+ <extension point="org.eclipse.ui.views">
+        <view
+              class="org.eclipse.m2m.internal.qvt.oml.tools.coverage.ui.CoverageView"
+              icon="icons/pr-Model_to_model.gif"
+              id="org.eclipse.m2m.qvt.oml.tools.coverage.ui.coverageView"
+              name="%view.name"/>
+</extension>
+
+<extension
+    id="org.eclipse.m2m.qvt.oml.tools.coverage.markers.touchedMarker"
+    name="%extension.name"
+    point="org.eclipse.core.resources.markers">
+  <super
+    type="org.eclipse.core.resources.textmarker">
+  </super>
+</extension>
+
+<extension
+      point="org.eclipse.ui.editors.annotationTypes">
+   <type
+         markerType="org.eclipse.m2m.qvt.oml.tools.coverage.markers.touchedMarker"
+         name="org.eclipse.m2m.qvt.oml.tools.coverage.markers.touchedMarker">
+   </type>
+</extension>
+
+<extension
+      point="org.eclipse.ui.editors.markerAnnotationSpecification">
+   <specification
+         annotationType="org.eclipse.m2m.qvt.oml.tools.coverage.markers.touchedMarker"
+         colorPreferenceKey="org.eclipse.m2m.qvt.oml.tools.coverage.markers.touched.color"
+         colorPreferenceValue="152,251,152"
+         contributesToHeader="false"
+         highlightPreferenceKey="org.eclipse.m2m.qvt.oml.tools.coverage.markers.touched.highlight"
+         highlightPreferenceValue="true"
+         includeOnPreferencePage="true"
+         label="%specification.label"
+         overviewRulerPreferenceKey="org.eclipse.m2m.qvt.oml.tools.coverage.markers.touched.overview"
+         overviewRulerPreferenceValue="true"
+         presentationLayer="0"
+         textPreferenceKey="org.eclipse.m2m.qvt.oml.tools.coverage.markers.touched.text"
+         textPreferenceValue="true"
+         textStylePreferenceValue="BOX"
+         verticalRulerPreferenceKey="org.eclipse.m2m.qvt.oml.tools.coverage.markers.touched.ruler"
+         verticalRulerPreferenceValue="true">
+   </specification>
+</extension>
+
+<extension
+    id="org.eclipse.m2m.qvt.oml.tools.coverage.markers.untouchedMarker"
+    name="%extension.name.0"
+    point="org.eclipse.core.resources.markers">
+  <super
+    type="org.eclipse.core.resources.textmarker">
+  </super>
+</extension>
+
+<extension
+      point="org.eclipse.ui.editors.annotationTypes">
+   <type
+         markerType="org.eclipse.m2m.qvt.oml.tools.coverage.markers.untouchedMarker"
+         name="org.eclipse.m2m.qvt.oml.tools.coverage.markers.untouchedMarker">
+   </type>
+</extension>
+
+<extension
+      point="org.eclipse.ui.editors.markerAnnotationSpecification">
+   <specification
+         annotationType="org.eclipse.m2m.qvt.oml.tools.coverage.markers.untouchedMarker"
+         colorPreferenceKey="org.eclipse.m2m.qvt.oml.tools.coverage.markers.untouched.color"
+         colorPreferenceValue="255,192,203"
+         contributesToHeader="false"
+         highlightPreferenceKey="org.eclipse.m2m.qvt.oml.tools.coverage.markers.untouched.highlight"
+         highlightPreferenceValue="true"
+         includeOnPreferencePage="true"
+         label="%specification.label.0"
+         overviewRulerPreferenceKey="org.eclipse.m2m.qvt.oml.tools.coverage.markers.untouched.overview"
+         overviewRulerPreferenceValue="true"
+         presentationLayer="0"
+         textPreferenceKey="org.eclipse.m2m.qvt.oml.tools.coverage.markers.untouched.text"
+         textPreferenceValue="true"
+         textStylePreferenceValue="BOX"
+         verticalRulerPreferenceKey="org.eclipse.m2m.qvt.oml.tools.coverage.markers.untouched.ruler"
+         verticalRulerPreferenceValue="true">
+   </specification>
+</extension>
+
+<extension
+      point="org.eclipse.debug.core.launchDelegates">
+   <launchDelegate
+         delegate="org.eclipse.m2m.internal.qvt.oml.tools.coverage.ui.launching.QvtLaunchConfigurationCoverageDelegate"
+         delegateDescription="%launchDelegate.description"
+         id="org.eclipse.m2m.qvt.oml.tools.coverage.ui.launchDelegate"
+         modes="run"
+         name="%launchDelegate.name"
+         type="org.eclipse.m2m.qvt.oml.QvtTransformation">
+   </launchDelegate>
+</extension>
+<extension
+      point="org.eclipse.ui.menus">
+   <menuContribution
+         allPopups="false"
+         locationURI="toolbar:org.eclipse.m2m.qvt.oml.tools.coverage.ui.coverageView">
+   </menuContribution>
+</extension>
+<extension
+      point="org.eclipse.ui.commands">
+   <command
+         id="org.eclipse.m2m.qvt.oml.tools.coverage.ui.commands.clearCoverageDataCommand"
+         name="Clear coverage data">
+   </command>
+</extension>
+<extension
+      point="org.eclipse.ui.handlers">
+   <handler
+         class="org.eclipse.m2m.internal.qvt.oml.tools.coverage.ui.handlers.ClearCoverageDataCommandHandler"
+         commandId="org.eclipse.m2m.qvt.oml.tools.coverage.ui.commands.clearCoverageDataCommand">
+   </handler>
+</extension>
+<extension
+      point="org.eclipse.ui.menus">
+   <menuContribution
+         allPopups="false"
+         locationURI="toolbar:org.eclipse.m2m.qvt.oml.tools.coverage.ui.coverageView">
+      <command
+            commandId="org.eclipse.m2m.qvt.oml.tools.coverage.ui.commands.clearCoverageDataCommand"
+            icon="icons/clear_data.gif"
+            style="push">
+      </command>
+   </menuContribution>
+</extension>
+
+</plugin>

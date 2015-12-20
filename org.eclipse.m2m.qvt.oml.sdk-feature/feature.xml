@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.m2m.qvt.oml.sdk"
+      label="%featureName"
+      version="3.5.0.qualifier"
+      provider-name="%providerName"
+      plugin="org.eclipse.m2m.qvt.oml"
+      image="eclipse_update_120.jpg"
+      license-feature="org.eclipse.qvto.license"
+      license-feature-version="1.0.0.qualifier">
+
+   <description url="http://www.eclipse.org/mmt/qvto">
+      %description
+   </description>
+
+   <copyright url="http://www.eclipse.org/legal/epl-v10.html">
+      %copyright
+   </copyright>
+
+   <includes
+         id="org.eclipse.m2m.qvt.oml"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.m2m.qvt.oml.runtime"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.m2m.qvt.oml.editor"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.m2m.qvt.oml.examples"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.m2m.qvt.oml.doc"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.m2m.qvt.oml.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.m2m.qvt.oml.runtime.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.m2m.qvt.oml.editor.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.m2m.qvt.oml.debug"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.m2m.qvt.oml.debug.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.m2m.qvt.oml.tools.coverage"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.m2m.qvt.oml.tools.coverage.source"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.m2m.qvt.oml.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

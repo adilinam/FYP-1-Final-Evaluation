@@ -1,0 +1,15 @@
+transformation propinit;
+
+import models.propinit.Utils;
+
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+property DEFAULT_NAME = 'default';
+
+mapping main(in model: ecore::EPackage): ecore::EPackage {
+    	name := getName(model.name);
+}
+
+query getName(name: String): String {
+	return DEFAULT_NAME + '-' + getUtilName() + '-' + name;
+}

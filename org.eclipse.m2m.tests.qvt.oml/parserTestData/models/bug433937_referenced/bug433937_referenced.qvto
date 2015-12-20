@@ -1,0 +1,7 @@
+import ReferencedTransformation;
+import models.bug433937_referenced.root.other.NestedTransformation;
+
+transformation bug433937_referenced();
+
+main() {
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.m2m.qvt.oml.emf.util/src"
+    modelPluginID="org.eclipse.m2m.qvt.oml.emf.util" modelName="MModelURIMap" nonNLSMarkers="true"
+    rootImplementsInterface="" importerID="org.eclipse.emf.importer.ecore" bundleManifest="false"
+    complianceLevel="5.0">
+  <foreignModel>MModelURIMap.ecore</foreignModel>
+  <genPackages prefix="MModelURIMap" basePackage="org.eclipse.m2m.qvt.oml.emf.util"
+      resource="XML" disposableProviderFactory="true" utilityPackageSuffix="impl"
+      ecorePackage="MModelURIMap.ecore#/">
+    <genClasses ecoreClass="MModelURIMap.ecore#//MappingContainer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MModelURIMap.ecore#//MappingContainer/mapping"/>
+    </genClasses>
+    <genClasses ecoreClass="MModelURIMap.ecore#//URIMapping">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MModelURIMap.ecore#//URIMapping/sourceURI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MModelURIMap.ecore#//URIMapping/targetURI"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

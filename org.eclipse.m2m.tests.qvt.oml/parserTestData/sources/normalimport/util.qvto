@@ -1,0 +1,5 @@
+transformation util;
+
+query bar(): String {
+   return 'bar'
+}

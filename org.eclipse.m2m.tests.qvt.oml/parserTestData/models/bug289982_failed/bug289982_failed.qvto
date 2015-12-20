@@ -1,0 +1,320 @@
+import bug289982_lib_failed;
+
+modeltype Ecore "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation bug289982_failed();
+
+main() {
+
+	// from 'org.eclipse.m2m.tests.qvt.oml.bbox.SimpleJavaLibrary'
+	// 
+	do {
+		var s := echoFromSimpleJavaLibrary("test");
+		assert fatal (s = "test");
+	};	
+	
+
+	// from 'TestBlackboxLibrary'
+	//
+	do {
+		var c : Set(ENamedElement) := legacyAsRenamedSet(object EClass{}, "test");
+		assert fatal (c->any(true).name = "test");
+	};	
+		
+	do {
+		var c := 1.legacyOclAnyAsSet();
+		assert fatal (c->any(true) = 1);
+	};	
+		
+	do {
+		var c := "test".legacyOclAnyAsSet();
+		assert fatal (c->any(true) = "test");
+	};	
+	
+		
+	// from 'org.bar.Foo' unit, library 'Bug289982_Lib'
+	// 
+	do {
+		var p : EPackage := new EPackage();
+		assert fatal (p.name = "blackbox");
+	};	
+	
+	do {
+		var l := List{"test"};
+		var p : EPackage := new EPackage(l);
+		assert fatal (p.name = "blackbox");
+		assert fatal (l->asSequence()->at(2) = "blackbox");
+	
+		var p2 : EPackage := new EPackage(Sequence{"test"});
+		assert fatal (p2.name = "blackbox");
+	};	
+	
+	
+	// helpers
+	// 
+	do {
+		var p := object EPackage{};
+		p.contextualHelper();	
+		assert fatal (p.name = "blackbox");
+	};	
+		
+	bug289982_lib::nonContextualHelper();
+	nonContextualHelper();
+	
+	do {
+		var l := List{"test"};
+		var p := object EPackage{};
+		var c : Set(String) := p.contextualHelper(l);	
+		assert fatal (p.name = "blackbox");
+		assert fatal (l = List{"test"});
+		assert fatal (c->asList() = List{"test"});
+	
+		l := Sequence{"test"};
+		var p2 := object EPackage{};
+		var c2 : Set(String) := p2.contextualHelper(l);	
+		assert fatal (p2.name = "blackbox");
+		assert fatal (l = Sequence{"test"});
+		assert fatal (c2->asSequence() = List{"test"});
+	};	
+	
+	do {
+		var l := List{"test"};
+		var c : Set(String) := nonContextualHelper(l);	
+		assert fatal (l = List{"test"});
+		assert fatal (c->asList() = List{"test"});
+	
+		l := Sequence{"test"};
+		var c2 : Set(String) := nonContextualHelper(l);	
+		assert fatal (l = Sequence{"test"});
+		assert fatal (c2->asSequence() = List{"test"});
+	};
+	
+	do {
+		var p := object EPackage{};
+		p.bug289982_lib::contextualHelperWithExecContext();
+		assert fatal (p.name = "blackbox");
+		
+		var p2 := object EPackage{};
+		p2.contextualHelperWithExecContext();
+		assert fatal (p2.name = "blackbox");
+	};
+	
+	bug289982_lib::nonContextualHelperWithExecContext();
+	nonContextualHelperWithExecContext();
+	
+	do {
+		var l := List{"test"};
+		var p := object EPackage{};
+		var c : Set(String) := p.contextualHelperWithExecContext(l);	
+		assert fatal (p.name = "blackbox");
+		assert fatal (l = List{"test"});
+		assert fatal (c->asList() = List{"test"});
+	
+		l := Sequence{"test"};
+		var p2 := object EPackage{};
+		var c2 : Set(String) := p2.contextualHelperWithExecContext(l);	
+		assert fatal (p2.name = "blackbox");
+		assert fatal (l = Sequence{"test"});
+		assert fatal (c2->asSequence() = List{"test"});
+	};	
+	
+	do {
+		var l := List{"test"};
+		var c : Set(String) := nonContextualHelperWithExecContext(l);	
+		assert fatal (l = List{"test"});
+		assert fatal (c->asList() = List{"test"});
+	
+		var c2 : Set(String) := nonContextualHelperWithExecContext(Sequence{"test"});	
+		assert fatal (c2->asSequence() = List{"test"});
+	};
+	
+
+	// queries
+	// 
+	do {
+		var p := object EClass{};
+		p.contextualQuery();	
+		assert fatal (p.name = "blackbox");
+	};	
+		
+	bug289982_lib::nonContextualQuery();
+	nonContextualQuery();
+	
+	do {
+		var l := Dict{"test"=1};
+		var p := object EClass{};
+		var c : Sequence(String) := p.contextualQuery(l);	
+		assert fatal (p.name = "blackbox");
+		assert fatal (l->keys() = List{"test"});
+		assert fatal (c = List{"test"});
+	};	
+	
+	do {
+		var l := Dict{"test"=1};
+		var c : List(String) := nonContextualQuery(l);
+		assert fatal (l->keys() = List{"test"});
+		assert fatal (c->asList() = List{"test"});
+	};
+	
+	do {
+		var p := object EClass{};
+		p.bug289982_lib::contextualQueryWithExecContext();
+		assert fatal (p.name = "blackbox");
+		
+		var p2 := object EClass{};
+		p2.contextualQueryWithExecContext();
+		assert fatal (p2.name = "blackbox");
+	};
+	
+	bug289982_lib::nonContextualQueryWithExecContext();
+	nonContextualQueryWithExecContext();
+	
+	do {
+		var l := Dict{"test"=1};
+		var p := object EClass{};
+		var c : Sequence(String) := p.contextualQueryWithExecContext(l);
+		assert fatal (p.name = "blackbox");
+		assert fatal (l->keys() = List{"test"});
+		assert fatal (c->asList() = Sequence{"test"});
+	};	
+	
+	do {
+		var l := Dict{"test"=1};
+		var c : Sequence(String) := nonContextualQueryWithExecContext(l);	
+		assert fatal (l->keys() = List{"test"});
+		assert fatal (c = Sequence{"test"});
+	
+		var c2 : Sequence(String) := nonContextualQueryWithExecContext(Dict{"test"=1});	
+		assert fatal (c2->asSequence() = List{"test"});
+	};
+
+	
+
+	// operations
+	// 
+	do {
+		var p := object EClass{};
+		p.contextualOperation();	
+		assert fatal (p.name = "blackbox");
+	};	
+		
+	bug289982_lib::nonContextualOperation();
+	nonContextualOperation();
+	
+	do {
+		var l := Dict{"test"=1};
+		var p := object EClass{};
+		var c : Sequence(String) := p.contextualOperation(l);	
+		assert fatal (p.name = "blackbox");
+		assert fatal (l->keys() = List{"test"});
+		assert fatal (c = List{"test"});
+	};	
+	
+	do {
+		var l := Dict{"test"=1};
+		var c : List(String) := nonContextualOperation(l);
+		assert fatal (l->keys() = List{"test"});
+		assert fatal (c->asList() = List{"test"});
+	};
+	
+	do {
+		var p := object EClass{};
+		p.bug289982_lib::contextualOperationWithExecContext();
+		assert fatal (p.name = "blackbox");
+		
+		var p2 := object EClass{};
+		p2.contextualOperationWithExecContext();
+		assert fatal (p2.name = "blackbox");
+	};
+	
+	bug289982_lib::nonContextualOperationWithExecContext();
+	nonContextualOperationWithExecContext();
+	
+	do {
+		var l := Dict{"test"=1};
+		var p := object EClass{};
+		var c : Sequence(String) := p.contextualOperationWithExecContext(l);
+		assert fatal (p.name = "blackbox");
+		assert fatal (l->keys() = List{"test"});
+		assert fatal (c->asList() = Sequence{"test"});
+	};	
+	
+	do {
+		var l := Dict{"test"=1};
+		var c : Sequence(String) := nonContextualOperationWithExecContext(l);	
+		assert fatal (l->keys() = List{"test"});
+		assert fatal (c = Sequence{"test"});
+	
+		var c2 : Sequence(String) := nonContextualOperationWithExecContext(Dict{"test"=1});	
+		assert fatal (c2->asSequence() = List{"test"});
+	};
+
+
+	// mappings
+	// 
+	do {
+		var f : Boolean := false;
+		
+		try {
+			var p := object EClass{name:="test"}.map contextualMapping();	
+			assert fatal (p.name = "test");
+		}
+		except () {
+			f := true
+		};
+		
+		assert fatal (f);
+	};	
+		
+	do {
+		var p := map bug289982_lib::nonContextualMapping();
+		assert fatal (p.name = "blackbox");
+		
+		p := map nonContextualMapping();
+		assert fatal (p.name = "blackbox");
+	};
+	
+	do {
+		var p := object EPackage{name := "test"};
+		var c : Sequence(EClassifier) := object EClass{name:="test"}.map contextualMapping(1, List{1}, p);	
+		assert fatal (c->any(true).name = "test1");
+		assert fatal (p.name = "test1");
+	};	
+	
+	do {
+		var p := object EPackage{name := "test"};
+		var i : Integer := 1;
+		var c : Sequence(EClassifier) := map nonContextualMapping(i, List{i}, p);	
+		assert fatal (c->any(true).name = "blackbox1");
+		assert fatal (p.name = "test1");
+	};
+	
+	do {
+		var p := object EClass{name := "test"}.map bug289982_lib::contextualMappingWithExecContext();
+		assert fatal (p.name = "test");
+		
+		p := object EClass{name := "test"}.map contextualMappingWithExecContext();
+		assert fatal (p.name = "test");
+	};
+	
+	do {
+		var p := map bug289982_lib::nonContextualMappingWithExecContext();
+		assert fatal (p.name = "blackbox");
+		
+		p := map nonContextualMappingWithExecContext();
+		assert fatal (p.name = "blackbox");
+	};
+	
+	do {
+		var l := Dict{"test"=1};
+		var c : Sequence(EClassifier) := object EClass{name := "test"}.map contextualMappingWithExecContext(l);
+		assert fatal (c->any(true).name = "test1");
+		assert fatal (l->keys() = List{"test"});
+	};	
+	
+	do {
+		var c : Sequence(EClassifier) := map nonContextualMappingWithExecContext(Dict{"test"=1});	
+		assert fatal (c->any(true).name = "blackbox1");
+	};
+
+}

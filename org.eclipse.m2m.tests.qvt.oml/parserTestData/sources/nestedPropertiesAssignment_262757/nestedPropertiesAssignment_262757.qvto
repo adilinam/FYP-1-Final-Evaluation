@@ -1,0 +1,35 @@
+modeltype ecore uses "http://www.eclipse.org/emf/2002/Ecore";
+
+transformation test(in model : ecore, out modelOut : ecore);
+
+main() {
+	var pack := object EPackage {
+	};
+	var subPack := object EPackage {
+		name := 'subPack';
+	};
+	object subPack : EPackage {
+		pack.eSubpackages += subPack;
+		eSuperPackage.name := 'root1';
+	};
+	modelOut->objectsOfType(EPackage)->flatten()->any(true).name := 
+		modelOut->objectsOfType(EPackage)->flatten()->any(true).name + 'root2'; 
+	subPack.eSuperPackage.name := subPack.eSuperPackage.name + 'root3';
+	var mappedSubPack := subPack.map mapping1();
+	subPack.eSuperPackage.eSubpackages += subPack.late resolveoneIn(EPackage::mapping1, EPackage);         
+}     
+
+mapping EPackage::mapping1() : EPackage {
+	name := 'mapped' + self.name; 
+}
+
+mapping EClass::m1(inout param : EPackage) { 
+	/*<error>*/self/*</error>*/ := null; 
+	/*<error>*/this/*</error>*/ := null; 
+	/*<error>*/a1/*</error>*/.b.c := null; // stops parsing the property call chain on the first error 
+	/*<error>*/a2/*</error>*/ := null;
+	var x : EClass := object EClass {}; 
+	x./*<error>*/a3/*</error>*/ := null;   
+	var s := self./*<error>*/a1/*</error>*/;
+	/*<error>*/param.getEClassifier('a4')/*</error>*/ := null;  
+}

@@ -1,0 +1,29 @@
+modeltype Model "strict" uses "http://p";
+
+transformation nullableEnum(out Model);
+
+main() {
+	
+	var c := object Shapes::Line
+	{
+		// This is what we want nullable enumerations for to begin with ...
+		Style := null;
+	};
+	assert fatal (c.Style = null);
+
+	object c:Shapes::Line 
+	{
+		-- Assignment with typecast
+		Style := StyleEnum::Dotted.oclAsType(Shapes::StyleEnumObject);
+	};
+	assert fatal (c.Style = StyleEnum::Dotted);
+
+	object c:Shapes::Line 
+	{
+		-- Direct assignment
+		Style := StyleEnum::Dotted;
+	};
+	assert fatal (c.Style = StyleEnum::Dotted.oclAsType(Shapes::StyleEnumObject));
+	
+}
+

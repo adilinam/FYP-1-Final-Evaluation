@@ -1,0 +1,30 @@
+modeltype MM uses "http:///pack";
+
+transformation numconversion(in m1 : MM, out MM);
+
+main() {
+	var cls := m1.rootObjects()![MM::cls1];
+	
+	var cls2 := object MM::cls2 {
+		attrLong := cls.attrELong;
+		attrInt := cls.attrEInt;
+		attrShort := cls.attrEShort; 
+		attrByte := cls.attrEByte; 
+		attrDouble := cls.attrEDouble;
+		attrFloat := cls.attrEFloat;
+
+		attrLongs := cls.attrELong;
+		attrInts := cls.attrEInt;
+		attrShorts := cls.attrEShort; 
+		attrBytes := cls.attrEByte; 
+		attrDoubles := cls.attrEDouble;
+		attrFloats := cls.attrEFloat;
+
+		attrLongs += cls.attrELongs;
+		attrInts += cls.attrEInts;
+		attrShorts += cls.attrEShorts; 
+		attrBytes += cls.attrEBytes; 
+		attrDoubles += cls.attrEDoubles;
+		attrFloats += cls.attrEFloats;
+		};
+}

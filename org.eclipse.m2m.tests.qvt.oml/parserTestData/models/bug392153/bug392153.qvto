@@ -1,0 +1,18 @@
+import models.bug392153.NewTransformation;
+
+modeltype ECORE uses "http://www.eclipse.org/emf/2002/Ecore";
+
+transformation bug392153(in i : ECORE, out o : ECORE) access NewTransformation;
+
+main() {
+
+	var trans : Transformation = new NewTransformation(i,o);
+
+	trans.transform();
+	
+	
+	var p : EPackage = i.objects()[EPackage]->any(true).resolveone(EPackage);
+	
+	assert fatal (p != null);
+
+}

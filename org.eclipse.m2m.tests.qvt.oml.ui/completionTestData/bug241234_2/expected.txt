@@ -1,0 +1,2 @@
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = mapping3(), displayString = mapping3(par : Set(EPackage)) : EPackage, replacementOffsetDelta = 0, replacementLength = 0, cursorPosition = 9
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = mapping4(), displayString = mapping4(par : Set(EPackage)) : EPackage, replacementOffsetDelta = 0, replacementLength = 0, cursorPosition = 9

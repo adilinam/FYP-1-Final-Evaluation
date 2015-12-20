@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Xsd
+Bundle-SymbolicName: qvto.uml2xhtml.xsd
+Bundle-Version: 1.0.0

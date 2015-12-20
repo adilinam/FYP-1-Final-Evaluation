@@ -1,0 +1,35 @@
+import models.bug425069.bug425069a;
+
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+transformation bug425069() extends bug425069a;
+
+main() {
+
+	do {
+		var c : EClass = null;
+		var res1 = c.map m();
+		assert fatal (res1.name = oclVoidID);
+		   
+		var res2 = null.map m();
+		assert fatal (res1 = res2);
+		   
+		c := object EClass {};
+		var res3 = c.map m();
+		assert fatal (res3.name = eClassID);
+	};
+   
+	do {
+		var c : OclAny = null;
+		var res1 = c.map m();
+		assert fatal (res1.name = oclVoidID);
+		   
+		var res2 = null.map m();
+		assert fatal (res1 = res2);
+		   
+		c := object EPackage {};
+		var res3 = c.map m();
+		assert fatal (res3.name = oclAnyID);
+	};
+   
+}
+

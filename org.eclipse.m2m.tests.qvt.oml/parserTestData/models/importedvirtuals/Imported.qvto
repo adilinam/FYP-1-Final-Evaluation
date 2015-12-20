@@ -1,0 +1,44 @@
+import models.importedvirtuals.Imported2;
+
+modeltype ecore uses "http://www.eclipse.org/emf/2002/Ecore";
+
+transformation Imported(in modelIn : ecore, out model : ecore);
+
+property LOCAL_PROP : String = 'Imported::LOCAL_PROP';
+property Imported_PROP : String = 'Imported::PROP';
+
+main(in inModel : ecore::EPackage) {
+}
+
+
+query imported2() : Integer {	
+	return null;  
+}
+
+
+/*
+ Tests that matching context-less query overrides imported ones
+*/
+query checkImportedLocalQuery() : String {
+	return localQuery();
+}
+
+query localQuery() : String {
+	return 'Imported::localQuery'
+}
+
+query getImportedLocalProperty() : String {
+	return LOCAL_PROP;
+}
+
+
+----- virtual mapping exposed to indirectly imported ImportMappingTest
+mapping ETypedElement::globalVirtualMapping(in arg1 : OclAny, in arg2 : Collection(Real), in arg3: Tuple (val : Collection(OclAny))) : EClass {
+	name:='ETypedElement::globalVirtualMapping';
+}
+
+
+
+query ENamedElement::globalVirtualQuery(in arg1 : OclAny, in arg2 : Collection(Real), in arg3: Tuple (val : Collection(OclAny))) : String {
+	return 'ENamedElement::globalVirtualQuery';
+}

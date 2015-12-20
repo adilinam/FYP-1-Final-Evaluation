@@ -1,0 +1,15 @@
+import DuplicatedNamesDetection;
+
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+	
+transformation QVToASDuplicatedNamesDetection(in qvto : ECORE, in imperativeocl : ECORE, 	in pivot : ECORE);
+
+
+main() {
+
+	log("Stating QVTo AS class clash  names");
+	new DuplicatedNamesDetection(qvto, imperativeocl).transform();
+	new DuplicatedNamesDetection(qvto, pivot).transform();
+	new DuplicatedNamesDetection(imperativeocl, pivot).transform();
+	log("Transformation ends");
+}

@@ -1,0 +1,10 @@
+transformation Ecore_To_Uml(in dummy : ECORE, out ECORE);
+
+import Strings;
+	
+modeltype ECORE uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+	
+mapping EClass::a() : EAttribute when {/*@*/self.name = 'a' }
+	 {
+        name := 'b++' + self.name;
+}

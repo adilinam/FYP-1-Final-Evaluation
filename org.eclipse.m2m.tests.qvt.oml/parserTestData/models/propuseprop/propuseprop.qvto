@@ -1,0 +1,13 @@
+transformation propuseprop;
+
+import models.propuseprop.imp;
+
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+property a : Integer = 1;
+property b : Integer = a + 1;
+property c : Integer = b + 1 + bb;
+
+mapping main(in model: ecore::EPackage): ecore::EPackage {
+    	name := '' + c.toString();
+} 

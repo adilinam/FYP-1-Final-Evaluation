@@ -1,0 +1,14 @@
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+	
+
+transformation GenModel2Pmodel(in gen: ECORE, out ECORE);
+
+main() {
+	map /*@*/mapping1(gen.rootObjects()[EPackage]);
+}
+
+mapping mapping1(in par : Set(EPackage)) : EPackage {
+}
+
+mapping mapping2(in par : EPackage) : EPackage {
+}

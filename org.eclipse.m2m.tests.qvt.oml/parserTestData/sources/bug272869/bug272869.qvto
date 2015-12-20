@@ -1,0 +1,4 @@
+import bug272869lib;  
+
+library  Library272869 extends /*<error>*/trans272869/*</error>*/;
+

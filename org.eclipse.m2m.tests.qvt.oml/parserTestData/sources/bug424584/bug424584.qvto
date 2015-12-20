@@ -1,0 +1,76 @@
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+transformation bug424584(out output: ECORE);
+
+constructor EClass::EClass()
+{
+}
+
+main() {
+	// --- lvalue test
+	var contTest1 = new EClass();
+	contTest1.map m1(/*<error>*/new EClass()/*</error>*/, "1: ");
+	contTest1.map m1(/*<error>*/null/*</error>*/, "1: ");
+	
+	// --- exactly the same type
+	var outTest1 :EClassifier = null;
+	var outTest2 :EClass;
+	contTest1.map m1(/*<error>*/outTest2/*</error>*/, "1: ");
+	contTest1./*<error>*/map m2(outTest1, "1: ")/*</error>*/;
+}
+
+
+mapping inout EClass :: m1(out outParam : EClassifier, in prefix:String) : EClass {
+	init {
+		outParam := new EClass();
+	}
+	/*<error>*/outParam/*</error>*/ := new EClass();
+	self.name := prefix + "self_name";
+	outParam.name := prefix + "out_name";
+	name := prefix + 'result_name';
+}
+
+
+mapping inout EClass :: m2(out outParam : EClass, in prefix:String) : EClass {
+	init {
+		outParam := new EClass();
+	}
+	outParam.name := prefix + "out_name / " + self.name;
+	self.name := prefix + "self_name / " + self.name;
+	name := prefix + 'result_name';
+}
+
+mapping md1(in selfParam:EClass, out outParam1 : EClassifier) : EClass disjuncts /*<error>*/md2/*</error>*/, /*<error>*/md3/*</error>*/
+{
+} 
+
+mapping md2(in selfParam:EClass, out outParam2 : EClassifier) : EClass
+	when {selfParam.name = "name1";}
+{
+	init {}
+} 
+
+mapping md3(in selfParam:EClass, out outParam3 : EClass) : EClass
+	when {selfParam.name != "name1";}
+{
+	init {}
+} 
+
+
+mapping inout EClass :: m_bad(/*<error>*/out outParam : String/*</error>*/, in prefix:String) : EClass {
+}
+
+mapping /*<error>*/inout EClass :: m_bad2(out outParam : EClassifier, in prefix:String) : EClass/*</error>*/ {
+}
+
+abstract mapping inout EClass :: m_ok(out outParam : EClassifier, in prefix:String) : EClass {
+}
+
+
+mapping inout EClass :: mlist(out outParam : List(String), in prefix:String) : EClass {
+	init {
+		outParam := new List(String)(); 
+	}
+	/*<error>*/outParam/*</error>*/ := new List(String)(); 
+	outParam += "out_name";
+	outParam->add(prefix + "out_name / " + self.name);
+}

@@ -1,0 +1,2 @@
+QVTo test cases needs this src/org/eclipse/qvto/examples/xtext/qvtoperational/tests/models folder to be created.
+This README file ensures that the folder is created in the GIT repository

@@ -1,0 +1,1258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qvtoperational.expr:OperationalTransformation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:eimpocl="http://www.eclipse.org/qvt/1.0/ImperativeOCL" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore"
+    xmlns:qvtoperational.expr="http://www.eclipse.org/qvt/1.0.0/Operational/Expressions"
+    name="Simpleuml_To_Rdb" instanceClassName="org.eclipse.m2m.internal.qvt.oml.evaluator.TransformationInstance"
+    eSuperTypes="http://www.eclipse.org/m2m/qvt/oml/1.0.0/Stdlib#//Transformation"
+    nsPrefix="Simpleuml_To_Rdb" usedModelType="traditionalBasedTransformation.qvtoas#//A traditionalBasedTransformation.qvtoas#//B.1 traditionalBasedTransformation.qvtoas#//simpleuml traditionalBasedTransformation.qvtoas#//rdb">
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="package2schemas" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Schema)">
+    <eParameters xsi:type="qvtoperational.expr:VarParameter" name="root" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//package2schemas/root"/>
+    <body>
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Schema)"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/asOrderedSet">
+        <source xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:SetType traditionalBasedTransformation.qvtoas#//Set(Schema)"
+            referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/union.1">
+          <source xsi:type="ocl.ecore:CollectionLiteralExp" eType="ocl.ecore:SetType traditionalBasedTransformation.qvtoas#//Set(Schema)">
+            <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL/Annotations">
+              <details key="IMPLICIT_SET_CONVERSION" value="true"/>
+            </eAnnotations>
+            <part xsi:type="ocl.ecore:CollectionItem" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Schema">
+              <item xsi:type="qvtoperational.expr:MappingCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Schema"
+                  referredOperation="qvtoperational.expr:MappingOperation traditionalBasedTransformation.qvtoas#//package2schema">
+                <source xsi:type="ocl.ecore:VariableExp" name="this" eType="qvtoperational.expr:OperationalTransformation traditionalBasedTransformation.qvtoas#/"
+                    referredVariable="traditionalBasedTransformation.qvtoas#//this"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="root" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package"
+                    referredVariable="traditionalBasedTransformation.qvtoas#//package2schemas/root"/>
+              </item>
+            </part>
+          </source>
+          <argument xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Schema)"
+              referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asOrderedSet">
+            <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="ocl.ecore:SequenceType traditionalBasedTransformation.qvtoas#//Sequence(Schema)">
+              <source xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Package)"
+                  referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//getSubpackages">
+                <source xsi:type="ocl.ecore:VariableExp" name="root" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package"
+                    referredVariable="traditionalBasedTransformation.qvtoas#//package2schemas/root"/>
+              </source>
+              <body xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Schema)"
+                  referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//package2schemas">
+                <source xsi:type="ocl.ecore:VariableExp" name="this" eType="qvtoperational.expr:OperationalTransformation traditionalBasedTransformation.qvtoas#/"
+                    referredVariable="traditionalBasedTransformation.qvtoas#//this"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="p" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package"
+                    referredVariable="traditionalBasedTransformation.qvtoas#//package2schemas/@body/@content.0/%/%.1/collect/p"/>
+              </body>
+              <iterator xsi:type="ocl.ecore:Variable" name="p" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package"/>
+            </source>
+          </argument>
+        </source>
+      </content>
+    </body>
+    <result name="result" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Schema)"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//package2schemas/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="class2foreignKeys" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(ForeignKey)">
+    <eParameters xsi:type="qvtoperational.expr:VarParameter" name="cls" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//class2foreignKeys/cls"/>
+    <body>
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(ForeignKey)"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asOrderedSet">
+        <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="ocl.ecore:SequenceType traditionalBasedTransformation.qvtoas#//Sequence(ForeignKey)">
+          <source xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Property)"
+              referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType/attributes">
+            <source xsi:type="ocl.ecore:VariableExp" name="cls" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"
+                referredVariable="traditionalBasedTransformation.qvtoas#//class2foreignKeys/cls"/>
+          </source>
+          <body xsi:type="qvtoperational.expr:ResolveInExp" eType="ocl.ecore:SequenceType traditionalBasedTransformation.qvtoas#//Sequence(ForeignKey)"
+              inMapping="traditionalBasedTransformation.qvtoas#//relationshipAttribute2foreignKey">
+            <target name="rdb" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/ForeignKey"/>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="temp1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"/>
+        </source>
+      </content>
+    </body>
+    <result name="result" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(ForeignKey)"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//class2foreignKeys/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="class2columns" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)">
+    <eParameters xsi:type="qvtoperational.expr:VarParameter" name="cls" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//class2columns/cls"/>
+    <body>
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/asOrderedSet">
+        <source xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:SetType traditionalBasedTransformation.qvtoas#//Set(TableColumn)"
+            referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/union.1">
+          <source xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+              referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//dataType2columns">
+            <source xsi:type="ocl.ecore:VariableExp" name="this" eType="qvtoperational.expr:OperationalTransformation traditionalBasedTransformation.qvtoas#/"
+                referredVariable="traditionalBasedTransformation.qvtoas#//this"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="cls" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"
+                referredVariable="traditionalBasedTransformation.qvtoas#//class2columns/cls"/>
+          </source>
+          <argument xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+              referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//generalizations2columns">
+            <source xsi:type="ocl.ecore:VariableExp" name="this" eType="qvtoperational.expr:OperationalTransformation traditionalBasedTransformation.qvtoas#/"
+                referredVariable="traditionalBasedTransformation.qvtoas#//this"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="cls" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"
+                referredVariable="traditionalBasedTransformation.qvtoas#//class2columns/cls"/>
+          </argument>
+        </source>
+      </content>
+    </body>
+    <result name="result" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//class2columns/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="dataType2columns" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)">
+    <eParameters xsi:type="qvtoperational.expr:VarParameter" name="dt" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//dataType2columns/dt"/>
+    <body>
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/asOrderedSet">
+        <source xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:SetType traditionalBasedTransformation.qvtoas#//Set(TableColumn)"
+            referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/union.1">
+          <source xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:SetType traditionalBasedTransformation.qvtoas#//Set(TableColumn)"
+              referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/union.1">
+            <source xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:SetType traditionalBasedTransformation.qvtoas#//Set(TableColumn)"
+                referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/union.1">
+              <source xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+                  referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//primitiveAttributes2columns">
+                <source xsi:type="ocl.ecore:VariableExp" name="this" eType="qvtoperational.expr:OperationalTransformation traditionalBasedTransformation.qvtoas#/"
+                    referredVariable="traditionalBasedTransformation.qvtoas#//this"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="dt" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"
+                    referredVariable="traditionalBasedTransformation.qvtoas#//dataType2columns/dt"/>
+              </source>
+              <argument xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+                  referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//enumerationAttributes2columns">
+                <source xsi:type="ocl.ecore:VariableExp" name="this" eType="qvtoperational.expr:OperationalTransformation traditionalBasedTransformation.qvtoas#/"
+                    referredVariable="traditionalBasedTransformation.qvtoas#//this"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="dt" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"
+                    referredVariable="traditionalBasedTransformation.qvtoas#//dataType2columns/dt"/>
+              </argument>
+            </source>
+            <argument xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+                referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//relationshipAttributes2columns">
+              <source xsi:type="ocl.ecore:VariableExp" name="this" eType="qvtoperational.expr:OperationalTransformation traditionalBasedTransformation.qvtoas#/"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//this"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="dt" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//dataType2columns/dt"/>
+            </argument>
+          </source>
+          <argument xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+              referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//assosiationAttributes2columns">
+            <source xsi:type="ocl.ecore:VariableExp" name="this" eType="qvtoperational.expr:OperationalTransformation traditionalBasedTransformation.qvtoas#/"
+                referredVariable="traditionalBasedTransformation.qvtoas#//this"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="dt" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"
+                referredVariable="traditionalBasedTransformation.qvtoas#//dataType2columns/dt"/>
+          </argument>
+        </source>
+      </content>
+    </body>
+    <result name="result" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//dataType2columns/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="dataType2primaryKeyColumns"
+      eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)">
+    <eParameters xsi:type="qvtoperational.expr:VarParameter" name="dt" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//dataType2primaryKeyColumns/dt"/>
+    <eParameters xsi:type="qvtoperational.expr:VarParameter" name="prefix" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//dataType2primaryKeyColumns/prefix"/>
+    <eParameters xsi:type="qvtoperational.expr:VarParameter" name="leaveIsPrimaryKey"
+        eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//dataType2primaryKeyColumns/leaveIsPrimaryKey"/>
+    <body>
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asOrderedSet">
+        <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="ocl.ecore:SequenceType traditionalBasedTransformation.qvtoas#//Sequence(TableColumn)">
+          <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)">
+            <source xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+                referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//dataType2columns">
+              <source xsi:type="ocl.ecore:VariableExp" name="this" eType="qvtoperational.expr:OperationalTransformation traditionalBasedTransformation.qvtoas#/"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//this"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="dt" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//dataType2primaryKeyColumns/dt"/>
+            </source>
+            <body xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+                referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn/isPrimaryKey">
+              <source xsi:type="ocl.ecore:VariableExp" name="temp1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//dataType2primaryKeyColumns/@body/@content.0/collect/select/temp1"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="temp1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"/>
+          </source>
+          <body xsi:type="qvtoperational.expr:ObjectExp" name="$temp_1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+              extent="traditionalBasedTransformation.qvtoas#//$result" instantiatedClass="http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+              referredObject="traditionalBasedTransformation.qvtoas#//dataType2primaryKeyColumns/@body/@content.0/collect/$temp_1/@body/@variable.0">
+            <body>
+              <content xsi:type="eimpocl:AssignExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                  isReset="true">
+                <left xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                    referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//NamedElement/name">
+                  <source xsi:type="ocl.ecore:VariableExp" name="$temp_1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+                      referredVariable="traditionalBasedTransformation.qvtoas#//dataType2primaryKeyColumns/@body/@content.0/collect/$temp_1/@body/@variable.0"/>
+                </left>
+                <value xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                    referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat">
+                  <source xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                      referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat">
+                    <source xsi:type="ocl.ecore:VariableExp" name="prefix" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                        referredVariable="traditionalBasedTransformation.qvtoas#//dataType2primaryKeyColumns/prefix"/>
+                    <argument xsi:type="ocl.ecore:StringLiteralExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                        stringSymbol="_"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                      referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//NamedElement/name">
+                    <source xsi:type="ocl.ecore:VariableExp" name="c" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+                        referredVariable="traditionalBasedTransformation.qvtoas#//dataType2primaryKeyColumns/@body/@content.0/collect/c"/>
+                  </argument>
+                </value>
+              </content>
+              <content xsi:type="eimpocl:AssignExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//datatypes/Domain"
+                  isReset="true">
+                <left xsi:type="ocl.ecore:PropertyCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//datatypes/Domain"
+                    referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn/domain">
+                  <source xsi:type="ocl.ecore:VariableExp" name="$temp_1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+                      referredVariable="traditionalBasedTransformation.qvtoas#//dataType2primaryKeyColumns/@body/@content.0/collect/$temp_1/@body/@variable.0"/>
+                </left>
+                <value xsi:type="ocl.ecore:PropertyCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//datatypes/Domain"
+                    referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn/domain">
+                  <source xsi:type="ocl.ecore:VariableExp" name="c" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+                      referredVariable="traditionalBasedTransformation.qvtoas#//dataType2primaryKeyColumns/@body/@content.0/collect/c"/>
+                </value>
+              </content>
+              <content xsi:type="eimpocl:AssignExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//datatypes/PrimitiveDataType"
+                  isReset="true">
+                <left xsi:type="ocl.ecore:PropertyCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//datatypes/PrimitiveDataType"
+                    referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn/type">
+                  <source xsi:type="ocl.ecore:VariableExp" name="$temp_1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+                      referredVariable="traditionalBasedTransformation.qvtoas#//dataType2primaryKeyColumns/@body/@content.0/collect/$temp_1/@body/@variable.0"/>
+                </left>
+                <value xsi:type="ocl.ecore:PropertyCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//datatypes/PrimitiveDataType"
+                    referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn/type">
+                  <source xsi:type="ocl.ecore:VariableExp" name="c" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+                      referredVariable="traditionalBasedTransformation.qvtoas#//dataType2primaryKeyColumns/@body/@content.0/collect/c"/>
+                </value>
+              </content>
+              <content xsi:type="eimpocl:AssignExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+                  isReset="true">
+                <left xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+                    referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn/isPrimaryKey">
+                  <source xsi:type="ocl.ecore:VariableExp" name="$temp_1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+                      referredVariable="traditionalBasedTransformation.qvtoas#//dataType2primaryKeyColumns/@body/@content.0/collect/$temp_1/@body/@variable.0"/>
+                </left>
+                <value xsi:type="ocl.ecore:VariableExp" name="leaveIsPrimaryKey" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+                    referredVariable="traditionalBasedTransformation.qvtoas#//dataType2primaryKeyColumns/leaveIsPrimaryKey"/>
+              </content>
+              <variable name="$temp_1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"/>
+            </body>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="c" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"/>
+        </source>
+      </content>
+    </body>
+    <result name="result" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//dataType2primaryKeyColumns/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="primitiveAttributes2columns"
+      eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)">
+    <eParameters xsi:type="qvtoperational.expr:VarParameter" name="dt" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//primitiveAttributes2columns/dt"/>
+    <body>
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asOrderedSet">
+        <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="ocl.ecore:SequenceType traditionalBasedTransformation.qvtoas#//Sequence(TableColumn)">
+          <source xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Property)"
+              referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType/attributes">
+            <source xsi:type="ocl.ecore:VariableExp" name="dt" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"
+                referredVariable="traditionalBasedTransformation.qvtoas#//primitiveAttributes2columns/dt"/>
+          </source>
+          <body xsi:type="qvtoperational.expr:MappingCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+              referredOperation="qvtoperational.expr:MappingOperation traditionalBasedTransformation.qvtoas#//primitiveAttribute2column">
+            <source xsi:type="ocl.ecore:VariableExp" name="this" eType="qvtoperational.expr:OperationalTransformation traditionalBasedTransformation.qvtoas#/"
+                referredVariable="traditionalBasedTransformation.qvtoas#//this"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="a" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+                referredVariable="traditionalBasedTransformation.qvtoas#//primitiveAttributes2columns/@body/@content.0/collect/a"/>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="a" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"/>
+        </source>
+      </content>
+    </body>
+    <result name="result" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//primitiveAttributes2columns/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="enumerationAttributes2columns"
+      eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)">
+    <eParameters xsi:type="qvtoperational.expr:VarParameter" name="dt" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//enumerationAttributes2columns/dt"/>
+    <body>
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asOrderedSet">
+        <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="ocl.ecore:SequenceType traditionalBasedTransformation.qvtoas#//Sequence(TableColumn)">
+          <source xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Property)"
+              referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType/attributes">
+            <source xsi:type="ocl.ecore:VariableExp" name="dt" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"
+                referredVariable="traditionalBasedTransformation.qvtoas#//enumerationAttributes2columns/dt"/>
+          </source>
+          <body xsi:type="qvtoperational.expr:MappingCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+              referredOperation="qvtoperational.expr:MappingOperation traditionalBasedTransformation.qvtoas#//enumerationAttribute2column">
+            <source xsi:type="ocl.ecore:VariableExp" name="this" eType="qvtoperational.expr:OperationalTransformation traditionalBasedTransformation.qvtoas#/"
+                referredVariable="traditionalBasedTransformation.qvtoas#//this"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="a" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+                referredVariable="traditionalBasedTransformation.qvtoas#//enumerationAttributes2columns/@body/@content.0/collect/a"/>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="a" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"/>
+        </source>
+      </content>
+    </body>
+    <result name="result" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//enumerationAttributes2columns/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="relationshipAttributes2columns"
+      eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)">
+    <eParameters xsi:type="qvtoperational.expr:VarParameter" name="dt" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//relationshipAttributes2columns/dt"/>
+    <body>
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asOrderedSet">
+        <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="ocl.ecore:SequenceType traditionalBasedTransformation.qvtoas#//Sequence(TableColumn)">
+          <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="ocl.ecore:SequenceType traditionalBasedTransformation.qvtoas#//Sequence(ForeignKey)">
+            <source xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Property)"
+                referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType/attributes">
+              <source xsi:type="ocl.ecore:VariableExp" name="dt" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//relationshipAttributes2columns/dt"/>
+            </source>
+            <body xsi:type="qvtoperational.expr:MappingCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/ForeignKey"
+                referredOperation="qvtoperational.expr:MappingOperation traditionalBasedTransformation.qvtoas#//relationshipAttribute2foreignKey">
+              <source xsi:type="ocl.ecore:VariableExp" name="a" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//relationshipAttributes2columns/@body/@content.0/collect/collect/a"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="a" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"/>
+          </source>
+          <body xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+              referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/ColumnRefConstraint/includedColumns">
+            <source xsi:type="ocl.ecore:VariableExp" name="temp1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/ForeignKey"
+                referredVariable="traditionalBasedTransformation.qvtoas#//relationshipAttributes2columns/@body/@content.0/collect/temp1"/>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="temp1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/ForeignKey"/>
+        </source>
+      </content>
+    </body>
+    <result name="result" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//relationshipAttributes2columns/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="assosiationAttributes2columns"
+      eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)">
+    <eParameters xsi:type="qvtoperational.expr:VarParameter" name="dt" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//assosiationAttributes2columns/dt"/>
+    <body>
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asOrderedSet">
+        <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="ocl.ecore:SequenceType traditionalBasedTransformation.qvtoas#//Sequence(TableColumn)">
+          <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Property)">
+            <source xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Property)"
+                referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType/attributes">
+              <source xsi:type="ocl.ecore:VariableExp" name="dt" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//assosiationAttributes2columns/dt"/>
+            </source>
+            <body xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+                referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//isAssosiation">
+              <source xsi:type="ocl.ecore:VariableExp" name="temp1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//assosiationAttributes2columns/@body/@content.0/collect/select/temp1"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="temp1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"/>
+          </source>
+          <body xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+              referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//dataType2columns">
+            <source xsi:type="ocl.ecore:VariableExp" name="this" eType="qvtoperational.expr:OperationalTransformation traditionalBasedTransformation.qvtoas#/"
+                referredVariable="traditionalBasedTransformation.qvtoas#//this"/>
+            <argument xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"
+                referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//asDataType">
+              <source xsi:type="ocl.ecore:PropertyCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Type"
+                  referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property/type">
+                <source xsi:type="ocl.ecore:VariableExp" name="p" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+                    referredVariable="traditionalBasedTransformation.qvtoas#//assosiationAttributes2columns/@body/@content.0/collect/p"/>
+              </source>
+            </argument>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="p" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"/>
+        </source>
+      </content>
+    </body>
+    <result name="result" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//assosiationAttributes2columns/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="generalizations2columns"
+      eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)">
+    <eParameters xsi:type="qvtoperational.expr:VarParameter" name="cls" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//generalizations2columns/cls"/>
+    <body>
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asOrderedSet">
+        <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="ocl.ecore:SequenceType traditionalBasedTransformation.qvtoas#//Sequence(TableColumn)">
+          <source xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Generalization)"
+              referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class/generalizations">
+            <source xsi:type="ocl.ecore:VariableExp" name="cls" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"
+                referredVariable="traditionalBasedTransformation.qvtoas#//generalizations2columns/cls"/>
+          </source>
+          <body xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+              referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//class2columns">
+            <source xsi:type="ocl.ecore:VariableExp" name="this" eType="qvtoperational.expr:OperationalTransformation traditionalBasedTransformation.qvtoas#/"
+                referredVariable="traditionalBasedTransformation.qvtoas#//this"/>
+            <argument xsi:type="ocl.ecore:PropertyCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"
+                referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Generalization/general">
+              <source xsi:type="ocl.ecore:VariableExp" name="g" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Generalization"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//generalizations2columns/@body/@content.0/collect/g"/>
+            </argument>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="g" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Generalization"/>
+        </source>
+      </content>
+    </body>
+    <result name="result" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//generalizations2columns/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="getSubpackages" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Package)">
+    <body>
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Package)"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asOrderedSet">
+        <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="ocl.ecore:SequenceType traditionalBasedTransformation.qvtoas#//Sequence(Package)">
+          <source xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Packageable)"
+              referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package/ownedElements">
+            <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package"
+                referredVariable="traditionalBasedTransformation.qvtoas#//getSubpackages/self"/>
+          </source>
+          <body xsi:type="ocl.ecore:OperationCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package"
+              referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType">
+            <source xsi:type="ocl.ecore:VariableExp" name="temp1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Packageable"
+                referredVariable="traditionalBasedTransformation.qvtoas#//getSubpackages/@body/@content.0/collect/temp1"/>
+            <argument xsi:type="ocl.ecore:TypeExp" eType="ocl.ecore:TypeType traditionalBasedTransformation.qvtoas#//Package"
+                referredType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package"/>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="temp1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Packageable"/>
+        </source>
+      </content>
+    </body>
+    <context name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//getSubpackages/self"/>
+    <result name="result" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Package)"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//getSubpackages/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="asDataType" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType">
+    <body>
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType">
+        <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Type"
+            referredVariable="traditionalBasedTransformation.qvtoas#//asDataType/self"/>
+        <argument xsi:type="ocl.ecore:TypeExp" eType="ocl.ecore:TypeType traditionalBasedTransformation.qvtoas#//DataType"
+            referredType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"/>
+      </content>
+    </body>
+    <context name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Type"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//asDataType/self"/>
+    <result name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//asDataType/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="isPrimaryKey" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean">
+    <body>
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/includes">
+        <source xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:SetType traditionalBasedTransformation.qvtoas#//Set(String)"
+            referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//ModelElement/stereotype">
+          <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+              referredVariable="traditionalBasedTransformation.qvtoas#//isPrimaryKey/self"/>
+        </source>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+            stringSymbol="primaryKey"/>
+      </content>
+    </body>
+    <context name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//isPrimaryKey/self"/>
+    <result name="result" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//isPrimaryKey/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="isIdentifying" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean">
+    <body>
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/includes">
+        <source xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:SetType traditionalBasedTransformation.qvtoas#//Set(String)"
+            referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//ModelElement/stereotype">
+          <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+              referredVariable="traditionalBasedTransformation.qvtoas#//isIdentifying/self"/>
+        </source>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+            stringSymbol="identifying"/>
+      </content>
+    </body>
+    <context name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//isIdentifying/self"/>
+    <result name="result" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//isIdentifying/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="isPrimitive" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean">
+    <body>
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf">
+        <source xsi:type="ocl.ecore:PropertyCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Type"
+            referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property/type">
+          <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+              referredVariable="traditionalBasedTransformation.qvtoas#//isPrimitive/self"/>
+        </source>
+        <argument xsi:type="ocl.ecore:TypeExp" eType="ocl.ecore:TypeType traditionalBasedTransformation.qvtoas#//PrimitiveType"
+            referredType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//PrimitiveType"/>
+      </content>
+    </body>
+    <context name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//isPrimitive/self"/>
+    <result name="result" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//isPrimitive/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="isEnumeration" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean">
+    <body>
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf">
+        <source xsi:type="ocl.ecore:PropertyCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Type"
+            referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property/type">
+          <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+              referredVariable="traditionalBasedTransformation.qvtoas#//isEnumeration/self"/>
+        </source>
+        <argument xsi:type="ocl.ecore:TypeExp" eType="ocl.ecore:TypeType traditionalBasedTransformation.qvtoas#//Enumeration"
+            referredType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Enumeration"/>
+      </content>
+    </body>
+    <context name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//isEnumeration/self"/>
+    <result name="result" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//isEnumeration/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="isRelationship" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean">
+    <body>
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/and">
+        <source xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+            referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf">
+          <source xsi:type="ocl.ecore:PropertyCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Type"
+              referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property/type">
+            <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+                referredVariable="traditionalBasedTransformation.qvtoas#//isRelationship/self"/>
+          </source>
+          <argument xsi:type="ocl.ecore:TypeExp" eType="ocl.ecore:TypeType traditionalBasedTransformation.qvtoas#//DataType"
+              referredType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"/>
+        </source>
+        <argument xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+            referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//isPersistent">
+          <source xsi:type="ocl.ecore:PropertyCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Type"
+              referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property/type">
+            <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+                referredVariable="traditionalBasedTransformation.qvtoas#//isRelationship/self"/>
+          </source>
+        </argument>
+      </content>
+    </body>
+    <context name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//isRelationship/self"/>
+    <result name="result" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//isRelationship/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="isAssosiation" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean">
+    <body>
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/and">
+        <source xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+            referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf">
+          <source xsi:type="ocl.ecore:PropertyCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Type"
+              referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property/type">
+            <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+                referredVariable="traditionalBasedTransformation.qvtoas#//isAssosiation/self"/>
+          </source>
+          <argument xsi:type="ocl.ecore:TypeExp" eType="ocl.ecore:TypeType traditionalBasedTransformation.qvtoas#//DataType"
+              referredType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"/>
+        </source>
+        <argument xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+            referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not">
+          <source xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+              referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//isPersistent">
+            <source xsi:type="ocl.ecore:PropertyCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Type"
+                referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property/type">
+              <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//isAssosiation/self"/>
+            </source>
+          </source>
+        </argument>
+      </content>
+    </body>
+    <context name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//isAssosiation/self"/>
+    <result name="result" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//isAssosiation/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="getPrimaryKeyColumns" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)">
+    <body>
+      <content xsi:type="ocl.ecore:IteratorExp" name="select" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)">
+        <source xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+            referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Table/columns">
+          <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Table"
+              referredVariable="traditionalBasedTransformation.qvtoas#//getPrimaryKeyColumns/self"/>
+        </source>
+        <body xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+            referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn/isPrimaryKey">
+          <source xsi:type="ocl.ecore:VariableExp" name="temp1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+              referredVariable="traditionalBasedTransformation.qvtoas#//getPrimaryKeyColumns/@body/@content.0/temp1"/>
+        </body>
+        <iterator xsi:type="ocl.ecore:Variable" name="temp1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"/>
+      </content>
+    </body>
+    <context name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Table"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//getPrimaryKeyColumns/self"/>
+    <result name="result" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//getPrimaryKeyColumns/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="isPersistent" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean">
+    <body>
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/includes">
+        <source xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:SetType traditionalBasedTransformation.qvtoas#//Set(String)"
+            referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//ModelElement/stereotype">
+          <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//ModelElement"
+              referredVariable="traditionalBasedTransformation.qvtoas#//isPersistent/self"/>
+        </source>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+            stringSymbol="persistent"/>
+      </content>
+    </body>
+    <context name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//ModelElement"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//isPersistent/self"/>
+    <result name="result" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//isPersistent/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Helper" name="hasPersistentClasses" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean">
+    <body>
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer_Class/%3E.1">
+        <source xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"
+            referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/size">
+          <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Packageable)">
+            <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Packageable)">
+              <source xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Packageable)"
+                  referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package/ownedElements">
+                <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package"
+                    referredVariable="traditionalBasedTransformation.qvtoas#//hasPersistentClasses/self"/>
+              </source>
+              <body xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+                  referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf">
+                <source xsi:type="ocl.ecore:VariableExp" name="temp1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Packageable"
+                    referredVariable="traditionalBasedTransformation.qvtoas#//hasPersistentClasses/@body/@content.0/%/select/select/temp1"/>
+                <argument xsi:type="ocl.ecore:TypeExp" eType="ocl.ecore:TypeType traditionalBasedTransformation.qvtoas#//Class"
+                    referredType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"/>
+              </body>
+              <iterator xsi:type="ocl.ecore:Variable" name="temp1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Packageable"/>
+            </source>
+            <body xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+                referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//isPersistent">
+              <source xsi:type="ocl.ecore:OperationCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"
+                  referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType">
+                <source xsi:type="ocl.ecore:VariableExp" name="c" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Packageable"
+                    referredVariable="traditionalBasedTransformation.qvtoas#//hasPersistentClasses/@body/@content.0/%/select/c"/>
+                <argument xsi:type="ocl.ecore:TypeExp" eType="ocl.ecore:TypeType traditionalBasedTransformation.qvtoas#//Class"
+                    referredType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"/>
+              </source>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="c" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Packageable"/>
+          </source>
+        </source>
+        <argument xsi:type="ocl.ecore:IntegerLiteralExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"
+            integerSymbol="0"/>
+      </content>
+    </body>
+    <context name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//hasPersistentClasses/self"/>
+    <result name="result" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//hasPersistentClasses/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:MappingOperation" name="main" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Model">
+    <eParameters xsi:type="qvtoperational.expr:MappingParameter" name="model" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Model"
+        representedParameter="qvtoperational.expr:MappingParameter traditionalBasedTransformation.qvtoas#//main/model"
+        extent="traditionalBasedTransformation.qvtoas#//$model"/>
+    <body xsi:type="qvtoperational.expr:MappingBody">
+      <content xsi:type="qvtoperational.expr:ObjectExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Model"
+          extent="traditionalBasedTransformation.qvtoas#//$result" instantiatedClass="http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Model"
+          referredObject="traditionalBasedTransformation.qvtoas#//main/result">
+        <body>
+          <content xsi:type="eimpocl:AssignExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+              isReset="true">
+            <left xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//NamedElement/name">
+              <source xsi:type="ocl.ecore:VariableExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Model"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//main/result"/>
+            </left>
+            <value xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//ModelElement/name">
+              <source xsi:type="ocl.ecore:VariableExp" name="model" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Model"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//main/model"/>
+            </value>
+          </content>
+          <content xsi:type="eimpocl:AssignExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Schema)"
+              isReset="true">
+            <left xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Schema)"
+                referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Model/schemas">
+              <source xsi:type="ocl.ecore:VariableExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Model"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//main/result"/>
+            </left>
+            <value xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Schema)"
+                referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//package2schemas">
+              <source xsi:type="ocl.ecore:VariableExp" name="this" eType="qvtoperational.expr:OperationalTransformation traditionalBasedTransformation.qvtoas#/"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//this"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="model" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Model"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//main/model"/>
+            </value>
+          </content>
+        </body>
+      </content>
+    </body>
+    <result xsi:type="qvtoperational.expr:MappingParameter" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Model"
+        representedParameter="qvtoperational.expr:MappingParameter traditionalBasedTransformation.qvtoas#//main/result"
+        kind="out" extent="traditionalBasedTransformation.qvtoas#//$result"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:MappingOperation" name="package2schema"
+      eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Schema">
+    <eParameters xsi:type="qvtoperational.expr:MappingParameter" name="pack" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package"
+        representedParameter="qvtoperational.expr:MappingParameter traditionalBasedTransformation.qvtoas#//package2schema/pack"/>
+    <body xsi:type="qvtoperational.expr:MappingBody">
+      <content xsi:type="qvtoperational.expr:ObjectExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Schema"
+          extent="traditionalBasedTransformation.qvtoas#//$result" instantiatedClass="http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Schema"
+          referredObject="traditionalBasedTransformation.qvtoas#//package2schema/result">
+        <body>
+          <content xsi:type="eimpocl:AssignExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+              isReset="true">
+            <left xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//NamedElement/name">
+              <source xsi:type="ocl.ecore:VariableExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Schema"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//package2schema/result"/>
+            </left>
+            <value xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//ModelElement/name">
+              <source xsi:type="ocl.ecore:VariableExp" name="pack" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//package2schema/pack"/>
+            </value>
+          </content>
+          <content xsi:type="eimpocl:AssignExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(SchemaElement)"
+              isReset="true">
+            <left xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(SchemaElement)"
+                referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Schema/elements">
+              <source xsi:type="ocl.ecore:VariableExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Schema"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//package2schema/result"/>
+            </left>
+            <value xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Table)"
+                referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asOrderedSet">
+              <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="ocl.ecore:SequenceType traditionalBasedTransformation.qvtoas#//Sequence(Table)">
+                <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Packageable)">
+                  <source xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(Packageable)"
+                      referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package/ownedElements">
+                    <source xsi:type="ocl.ecore:VariableExp" name="pack" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package"
+                        referredVariable="traditionalBasedTransformation.qvtoas#//package2schema/pack"/>
+                  </source>
+                  <body xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+                      referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf">
+                    <source xsi:type="ocl.ecore:VariableExp" name="temp1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Packageable"
+                        referredVariable="traditionalBasedTransformation.qvtoas#//package2schema/@body/@content.0/@body/@content.1/%.1/collect/select/temp1"/>
+                    <argument xsi:type="ocl.ecore:TypeExp" eType="ocl.ecore:TypeType traditionalBasedTransformation.qvtoas#//Class"
+                        referredType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"/>
+                  </body>
+                  <iterator xsi:type="ocl.ecore:Variable" name="temp1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Packageable"/>
+                </source>
+                <body xsi:type="qvtoperational.expr:MappingCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Table"
+                    referredOperation="qvtoperational.expr:MappingOperation traditionalBasedTransformation.qvtoas#//persistentClass2table">
+                  <source xsi:type="ocl.ecore:OperationCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"
+                      referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType">
+                    <source xsi:type="ocl.ecore:VariableExp" name="c" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Packageable"
+                        referredVariable="traditionalBasedTransformation.qvtoas#//package2schema/@body/@content.0/@body/@content.1/%.1/collect/c"/>
+                    <argument xsi:type="ocl.ecore:TypeExp" eType="ocl.ecore:TypeType traditionalBasedTransformation.qvtoas#//Class"
+                        referredType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"/>
+                  </source>
+                </body>
+                <iterator xsi:type="ocl.ecore:Variable" name="c" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Packageable"/>
+              </source>
+            </value>
+          </content>
+        </body>
+      </content>
+    </body>
+    <result xsi:type="qvtoperational.expr:MappingParameter" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Schema"
+        representedParameter="qvtoperational.expr:MappingParameter traditionalBasedTransformation.qvtoas#//package2schema/result"
+        kind="out"/>
+    <when xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+        referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//hasPersistentClasses">
+      <source xsi:type="ocl.ecore:VariableExp" name="pack" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package"
+          referredVariable="traditionalBasedTransformation.qvtoas#//package2schema/pack"/>
+    </when>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:MappingOperation" name="persistentClass2table"
+      eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Table">
+    <body xsi:type="qvtoperational.expr:MappingBody">
+      <content xsi:type="qvtoperational.expr:ObjectExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Table"
+          extent="traditionalBasedTransformation.qvtoas#//$result" instantiatedClass="http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Table"
+          referredObject="traditionalBasedTransformation.qvtoas#//persistentClass2table/result">
+        <body>
+          <content xsi:type="eimpocl:AssignExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+              isReset="true">
+            <left xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//NamedElement/name">
+              <source xsi:type="ocl.ecore:VariableExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Table"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//persistentClass2table/result"/>
+            </left>
+            <value xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//ModelElement/name">
+              <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//persistentClass2table/self"/>
+            </value>
+          </content>
+          <content xsi:type="eimpocl:AssignExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+              isReset="true">
+            <left xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+                referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Table/columns">
+              <source xsi:type="ocl.ecore:VariableExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Table"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//persistentClass2table/result"/>
+            </left>
+            <value xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+                referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//class2columns">
+              <source xsi:type="ocl.ecore:VariableExp" name="this" eType="qvtoperational.expr:OperationalTransformation traditionalBasedTransformation.qvtoas#/"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//this"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//persistentClass2table/self"/>
+            </value>
+          </content>
+          <content xsi:type="eimpocl:AssignExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/PrimaryKey"
+              isReset="true">
+            <left xsi:type="ocl.ecore:PropertyCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/PrimaryKey"
+                referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Table/primaryKey">
+              <source xsi:type="ocl.ecore:VariableExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Table"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//persistentClass2table/result"/>
+            </left>
+            <value xsi:type="qvtoperational.expr:MappingCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/PrimaryKey"
+                referredOperation="qvtoperational.expr:MappingOperation traditionalBasedTransformation.qvtoas#//class2primaryKey">
+              <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//persistentClass2table/self"/>
+            </value>
+          </content>
+          <content xsi:type="eimpocl:AssignExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(ForeignKey)"
+              isReset="true">
+            <left xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(ForeignKey)"
+                referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Table/foreignKeys">
+              <source xsi:type="ocl.ecore:VariableExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Table"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//persistentClass2table/result"/>
+            </left>
+            <value xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(ForeignKey)"
+                referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//class2foreignKeys">
+              <source xsi:type="ocl.ecore:VariableExp" name="this" eType="qvtoperational.expr:OperationalTransformation traditionalBasedTransformation.qvtoas#/"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//this"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//persistentClass2table/self"/>
+            </value>
+          </content>
+        </body>
+      </content>
+    </body>
+    <context xsi:type="qvtoperational.expr:MappingParameter" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"
+        representedParameter="qvtoperational.expr:MappingParameter traditionalBasedTransformation.qvtoas#//persistentClass2table/self"/>
+    <result xsi:type="qvtoperational.expr:MappingParameter" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Table"
+        representedParameter="qvtoperational.expr:MappingParameter traditionalBasedTransformation.qvtoas#//persistentClass2table/result"
+        kind="out"/>
+    <when xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+        referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//isPersistent">
+      <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"
+          referredVariable="traditionalBasedTransformation.qvtoas#//persistentClass2table/self"/>
+    </when>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:MappingOperation" name="class2primaryKey"
+      eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/PrimaryKey">
+    <body xsi:type="qvtoperational.expr:MappingBody">
+      <content xsi:type="qvtoperational.expr:ObjectExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/PrimaryKey"
+          extent="traditionalBasedTransformation.qvtoas#//$result" instantiatedClass="http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/PrimaryKey"
+          referredObject="traditionalBasedTransformation.qvtoas#//class2primaryKey/result">
+        <body>
+          <content xsi:type="eimpocl:AssignExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+              isReset="true">
+            <left xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//NamedElement/name">
+              <source xsi:type="ocl.ecore:VariableExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/PrimaryKey"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//class2primaryKey/result"/>
+            </left>
+            <value xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat">
+              <source xsi:type="ocl.ecore:StringLiteralExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                  stringSymbol="PK"/>
+              <argument xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                  referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//ModelElement/name">
+                <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"
+                    referredVariable="traditionalBasedTransformation.qvtoas#//class2primaryKey/self"/>
+              </argument>
+            </value>
+          </content>
+          <content xsi:type="eimpocl:AssignExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+              isReset="true">
+            <left xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+                referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/ColumnRefConstraint/includedColumns">
+              <source xsi:type="ocl.ecore:VariableExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/PrimaryKey"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//class2primaryKey/result"/>
+            </left>
+            <value xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+                referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//getPrimaryKeyColumns">
+              <source xsi:type="ocl.ecore:IteratorExp" name="any" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Table">
+                <source xsi:type="qvtoperational.expr:ResolveInExp" eType="ocl.ecore:SequenceType traditionalBasedTransformation.qvtoas#//Sequence(Table)"
+                    inMapping="traditionalBasedTransformation.qvtoas#//persistentClass2table">
+                  <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"
+                      referredVariable="traditionalBasedTransformation.qvtoas#//class2primaryKey/self"/>
+                  <target name="rdb" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Table"/>
+                </source>
+                <body xsi:type="ocl.ecore:BooleanLiteralExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+                    booleanSymbol="true"/>
+                <iterator xsi:type="ocl.ecore:Variable" name="temp1" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Table"/>
+              </source>
+            </value>
+          </content>
+        </body>
+      </content>
+    </body>
+    <context xsi:type="qvtoperational.expr:MappingParameter" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"
+        representedParameter="qvtoperational.expr:MappingParameter traditionalBasedTransformation.qvtoas#//class2primaryKey/self"/>
+    <result xsi:type="qvtoperational.expr:MappingParameter" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/PrimaryKey"
+        representedParameter="qvtoperational.expr:MappingParameter traditionalBasedTransformation.qvtoas#//class2primaryKey/result"
+        kind="out"/>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:MappingOperation" name="primitiveAttribute2column"
+      eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn">
+    <eParameters xsi:type="qvtoperational.expr:MappingParameter" name="prop" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+        representedParameter="qvtoperational.expr:MappingParameter traditionalBasedTransformation.qvtoas#//primitiveAttribute2column/prop"/>
+    <body xsi:type="qvtoperational.expr:MappingBody">
+      <content xsi:type="qvtoperational.expr:ObjectExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+          extent="traditionalBasedTransformation.qvtoas#//$result" instantiatedClass="http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+          referredObject="traditionalBasedTransformation.qvtoas#//primitiveAttribute2column/result">
+        <body>
+          <content xsi:type="eimpocl:AssignExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+              isReset="true">
+            <left xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+                referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn/isPrimaryKey">
+              <source xsi:type="ocl.ecore:VariableExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//primitiveAttribute2column/result"/>
+            </left>
+            <value xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+                referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//isPrimaryKey">
+              <source xsi:type="ocl.ecore:VariableExp" name="prop" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//primitiveAttribute2column/prop"/>
+            </value>
+          </content>
+          <content xsi:type="eimpocl:AssignExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+              isReset="true">
+            <left xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//NamedElement/name">
+              <source xsi:type="ocl.ecore:VariableExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//primitiveAttribute2column/result"/>
+            </left>
+            <value xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//ModelElement/name">
+              <source xsi:type="ocl.ecore:VariableExp" name="prop" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//primitiveAttribute2column/prop"/>
+            </value>
+          </content>
+          <content xsi:type="eimpocl:AssignExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//datatypes/PrimitiveDataType"
+              isReset="true">
+            <left xsi:type="ocl.ecore:PropertyCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//datatypes/PrimitiveDataType"
+                referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn/type">
+              <source xsi:type="ocl.ecore:VariableExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//primitiveAttribute2column/result"/>
+            </left>
+            <value xsi:type="qvtoperational.expr:ObjectExp" name="$temp_2" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//datatypes/PrimitiveDataType"
+                extent="traditionalBasedTransformation.qvtoas#//$result" instantiatedClass="http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//datatypes/PrimitiveDataType"
+                referredObject="traditionalBasedTransformation.qvtoas#//primitiveAttribute2column/@body/@content.0/@body/@content.2/$temp_2/@body/@variable.0">
+              <body>
+                <content xsi:type="eimpocl:AssignExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                    isReset="true">
+                  <left xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                      referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//NamedElement/name">
+                    <source xsi:type="ocl.ecore:VariableExp" name="$temp_2" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//datatypes/PrimitiveDataType"
+                        referredVariable="traditionalBasedTransformation.qvtoas#//primitiveAttribute2column/@body/@content.0/@body/@content.2/$temp_2/@body/@variable.0"/>
+                  </left>
+                  <value xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                      referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//ModelElement/name">
+                    <source xsi:type="ocl.ecore:PropertyCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Type"
+                        referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property/type">
+                      <source xsi:type="ocl.ecore:VariableExp" name="prop" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+                          referredVariable="traditionalBasedTransformation.qvtoas#//primitiveAttribute2column/prop"/>
+                    </source>
+                  </value>
+                </content>
+                <variable name="$temp_2" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//datatypes/PrimitiveDataType"/>
+              </body>
+            </value>
+          </content>
+        </body>
+      </content>
+    </body>
+    <result xsi:type="qvtoperational.expr:MappingParameter" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+        representedParameter="qvtoperational.expr:MappingParameter traditionalBasedTransformation.qvtoas#//primitiveAttribute2column/result"
+        kind="out"/>
+    <when xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+        referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//isPrimitive">
+      <source xsi:type="ocl.ecore:VariableExp" name="prop" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+          referredVariable="traditionalBasedTransformation.qvtoas#//primitiveAttribute2column/prop"/>
+    </when>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:MappingOperation" name="enumerationAttribute2column"
+      eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn">
+    <eParameters xsi:type="qvtoperational.expr:MappingParameter" name="prop" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+        representedParameter="qvtoperational.expr:MappingParameter traditionalBasedTransformation.qvtoas#//enumerationAttribute2column/prop"/>
+    <body xsi:type="qvtoperational.expr:MappingBody">
+      <content xsi:type="qvtoperational.expr:ObjectExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+          extent="traditionalBasedTransformation.qvtoas#//$result" instantiatedClass="http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+          referredObject="traditionalBasedTransformation.qvtoas#//enumerationAttribute2column/result">
+        <body>
+          <content xsi:type="eimpocl:AssignExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+              isReset="true">
+            <left xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+                referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn/isPrimaryKey">
+              <source xsi:type="ocl.ecore:VariableExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//enumerationAttribute2column/result"/>
+            </left>
+            <value xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+                referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//isPrimaryKey">
+              <source xsi:type="ocl.ecore:VariableExp" name="prop" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//enumerationAttribute2column/prop"/>
+            </value>
+          </content>
+          <content xsi:type="eimpocl:AssignExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+              isReset="true">
+            <left xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//NamedElement/name">
+              <source xsi:type="ocl.ecore:VariableExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//enumerationAttribute2column/result"/>
+            </left>
+            <value xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//ModelElement/name">
+              <source xsi:type="ocl.ecore:VariableExp" name="prop" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//enumerationAttribute2column/prop"/>
+            </value>
+          </content>
+          <content xsi:type="eimpocl:AssignExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//datatypes/PrimitiveDataType"
+              isReset="true">
+            <left xsi:type="ocl.ecore:PropertyCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//datatypes/PrimitiveDataType"
+                referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn/type">
+              <source xsi:type="ocl.ecore:VariableExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//enumerationAttribute2column/result"/>
+            </left>
+            <value xsi:type="qvtoperational.expr:ObjectExp" name="$temp_3" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//datatypes/PrimitiveDataType"
+                extent="traditionalBasedTransformation.qvtoas#//$result" instantiatedClass="http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//datatypes/PrimitiveDataType"
+                referredObject="traditionalBasedTransformation.qvtoas#//enumerationAttribute2column/@body/@content.0/@body/@content.2/$temp_3/@body/@variable.0">
+              <body>
+                <content xsi:type="eimpocl:AssignExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                    isReset="true">
+                  <left xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                      referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//NamedElement/name">
+                    <source xsi:type="ocl.ecore:VariableExp" name="$temp_3" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//datatypes/PrimitiveDataType"
+                        referredVariable="traditionalBasedTransformation.qvtoas#//enumerationAttribute2column/@body/@content.0/@body/@content.2/$temp_3/@body/@variable.0"/>
+                  </left>
+                  <value xsi:type="ocl.ecore:StringLiteralExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                      stringSymbol="Integer"/>
+                </content>
+                <variable name="$temp_3" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//datatypes/PrimitiveDataType"/>
+              </body>
+            </value>
+          </content>
+        </body>
+      </content>
+    </body>
+    <result xsi:type="qvtoperational.expr:MappingParameter" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"
+        representedParameter="qvtoperational.expr:MappingParameter traditionalBasedTransformation.qvtoas#//enumerationAttribute2column/result"
+        kind="out"/>
+    <when xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+        referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//isEnumeration">
+      <source xsi:type="ocl.ecore:VariableExp" name="prop" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+          referredVariable="traditionalBasedTransformation.qvtoas#//enumerationAttribute2column/prop"/>
+    </when>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:MappingOperation" name="relationshipAttribute2foreignKey"
+      eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/ForeignKey">
+    <body xsi:type="qvtoperational.expr:MappingBody">
+      <content xsi:type="qvtoperational.expr:ObjectExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/ForeignKey"
+          extent="traditionalBasedTransformation.qvtoas#//$result" instantiatedClass="http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/ForeignKey"
+          referredObject="traditionalBasedTransformation.qvtoas#//relationshipAttribute2foreignKey/result">
+        <body>
+          <content xsi:type="eimpocl:AssignExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+              isReset="true">
+            <left xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//NamedElement/name">
+              <source xsi:type="ocl.ecore:VariableExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/ForeignKey"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//relationshipAttribute2foreignKey/result"/>
+            </left>
+            <value xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat">
+              <source xsi:type="ocl.ecore:StringLiteralExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                  stringSymbol="FK"/>
+              <argument xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                  referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//ModelElement/name">
+                <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+                    referredVariable="traditionalBasedTransformation.qvtoas#//relationshipAttribute2foreignKey/self"/>
+              </argument>
+            </value>
+          </content>
+          <content xsi:type="eimpocl:AssignExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+              isReset="true">
+            <left xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+                referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/ColumnRefConstraint/includedColumns">
+              <source xsi:type="ocl.ecore:VariableExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/ForeignKey"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//relationshipAttribute2foreignKey/result"/>
+            </left>
+            <value xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:OrderedSetType traditionalBasedTransformation.qvtoas#//OrderedSet(TableColumn)"
+                referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//dataType2primaryKeyColumns">
+              <source xsi:type="ocl.ecore:VariableExp" name="this" eType="qvtoperational.expr:OperationalTransformation traditionalBasedTransformation.qvtoas#/"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//this"/>
+              <argument xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"
+                  referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//asDataType">
+                <source xsi:type="ocl.ecore:PropertyCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Type"
+                    referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property/type">
+                  <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+                      referredVariable="traditionalBasedTransformation.qvtoas#//relationshipAttribute2foreignKey/self"/>
+                </source>
+              </argument>
+              <argument xsi:type="ocl.ecore:PropertyCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+                  referredProperty="ecore:EAttribute http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//ModelElement/name">
+                <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+                    referredVariable="traditionalBasedTransformation.qvtoas#//relationshipAttribute2foreignKey/self"/>
+              </argument>
+              <argument xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+                  referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//isIdentifying">
+                <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+                    referredVariable="traditionalBasedTransformation.qvtoas#//relationshipAttribute2foreignKey/self"/>
+              </argument>
+            </value>
+          </content>
+          <content xsi:type="eimpocl:AssignExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/UniqueConstraint"
+              isReset="true">
+            <left xsi:type="ocl.ecore:PropertyCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/UniqueConstraint"
+                referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/ForeignKey/referredUC">
+              <source xsi:type="ocl.ecore:VariableExp" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/ForeignKey"
+                  referredVariable="traditionalBasedTransformation.qvtoas#//relationshipAttribute2foreignKey/result"/>
+            </left>
+            <value xsi:type="qvtoperational.expr:ResolveInExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/PrimaryKey"
+                isDeferred="true" one="true" inMapping="traditionalBasedTransformation.qvtoas#//class2primaryKey">
+              <source xsi:type="ocl.ecore:PropertyCallExp" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Type"
+                  referredProperty="ecore:EReference http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property/type">
+                <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+                    referredVariable="traditionalBasedTransformation.qvtoas#//relationshipAttribute2foreignKey/self"/>
+              </source>
+              <target name="rdb" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/PrimaryKey"/>
+            </value>
+          </content>
+        </body>
+      </content>
+    </body>
+    <context xsi:type="qvtoperational.expr:MappingParameter" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+        representedParameter="qvtoperational.expr:MappingParameter traditionalBasedTransformation.qvtoas#//relationshipAttribute2foreignKey/self"/>
+    <result xsi:type="qvtoperational.expr:MappingParameter" name="result" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/ForeignKey"
+        representedParameter="qvtoperational.expr:MappingParameter traditionalBasedTransformation.qvtoas#//relationshipAttribute2foreignKey/result"
+        kind="out"/>
+    <when xsi:type="qvtoperational.expr:ImperativeCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"
+        referredOperation="qvtoperational.expr:Helper traditionalBasedTransformation.qvtoas#//isRelationship">
+      <source xsi:type="ocl.ecore:VariableExp" name="self" eType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"
+          referredVariable="traditionalBasedTransformation.qvtoas#//relationshipAttribute2foreignKey/self"/>
+    </when>
+  </eOperations>
+  <eOperations xsi:type="qvtoperational.expr:Constructor" name="B" eType="ocl.ecore:VoidType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid">
+    <eParameters xsi:type="qvtoperational.expr:VarParameter" name="x" eType="qvtoperational.expr:ModelType traditionalBasedTransformation.qvtoas#//A"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//B/x"/>
+    <body xsi:type="qvtoperational.expr:ConstructorBody">
+      <content xsi:type="ocl.ecore:OperationCallExp" eType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"
+          referredOperation="ecore:EOperation http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclType_Class/toString">
+        <source xsi:type="ocl.ecore:TypeExp" eType="ocl.ecore:TypeType traditionalBasedTransformation.qvtoas#//B.2"
+            referredType="qvtoperational.expr:ModelType traditionalBasedTransformation.qvtoas#//B.1"/>
+      </content>
+      <variable xsi:type="qvtoperational.expr:VarParameter" name="result" eType="qvtoperational.expr:ModelType traditionalBasedTransformation.qvtoas#//B.1"
+          representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//B/@body/@variable.0"
+          kind="out"/>
+    </body>
+    <context name="self" eType="qvtoperational.expr:ModelType traditionalBasedTransformation.qvtoas#//B.1"
+        representedParameter="qvtoperational.expr:VarParameter traditionalBasedTransformation.qvtoas#//B/self"/>
+  </eOperations>
+  <eClassifiers xsi:type="qvtoperational.expr:ModelType" name="A" instanceClassName="org.eclipse.m2m.internal.qvt.oml.evaluator.ModelInstance"
+      eSuperTypes="http://www.eclipse.org/m2m/qvt/oml/1.0.0/Stdlib#//Model" metamodel="http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#/"/>
+  <eClassifiers xsi:type="qvtoperational.expr:ModelType" name="B" instanceClassName="org.eclipse.m2m.internal.qvt.oml.evaluator.ModelInstance"
+      eSuperTypes="http://www.eclipse.org/m2m/qvt/oml/1.0.0/Stdlib#//Model" metamodel="http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#/"/>
+  <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Schema)" instanceClassName="java.util.LinkedHashSet"
+      elementType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Schema"/>
+  <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(ForeignKey)"
+      instanceClassName="java.util.LinkedHashSet" elementType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/ForeignKey"/>
+  <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(TableColumn)"
+      instanceClassName="java.util.LinkedHashSet" elementType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"/>
+  <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Package)" instanceClassName="java.util.LinkedHashSet"
+      elementType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package"/>
+  <eClassifiers xsi:type="qvtoperational.expr:ModelType" name="simpleuml" metamodel="http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#/"/>
+  <eClassifiers xsi:type="qvtoperational.expr:ModelType" name="rdb" metamodel="http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#/"/>
+  <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Schema)" instanceClassName="java.util.Set"
+      elementType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Schema"/>
+  <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(Schema)" instanceClassName="java.util.List"
+      elementType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Schema"/>
+  <eClassifiers xsi:type="ocl.ecore:BagType" name="Bag(Schema)" instanceClassName="org.eclipse.ocl.util.Bag"
+      elementType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Schema"/>
+  <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(T2)" instanceClassName="java.util.Set"
+      elementType="ocl.ecore:AnyType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/T2"/>
+  <eClassifiers xsi:type="ocl.ecore:BagType" name="Bag(T2)" instanceClassName="org.eclipse.ocl.util.Bag"
+      elementType="ocl.ecore:AnyType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/T2"/>
+  <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Property)" instanceClassName="java.util.LinkedHashSet"
+      elementType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Property"/>
+  <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(ForeignKey)" instanceClassName="java.util.List"
+      elementType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//constraints/ForeignKey"/>
+  <eClassifiers xsi:type="ocl.ecore:BagType" name="Bag(TableColumn)" instanceClassName="org.eclipse.ocl.util.Bag"
+      elementType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"/>
+  <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(TableColumn)" instanceClassName="java.util.Set"
+      elementType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"/>
+  <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(TableColumn)" instanceClassName="java.util.List"
+      elementType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//TableColumn"/>
+  <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Generalization)"
+      instanceClassName="java.util.LinkedHashSet" elementType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Generalization"/>
+  <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Packageable)"
+      instanceClassName="java.util.LinkedHashSet" elementType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Packageable"/>
+  <eClassifiers xsi:type="ocl.ecore:TypeType" name="Package" referredType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package"/>
+  <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(Package)" instanceClassName="java.util.List"
+      elementType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package"/>
+  <eClassifiers xsi:type="ocl.ecore:TypeType" name="DataType" referredType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//DataType"/>
+  <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(String)" instanceClassName="java.util.Set"
+      elementType="ocl.ecore:PrimitiveType http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  <eClassifiers xsi:type="ocl.ecore:TypeType" name="PrimitiveType" referredType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//PrimitiveType"/>
+  <eClassifiers xsi:type="ocl.ecore:TypeType" name="Enumeration" referredType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Enumeration"/>
+  <eClassifiers xsi:type="ocl.ecore:TypeType" name="Class" referredType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Class"/>
+  <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Packageable)" instanceClassName="java.util.Set"
+      elementType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Packageable"/>
+  <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(Table)" instanceClassName="java.util.List"
+      elementType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Table"/>
+  <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Table)" instanceClassName="java.util.LinkedHashSet"
+      elementType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//Table"/>
+  <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(SchemaElement)"
+      instanceClassName="java.util.LinkedHashSet" elementType="ecore:EClass http://www.eclipse.org/qvt/1.0.0/Operational/examples/rdb#//SchemaElement"/>
+  <eClassifiers xsi:type="ocl.ecore:TypeType" name="B" referredType="qvtoperational.expr:ModelType traditionalBasedTransformation.qvtoas#//B.1"/>
+  <ownedVariable name="this" eType="qvtoperational.expr:OperationalTransformation traditionalBasedTransformation.qvtoas#/"/>
+  <modelParameter name="$model" eType="qvtoperational.expr:ModelType traditionalBasedTransformation.qvtoas#//simpleuml">
+    <eAnnotations source="http://www.eclipse.org/m2m/1.0.0/QVT/autoModelParam"/>
+  </modelParameter>
+  <modelParameter name="$result" eType="qvtoperational.expr:ModelType traditionalBasedTransformation.qvtoas#//rdb"
+      kind="out">
+    <eAnnotations source="http://www.eclipse.org/m2m/1.0.0/QVT/autoModelParam"/>
+  </modelParameter>
+</qvtoperational.expr:OperationalTransformation>

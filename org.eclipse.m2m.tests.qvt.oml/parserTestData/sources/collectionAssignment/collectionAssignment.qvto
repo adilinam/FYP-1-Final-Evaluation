@@ -1,0 +1,15 @@
+modeltype ecore uses "http://www.eclipse.org/emf/2002/Ecore";
+transformation collectionAssignment(out ecore, out temp : ecore);
+
+main() {
+	var vv1 : Sequence(EDataType) := /*<error>*/Sequence{ object EClass{name:='foo'} }/*</error>*/;
+	var vv2 : Sequence(Sequence(EDataType)) := /*<error>*/Sequence{ Sequence{ object EClass{name:='foo'} } }/*</error>*/;
+	var vv3 : Set(Sequence(EClass)) := /*<error>*/Set{ Set{ object EClass{name:='foo'} } }/*</error>*/;
+	var vv4 : Set(OrderedSet(EClass)) := /*<error>*/Set{ Set{ object EClass{name:='foo'} } }/*</error>*/;
+
+	var v1 : Sequence(EClass) := Sequence{ object EClass{name:='foo'} };
+	var v2 : Set(Sequence(EClass)) := Set{ Sequence{ object EClass{name:='foo'} } };
+	var v3 : Set(OrderedSet(EClass)) := OrderedSet{ OrderedSet{ object EClass{name:='foo'} } };
+	var v4 : Set(Set(EClass)) := Set{ OrderedSet{ object EClass{name:='foo'} } };
+	var v5 : Sequence(EClassifier) := Sequence{ object EClass{name:='foo'} };
+}

@@ -1,0 +1,50 @@
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation overload_singleParam(in eModel : ECORE, out outModel : ECORE); 
+
+main() {
+	var c : EClass := object EClass { name := "arg"; };	
+	var results := Sequence {	
+		singleParam(c),
+		singleParam(null), // choose more specific by param type;
+		singleParam(invalid), // choose more specific by param type
+		singleParam(c.oclAsType(EClassifier)),
+		singleParam(c.oclAsType(ENamedElement))
+	};
+	
+	object EPackage {
+		name := "result";
+		eClassifiers += c;
+		eClassifiers += results->collect( s | object EClass { name := s; });	
+	};
+
+	-- test couple of irregularities in the MDT OCL stdlib
+	-- ensuring no ambiguous operation call is reported
+	var i : Integer := 1;
+	var r : Real := 1.5;
+	
+	i < i;
+	i <= i;
+	i < r;	
+	i <= r;	
+	i.round();
+	
+	r < i;
+	r <= i;
+	r < r;	
+	r <= r;	
+	r.round();
+} 
+
+// single parameter overloaded operations
+helper singleParam(c : EClassifier) : String {
+	return "singleParam(c : EClassifier) : String";
+}
+
+helper singleParam(c : EClass) : String {
+	return "singleParam(c : EClass) : String";
+}
+
+helper singleParam(c : ENamedElement) : String {
+	return "singleParam(c : ENamedElement) : String";
+}

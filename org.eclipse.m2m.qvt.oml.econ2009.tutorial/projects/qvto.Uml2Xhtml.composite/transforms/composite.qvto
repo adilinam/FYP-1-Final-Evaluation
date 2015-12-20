@@ -1,0 +1,22 @@
+import Ecore2UML;
+import Uml2Xhtml_vfinal;
+
+modeltype ECORE uses "http://www.eclipse.org/emf/2002/Ecore";
+modeltype UML uses 'http://www.eclipse.org/uml2/2.0.0/UML';
+modeltype XHTML uses 'http://www.w3.org/1999/xhtml';
+
+transformation composite(in Ecore : ECORE, out Uml : UML, out Xhtml : XHTML) 
+	access transformation Ecore2UML(in ECORE, out UML)
+	access transformation Uml2Xhtml(in UML, out XHTML);
+
+main() {
+	var t1 : Transformation := new Ecore2UML(Ecore, Uml);	
+	var s1 : Status := t1.transform();
+
+	assert fatal (s1.succeeded());
+
+	var t2 : Transformation := new Uml2Xhtml(Uml, Xhtml);
+	var s2 : Status := t2.transform();
+
+	assert fatal (s2.succeeded());
+}

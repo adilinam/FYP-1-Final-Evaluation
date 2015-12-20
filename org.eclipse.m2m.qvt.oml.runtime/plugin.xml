@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+    <extension-point id="qvtTransformation" name="%qvtTransformation" schema="schema/qvtTransformation.exsd"/>
+    <extension-point id="qvtTransformationContainer" name="%qvtTransformationContainer" schema="schema/qvtTransformationContainer.exsd"/>
+    <extension-point id="qvtTransformationImplFactory" name="%qvtTransformationImplFactory" schema="schema/qvtTransformationImplFactory.exsd"/>
+                    
+	<extension point="org.eclipse.core.resources.markers"
+		id="qvtBuilderMarker" name="%qvtBuilderTransformation">
+		<super type="org.eclipse.core.resources.problemmarker"/>
+		<super type="org.eclipse.core.resources.textmarker"/>
+		<persistent value="true"/>
+	</extension>
+   
+    <extension point="org.eclipse.debug.core.launchConfigurationTypes">
+		<launchConfigurationType
+			name="%qvtInterpreter"
+			delegate="org.eclipse.m2m.internal.qvt.oml.runtime.launch.QvtLaunchConfigurationDelegate"
+			modes="run"               
+			id="org.eclipse.m2m.qvt.oml.QvtTransformation">
+		</launchConfigurationType>
+
+        <launchConfigurationType
+              category="org.eclipse.ui.externaltools.builder"
+              delegate="org.eclipse.m2m.internal.qvt.oml.runtime.launch.QvtBuilderLaunchConfigurationDelegate"
+              id="org.eclipse.m2m.qvt.oml.QvtBuilderTransformation"
+              modes="run"
+              name="%qvtBuilderTransformation"/>
+
+        <launchConfigurationType
+              name="%qvtInterpreter"
+              delegate="org.eclipse.m2m.internal.qvt.oml.runtime.launch.InMemoryQvtLaunchConfigurationDelegate"
+              modes="run"
+              id="org.eclipse.m2m.qvt.oml.InMemoryQvtTransformation"
+              public="false"/>			
+	</extension> 
+    
+	<extension point="org.eclipse.m2m.qvt.oml.runtime.qvtTransformationImplFactory">
+		<factory class="org.eclipse.m2m.internal.qvt.oml.runtime.project.QvtInterpretedTransformationFactory"/>
+ 	</extension>
+
+	<extension point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="org.eclipse.m2m.internal.qvt.oml.runtime.resource.QvtOperationalResourceFactoryImpl"
+			type="%qvtFileExtension">
+		</parser>
+	</extension>
+
+	 <extension point="org.eclipse.ant.core.antTasks">
+	    <antTask
+	          class="org.eclipse.m2m.internal.qvt.oml.runtime.ant.ApplyInterpretedTransformationTask"
+	          eclipseRuntime="true"
+	          headless="true"
+	          library="lib/antTasks.jar"
+	          name="qvto.interpretedTransformation"/>
+	 </extension>
+	 
+	 <extension point="org.eclipse.ant.core.antTasks">
+	    <antTask
+	          class="org.eclipse.m2m.internal.qvt.oml.runtime.ant.QvtoAntTransformationTask"
+	          eclipseRuntime="true"
+	          headless="true"
+	          library="lib/antTasks.jar"
+	          name="transformation"
+	          uri="http://www.eclipse.org/qvt/1.0.0/Operational"
+	          />
+	 </extension>
+	 
+	 <extension point="org.eclipse.ant.core.extraClasspathEntries">
+	    <extraClasspathEntry
+	          eclipseRuntime="true"
+	          headless="true"
+	          library="lib/antTasks.jar"/>
+	 </extension>
+	 
+	 <extension point="org.eclipse.m2m.qvt.oml.unitResolverFactory">
+		<factory class="org.eclipse.m2m.internal.qvt.oml.runtime.project.PlatformPluginUnitResolverFactory"/>
+ 	 </extension>
+ 	 
+ 	 <extension point="org.eclipse.m2m.qvt.oml.unitResolverFactory">
+		<factory class="org.eclipse.m2m.internal.qvt.oml.runtime.project.DeployedImportResolverFactory"/>
+ 	 </extension>
+
+</plugin>

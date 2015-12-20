@@ -1,0 +1,10 @@
+transformation t;
+
+modeltype A uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+mapping ecore::EPackage::toDecision() : ecore::EPackage {         
+    object {
+         name:=self.name;
+         eClassifiers+= self.resolveIn(ecore::EPackage::/*@*/
+    }
+}

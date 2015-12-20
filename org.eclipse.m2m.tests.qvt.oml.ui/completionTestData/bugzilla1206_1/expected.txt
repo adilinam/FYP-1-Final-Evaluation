@@ -1,0 +1,1 @@
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = ecore::EPackage::toDecision, displayString = ecore::EPackage::toDecision, replacementOffsetDelta = 0, replacementLength = 0, cursorPosition = 27

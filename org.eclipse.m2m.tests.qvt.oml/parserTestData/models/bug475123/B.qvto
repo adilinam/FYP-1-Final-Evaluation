@@ -1,0 +1,17 @@
+import models.bug475123.C;
+
+library B;
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+property nameB : String = 'b';
+
+
+mapping ENamedElement::m() : EClass { result.name := nameB; }
+
+helper EClass :: testB() : EClass {
+	return self.map m();	
+}
+
+
+mapping EClassifier::n() : EClass { result.name := nameB; }

@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.eclipse.qvto.examples.xtext.qvtoperational
+Bundle-SymbolicName: org.eclipse.qvto.examples.xtext.qvtoperational; singleton:=true
+Bundle-Version: 0.0.1
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.qvto.examples.xtext.qvtoperational,
+ org.eclipse.qvto.examples.xtext.qvtoperational.services,
+ org.eclipse.qvto.examples.xtext.qvtoperational.serializer,
+ org.eclipse.qvto.examples.xtext.qvtoperational.parser.antlr,
+ org.eclipse.qvto.examples.xtext.qvtoperational.parser.antlr.internal,
+ org.eclipse.qvto.examples.xtext.qvtoperational.validation,
+ org.eclipse.qvto.examples.xtext.qvtoperational.scoping,
+ org.eclipse.qvto.examples.xtext.qvtoperational.formatting
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime
+Import-Package: org.apache.log4j
+

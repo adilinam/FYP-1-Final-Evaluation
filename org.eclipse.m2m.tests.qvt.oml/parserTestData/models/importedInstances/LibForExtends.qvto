@@ -1,0 +1,7 @@
+library LibForExtends;
+
+property prop_LibForExtends : String = "prop_LibForExtends";
+
+query query_LibForExtends() : String {
+	return "query_LibForExtends";
+}

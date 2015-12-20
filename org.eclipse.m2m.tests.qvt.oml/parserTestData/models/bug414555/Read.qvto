@@ -1,0 +1,15 @@
+import models.bug414555.Base;
+
+modeltype ecore uses "http://www.eclipse.org/emf/2002/Ecore";
+
+transformation Read(in source : ecore, out target : ecore) extends Base;
+
+main() {
+
+	target.objects()[EClass]->forEach(eClass) {
+		
+		assert fatal (not eClass.prop.oclIsUndefined());
+		
+	}
+
+}

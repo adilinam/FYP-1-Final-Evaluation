@@ -1,0 +1,10 @@
+import models.bug433937_wrongImport.NonExistedImport;
+
+transformation bug433937_wrongImport();
+
+main() {
+	
+	var retcode := true;
+	assert fatal (retcode);
+
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_HptVIBdcEd697_yMxL0OqA" name="family">
+  <packagedElement xmi:type="uml:Class" xmi:id="_HptVIRdcEd697_yMxL0OqA" name="Person" clientDependency="_HptVLhdcEd697_yMxL0OqA">
+    <ownedAttribute xmi:id="_HptVIhdcEd697_yMxL0OqA" name="firstName" visibility="public" type="_HptVThdcEd697_yMxL0OqA" isOrdered="true">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HptVIxdcEd697_yMxL0OqA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HptVJBdcEd697_yMxL0OqA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_HptVJRdcEd697_yMxL0OqA" name="lastName" visibility="public" type="_HptVThdcEd697_yMxL0OqA" isOrdered="true">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HptVJhdcEd697_yMxL0OqA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HptVJxdcEd697_yMxL0OqA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_HptVKBdcEd697_yMxL0OqA" name="gender" visibility="public" type="_HptVSBdcEd697_yMxL0OqA" isOrdered="true">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HptVKRdcEd697_yMxL0OqA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HptVKhdcEd697_yMxL0OqA"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_HptVKxdcEd697_yMxL0OqA" name="id" visibility="public" type="_HptVSxdcEd697_yMxL0OqA" isOrdered="true">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HptVLBdcEd697_yMxL0OqA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HptVLRdcEd697_yMxL0OqA" value="1"/>
+    </ownedAttribute>
+    <interfaceRealization xmi:id="_HptVLhdcEd697_yMxL0OqA" supplier="_HptVQBdcEd697_yMxL0OqA" client="_HptVIRdcEd697_yMxL0OqA" contract="_HptVQBdcEd697_yMxL0OqA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_HptVLxdcEd697_yMxL0OqA" name="Parent">
+    <generalization xmi:id="_HptVMBdcEd697_yMxL0OqA" general="_HptVIRdcEd697_yMxL0OqA"/>
+    <ownedAttribute xmi:id="_HptVMRdcEd697_yMxL0OqA" name="children" visibility="public" type="_HptVNBdcEd697_yMxL0OqA" isOrdered="true" association="_HptVRhdcEd697_yMxL0OqA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HptVMhdcEd697_yMxL0OqA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HptVMxdcEd697_yMxL0OqA"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_HptVNBdcEd697_yMxL0OqA" name="Child">
+    <generalization xmi:id="_HptVNRdcEd697_yMxL0OqA" general="_HptVIRdcEd697_yMxL0OqA"/>
+    <ownedAttribute xmi:id="_HptVNhdcEd697_yMxL0OqA" name="parents" visibility="public" type="_HptVLxdcEd697_yMxL0OqA" isOrdered="true" association="_HptVRhdcEd697_yMxL0OqA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HptVNxdcEd697_yMxL0OqA" value="2"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HptVOBdcEd697_yMxL0OqA"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_HptVORdcEd697_yMxL0OqA" name="Family">
+    <ownedAttribute xmi:id="_HptVOhdcEd697_yMxL0OqA" name="members" visibility="public" type="_HptVIRdcEd697_yMxL0OqA" isOrdered="true" aggregation="composite" association="_HptVRBdcEd697_yMxL0OqA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HptVOxdcEd697_yMxL0OqA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HptVPBdcEd697_yMxL0OqA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_HptVPRdcEd697_yMxL0OqA" name="size" visibility="public" type="_HptVTRdcEd697_yMxL0OqA" isOrdered="true" isReadOnly="true" isDerived="true">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HptVPhdcEd697_yMxL0OqA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HptVPxdcEd697_yMxL0OqA"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_HptVQBdcEd697_yMxL0OqA" name="IFamilyMember">
+    <ownedAttribute xmi:id="_HptVQRdcEd697_yMxL0OqA" name="fullName" visibility="public" type="_HptVThdcEd697_yMxL0OqA" isOrdered="true">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HptVQhdcEd697_yMxL0OqA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HptVQxdcEd697_yMxL0OqA" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_HptVRBdcEd697_yMxL0OqA" memberEnd="_HptVRRdcEd697_yMxL0OqA _HptVOhdcEd697_yMxL0OqA">
+    <ownedEnd xmi:id="_HptVRRdcEd697_yMxL0OqA" type="_HptVORdcEd697_yMxL0OqA" association="_HptVRBdcEd697_yMxL0OqA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_HptVRhdcEd697_yMxL0OqA" memberEnd="_HptVNhdcEd697_yMxL0OqA _HptVMRdcEd697_yMxL0OqA"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_HptVRxdcEd697_yMxL0OqA" name="types">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_HptVSBdcEd697_yMxL0OqA" name="Gender">
+      <ownedLiteral xmi:id="_HptVSRdcEd697_yMxL0OqA" name="MALE"/>
+      <ownedLiteral xmi:id="_HptVShdcEd697_yMxL0OqA" name="FEMALE"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_HptVSxdcEd697_yMxL0OqA" name="ID"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_HptVTBdcEd697_yMxL0OqA" name="importedTypes">
+    <packagedElement xmi:type="uml:DataType" xmi:id="_HptVTRdcEd697_yMxL0OqA" name="EInt"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_HptVThdcEd697_yMxL0OqA" name="EString"/>
+  </packagedElement>
+</uml:Model>

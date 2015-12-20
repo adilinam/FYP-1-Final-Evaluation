@@ -1,0 +1,5 @@
+transformation sameparamname;
+
+mapping foo(in s: String, /*<error>*/in s: String/*</error>*/): /*<error>*/OclVoid/*</error>*/ {
+
+}

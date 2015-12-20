@@ -1,0 +1,16 @@
+import models.bug358709.A;
+
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation B(in input:Ecore, out output: Ecore) extends A;
+
+
+main() {
+		
+	execute();
+	
+}
+
+mapping EPackage :: m() : EPackage {
+	name := 'pack'	
+}

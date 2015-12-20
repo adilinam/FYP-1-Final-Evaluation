@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://www.example.org/model" xsi:schemaLocation="http://www.example.org/model model.ecore">
+  <contains label="1" single="//@contains.1" multi="//@contains.1 //@contains.2"/>
+  <contains label="2"/>
+  <contains label="3"/>
+</model:Container>

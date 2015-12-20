@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+<extension point="org.eclipse.ui.popupMenus">
+	<objectContribution id="qvto.ecore2uml.invoke"
+			objectClass="org.eclipse.core.resources.IFile"
+			nameFilter="*.ecore">
+            
+		<menu label="%QVTO.menu.label" path="additions" id="qvto.ecore2uml.invoke">              
+			<separator name="group1"></separator>
+		</menu>
+
+		<action label="%Ecore2UML.action.label"
+				id="org.econ2009.convertToUMLAction"         
+				class="qvto.ecore2uml.internal.invoke.Ecore2UMLAction"
+				menubarPath="qvto.ecore2uml.invoke/group1"
+				enablesFor="1">
+		</action>
+	</objectContribution>
+	
+</extension>
+
+</plugin>

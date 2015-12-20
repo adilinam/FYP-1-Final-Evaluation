@@ -1,0 +1,10 @@
+transformation wrongparamnameinout;
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+mapping foo(pack: ecore::EPackage): ecore::EPackage {
+   init {
+	   /*<error>*/pack1/*</error>*/.name := 'foo';
+   } 
+	   /*<error>*/name1/*</error>*/ := 'foo';
+	   name := 'foo';
+}

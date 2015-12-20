@@ -1,0 +1,7 @@
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation bug404647_2;
+
+mapping List(Real) :: m() : EClass {
+	/*<error>*/self/*</error>*/->add(5.0);
+}

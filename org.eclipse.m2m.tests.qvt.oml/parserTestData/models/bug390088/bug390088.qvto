@@ -1,0 +1,12 @@
+import models.bug390088.NewLibrary;
+
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+transformation bug390088;
+
+main() {
+	var p : EPackage = map createEPackage();
+	
+	var res : EPackage = resolveoneIn(NewLibrary::createEPackage, EPackage);
+	assert fatal (res != null)
+}

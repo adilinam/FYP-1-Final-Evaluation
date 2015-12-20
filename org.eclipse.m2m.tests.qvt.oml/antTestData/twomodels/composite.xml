@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project" default="default">
+    <target name="default">
+        <qvto.interpretedTransformation
+            transformation="/QvtAntTest/models/twomodels/ecore2uml.qvto"
+            tracefile="/QvtAntTest/models/twomodels/ecore2uml.uml.qvtotrace"
+            resulturiproperty="intermResult"
+            >
+            <targeturidef
+                targeturi="platform:/resource/QvtAntTest/models/twomodels/in.ecore"
+            />
+            <targeturidef
+                targeturi="platform:/resource/QvtAntTest/models/twomodels/ecore2uml.uml"
+            />
+            <configurationProperty name="prop" value="attr"/>
+        </qvto.interpretedTransformation>
+        <qvto.interpretedTransformation
+            transformation="/QvtAntTest/models/twomodels/uml2rdb.qvto"
+            tracefile="/QvtAntTest/models/twomodels/uml2rdb.rdb.qvtotrace"
+            resulturiproperty="finalResult"
+            >
+            <targeturidef
+                targeturi="${intermResult1}"
+            />
+            <targeturidef
+                targeturi="platform:/resource/QvtAntTest/models/twomodels/uml2rdb.rdb"
+            />
+        </qvto.interpretedTransformation>
+        <echo file="out.uri.txt" message="${finalResult1}"/>
+    </target>
+</project>

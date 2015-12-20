@@ -1,0 +1,32 @@
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+ 	        
+transformation intermPropClash(in m : ECORE, out x  : ECORE); 
+ 
+intermediate property  /*<error>*/String/*</error>*/::name : Boolean;
+ 
+intermediate property EClass::/*<error>*/prop/*</error>*/ : String;
+intermediate property EModelElement::/*<error>*/prop/*</error>*/ : Boolean;  
+intermediate property EClassifier::/*<error>*/prop/*</error>*/ : Integer;
+
+intermediate property EClassifier::prop2 : String;
+
+                                   
+intermediate property EPackage::/*<error>*/pkgProp/*</error>*/ : String;
+intermediate property EPackage::/*<error>*/pkgProp/*</error>*/ : Set(EClass);
+             
+intermediate property EPackage::pkgProp2 : String;
+             
+
+intermediate property EPackage::/*<error>*/name/*</error>*/ : Boolean;
+       
+main() {  
+}   
+             
+mapping EPackage::fooDefaultInstantiate() : EClass {
+	/*<error>*/prop/*</error>*/ := true;
+	prop2 := self.pkgProp2;	 
+	end {
+		var aVar : String := /*<error>*/pkgProp/*</error>*/; 
+		var orisNameStrProp :String := self.name; -- should preserve the original name property
+	}	   
+}

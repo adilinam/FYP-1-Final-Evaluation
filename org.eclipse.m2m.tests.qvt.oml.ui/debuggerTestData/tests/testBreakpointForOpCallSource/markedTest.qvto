@@ -1,0 +1,24 @@
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+transformation testBreakpointForOpCallSource(inout inModel : ecore);
+
+main() {
+    var pack := inModel.objects()![EPackage];
+    map test(pack);
+}
+
+mapping EStructuralFeature::x(in a : Integer, in b: Real, in c : String) : EReference {
+
+}
+
+mapping test(in c : EPackage) : EClass {
+   eStructuralFeatures += c.eClassifiers.oclAsType(EClass).eStructuralFeatures->iterate(
+       feature : EStructuralFeature; res : OrderedSet(EReference) = OrderedSet{} |
+       res->including(feature.map x(
+--!@#b1 breakpoint
+           res->size(), 
+           1.0, --[Shift+Ctrl+B]
+           'as'
+       ))->asOrderedSet()
+   );
+}

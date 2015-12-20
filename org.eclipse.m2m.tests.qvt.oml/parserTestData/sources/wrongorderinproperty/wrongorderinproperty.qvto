@@ -1,0 +1,4 @@
+transformation wrongorderinproperty;
+
+property bar = foo;
+property foo = 'bar';

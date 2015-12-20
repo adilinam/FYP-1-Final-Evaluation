@@ -1,0 +1,516 @@
+/**
+ * <copyright>
+ *
+ * Copyright (c) 2012 E.D.Willink and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     E.D.Willink - initial API and implementation
+ *
+ * </copyright>
+ *
+ * $Id$
+ */
+grammar org.eclipse.qvto.examples.xtext.imperativeocl.ImperativeOCL_old with org.eclipse.ocl.examples.xtext.essentialocl.EssentialOCL
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "platform:/resource/org.eclipse.ocl.examples.xtext.base/model/BaseCST.ecore" as base
+import "platform:/resource/org.eclipse.ocl.examples.xtext.essentialocl/model/EssentialOCLCST.ecore" as essentialocl
+import "platform:/resource/org.eclipse.ocl.examples.pivot/model/Pivot.ecore" as pivot
+import "platform:/resource/org.eclipse.qvto.examples.pivot.imperativeocl/model/ImperativeOCL.ecore" as imperativeocl
+import "platform:/resource/org.eclipse.qvto.examples.xtext.imperativeocl/model/ImperativeOCLCST.ecore"
+
+
+GrammmarCS returns essentialocl::ExpCS: ExpressionCS;
+
+terminal ACCESS_OP: '.' | '->' | '!->';
+
+terminal ADD_OP: '+' | '-';
+
+terminal ASSIGN_OP: ':=' | '::=' | '+=' | '-=';
+
+terminal CMP_OP: '=' | '==' | '<>' | '<' | '>' | '<=' | '>=';
+
+terminal MULT_OP: '*' | '/' | '%';
+
+terminal MULTI_ITERATOR_OP: 'forAll';
+
+terminal OR_OP: 'or' | 'xor';
+
+terminal RESOLVE_IN_KIND: 'resolveIn' | 'resolveoneIn' | 'invresolveIn' | 'invresolveoneIn';
+
+terminal RESOLVE_KIND: 'resolve' | 'resolveone' | 'invresolve' | 'invresolveone';
+
+terminal SIMPLE_ITERATOR_OP: 'reject' | 'select' | 'collect' | 'exists'
+| 'one' | 'any' | 'isUnique' | 'collectNested'
+| 'sortedBy' | 'xselect' | 'xcollect'
+| 'selectOne' | 'collectOne'
+| 'collectselect' | 'collectselectOne';
+
+terminal UNARY_OP: '-' | 'not' | '#' | '##' | '*';
+
+QVToReservedKeyword:
+	'default'
+	| 'elif'
+	| RESOLVE_KIND
+	| RESOLVE_IN_KIND;
+
+QVToPrefixOperator:
+	'#' | '##' | '*';
+
+QVToInfixOperator:
+	ASSIGN_OP | 'default' | '==';
+
+QVToNavigationOperator:
+	'!->';
+
+PrefixOperator:
+	EssentialOCLPrefixOperator | QVToPrefixOperator;
+
+InfixOperator:
+	EssentialOCLInfixOperator | QVToInfixOperator;
+
+NavigationOperator:
+	EssentialOCLNavigationOperator | QVToNavigationOperator;
+
+//-----------------------------------------------------------------
+
+ScopedIdentifierCS returns base::PathNameCS: PathNameCS;
+
+
+//LiteralSimpleCS returns essentialocl::LiteralExpCS: <INTEGER> | <FLOAT> | <STRING> | 'true' | 'false' | 'unlimited' | 'null';
+
+//-----------------------------------------------------------------
+ExpCS returns essentialocl::ExpCS:
+	({essentialocl::InfixExpCS} (ownedExpression+=PrefixedExpCS ownedOperator+=BinaryOperatorCS)+
+		ownedExpression+=PrefixedExpOrLetExpCS)
+| 	({essentialocl::PrefixExpCS} ownedOperator+=UnaryOperatorCS+ ownedExpression=PrimaryExpOrLetExpCS)
+|	PrimaryExpOrLetExpCS;
+
+BinaryOperatorCS returns essentialocl::BinaryOperatorCS:
+	InfixOperatorCS | NavigationOperatorCS;
+
+NavigationOperatorCS returns essentialocl::NavigationOperatorCS:
+	name=NavigationOperator;
+
+PrefixedExpCS returns essentialocl::ExpCS:
+	PrimaryExpCS
+	| ({essentialocl::PrefixExpCS} ownedOperator+=UnaryOperatorCS+ ownedExpression=PrimaryExpCS);
+
+PrefixedExpOrLetExpCS returns essentialocl::ExpCS:
+	PrimaryExpOrLetExpCS
+	| ({essentialocl::PrefixExpCS} ownedOperator+=UnaryOperatorCS+ ownedExpression=PrimaryExpOrLetExpCS);
+
+UnaryOperatorCS returns essentialocl::UnaryOperatorCS:
+	name=PrefixOperator;
+
+PrimaryExpCS returns essentialocl::ExpCS:	// These rules are ordered most rejectable first
+	({essentialocl::IndexExpCS} pathName=PathNameCS '[' firstIndexes+=ExpCS (',' firstIndexes+=ExpCS)* ']'
+		('[' secondIndexes+=ExpCS (',' secondIndexes+=ExpCS)* ']')? (atPre?='@' 'pre')?)
+|	({essentialocl::ConstructorExpCS} pathName=PathNameCS
+		'{' ((ownedParts+=ConstructorPartCS (',' ownedParts+=ConstructorPartCS)*) | (value=StringLiteral)) '}')
+| 	({essentialocl::InvocationExpCS} pathName=PathNameCS (atPre?='@' 'pre')?
+		'(' (argument+=NavigatingArgCS (argument+=NavigatingCommaArgCS)*
+		(argument+=NavigatingSemiArgCS (argument+=NavigatingCommaArgCS)*)?
+		(argument+=NavigatingBarArgCS (argument+=NavigatingCommaArgCS)*)?)?
+		')')
+|	({essentialocl::NameExpCS} pathName=PathNameCS (atPre?='@' 'pre')?)
+|	SelfExpCS
+| 	PrimitiveLiteralExpCS
+| 	TupleLiteralExpCS
+| 	CollectionLiteralExpCS
+| 	TypeLiteralExpCS
+| 	IfExpCS
+| 	NestedExpCS
+| LiteralDictCS
+| StatementCS
+| ControlExpCS
+| RuleCallExpCS
+| QuitExpCS
+| TryExpCS
+| RaiseExpCS
+| AssertExpCS
+| LogExpCS
+;
+
+StatementCS:
+	BlockExpCS
+;
+
+/*PrimaryExpCS: LiteralCS
+| ScopedIdentifierCS
+| IfExpCS
+| BlockExpCS
+| ControlExpCS
+| RuleCallExpCS
+| QuitExpCS
+| TryExpCS
+| RaiseExpCS
+| AssertExpCS
+| LogExpCS
+| '(' ExpressionCS ')'; */
+
+PrimaryExpOrLetExpCS returns essentialocl::ExpCS:
+	PrimaryExpCS
+|	LetExpCS;
+
+//-----------------------------------------------------------------
+
+ExpressionCS returns essentialocl::ExpCS: AssignExpCS | LetExpCS | VarInitExpCS;
+
+AssignExpCS returns essentialocl::ExpCS: ImpliesExpCS
+| (UnaryExpCS ASSIGN_OP ExpressionCS DefaultValCS?)
+| (UnaryExpCS ASSIGN_OP ExpressionBlockCS DefaultValCS?)
+;
+
+DefaultValCS: 'default' AssignExpCS;
+
+//ImpliesExpCS: OrExpCS | ImpliesExpCS 'implies' OrExpCS;
+
+//OrExpCS: AndExpCS | OrExpCS OR_OP AndExpCS;
+
+//AndExpCS: CmpExpCS | AndExpCS 'and' CmpExpCS;
+
+//CmpExpCS: AdditiveExpCS | CmpExpCS CMP_OP AdditiveExpCS;
+
+//AdditiveExpCS: MultExpCS | AdditiveExpCS ADD_OP MultExpCS;
+
+//MultExpCS: UnaryExpCS | MultExpCS MULT_OP UnaryExpCS;
+
+UnaryExpCS returns essentialocl::ExpCS: PostfixExpCS | UNARY_OP UnaryExpCS;
+
+PostfixExpCS returns essentialocl::ExpCS: PrimaryExpCS
+| PostfixExpCS '(' (argument+=ExpressionCS (',' argument+=ExpressionCS)*)?? ')'
+| PostfixExpCS '!'? '[' (<simple_declarator> '|')? ExpressionCS ']'
+| PostfixExpCS ACCESS_OP (ScopedIdentifierCS | IteratorExpCS | BlockExpCS | ControlExpCS | RuleCallExpCS | ResolveExpCS | ResolveInExpCS);
+
+//LiteralCS: LiteralSimpleCS | LiteralCollectionCS | LiteralTupleCS | LiteralDictCS;
+
+//LiteralCollectionCS: <collection_key> '{' (argument+=ExpressionCS (',' argument+=ExpressionCS)*)?? '}';
+
+//LiteralTupleCS: 'Tuple' '{' <declarator_list>? '}';
+
+
+
+
+//IteratorExpCS: SIMPLE_ITERATOR_OP '(' (<simple_declarator> '|')? ExpressionCS ')'
+//| MULTI_ITERATOR_OP '(' (<simple_declarator_list> '|')? ExpressionCS ')'
+//| IterateExpCS;
+
+//IterateExpCS: 'iterate' '(' <declarator_list> ';' DeclaratorCS '|' ExpressionCS ')';
+
+DoExpCS: {DoExpCS} 'do' '{' (body+=ExpressionCS (';' body+=ExpressionCS)* ';'?)? '}';
+
+ControlExpCS returns essentialocl::ExpCS: WhileExpCS | ComputeExpCS | ForExpCS;
+
+ForExpCS: keyword=('forEach' | 'forOne') '(' <declarator_list> (';' DeclaratorCS)? ('|' ExpressionCS)? ')' '{' (body+=ExpressionCS (';' body+=ExpressionCS)* ';'?)? '}';
+
+RuleCallExpCS: keyword=('map' | 'xmap' | 'new' ) ('(' DeclaratorCS ')')? ScopedIdentifierCS;
+
+//LetExpCS: 'let' <declarator_list> 'in' ExpressionCS
+
+VarInitExpCS: 'var' <declarator_list> | 'var' '(' <declarator_list> ')';
+
+
+
+
+DictItemCS: key=Identifier '=' value=ExpressionCS;
+
+LiteralDictCS: {LiteralDictCS} 'Dict' '{' (parts+=DictItemCS (',' parts+=DictItemCS)*)? '}';
+
+
+
+AssertExpCS: 'assert' severity=Identifier? '(' assertion=ExpressionCS ')' ( 'with' log=LogExpCS)?;
+
+BlockExpCS: ObjectExpCS | DoExpCS | SwitchExpCS;
+
+BreakExpCS returns QuitExpCS: keyword='break';
+
+ComputeExpCS: 'compute' '(' returnedElement=DeclaratorCS ')' '{' (body+=ExpressionCS (';' body+=ExpressionCS)* ';'?)? '}';
+
+ContinueExpCS returns QuitExpCS: keyword='continue';
+
+ExceptCS: 'except' '(' except+=ScopedIdentifierCS* ')' catch=ExpressionBlockCS;
+
+ExpressionBlockCS returns essentialocl::ExpCS: '{' (body+=ExpressionCS (';' body+=ExpressionCS)* ';'?)? '}';
+
+ExpressionStatementCS: (oclExpressionCS=ExpressionCS ';') | (oclExpressionCS=ExpressionBlockCS ';'?);
+
+ImperativeIfExpCS returns SwitchExpCS: 'if' alternativePart+=SwitchAltCS ('elif' alternativePart+=SwitchAltCS)* ('else' elsePart=IfBodyCS)? 'endif'?;
+
+LogExpCS: {LogExpCS} 'log' '(' (argument+=ExpressionCS (',' argument+=ExpressionCS)*)? ')' ('when' condition=ExpressionCS)?;
+
+ObjectExpCS: 'object' ('(' simpleNameCS=DeclaratorCS ')')? (<typespec> | Identifier ':' <typespec>?) '{' (body+=ExpressionCS (';' body+=ExpressionCS)* ';'?)? '}';
+
+QuitExpCS: BreakExpCS | ContinueExpCS | ReturnExpCS;
+
+RaiseExpCS: 'raise' ScopedIdentifierCS ('(' (argument+=ExpressionCS (',' argument+=ExpressionCS)*)? ')')?;
+
+ResolveExpCS: isDeferred?='late'? RESOLVE_KIND '(' (target=DeclaratorCS ('|' condition=ExpressionCS)?)? ')';
+
+ResolveInExpCS: isDeferred?='late'? RESOLVE_IN_KIND '(' ScopedIdentifierCS (',' target=DeclaratorCS ('|' condition=ExpressionCS)?)?')';
+
+ReturnExpCS returns QuitExpCS: keyword='return' value=ExpressionCS?;
+
+SwitchAltCS: '(' condition=ExpressionCS ')' body=ExpressionStatementCS;
+
+SwitchExpCS: 'switch' ('(' DeclaratorCS ')')? '{' ('case' alternativePart+=SwitchAltCS)+ ('else' elsePart=ExpressionStatementCS)? '}';
+
+TryExpCS: 'try' '{' (body+=ExpressionCS (';' body+=ExpressionCS)* ';'?)? '}' catch+=ExceptCS+;
+
+WhileExpCS: 'while' '(' (resultVar=DeclaratorCS ';')? condition=ExpressionCS ')' '{' (body+=ExpressionCS (';' body+=ExpressionCS)* ';'?)? '}';
+
+
+
+
+/*
+BlockExpCS: '{' (bodyExpressions+=OCLExpressionCS ';')* '}';
+
+BreakExpCS: 'break';
+
+
+ComputeExpCS: 'compute' '(' Identifier ')' BlockExpCS;
+
+ContinueExpCS: 'continue';
+
+ExpressionStatementCS returns essentialocl::ExpCS: (OCLExpressionCS ';') | (BlockExpCS ';'?);
+
+ForExpCS: ('forEach' | 'forOne') '(' Identifier (',' Identifier)* ('|' OCLExpressionCS)? ')' BlockExpCS;
+
+OCLExpressionCS returns essentialocl::ExpCS: ExpCS;
+
+StatementCS: ReturnExpCS;
+*/
+/* 
+
+	switchDeclaratorCS -> declarator
+
+	switchDeclaratorCS ::= IDENTIFIER
+
+	switchDeclaratorCS ::= IDENTIFIER '=' OclExpressionCS
+	typeCS -> listTypeCS
+	listTypeCS ::= List '(' typeCS ')'
+
+	listLiteralCS ::= List '{' CollectionLiteralPartsCSopt '}'
+	
+	typeCS -> dictTypeCS
+	dictTypeCS ::= Dict '(' typeCS ',' typeCS ')'
+
+	dictLiteralCS ::= Dict '{' dictLiteralPartListCSopt '}'
+	
+	literalSimpleCS -> PrimitiveLiteralExpCS
+	LiteralExpCS -> listLiteralCS
+	LiteralExpCS -> dictLiteralCS
+	
+	dictLiteralPartCS ::= literalSimpleCS '=' OclExpressionCS
+	
+	dictLiteralPartListCSopt -> dictLiteralPartListCS	
+	dictLiteralPartListCSopt ::= %empty
+		
+	dictLiteralPartListCS ::= dictLiteralPartCS
+	dictLiteralPartListCS ::= dictLiteralPartListCS ',' dictLiteralPartCS
+	dictLiteralPartListCS ::= dictLiteralPartListCS qvtErrorToken
+
+	OclExpressionCS -> returnExpCS 	
+
+	oclExpressionCSOpt -> OclExpressionCS 
+	oclExpressionCSOpt ::= %empty
+	 
+	expression_semi_list_element -> var_init_group_exp
+
+	var_init_group_exp ::= var var_init_declarator_list
+
+	var_init_group_exp ::= var '(' var_init_declarator_list ')'
+
+	var_init_group_exp ::= var '(' var_init_declarator_list qvtErrorToken
+
+	OclExpressionCS -> var_init_exp
+
+	var_init_exp ::= var var_init_declarator
+
+	var_init_exp ::= var '(' var_init_declarator ')'
+
+	var_init_exp ::= var '(' var_init_declarator qvtErrorToken
+
+	var_init_exp ::= var qvtErrorToken
+
+	var_init_declarator_list ::= var_init_declarator ',' var_init_declarator
+	var_init_declarator_list ::= var_init_declarator_list ',' var_init_declarator
+
+	var_init_declarator ::= IDENTIFIER ':' typeCS var_init_op OclExpressionCS
+	var_init_declarator ::= IDENTIFIER ':' typeCS var_init_op qvtErrorToken
+	var_init_declarator ::= IDENTIFIER var_init_op OclExpressionCS
+	var_init_declarator ::= IDENTIFIER var_init_op qvtErrorToken
+	var_init_declarator ::= IDENTIFIER ':' typeCS
+	var_init_declarator ::= IDENTIFIER ':' qvtErrorToken
+		
+	var_init_op ::= '='
+	var_init_op ::= ':='
+	var_init_op ::= '::='
+
+	OclExpressionCS -> assignStatementCS
+
+	assignStatementCS ::= primaryExpCS ':=' OclExpressionCS
+	assignStatementCS ::= primaryExpCS ':=' qvtErrorToken
+
+	assignStatementCS ::= primaryExpCS '+=' OclExpressionCS
+	assignStatementCS ::= primaryExpCS '+=' qvtErrorToken
+
+	-- operation call and expression extension in QVT
+
+	primaryNotNameCS -> whileExpCS
+	
+
+	----- ifExp (start) -----
+	ifExpBodyCS -> OclExpressionCS
+	ifExpBodyCS -> expression_block
+
+	ifThenPart -> qvtErrorToken
+	ifElsePart -> qvtErrorToken
+	ifExpression -> qvtErrorToken
+
+	IfExpCS ::= if OclExpressionCS then ifExpBodyCS else ifExpBodyCS endif
+
+	IfExpCS ::= if OclExpressionCS then ifExpBodyCS endif
+
+	IfExpCS ::= if OclExpressionCS then ifExpBodyCS else ifElsePart
+
+	IfExpCS ::= if OclExpressionCS then ifThenPart
+
+	IfExpCS ::= if ifExpression
+
+	----- ifExp (end) -----
+
+	----- switch -----
+
+	primaryNotNameCS -> switchExpCS
+
+	-- 'collect' shorthand for switch keyword 
+	IterateExpCS ::= primaryExpCS '->' switch '(' switchDeclaratorCS ')' switchBodyExpCS
+
+	OclExpressionCS ::= primaryOCLExpressionCS 
+
+	-- log expression call
+	primaryOCLExpressionCS -> logExpCS
+	
+
+	-- assertion support	
+	primaryOCLExpressionCS -> assertExpCS
+
+	severityKindCS ::= simpleNameCS
+	
+	severityKindCSOpt -> severityKindCS
+	
+	severityKindCSOpt ::= %empty
+
+	-- ComputeExp start --
+
+
+
+	primaryNotNameCS -> computeExpCS
+
+	-- ComputeExp end --
+
+	-- imperative iterators
+
+	IterateExpCS ::= primaryExpCS '->' imperativeIterateExpCS
+
+        -- here x12 means full notation in the 1 and 2 forms, x3 - in the 3 form
+	-- <source> -> <collector-name> (<body_or_condition>) ;                              (1)
+	-- <source> -> <collector-name> (<iterator-list> | <body_or_condition>) ;            (2)
+	-- <source> -> <collector-name> (<iterator-list>; <target> = <body> | <condition>) ; (3)
+
+	imperativeIteratorExpCSToken12 -> xselect
+	imperativeIteratorExpCSToken12 -> xcollect
+	imperativeIteratorExpCSToken12 -> selectOne
+	imperativeIteratorExpCSToken12 -> collectOne
+
+	imperativeIteratorExpCSToken3 -> collectselect
+	imperativeIteratorExpCSToken3 -> collectselectOne
+
+	imperativeIteratorExpCSToken -> imperativeIteratorExpCSToken12
+	imperativeIteratorExpCSToken -> imperativeIteratorExpCSToken3
+
+
+	imperativeIterateExpCS ::= imperativeIteratorExpCSToken12 '(' imperativeIterContents12 ')'
+	imperativeIterateExpCS ::= imperativeIteratorExpCSToken3 '(' imperativeIterContents3 ')'
+
+	imperativeIterateExpCS ::= imperativeIteratorExpCSToken qvtErrorToken
+
+	imperativeIterContents12 ::= OclExpressionCS
+	
+	imperativeIterContents12 ::= uninitializedVariableCS '|' OclExpressionCS
+
+	imperativeIterContents12 ::= simpleNameCS ',' variableDeclarationListCS '|' OclExpressionCS
+
+	imperativeIterContents3 ::= variableDeclarationListCS ';' initializedVariableCS '|' OclExpressionCS
+
+	variableDeclarationListCS ::= uninitializedVariableCS
+	variableDeclarationListCS ::= variableDeclarationListCS ',' uninitializedVariableCS
+
+	-- imperative iterators shorthand notation
+
+	exclamationOpt ::= %empty
+	exclamationOpt -> '!'
+
+	
+	-- collectselect shorthand
+	declarator_vsep ::= IDENTIFIER '|'
+
+	declarator_vsepOpt ::= %empty
+	        /.$NullAction./
+	declarator_vsepOpt -> declarator_vsep
+
+	-- xselect/collectselect shorthand
+	IterateExpCS ::= primaryExpCS exclamationOpt '[' declarator_vsepOpt OclExpressionCS ']'
+
+	-- xcollect shorthand
+	IterateExpCS ::= primaryExpCS '->' simpleNameCS
+
+	primaryNotNameCS -> newExpCS
+	newExpCS ::= new newTypespecCS '(' argumentsCSopt ')' 
+
+	newTypespecCS ::= pathNameCS
+		
+	-- imperative BreakExp and ContinueExp registration
+		
+	primaryNotNameCS ::= break
+	
+	primaryNotNameCS ::= continue
+
+
+	--=== General purpose grammar rules (start) ===--
+
+	declarator -> declarator1
+	declarator -> declarator2
+
+	declarator1 ::= IDENTIFIER ':' typeCS
+	
+	declarator1 ::= IDENTIFIER ':' typeCS '=' OclExpressionCS
+
+	declarator1 ::= IDENTIFIER ':' typeCS ':=' OclExpressionCS
+		
+	declarator2 ::= IDENTIFIER ':=' OclExpressionCS
+
+
+	semicolonOpt -> ';'
+	semicolonOpt -> %empty
+
+
+	qvtErrorToken ::= ERROR_TOKEN
+
+	--=== General purpose grammar rules (end) ===--
+
+
+	--=== Non-standard extensions and legacy support (start) ===--
+	switchAltExpCS ::= '(' OclExpressionCS ')' '?' OclExpressionCS ';'
+	switchAltExpCS ::= '(' OclExpressionCS ')' qvtErrorToken
+	switchAltExpCS ::= '(' qvtErrorToken
+
+	switchElseExpCS ::= else '?' OclExpressionCS ';'
+	switchElseExpCS ::= else '?' OclExpressionCS qvtErrorToken
+	--=== Non-standard extensions and legacy support (end) ===--
+*/

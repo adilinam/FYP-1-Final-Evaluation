@@ -1,0 +1,20 @@
+modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation computeExp_252269(in model : ecore, out ecore);
+
+main(/*<warn>*/in inModel : ecore::EPackage/*</warn>*/) {
+	var a := null;
+	compute (s : String = 'a') {
+		s := s + 'b'; 
+		s := s + 'c'; 
+	};
+	/*<error>*/s/*</error>*/ := /*<error>*/s/*</error>*/ + 'd';
+	inModel.map toEPackage(/*<error>*/s/*</error>*/);
+}
+
+mapping EPackage::toEPackage(in s : String) : EPackage {
+	name := compute (s1 : String = s) {
+		s1 := s1 + 'e'; 
+		s1 := s1 + 'f'; 
+	};
+}

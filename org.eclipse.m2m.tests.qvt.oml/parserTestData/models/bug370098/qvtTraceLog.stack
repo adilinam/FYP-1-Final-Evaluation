@@ -1,0 +1,11 @@
+Terminating execution...
+org.eclipse.m2m.internal.qvt.oml.evaluator.QvtStackOverFlowError: Stack depth: 10
+	at bug370098::recursiveHelper(bug370098.qvto:9)
+	at bug370098::recursiveHelper(bug370098.qvto:9)
+	at bug370098::recursiveHelper(bug370098.qvto:9)
+	at bug370098::recursiveHelper(bug370098.qvto:9)
+	at bug370098::recursiveHelper(bug370098.qvto:9)
+	at bug370098::recursiveHelper(bug370098.qvto:9)
+	at bug370098::recursiveHelper(bug370098.qvto:9)
+	at bug370098::recursiveHelper(bug370098.qvto:9)
+	at bug370098::main(bug370098.qvto:4)

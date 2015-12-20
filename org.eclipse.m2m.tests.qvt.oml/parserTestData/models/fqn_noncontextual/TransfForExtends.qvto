@@ -1,0 +1,21 @@
+import RootTransfForExtends;
+	
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+	
+transformation TransfForExtends(in eModel : ECORE, out outModel : ECORE) 
+	extends transformation RootTransfForExtends;
+
+main() {
+	object EPackage {
+		name := "TransfForExtends::main()";
+	}
+}
+
+query queryString() : String {
+	return "TransfForExtends-queryString";
+}
+
+mapping foo(in _name : String) : EPackage {
+	name := "TransfForExtends-" + _name;
+}

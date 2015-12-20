@@ -1,0 +1,23 @@
+import bug400233_lib;
+
+modeltype Generics "strict" uses generics('http://www.eclipse.org/m2m/qvt/oml/generics');
+
+transformation bug400233();
+
+main() {
+	do {
+		var c : GenericCls = getGenericClsWildcard();
+		assert fatal (c.values->at(1).oclAsType(Integer) = 1);
+	};
+
+	do {
+		var c : GenericCls = getGenericClsInteger();
+		assert fatal (c.values->at(1).oclAsType(Integer) = 1);
+	};
+
+	do {
+		var c : GenericCls = getGenericClsType();
+		assert fatal (c <> null);
+	};
+
+}

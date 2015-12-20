@@ -1,0 +1,6 @@
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = flatten(), displayString = flatten() : Set(T2), replacementOffsetDelta = 1, replacementLength = 1, cursorPosition = 9
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = first(), displayString = first() : T, replacementOffsetDelta = 1, replacementLength = 1, cursorPosition = 7
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = forAll(), displayString = forAll(expr : OclExpression) : Boolean, replacementOffsetDelta = 1, replacementLength = 1, cursorPosition = 7
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = flatten(), displayString = flatten() : Collection(T2), replacementOffsetDelta = 1, replacementLength = 1, cursorPosition = 9
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = forEach, displayString = forEach, replacementOffsetDelta = 1, replacementLength = 1, cursorPosition = 7
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = forOne, displayString = forOne, replacementOffsetDelta = 1, replacementLength = 1, cursorPosition = 6

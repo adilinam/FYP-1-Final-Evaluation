@@ -1,0 +1,12 @@
+modeltype SIMPLEUML uses "http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml";
+modeltype ECORE uses "http://www.eclipse.org/emf/2002/Ecore";
+
+transformation importedExtents(out model : ECORE);
+
+import models.importedExtents.transf2;
+import models.importedExtents.transf3;
+
+main() {
+	map ecore2ecore(object EClass { name := 'a' });
+	map createUmlClass('cls');
+}

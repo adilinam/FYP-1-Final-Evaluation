@@ -1,0 +1,3 @@
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = aa, displayString = aa : Integer, replacementOffsetDelta = 1, replacementLength = 1, cursorPosition = 2
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = ab, displayString = ab : Integer, replacementOffsetDelta = 1, replacementLength = 1, cursorPosition = 2
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = allInstances(), displayString = allInstances(OclType : OclType) : Set(T), replacementOffsetDelta = 1, replacementLength = 1, cursorPosition = 13

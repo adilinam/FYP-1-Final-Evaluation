@@ -1,0 +1,8 @@
+transformation t;
+modeltype A uses /*@*/
+
+mapping main(in pack: ecore::EPackage): ecore::EPackage {
+    object {
+        name := 'foo';
+    }
+}

@@ -1,0 +1,99 @@
+import /*<link ref="referencedLib.startOffset" module="referencedLib">*/referencedLib/*</link>*/;
+
+modeltype /*<region id="ECORE">*/ECORE/*</region>*/ uses 
+/*<link elementUri="http://www.eclipse.org/emf/2002/Ecore#/">*/ecore/*</link>*/(/*<link elementUri="http://www.eclipse.org/emf/2002/Ecore#/">*/"http://www.eclipse.org/emf/2002/Ecore"/*</link>*/);
+
+modeltype /*<region id="UML">*/UML/*</region>*/ uses 
+/*<link elementUri="http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#/">*/simpleuml/*</link>*/(/*<link elementUri="http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#/">*/"http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml"/*</link>*/);
+	
+modeltype QVT uses qvtoperational('http://www.eclipse.org/QVT/1.0.0/Operational');
+
+
+transformation testhyperlinks(
+	in /*<region id="eModel">*/eModel/*</region>*/ : /*<link ref="ECORE">*/ECORE/*</link>*/,
+	out /*<region id="umlModel">*/umlModel/*</region>*/ : /*<link ref="UML">*/UML/*</link>*/);
+
+-- module property
+property /*<region id="moduleProp">*/moduleProp/*</region>*/ : String = '';
+configuration property /*<region id="cfgProp">*/cfgProp/*</region>*/ : String;
+intermediate property EPackage::/*<region id="EPackage.extraPackageProp">*/extraPackageProp/*</region>*/ : String;
+
+main() {	
+	-- test link to external query
+	/*<link ref="1" module="referencedLib">*/referencedQuery/*</link>*/();
+	
+	-- test link to internal query
+	/*<link ref="2">*/foo/*</link>*/(null, null);
+	
+	var p: ECORE::EPackage := null;
+	p./*<link ref="EPackage.extraPackageProp">*/extraPackageProp/*</link>*/;	
+	
+	map /*<link ref="myMapping">*/myMapping/*</link>*/(p, 10); 
+	
+	p.map /*<link ref="myMapping2">*/myMapping2/*</link>*/();
+	
+
+	-- test iterator var links
+	Sequence{ p }->any(/*<region id="i.iter.var">*/i/*</region>*/ | 
+		i <> null and 
+			Bag { /*<link ref="i.iter.var">*/i/*</link>*/ }->exists(/*<region id="aa.iter.var">*/aa : EPackage/*</region>*/ | 
+				/*<link ref="aa.iter.var">*/aa/*</link>*/ <> null));
+
+	-- test resolve
+	var umlPack : Package := null;
+	umlPack.resolveIn(ECORE::EPackage::/*<link ref="myMapping2">*/myMapping2/*</link>*/, OclAny);
+	umlPack.resolveIn(ECORE::/*<link elementUri="http://www.eclipse.org/emf/2002/Ecore#//EPackage">*/EPackage/*</link>*/::myMapping2, OclAny);
+	umlPack.resolveIn(/*<link ref="ECORE">*/ECORE/*</link>*/::EPackage::myMapping2, OclAny);
+	
+	-- let expr
+	var b:Boolean := let /*<region id="letVar">*/letVar : String = null/*</region>*/ in /*<link ref="letVar">*/letVar/*</link>*/ <> null;
+
+	-- test Enums and complex name path
+	var enumVar : /*<link elementUri="http://www.eclipse.org/QVT/1.0.0/Operational#/">*/qvtoperational/*</link>*/::/*<link elementUri="http://www.eclipse.org/QVT/1.0.0/Operational#//expressions">*/expressions/*</link>*/::/*<link elementUri="http://www.eclipse.org/QVT/1.0.0/Operational#//expressions/DirectionKind">*/DirectionKind/*</link>*/
+		:= QVT::expressions::DirectionKind::/*<link elementUri="http://www.eclipse.org/QVT/1.0.0/Operational#//expressions/DirectionKind/out">*/_out/*</link>*/;
+		
+		
+	-- test imported property
+	var libPropCopy := /*<link ref="libProp" module="referencedLib">*/libProp/*</link>*/;
+	
+	-- test model operation
+	p./*<link elementUri="http://www.eclipse.org/emf/2002/Ecore#//EModelElement/getEAnnotation">*/getEAnnotation/*</link>*/('sourceUri');
+}
+  
+query /*<region id="2">*/foo/*</region>*/(
+		/*<region id="foo.par1">*/par1/*</region>*/ : ecore::EPackage, 
+		/*<region id="foo.par2">*/par2/*</region>*/ : ecore::EPackage) :
+	ecore::/*<link elementUri="http://www.eclipse.org/emf/2002/Ecore#//EPackage">*/EPackage/*</link>*/
+{
+    var s : String := /*<link ref="foo.par1">*/par1/*</link>*/.name + 
+    				/*<link ref="foo.par2">*/par2/*</link>*/.name;
+    
+    /*<link ref="foo2">*/foo2/*</link>*/(par1);
+    return null;
+}
+  
+query /*<region id="foo2">*/foo2/*</region>*/(model: ecore::EPackage) : Integer {
+	var /*<region id="var.i">*/i/*</region>*/ : Integer := /*<link ref="eModel">*/eModel/*</link>*/.objects()->size();
+	var x:Integer := /*<link ref="umlModel">*/umlModel/*</link>*/.objects()->size();
+    return /*<link ref="var.i">*/i/*</link>*/;
+}
+
+mapping /*<region id="myMapping">*/myMapping/*</region>*/(inout /*<region id="myMapping.pac">*/pac/*</region>*/:ecore::EPackage, in sz : Integer): ecore::EPackage {
+    init {
+    }
+   
+    object UML::Package@/*<link ref="umlModel">*/umlModel/*</link>*/ {
+        /*<link elementUri="http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//ModelElement/name">*/name/*</link>*/ := /*<link ref="myMapping.pac">*/pac/*</link>*/./*<link elementUri="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name">*/name/*</link>*/;
+    } 
+}
+    
+mapping ecore::EPackage::/*<region id="myMapping2">*/myMapping2/*</region>*/(): Package {
+    init {
+    	var concatStr : String := /*<link ref="cfgProp">*/cfgProp/*</link>*/ + /*<link ref="moduleProp">*/moduleProp/*</link>*/;
+    }
+   
+   	-- test non-qualified name
+   	object /*<link elementUri="http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml#//Package">*/Package/*</link>*/ {
+        name := self./*<link elementUri="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name">*/name/*</link>*/;
+    }
+}

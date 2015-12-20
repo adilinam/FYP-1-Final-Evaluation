@@ -1,0 +1,10 @@
+import models.bug433937.root.RootTransformation;
+
+transformation bug433937();
+
+main() {
+	
+	var retcode := new RootTransformation().transform();
+	assert fatal (retcode.succeeded());
+
+}

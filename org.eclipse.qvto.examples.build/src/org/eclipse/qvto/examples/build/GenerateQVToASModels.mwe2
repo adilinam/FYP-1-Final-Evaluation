@@ -1,0 +1,164 @@
+/**
+ * <copyright>
+ *
+ * Copyright (c) 2011, 2013 Willink Transformations, University of York and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *		E.D.Willink - initial API and implementation
+ *		Adolfo Sanchez-Barbudo Herrera - bug397429
+ * 		
+ * </copyright>
+ *
+ * 
+ * Run As->MWE2 Workflow to regenerate QVTo models.
+ */
+module GenerateQVToASModels
+
+import org.eclipse.ocl.examples.build.utilities.*
+import org.eclipse.ocl.examples.build.xtend.* 
+import org.eclipse.emf.mwe.utils.*
+import org.eclipse.emf.ecore.resource.impl.*
+
+/**
+ *	Generate the Pivot-based QVTo Models.
+ */
+var platformURI = ".."
+var javaSrcFolder = "emf-gen"
+/*
+ * OCL related configuration variables
+ */
+var oclProjectName = "org.eclipse.ocl.pivot"
+var oclProjectURI = "platform:/resource/${oclProjectName}"
+var oclProjectPrefix = ""
+var oclEcoreProjectPath = "model/Pivot.ecore"
+var oclEcoreURI = "${oclProjectURI}/${oclEcoreProjectPath}"
+var oclModelPackage = "${oclProjectName}"
+var oclVisitorPackage = "${oclModelPackage}.util"
+var oclVisitorName = "Visitor"
+var oclVisitorQualifiedName = "${oclVisitorPackage}.${oclVisitorName}"
+var oclVisitablePackage = "${oclVisitorPackage}"
+var oclVisitableName = "Visitable"
+
+/*
+ * ImperativeOCL related configuration variables
+ */
+var imperativeOclProjectName = "org.eclipse.qvto.examples.pivot.imperativeocl"
+var imperativeOclProjectURI = "platform:/resource/${imperativeOclProjectName}"
+var imperativeOclProjectPrefix = "ImperativeOCL"
+var imperativeOclEcoreProjectPath = "model/ImperativeOCL.ecore"
+var imperativeOclEcoreURI = "${imperativeOclProjectURI}/${imperativeOclEcoreProjectPath}"
+var imperativeOclGenModelProjectPath = "model/${imperativeOclProjectPrefix}.genmodel"
+var imperativeOclGenModelPath = "${imperativeOclProjectName}/${imperativeOclGenModelProjectPath}"
+var imperativeOclModelPackage = "${imperativeOclProjectName}"
+var imperativeOclVisitorPackage = "${imperativeOclProjectName}.util"
+var imperativeOclVisitorName = "${imperativeOclProjectPrefix}Visitor"
+var imperativeOclVisitorQualifiedName = "${imperativeOclVisitorPackage}.${imperativeOclVisitorName}"
+
+/*
+ * QVTOperational related configuration variables
+ */
+var qvtOperationalProjectName = "org.eclipse.qvto.examples.pivot.qvtoperational"
+var qvtOperationalProjectURI = "platform:/resource/${qvtOperationalProjectName}"
+var qvtOperationalProjectPrefix = "QVTOperational"
+var qvtOperationalEcoreProjectPath = "model/QVTOperational.ecore"
+var qvtOperationalEcoreURI = "${qvtOperationalProjectURI}/${qvtOperationalEcoreProjectPath}"
+var qvtOperationalGenModelProjectPath = "model/${qvtOperationalProjectPrefix}.genmodel"
+var qvtOperationalGenModelPath = "${qvtOperationalProjectName}/${qvtOperationalGenModelProjectPath}"
+var qvtOperationalModelPackage = "${qvtOperationalProjectName}"
+var qvtOperationalVisitorPackage = "${qvtOperationalProjectName}.util"
+var qvtOperationalVisitorName = "${qvtOperationalProjectPrefix}Visitor"
+var qvtOperationalVisitorQualifiedName = "${qvtOperationalVisitorPackage}.${qvtOperationalVisitorName}"
+
+Workflow {
+	bean = ResourceSetImpl : resourceSet {}
+//	bean = ProjectMapSetup { resourceSet = resourceSet }
+    bean = StandaloneSetup { resourceSet = resourceSet
+    	platformUri = platformURI	// Common path from which...
+    	scanClassPath = true		// ... a scan finds all classes
+    	
+    	// In case that the build.ocl plugin only resides in the workspace
+    	// as might be the case for the *.build projects 
+    	uriMap = Mapping {
+    		from = "platform:/plugin/org.eclipse.ocl.examples.build/"
+    		to = "platform:/resource/org.eclipse.ocl.examples.build/"
+    	}
+    }
+    bean = EcoreGenModelSetup { resourceSet = resourceSet }
+    
+	/*
+	FIXME: We can't weave the visitor pattern into the model because OCL doesn't do it.
+	We are forced to use the OCL approach, in essence, using GenModel annotations wiht source:
+	http://www.eclipse.org/OCL/GenModel/Visitor
+	See (org.eclipse.ocl.pivot/model/Pivot.genmodel)
+	 
+    component = DerivedVisitorPatternWeaver {
+    	resourceSet = resourceSet
+    	in = imperativeOclEcoreURI
+    	in = oclEcoreURI
+    	in = oclEcoreURI
+    	superVisitorInterfaceName = oclVisitorName
+    	superVisitorInterfaceQualifiedName = oclVisitorQualifiedName
+    	derivedVisitorInterfaceName = imperativeOclVisitorName
+    	derivedVisitorInterfaceQualifiedName = imperativeOclVisitorQualifiedName
+    }
+    
+    component = DerivedVisitorPatternWeaver {
+    	resourceSet = resourceSet
+    	in = qvtOperationalEcoreURI 
+    	in = imperativeOclEcoreURI
+    	in = oclEcoreURI
+    	rootVisitorInterfaceName = oclVisitorName
+    	rootVisitorInterfaceQualifiedName = oclVisitorQualifiedName
+    	superVisitorInterfaceName = imperativeOclVisitorName
+    	superVisitorInterfaceQualifiedName = imperativeOclVisitorQualifiedName
+    	derivedVisitorInterfaceName = qvtOperationalVisitorName
+    	derivedVisitorInterfaceQualifiedName = qvtOperationalVisitorQualifiedName
+    }   */
+    
+	component = GenerateModel { resourceSet = resourceSet skipOnErrors = true
+		genModel = imperativeOclGenModelPath
+		clearResourceSet = false
+	}
+	
+	
+	component = GenerateModel { resourceSet = resourceSet skipOnErrors = true
+		genModel = qvtOperationalGenModelPath
+		clearResourceSet = false
+	}
+    
+    component = GenerateASVisitors {	resourceSet = resourceSet
+    	projectName = imperativeOclProjectName
+    	projectPrefix = imperativeOclProjectPrefix 
+    	superProjectName = oclProjectName
+    	superProjectPrefix = oclProjectPrefix
+    	javaFolder = javaSrcFolder
+    	genModelFile = imperativeOclGenModelProjectPath
+    	modelPackageName = imperativeOclModelPackage
+    	visitorPackageName = imperativeOclVisitorPackage
+    	visitorClassName = imperativeOclVisitorName
+    	superVisitorPackageName = oclVisitorPackage
+    	superVisitorClassName = oclVisitorName
+    	visitablePackageName = oclVisitablePackage
+    	visitableClassName = oclVisitableName
+    }
+    
+    component = GenerateASVisitors {	resourceSet = resourceSet
+    	projectName = qvtOperationalProjectName
+    	projectPrefix =  qvtOperationalProjectPrefix
+    	superProjectName = imperativeOclProjectName
+    	superProjectPrefix = imperativeOclProjectPrefix
+    	javaFolder = javaSrcFolder
+    	genModelFile = qvtOperationalGenModelProjectPath
+    	modelPackageName = qvtOperationalModelPackage
+    	visitorPackageName = qvtOperationalVisitorPackage
+    	visitorClassName = qvtOperationalVisitorName
+    	superVisitorPackageName = imperativeOclVisitorPackage
+    	superVisitorClassName = imperativeOclVisitorName
+    	visitablePackageName = oclVisitablePackage
+    	visitableClassName = oclVisitableName
+    }
+}

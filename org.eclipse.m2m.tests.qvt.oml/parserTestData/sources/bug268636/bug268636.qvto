@@ -1,0 +1,27 @@
+import bug268636lib;  
+
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation bug268636();
+
+intermediate class my_cl extends /*<error>*/Library268636/*</error>*/ {
+}
+
+//configuration property my_prop : Library268636;
+
+intermediate property EClass::aa : /*<error>*/Library268636/*</error>*/;
+
+main() {
+	var my_var : /*<error>*/Library268636/*</error>*/;
+	var x:List(/*<error>*/Library268636/*</error>*/);
+	
+	var v := Library268636::xxx();
+}
+
+
+mapping String :: m() : /*<error>*/Library268636/*</error>*/ {
+}
+
+mapping mm() : EClass inherits Library268636::gg {
+}
+

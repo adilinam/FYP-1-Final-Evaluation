@@ -1,0 +1,25 @@
+setpref complianceLevel=1.5
+
+# We import a target definition which will be our API Base Line
+importtargetdefinition "file://${checkout.location}/org.eclipse.qvto.git/releng/org.eclipse.qvto.releng.buckminster/APIBaseLine.target"
+addbaseline -A "Eclipse QVTo API Base Line"
+
+# We set the path of the new target platform
+setpref targetPlatformPath="${checkout.location}/buildroot/target.platform"
+
+import --properties "${checkout.location}/buildroot/build.properties" "org.eclipse.qvto.git/releng/org.eclipse.qvto.releng.buckminster/releng/qvto.mspec"
+
+build
+
+perform -DtargetPlatformPath="${checkout.location}/buildroot/target.platform" --properties "${checkout.location}/buildroot/build.properties" "org.eclipse.qvto.releng.buckminster:buckminster#create.javadoc"
+
+junit --launch "org.eclipse.m2m.tests.qvt.oml/org.eclipse.m2m.tests.qvt.oml.AllTests.launch" --flatXML --output "${checkout.location}/MMT-QVTo.test.results/org.eclipse.m2m.tests.qvt.oml.AllTests.xml"
+junit --launch "org.eclipse.m2m.tests.qvt.oml/org.eclipse.m2m.tests.qvt.oml.StandaloneTests.launch" --flatXML --output "${checkout.location}/MMT-QVTo.test.results/org.eclipse.m2m.tests.qvt.oml.StandaloneTests.xml"
+junit --launch "org.eclipse.m2m.tests.qvt.oml.ui/org.eclipse.m2m.internal.tests.qvt.oml.ui.AllTests.launch" --flatXML --output "${checkout.location}/MMT-QVTo.test.results/org.eclipse.m2m.internal.tests.qvt.oml.ui.AllTests.xml"
+#junit --launch "org.eclipse.m2m.tests.qvt.oml.ui/org.eclipse.m2m.internal.tests.qvt.oml.ui.AllTest_disabled_asserts.launch" --flatXML --output "${checkout.location}/MMT-QVTo.test.results/org.eclipse.m2m.tests.qvt.oml.ui/org.eclipse.m2m.internal.tests.qvt.oml.ui.AllTest_disabled_asserts.xml"
+
+perform --properties "${checkout.location}/buildroot/build.properties" "-Dbuckminster.reference.repository=${reference.repository}" "org.eclipse.qvto.releng.build:eclipse.feature#build"
+perform --properties "${checkout.location}/buildroot/build.properties" "org.eclipse.qvto.releng.buckminster:buckminster#setup.promoter"
+perform --properties "${checkout.location}/buildroot/build.properties" "org.eclipse.qvto.releng.buckminster:buckminster#setup.publisher"
+
+#perform --properties "${checkout.location}/buildroot/tagging.properties" "org.eclipse.FIXME.build#tag"

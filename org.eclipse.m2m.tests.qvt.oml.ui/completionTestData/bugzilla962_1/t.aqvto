@@ -1,0 +1,24 @@
+transformation qwerty();
+
+modeltype CODESENSE uses 'http://www.eclipse.org/m2m/qvt/oml/ui/test/codesense';
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+mapping main(in model: ecore::EPackage ) : mypackage::MyClass {
+}
+
+mapping ecore::EOperation::toCsharpConversionOperator() : mypackage::MyClass {
+	init {
+		var returnParam : ecore::EParameter := self.eParameters->select(param | param.eType = mypackage::MyEnum::MyEnumLiteral2)->first();
+		var returnParamType : ecore::EClassifier := if returnParam = null then
+												null
+											else
+												returnParam.eClass()
+											endif 
+	}
+	MyIntAttribute := self.name.length();
+	MyEnumAttribute := if returnParamType = null or not (result.MyEnumAttribute = mypackage::MyEnum::/*@*/MyEnumLiteral1) then
+					null
+				else
+					self.MyIntAttribute->late resolveone(mypackage::MyClass)
+				endif
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ocl.annotation:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ocl.annotation="m2m.qvto.ocl.annotation" xsi:schemaLocation="m2m.qvto.ocl.annotation metamodel.ecore">
+  <foos firstName="SuperFoo" lastName="Smith"/>
+  <foos xsi:type="ocl.annotation:Foo" firstName="Foo" lastName="Smith"/>
+  <foos xsi:type="ocl.annotation:SubFoo" firstName="SubFoo" lastName="Smith"/>
+  <results name="derivedPropertyAccess">
+    <values value="Foo Smith"/>
+    <values value="SubFoo Smith"/>
+    <values value="SubFoo Smith"/>
+    <values value="Foo::testOper(String)"/>
+  </results>
+  <results name="SuperFoo::bodyOperationAccess">
+    <values value="SuperFoo::testOper(String)"/>
+    <values value="SuperFoo::testOper(SubFoo)"/>
+  </results>
+  <results name="Foo::bodyOperationAccess">
+    <values value="SuperFoo::testOper(SubFoo)"/>
+    <values value="SuperFoo::testOper(SubFoo)"/>
+    <values value="Foo::testOper(String)"/>
+    <values value="Foo::testOper(String)"/>
+  </results>
+  <results name="SubFoo::bodyOperationAccess">
+    <values value="SubFoo::testOper(SubFoo)-SubFoo Smith; par1=SubFoo"/>
+    <values value="SubFoo::testOper(SubFoo)-SubFoo Smith; par1=SubFoo"/>
+    <values value="SubFoo::testOper(SubFoo)-SubFoo Smith; par1=SubFoo"/>
+    <values value="Foo::testOper(String)"/>
+    <values value="Foo::testOper(String)"/>
+    <values value="Foo::testOper(String)"/>
+  </results>
+</ocl.annotation:Root>

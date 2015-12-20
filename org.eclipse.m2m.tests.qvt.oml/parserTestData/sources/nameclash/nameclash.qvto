@@ -1,0 +1,21 @@
+transformation nameclash;
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+query main(pack: ecore::EPackage): ecore::ENamedElement {
+    pack.map clashVar();
+    return map clashParam('foo')
+}
+
+mapping clashParam(in name: String): ecore::EPackage {
+  population {
+    object result : ecore::EPackage {
+        name := name;
+    }
+  }
+}
+
+mapping ecore::EPackage::clashVar(): ecore::EPackage {
+    init {
+        var name := 'foo';
+    }
+} 

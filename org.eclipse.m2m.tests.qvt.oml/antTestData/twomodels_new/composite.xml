@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project" default="default" xmlns:qvto="http://www.eclipse.org/qvt/1.0.0/Operational">
+    <target name="default">
+
+        <qvto:transformation
+            uri="file:/QvtAntTest/models/twomodels_new/ecore2uml.qvto"
+            >
+            <in
+                uri="/QvtAntTest/models/twomodels_new/in.ecore"
+            />
+            <out
+                uri="platform:/resource/QvtAntTest/models/twomodels_new/ecore2uml.uml"
+            />
+            <trace
+                uri="/QvtAntTest/models/twomodels_new/ecore2uml.uml.qvtotrace"
+            />
+            <configProperty 
+                name="prop" 
+                value="attr"
+            />
+        </qvto:transformation>
+
+        <qvto:transformation
+            uri="uml2rdb.qvto"
+            >
+            <in
+                uri="ecore2uml.uml"
+            />
+            <out
+                uri="uml2rdb.rdb"
+            />
+            <trace
+                uri="uml2rdb.rdb.qvtotrace"
+            />
+        </qvto:transformation>
+
+    </target>
+</project>

@@ -1,0 +1,8 @@
+transformation bug433585();
+
+main() {
+}
+
+query q1() {
+	var v := 1;
+}

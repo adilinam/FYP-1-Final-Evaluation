@@ -1,0 +1,15 @@
+import bug427237;
+	
+modeltype Ecore "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation bug427237a(in e : Ecore, out o : Ecore) access bug427237;
+
+main() {
+	object EClass {name := "foo"};
+	
+	var t : bug427237 := new bug427237(e, o);
+	t.prop := 1;
+	
+	var s : Status := t.transform();	
+	assert fatal (s.succeeded());	
+}

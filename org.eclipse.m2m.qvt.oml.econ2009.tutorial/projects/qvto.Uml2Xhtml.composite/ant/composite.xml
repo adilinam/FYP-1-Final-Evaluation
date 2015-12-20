@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project" default="default" xmlns:qvto="http://www.eclipse.org/qvt/1.0.0/Operational">
+    <target name="default">
+    	
+        <qvto:transformation
+            uri="../transforms/Ecore2UML.qvto"
+            >
+        
+            <in
+                uri="../model/SimpleUML.ecore"
+            />
+            <out
+                uri="../output/SimpleUML.uml"
+            />
+        </qvto:transformation>
+
+    	<qvto:transformation
+            uri="../transforms/Uml2Xhtml_vfinal.qvto"
+            >
+        
+            <in
+                uri="../output/SimpleUML.uml"
+            />
+            <out
+                uri="../output/SimpleUML.html"
+            />
+        </qvto:transformation>
+    	
+    </target>
+</project>

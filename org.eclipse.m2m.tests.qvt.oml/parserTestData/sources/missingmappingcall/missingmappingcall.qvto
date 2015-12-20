@@ -1,0 +1,6 @@
+transformation missingmappingcall;
+modeltype SIMPLEUML uses 'http://www.eclipse.org/qvt/1.0.0/Operational/examples/simpleuml';
+
+query base(): simpleuml::DataType {
+    return miss()
+}

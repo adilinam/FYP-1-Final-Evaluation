@@ -1,0 +1,10 @@
+library q3;
+
+import models.imports.nested2.q4;
+--import models.imports.nested2.q3;
+
+modeltype Ecore2 uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+query q31(inout ee : Ecore2::ENamedElement) : String{
+	'value:'+q32(ee)
+}

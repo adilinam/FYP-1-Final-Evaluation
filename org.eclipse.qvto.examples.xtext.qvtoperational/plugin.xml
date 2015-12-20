@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated QVTOperationalCS -->
+      <package
+            uri="http://www.eclipse.org/qvt/pivot/1.0/QVTOperationalCS"
+            class="org.eclipse.qvto.examples.xtext.qvtoperationalcs.QVTOperationalCSPackage"
+            genModel="model/QVTOperationalCS.genmodel"/>
+   </extension>
+
+  <extension point="org.eclipse.ocl.pivot.as_resource_factory">
+     <factory class="org.eclipse.qvto.examples.pivot.qvtoperational.utilities.QVTOperationalASResourceFactory"
+     	extension="qvto2" contentType="org.eclipse.qvt.pivot.qvtoperational.1_0"/>
+  </extension>
+
+</plugin>

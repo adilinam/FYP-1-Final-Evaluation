@@ -1,0 +1,12 @@
+transformation t;
+
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+mapping main(in model: ecore::EPackage): ecore::EPackage {
+	init {
+		var foo := Tuple { aa = 1, ab = 2 }
+	}
+    object {
+		name := '' + foo.a/*@*/a 
+    }
+}

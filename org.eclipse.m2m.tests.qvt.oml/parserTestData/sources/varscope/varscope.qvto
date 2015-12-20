@@ -1,0 +1,66 @@
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+library varscope;
+
+property moduleProp : String = '';
+
+mapping EClass::fooMapping2(in par1 : String) : EClass {
+	init {
+		var moduleProp : String := moduleProp;
+	}
+}
+
+mapping EClass::fooMapping(in par1 : String) : EClass {
+	init {
+		var /*<error>*/par1 : String := null/*</error>*/;
+		
+		var initVar1 : String := ''; 
+		
+		var /*<error>*/initVar1 : String := ''/*</error>*/;
+		var /*<error>*/par1 : String := ''/*</error>*/;
+	}
+	
+	name := initVar1;
+	name := par1;	
+	name := /*<error>*/par2/*</error>*/;	
+	
+	end {
+		var /*<error>*/par1 : String := null/*</error>*/;
+		
+		-- check access		
+		var initVar3 : Boolean := initVar1 <> null and par1 <> null;
+		
+		var /*<error>*/initVar1 : Boolean := true/*</error>*/;
+	}
+}
+
+query variableScopeCheck() : Integer {
+	var i : Integer := null;
+	
+	if(true) 
+	then {
+		var /*<error>*/i : String := null/*</error>*/;
+		
+		-- but I can access the outer scope
+		var ib : Boolean := i <> null;			    
+	} 
+	else {
+		var /*<error>*/i : String := null/*</error>*/;
+		
+		-- but I can access the outer scope
+		-- there is no conlict with then block expression
+		var ib : Boolean := i <> null;
+		
+		while(true) { 
+			var /*<error>*/i : Integer := 10/*</error>*/;
+			
+			var /*<error>*/ib : Boolean := i <> null/*</error>*/; -- conflict with else block
+
+			-- but I can access the outer scope
+			var ibwhile : Boolean := i <> null and ib <> null;
+		}
+	}
+	endif;
+	
+	return i;
+}

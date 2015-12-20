@@ -1,0 +1,14 @@
+modeltype SIMPLEUML uses mypackage('http://www.eclipse.org/m2m/qvt/oml/ui/test/codesense');
+modeltype ECORE uses "http://www.eclipse.org/emf/2002/Ecore";
+
+transformation entryOp(out ecore1 : ECORE, in ecore2 : ECORE, inout ecore3 : ECORE, out uml : SIMPLEUML);
+
+main() {
+	object EClass@ecore1 {
+		
+	}
+}
+
+mapping EClass::toClass() : MyClass@/*@*/ecore1 {
+	MyIntAttribute := 1;
+}

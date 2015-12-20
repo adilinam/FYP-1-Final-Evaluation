@@ -1,0 +1,1 @@
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = stringContextualEcho(), displayString = stringContextualEcho() : String, replacementOffsetDelta = 6, replacementLength = 6, cursorPosition = 22

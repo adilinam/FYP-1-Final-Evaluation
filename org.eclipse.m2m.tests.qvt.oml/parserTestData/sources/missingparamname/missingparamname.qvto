@@ -1,0 +1,5 @@
+transformation missingparamname;
+
+mapping foo(String): OclVoid {
+   null
+}

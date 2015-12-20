@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.eclipse.qvto.examples.xtext.qvtoperational.tests
+Bundle-SymbolicName: org.eclipse.qvto.examples.xtext.qvtoperational.tests; singleton:=true
+Bundle-Version: 0.0.1
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.qvto.examples.xtext.qvtoperational
+Require-Bundle: org.eclipse.qvto.examples.xtext.qvtoperational,
+ org.eclipse.qvto.examples.xtext.qvtoperational.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.xtext.junit4,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.ui.workbench;resolution:=optional
+Import-Package: org.junit.runner;version="4.5.0",
+ org.junit.runner.manipulation;version="4.5.0",
+ org.junit.runner.notification;version="4.5.0",
+ org.junit.runners;version="4.5.0",
+ org.junit.runners.model;version="4.5.0",
+ org.hamcrest.core
+Bundle-Activator: org.eclipse.qvto.examples.xtext.qvtoperational.ui.internal.QVTOperationalActivator

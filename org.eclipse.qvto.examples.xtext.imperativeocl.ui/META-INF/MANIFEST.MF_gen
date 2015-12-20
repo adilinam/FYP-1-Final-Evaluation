@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.eclipse.qvto.examples.xtext.imperativeocl.ui
+Bundle-SymbolicName: org.eclipse.qvto.examples.xtext.imperativeocl.ui; singleton:=true
+Bundle-Version: 0.0.1
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.qvto.examples.xtext.imperativeocl.ui.quickfix,
+ org.eclipse.qvto.examples.xtext.imperativeocl.ui.contentassist,
+ org.eclipse.qvto.examples.xtext.imperativeocl.ui.internal,
+ org.eclipse.qvto.examples.xtext.imperativeocl.ui.contentassist.antlr
+Require-Bundle: org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.ui.editors,
+ org.eclipse.ui,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.compare
+Import-Package: org.apache.log4j
+Bundle-Activator: org.eclipse.qvto.examples.xtext.imperativeocl.ui.internal.ImperativeOCLActivator

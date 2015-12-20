@@ -1,0 +1,14 @@
+import ExtendedLibrary;
+
+modeltype ecore uses "http://www.eclipse.org/emf/2002/Ecore";
+
+transformation bug438038();
+
+main() {
+
+}
+
+mapping EClassifier :: EClassifier2EClassifier() : EClassifier
+	disjuncts EClass::EClass2EClass;
+
+mapping EClass :: EClass2EClass() : EClass {};

@@ -1,0 +1,10 @@
+transformation importedprops;
+
+import models.importedprops.queries;
+
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+mapping main(in model: ecore::EPackage): ecore::EPackage {
+    name := t1;
+    nsPrefix := a;
+}

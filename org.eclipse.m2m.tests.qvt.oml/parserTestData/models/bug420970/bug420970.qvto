@@ -1,0 +1,21 @@
+import models.bug420970.A;
+
+modeltype ECORE uses "http://www.eclipse.org/emf/2002/Ecore";
+
+transformation bug420970(in m1:ECORE, in m2:ECORE, in m3:ECORE, out m4:ECORE) access A {
+	main() {
+		var tr1 =  new A(m1,m1,m4);
+		var retcode1 = tr1.transform();
+		assert fatal (retcode1.toString() = "SUCCESS");
+
+		var tr2 =  new A(m1,m2,m4);
+		var retcode2 = tr2.transform();
+		assert fatal (retcode2.toString().startsWith("FAILED raised: (Exception : WHERE condition failed for model parameter 'i2' of transformation 'A'"));
+
+		var tr3 =  new A(m1,m3,m4);
+		var retcode3 = tr3.transform();
+		assert fatal (retcode3.toString() = "SUCCESS");
+	}
+}
+
+

@@ -1,0 +1,232 @@
+import bug418961_lib; 
+
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation bug418961() access bug418961_lib;
+
+property g_list : List(EClass) = List{object EClass{}};
+property g_coll : Sequence(EClass) = Sequence{object EClass{}};
+
+main() {
+
+	do -- test initialization
+	{
+		var list : List(EClass) := Sequence {object EClass{}};
+		var coll : Sequence(EClass) := List {object EClass{}};
+	};
+
+	do -- test assignment via 'List::add()'
+	{
+		var list : List(EClass) := List {object EClass{}};
+		var coll : Sequence(EClass) := Sequence {object EClass{}};
+
+		list := coll;
+		coll := list;
+		
+		var list1 : List(EClass) := coll;
+		list->add(object EClass{});
+		assert fatal (list->size() = 2 and list1->size() = 1);
+	};
+
+	do -- test assignment via '+='
+	{
+		var list : List(EClass) := List {object EClass{}};
+		var coll : Sequence(EClass) := Sequence {object EClass{}};
+
+		list := coll;
+		coll := list;
+		
+		var list1 : List(EClass) := coll;
+		list += object EClass{};
+		assert fatal (list->size() = 2 and list1->size() = 1);
+	};
+
+	do -- test list modification
+	{
+		var list : List(EClass) := List {object EClass{}};
+		var coll : Sequence(EClass) := Sequence {object EClass{}};
+
+		list := coll;
+		coll := list;
+		
+		var list1 : List(EClass) := list;
+		list += object EClass{};
+		assert fatal (list->size() = 2 and list1->size() = 2);
+	};
+
+	do -- test cross-assignment
+	{
+		var list : List(EClass) := List {object EClass{}};
+		var coll : Sequence(EClass) := Sequence {object EClass{}};
+	
+		var coll2 : Sequence(EClass) := testAsCol4(coll);
+		var list2 : List(EClass) := testAsCol5(list);
+	};	
+
+	do -- test passing as function arguments
+	{
+		var list : List(EClass) := List {object EClass{}};
+		var coll : Sequence(EClass) := Sequence {object EClass{}};
+		
+		testListSequence(coll, coll);
+		assert fatal (list->size() = 1 and coll->size() = 1);
+		testListSequence(list, list);
+		assert fatal (list->size() = 2 and coll->size() = 1);
+	};
+
+	do -- test passing as function arguments
+	{
+		var list : List(EClass) := List {object EClass{}};
+
+		testListList(list, list);
+		assert fatal (list->size() = 2);
+	};
+		
+	do -- test return result
+	{
+		var list : List(EClass) := List {object EClass{}};
+		var coll : Sequence(EClass) := Sequence {object EClass{}};
+	
+		assert fatal (testList2List(list)->size() = 2);
+		assert fatal (list->size() = 2);
+		
+		list := List {object EClass{}};
+		assert fatal (testSequence2List(list)->size() = 2);
+		assert fatal (list->size() = 1);
+	};
+		
+	do -- test return result
+	{
+		testAsList()->add(object EClass{});
+		assert fatal (g_list->size() = 1 and g_coll->size() = 1);
+		
+		testAsCol3()->add(object EClass{});
+		assert fatal (g_list->size() = 2 and g_coll->size() = 1);
+	};
+
+	do -- test context type
+	{
+		var list : List(EClass) := List {object EClass{}};
+		var coll : Sequence(EClass) := Sequence {object EClass{}};
+		
+		list->testSequenceContext()->add(object EClass{});
+		assert fatal (list->size() = 1 and coll->size() = 1);
+		coll->testSequenceContext()->add(object EClass{});
+		assert fatal (list->size() = 1 and coll->size() = 1);
+
+		list->testListContext();
+		list->testListContext2()->add(object EClass{});
+		assert fatal (list->size() = 2 and coll->size() = 1);
+		
+		list->testCollectionContext();
+		coll->testCollectionContext();
+	};
+
+	// test coersion on assignment
+	//
+	do {
+		var l1 := List{1};
+		var l2 := l1;
+		l1->add(2);
+		assert fatal (l2->size() = 2);
+	};
+	
+	do {
+		var l1 := List{1};
+		var l2 := l1->asSequence();
+		l1->add(2);
+		assert fatal (l2->size() = 1);
+	};
+	
+	do {
+		var l1 := List{1};
+		var l2 : Sequence(Integer) := l1;
+		l1->add(2);
+		assert fatal (l2->size() = 1);
+	};
+	
+	do {
+		var l1 := Sequence{1};
+		var l2 : List(Integer) := l1;
+		l2->add(2);
+		assert fatal (l1->size() = 1);
+	};
+
+}
+
+helper testListSequence(inout l : List(EClass), inout c : Sequence(EClass)) {
+	assert fatal (l->size() = 1 and c->size() = 1);
+	l->add(object EClass{});
+	c->append(object EClass{});
+	assert fatal (l->size() = 2 and c->size() = 1);
+}
+
+helper testListList(inout l1 : List(EClass), inout l2 : List(EClass)) {
+	assert fatal (l1->size() = 1 and l2->size() = 1);
+	l1->add(object EClass{});
+	assert fatal (l1->size() = 2 and l2->size() = 2);
+}
+
+helper testList2List(inout l : List(EClass)) : List(EClass) {
+	l->add(object EClass{});
+	return l
+}
+
+helper testSequence2List(inout c : Sequence(EClass)) : List(EClass) {
+	var l : List(EClass) := c;
+	l->add(object EClass{});
+	return l
+}
+
+helper testAsList() : List(EClass) {
+	return g_coll;
+}
+
+helper testAsList2() : Collection(EClass) {
+	return g_coll;
+}
+
+helper testAsList3() : Sequence(EClass) {
+	return g_coll;
+}
+
+helper testAsList4() : List(EClass) {
+	return Sequence{object EClass{}}
+}
+
+helper testAsColl() : Sequence(EClass) {
+	return g_list;
+}
+
+helper testAsCol2() : Collection(EClass) {
+	return g_list;
+}
+
+helper testAsCol3() : List(EClass) {
+	return g_list;
+}
+
+helper testAsCol4(l : List(EClass)) : List(EClass) {
+	return l;
+}
+
+helper testAsCol5(c : Sequence(EClass)) : Sequence(EClass) {
+	return c
+}
+
+helper List(EClass)::testListContext() : Sequence(EClass) {
+	return self
+}
+
+helper List(EClass)::testListContext2() : List(EClass) {
+	return self
+}
+
+helper Sequence(EClass)::testSequenceContext() : List(EClass) {
+	return self
+}
+
+helper Collection(EClass)::testCollectionContext() : Collection(EClass) {
+	return self
+}
+

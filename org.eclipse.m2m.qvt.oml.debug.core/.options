@@ -1,0 +1,22 @@
+# Debugging options for the org.eclipse.m2m.qvt.oml.debug.core plug-in
+
+# Turn on general debugging for the org.eclipse.ocl plug-in
+org.eclipse.m2m.qvt.oml.debug.core/debug=true
+
+# Trace QVTO debug target
+org.eclipse.m2m.qvt.oml.debug.core/debug/target=false
+# Trace QVTO virtual machine
+org.eclipse.m2m.qvt.oml.debug.core/debug/vm=false
+# Trace QVTO debug evaluator
+org.eclipse.m2m.qvt.oml.debug.core/debug/evaluator=false
+
+
+# Trace when exceptions are caught
+org.eclipse.m2m.qvt.oml.debug.core/debug/exceptions/catching=false
+# Trace when exceptions are thrown
+org.eclipse.m2m.qvt.oml.debug.core/debug/exceptions/throwing=false
+
+# Trace when methods are entered
+org.eclipse.m2m.qvt.oml.debug.core/debug/methods/entering=false
+# Trace when methods are exited
+org.eclipse.m2m.qvt.oml.debug.core/debug/methods/exiting=false

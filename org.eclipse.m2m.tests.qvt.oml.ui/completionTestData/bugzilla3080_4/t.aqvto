@@ -1,0 +1,124 @@
+modeltype ECORE uses "http://www.eclipse.org/emf/2002/Ecore";
+modeltype EMOF uses "http://schema.omg.org/spec/mof/2.0/emof.xmi";
+
+transformation Ecore2EMOF(in ecore : ECORE, out emof : EMOF);
+
+main() {
+	var ePackages := ecore.rootObjects()[ECORE::EPackage];
+	ePackages->map toPackage();	
+}
+
+mapping EPackage::toPackage() : EMOF::Package 
+	inherits /*@*/ENamedElement::toNamedElement 
+{
+	uri := self.nsURI;
+	ownedType := self.eClassifiers->map toType()->asOrderedSet();
+	nestedPackage := self.eSubpackages->map toPackage()->asOrderedSet();
+	let b : String in {{let a : Integer in null; b}; 
+}
+
+mapping EClass::toClass() : EMOF::Class 
+	inherits ENamedElement::toNamedElement
+{
+init {	
+	
+while(a : String := 'a'; null) {
+	resolve(aa : EObject|resolve(b:EClass|null) and null);
+}
+}
+}
+	isAbstract := self._abstract or self.interface;
+	superClass += self.eSuperTypes.late resolveIn(EClass::toClass, EMOF::Class);
+	
+	ownedAttribute += self.eStructuralFeatures->map toProperty();
+	ownedOperation += self.eOperations->map toOperation();
+	--resolve(a : EObject|resolve(b:EClass|null and ) and )
+}
+
+abstract mapping EClassifier::toType() : EMOF::Type
+	disjuncts EClass::toClass, EEnum::toEnum, EDataType::toDataType{}
+
+mapping EEnum::toEnum() : EMOF::Enumeration inherits ENamedElement::toNamedElement {
+	ownedLiteral += self.eLiterals->xcollect(el |
+		object EMOF::EnumerationLiteral { name := el.name; });
+}
+
+abstract mapping ECORE::ENamedElement::toNamedElement() 
+	: EMOF::NamedElement 
+{
+	name := self.name;
+}
+
+abstract mapping ECORE::ETypedElement::toTypedElement() 
+	: EMOF::TypedElement
+	inherits ENamedElement::toNamedElement 
+{
+	type := self.eType.map toType();
+}
+
+abstract mapping ETypedElement::toMultiplicity() : MultiplicityElement {
+	isOrdered := self.ordered;
+	_isUnique := self.unique;
+	lower := self.lowerBound;
+	upper := if(self.upperBound = *) then -1 else self.upperBound.oclAsType(Integer) endif;
+}
+
+mapping EOperation::toOperation() : Operation
+	inherits ETypedElement::toTypedElement merges ETypedElement::toMultiplicity {
+	ownedParameter := self.eParameters->map toParameter()->asOrderedSet();
+	raisedException := self.eExceptions->map toType()->asOrderedSet();
+}
+
+mapping EParameter::toParameter() : Parameter 
+	inherits ETypedElement::toTypedElement merges ETypedElement::toMultiplicity {}
+	
+	
+mapping EStructuralFeature::toProperty() : Property
+	inherits ETypedElement::toTypedElement 
+	merges ETypedElement::toMultiplicity 
+{
+	isDerived := self.derived;
+	isReadOnly := not self.changeable;
+	end {
+		log('Transforming EReference', self.name) 
+				when self.oclIsKindOf(EReference);
+	}
+}
+
+mapping EReference::toProperty() : Property inherits EStructuralFeature::toProperty {
+	isComposite := self.containment;	
+	opposite := self.eOpposite.late resolveoneIn(EReference::toProperty, Property);
+}
+
+mapping EAttribute::toProperty() : Property inherits EStructuralFeature::toProperty {
+	isId := if(self.iD) then true else null endif;	
+}
+
+mapping EDataType::toDataType() : EMOF::DataType 
+	inherits ENamedElement::toNamedElement {
+	init {
+		var typeName := self.getPrimitiveTypeName();
+		if(typeName <> null) then {
+			result := map primitiveType(typeName);	
+		} endif;
+	}
+	name := if(typeName <> null) then typeName else result.name endif;
+}
+
+mapping primitiveType(in typeName : String) : PrimitiveType {
+	name := typeName;
+}
+
+helper EDataType::getPrimitiveTypeName() : String {
+	var typeName : String := null;
+	switch {
+		case (self.instanceClassName = 'java.lang.String') typeName := 'String';
+		case (self.instanceClassName = 'boolean') typeName := 'Boolean';
+		case (self.instanceClassName = 'java.lang.Boolean') typeName := 'Boolean';			
+		case (self.instanceClassName = 'int') typeName := 'Integer';
+		case (self.instanceClassName = 'java.lang.Integer') typeName := 'Integer';
+		case (self.instanceClassName = 'float') typeName := 'Real';		
+		case (self.instanceClassName = 'java.lang.Float') typeName := 'Real';			
+	};
+	return typeName;
+}

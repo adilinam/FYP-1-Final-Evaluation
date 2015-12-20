@@ -1,0 +1,29 @@
+import ImportedTransf1;
+import ImportedTransf2;
+import ImportedTransf3;
+	
+
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+	
+transformation NewTransformation(in eModel : ECORE, out outModel : ECORE) 
+	access ImportedTransf1, ImportedTransf2
+	extends ImportedTransf3;
+
+main() {
+	var t2 : ImportedTransf2 := new ImportedTransf2(eModel, outModel);
+	t2.outPackageName := "outPackFromT2";
+	
+	var s2 : Status := t2.transform();
+
+	var t1 : ImportedTransf1 := new ImportedTransf1(outModel);
+	t1.outPackageName := "outPackFromT1";
+	
+	var s1 : Status := t1.transform();
+	assert fatal (s1.succeeded());
+
+	// cfg properties set explicitly in the test invocation
+	//attrNum := 10;
+	//outClassName := "ClassFromImportedTransf3_cfgprop";
+	// call inherited functionality Transf4 (via Transf3)
+	mainHelperFromTransf3();
+}

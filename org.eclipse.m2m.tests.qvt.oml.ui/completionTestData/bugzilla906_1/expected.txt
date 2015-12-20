@@ -1,0 +1,2 @@
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = createEClass1(), displayString = createEClass1() : EClass, replacementOffsetDelta = 0, replacementLength = 0, cursorPosition = 15
+QvtCompletionProposal[org.eclipse.m2m.qvt.oml.editor.ui.completion.category.default]: replacementString = createEClass2(), displayString = createEClass2() : EClass, replacementOffsetDelta = 0, replacementLength = 0, cursorPosition = 15

@@ -1,0 +1,51 @@
+modeltype UML uses 'http://www.eclipse.org/uml2/2.0.0/UML';
+modeltype XHTML uses 'http://www.w3.org/1999/xhtml';
+
+transformation Uml2Xhtml(in Uml : UML, out Xhtml : XHTML);
+
+main() {
+	var model := Uml.rootObjects()![Model];
+	
+	object DocumentRoot {
+		html := object xhtml::HtmlType {
+			head := object xhtml::HeadType {
+				title := object xhtml::TitleType {
+					text := guardText(model.name);
+				};
+			};
+			_body := object xhtml::BodyType {
+				h1 := object xhtml::H1Type {
+					text := guardText('Model ' + model.name)
+				};
+				
+				div += object xhtml::DivType {
+					h2 := object xhtml::H2Type {
+						text := guardText('Classes in ' + model.name)
+					};
+					table := object xhtml::TableType {
+						model.allClasses()->forEach(p) {
+							tr += p.map class2row()
+						}
+					};
+				};
+			}
+		}
+	}
+}
+
+query uml::Package::allClasses() : OrderedSet(uml::Class) {
+	return self.ownedMember[uml::Class]->sortedBy(name)
+}
+
+mapping uml::Class::class2row() : xhtml::TrType {
+	td := new xhtml::TdType(self.name)
+}
+
+constructor xhtml::TdType::TdType(value : String) {
+	text := guardText(value)
+}
+
+query guardText(in text: String) : String {
+	return if text.oclIsUndefined() then '' else text endif
+}
+

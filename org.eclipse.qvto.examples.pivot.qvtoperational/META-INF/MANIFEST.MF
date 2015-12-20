@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.qvto.examples.pivot.qvtoperational;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.eclipse.qvto.examples.pivot.qvtoperational,
+ org.eclipse.qvto.examples.pivot.qvtoperational.impl,
+ org.eclipse.qvto.examples.pivot.qvtoperational.lookup,
+ org.eclipse.qvto.examples.pivot.qvtoperational.util,
+ org.eclipse.qvto.examples.pivot.qvtoperational.utilities
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.qvto.examples.pivot.imperativeocl;bundle-version="[1.0.0,2.0.0)";visibility:=reexport
+Bundle-ActivationPolicy: lazy

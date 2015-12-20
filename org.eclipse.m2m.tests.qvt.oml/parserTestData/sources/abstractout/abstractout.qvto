@@ -1,0 +1,16 @@
+transformation abstractout;
+
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+main() {
+ var c:= /*<error>*/object EClassifier {}/*</error>*/;
+ /*<error>*/object EClassifier {}/*</error>*/;
+}
+
+/*<error>*/mapping base(): ecore::ENamedElement/*</error>*/ {
+ population {
+    object result:ecore::ENamedElement {
+        name := 'simple'
+    }
+ }
+}

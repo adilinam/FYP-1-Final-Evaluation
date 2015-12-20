@@ -1,0 +1,12 @@
+modeltype ecore "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation noClassInImplicitPopulate(out output: ecore);
+
+/*<warn>*/mapping main(out model:ecore::EPackage@output)/*</warn>*/ {
+	/*<error>*/name/*</error>*/:='generated_package';
+	/*<error>*/nsPrefix/*</error>*/:='prefix';
+}
+
+mapping foo() {
+	/*<error>*/name/*</error>*/ := '';
+}
